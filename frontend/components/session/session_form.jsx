@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
+  componentDidUpdate() {
+
+  }
+  
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -57,7 +61,7 @@ class SessionForm extends React.Component {
         </div>
         <div className="mid-content">
           <form className="login-signup-form" onSubmit={this.handleSubmit}>
-            {this.renderErrors()}
+            <div className="errors">{this.renderErrors()}</div>
             {usernameInput}
             <br/>
             <label> 

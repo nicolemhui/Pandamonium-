@@ -1,0 +1,168 @@
+body {
+  font-family: Circular, 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background: white;
+}
+
+li {
+  list-style: none;
+}
+
+li a:hover {
+  color: #1DB954;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.header {
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  color: #fff;
+  /* height: 100px; */
+}
+
+.nav-bar {
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  /* font-size: 18px; */
+}
+
+.logo {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin-left: 10%;
+}
+
+.logo i {
+  display: block;
+  font-size: 38px;
+}
+
+.header-logo {
+  font-weight: bold;
+  font-size: 25px;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 25px 5px;
+}
+
+.header-list {
+  display: flex;
+  float: right;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.header a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header-list > li {
+  text-decoration: none;
+}
+
+.header-list i {
+  font-size: 22px;
+}
+
+/* Main content */
+.main-content {
+  background: url(image_path('splash_bg.png'));
+  background-color: pink;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -75px;
+  height: 700px;
+  width: 100%;
+  color: white;
+  font-family: "Poppins";
+  text-align: center;
+}
+
+.main-content > h1 {
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  padding-top: 200px;
+}
+
+.main-content > h3 {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+
+.main-content > a {
+  height: 300px;
+  width: 500px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 200px;
+  background-color: #1DB954;
+  letter-spacing: 0.07em;
+  padding: 15px 45px;
+}
+
+.main-content > a:hover {
+  background-color: #1ED760;
+}
+
+/* Section class */
+.content-main {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 125px;
+  display: flex;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin-left: 2%;
+  margin-right: 75px;
+}
+
+.footer-logo h1 {
+  font-size: 20px;
+}
+
+.footer-links {
+  // align-items: center;
+}
+.footer-links a {
+  font-size: 16px;
+}
+
+.useful-links {
+
+}
