@@ -1,0 +1,169 @@
+body {
+  font-family: Circular, 'Montserrat', Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.login-form-header {
+  margin-top: -25px;
+  width: 100%;
+  height: 125px;
+  border-bottom: 1px solid #D9DADC;
+}
+
+.login-logo {
+  // margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logo i {
+  font-size: 60px;
+}
+
+.login-logo h1 {
+  font-size: 42px;
+  font-weight: 1000;
+  letter-spacing: -0.1em;
+}
+
+.login-separator{
+  border-bottom: white;
+  border-right: white;
+  border-left: white;
+}
+
+.login-signup-form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.session-input-field {
+  width: 430px;
+  height: 50px;
+  border: 1px solid #dfe0e6;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.session-input-field::placeholder {
+  color: #88898C;
+  font-size: 1.5em;
+  font-family: arial;
+  font-size: 14px;
+}
+
+.session-input-field:focus::-webkit-input-placeholder {
+  color: #C1C2C6;
+  transition-duration: .5s;
+  
+}
+
+.submit-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-me {
+  // background-color: red;
+}
+
+.session-submit-btn {
+  background-color: #FFFFFF;
+  height: 50px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 200px;
+  letter-spacing: -0.04em;
+  padding: 15px 45px;
+  text-decoration: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  // vertical-align: center;
+  align-items: center;
+  transition-duration: .3s;
+  color: #333333;
+}
+
+.session-submit-btn:hover {
+  background-color: #616467;
+  color: white;
+}
+
+.session-nav-link {
+  text-decoration: none;
+  color: green;
+}
+
+.nav-description {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.demo-btn button {
+  display: block;
+  width: 400px;
+  height: 50px;
+  border-radius: 200px;
+  background-color: #3B5998;
+  margin: 50px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.demo-btn button:hover {
+  background-color: #3A61B3;
+  transition-duration: .3s;
+}
+
+
+
+
+
+.btn {
+  background-color: #FFFFFF;
+  height: 20px;
+  width: 400px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 200px;
+  letter-spacing: -0.04em;
+  padding: 15px 45px;
+  text-decoration: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: .3s;
+}
+
+.facebook-btn {
+  background-color: #3B5998;
+  color: #FFFFFF;
+  width: 100px;
+  height: 100px;
+}
+
+.facebook-btn:hover {
+  background-color: #3A61B3;
+}
+
+.signup-btn.btn {
+  color: #333;
+}
+
+.signup-btn:hover {
+  background-color: #616467;
+  color: white;
+}

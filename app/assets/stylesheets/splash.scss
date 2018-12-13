@@ -139,7 +139,7 @@ a {
 .footer {
   background-color: #000000;
   color: #FFFFFF;
-  height: 125px;
+  height: 150px;
   display: flex;
 }
 
@@ -150,17 +150,20 @@ a {
   float: left;
   margin-left: 2%;
   margin-right: 75px;
+  margin-bottom: 80px;
 }
 
 .footer-logo h1 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.footer-links {
-  // align-items: center;
+.footer-links h5 {
+  color: #919496;
+  margin-top: 30px;
 }
+
 .footer-links a {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .useful-links {

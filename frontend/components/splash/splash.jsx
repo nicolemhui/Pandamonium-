@@ -8,6 +8,24 @@ class Splash extends React.Component {
 
 
   render() {
+    const sessionLinks = () => (
+    <nav className="login-signup">
+      <h1> THIS IS THE SPLASH PAGE </h1>
+      <Link to="/login">Login</Link>
+      &nbsp;or&nbsp;
+      <Link to="/signup">Sign up!</Link>
+    </nav>
+  );
+
+  const personalGreeting = () => (
+    <hgroup className="header-group">
+      <h1> THIS IS THE SPLASH PAGE </h1>
+      <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
+      <Link to="/" className="logout-btn" onClick={this.props.logout}>Log Out</Link>
+    </hgroup>
+  );
+
+   
     return (
       <div> 
 
@@ -21,11 +39,13 @@ class Splash extends React.Component {
             <li><a href="#"><i className="fab fa-github"></i></a></li>
             <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
             <li>|</li>
-            <li><a href="#">Sign up</a></li>
-            <li><a href="#">Log In</a></li>
+            <li><Link to="/signup">Sign Up</Link></li>
+            <li><Link to="/login">Log In</Link></li>
           </ul>
         </nav>
       </header >
+
+      {this.props.currentUser ? personalGreeting() : sessionLinks()}
 
       <section className="main-content">
         <h1>Music for everyone.</h1>

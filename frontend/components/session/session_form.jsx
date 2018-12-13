@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -9,12 +10,13 @@ class SessionForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoClick = this.handleDemoClick.bind(this);
   };
 
   componentDidUpdate() {
 
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -24,6 +26,12 @@ class SessionForm extends React.Component {
   handleChange(field) {
     return (e) => this.setState({ [field]: e.target.value });
   };
+
+  handleDemoClick(e) {
+    e.preventDefault();
+    const user = { username: "demouser", password: "password", email: "demo@user.com" };
+    this.props.action(user);
+  }
 
   renderErrors() {
     return (
@@ -42,50 +50,73 @@ class SessionForm extends React.Component {
 
     if (this.props.formType === "SIGN UP") {
       usernameInput = 
-        <label>
-          Username: 
-          <input type="text" 
-            className="session-input-field"
-            value={this.state.username}
-            onChange={this.handleChange('username')}
-          />
-        </label>
+        <div>
+          <label>
+            <input type="text" 
+              className="session-input-field"
+              value={this.state.username}
+              onChange={this.handleChange('username')}
+              placeholder="Username"
+              />
+          </label>
+          <br/>
+        </div>
     } else {
       usernameInput = ""
     }
 
     return (
       <div className="login-signup-form-container">
-        <div className="pandamonium-header">
-          <h2>{this.props.formType}</h2>
+        <div className="login-form-header">
+          <div className="login-logo">
+            <i className="fab fa-spotify"></i>
+            <h1 className="header-logo">Pandamonium</h1>
+          </div>
         </div>
-        <div className="mid-content">
+        <div className="login-mid-section">
           <form className="login-signup-form" onSubmit={this.handleSubmit}>
-            <div className="errors">{this.renderErrors()}</div>
-            {usernameInput}
+            <div className="demo-btn">
+              <button onClick={this.handleDemoClick}>DEMO USER</button>
+            </div>
+
+            <div>
+              <fieldset className="login-separator">
+                <legend align="center" className="or-separator" >OR</legend>
+              </fieldset>
+            </div>
+            
+            <div className="session-errors">{this.renderErrors()}</div>
             <br/>
             <label> 
-              Email: 
               <input type="text" 
                 className="session-input-field"
                 value={this.state.email} 
                 onChange={this.handleChange('email')}
+                placeholder="Email"
               />
             </label>
             <br/>
+            {usernameInput}
             <label>
-              Password:
-              <input type="text"
+              <input type="password"
                 className="session-input-field"
                 value={this.state.password}
                 onChange={this.handleChange('password')}
+                placeholder="Password"
               />
             </label>
             <br/>
-            <input type="submit"
-              className="session-submit-btn"
-              value={this.props.formType}
-            />
+            <div className="submit-row">
+              <div className="remember-me">
+                <input type="checkbox" id="remember" name="remember"/>
+                <label htmlFor="remember">Remember me</label>
+              </div>
+              <input type="submit"
+                className="session-submit-btn"
+                value={this.props.formType}
+              />
+           </div>
+           
           </form>
           <div className="nav-description"> 
             {this.props.navDescription}
