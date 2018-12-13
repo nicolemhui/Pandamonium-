@@ -1,16 +1,16 @@
 # == Schema Information
 #
-# Table name: songs
+# Table name: artists
 #
 #  id         :bigint(8)        not null, primary key
-#  title      :string           not null
-#  album_id   :integer
+#  name       :string           not null
+#  bio        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Song < ApplicationRecord
-  validates :title, presence: true
+class Artist < ApplicationRecord
+  validates :name, presence: true
+
   
-  belongs_to :album
 end
