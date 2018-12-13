@@ -43,7 +43,22 @@ class Splash extends React.Component {
             <li><Link to="/login">Log In</Link></li>
           </ul>
         </nav>
-      </header >
+      </header>
+
+      {/* <div class="responsive-nav">
+        <div class="hamburger-btn" id="hamburger-btn">
+          <div></div>
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="responsive-modal">
+          <ul>
+            <li>Sign Up</li>
+            <li>Log In</li>
+            <li>Demo</li>
+          </ul>
+        </div>
+      </div> */}
 
       {this.props.currentUser ? personalGreeting() : sessionLinks()}
 

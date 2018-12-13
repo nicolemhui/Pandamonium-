@@ -5,7 +5,8 @@ class Api::UsersController < ApplicationController
       login(@user)
       render 'api/users/show'
     else
-      render json: ['Username/Email already taken'], status: 401
+      render json: @user.errors.full_messages, status: 401
+      # render json: ['Username/Email already taken'], status: 401
     end
   end
 

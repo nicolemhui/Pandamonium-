@@ -11,6 +11,7 @@ li {
 
 li a:hover {
   color: #1DB954;
+  cursor: pointer;
 }
 
 
@@ -24,6 +25,29 @@ a {
   color: #fff;
   /* height: 100px; */
 }
+
+// .responsive-menu{
+// 	display: none;
+//   background-color: #444;
+//   border-style: solid;
+//   border-color: #252525;
+//   border-width: 5px;
+//   padding: 5px;
+//   width: 300px;
+//   height: 150px;
+//   font-size: 20px;
+//   ul{
+//     margin: 0px 0px 0px -40px;
+
+//   }
+//   li {
+//     background-color: #383838;
+//     margin: 4px;
+//     padding: 5px;
+//     color: white;
+//     list-style-type: none;
+//   }
+// }
 
 .nav-bar {
   background-color: rgba(0, 0, 0, 0.6);
@@ -125,6 +149,8 @@ a {
 
 .main-content > a:hover {
   background-color: #1ED760;
+  cursor: pointer;
+
 }
 
 /* Section class */
@@ -166,6 +192,3 @@ a {
   font-size: 14px;
 }
 
-.useful-links {
-
-}

@@ -12,7 +12,6 @@ body {
 }
 
 .login-logo {
-  // margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,11 +31,20 @@ body {
   border-bottom: white;
   border-right: white;
   border-left: white;
+  width: 410px;
+  margin: 0 auto;
 }
 
 .login-signup-form {
   width: 500px;
   margin: 0 auto;
+}
+
+// make errors appear!
+.session-errors {
+  // width: 400px;
+  // height: 75px;
+  // background-color: #f39a35;
 }
 
 .session-input-field {
@@ -60,46 +68,67 @@ body {
 .session-input-field:focus::-webkit-input-placeholder {
   color: #C1C2C6;
   transition-duration: .5s;
-  
 }
 
 .submit-row {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.remember-me {
-  // background-color: red;
+input[type='checkbox'] {
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	display: block;
+	float: left;
+	position: relative;
+	cursor: pointer;
 }
 
 .session-submit-btn {
-  background-color: #FFFFFF;
+  background-color: #1DB954;
+  color: white;
   height: 50px;
-  width: 200px;
+  width: 275px;
   font-size: 16px;
   font-weight: bold;
   border-radius: 200px;
   letter-spacing: -0.04em;
-  padding: 15px 45px;
   text-decoration: none;
   margin: 0 auto;
+  margin: 15px;
   display: flex;
   justify-content: center;
-  // vertical-align: center;
   align-items: center;
   transition-duration: .3s;
-  color: #333333;
 }
 
 .session-submit-btn:hover {
-  background-color: #616467;
+  background-color: #1ED760;
   color: white;
+  cursor: pointer;
 }
 
 .session-nav-link {
   text-decoration: none;
-  color: green;
+  color: #2ab759;
+}
+
+.session-greeting { 
+  text-align: center;
+}
+
+#remember {
+  border: 1px solid #2ab759;
+}
+
+.remember-me label {
+  color: #919496;
+  size: 10px;
 }
 
 .nav-description {
@@ -107,7 +136,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  font-size: 14px;
+}
+
+.demo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .demo-btn button {
@@ -116,7 +151,7 @@ body {
   height: 50px;
   border-radius: 200px;
   background-color: #3B5998;
-  margin: 50px;
+  margin: 25px;
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -125,45 +160,6 @@ body {
 .demo-btn button:hover {
   background-color: #3A61B3;
   transition-duration: .3s;
+  cursor: pointer;
 }
 
-
-
-
-
-.btn {
-  background-color: #FFFFFF;
-  height: 20px;
-  width: 400px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 200px;
-  letter-spacing: -0.04em;
-  padding: 15px 45px;
-  text-decoration: none;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition-duration: .3s;
-}
-
-.facebook-btn {
-  background-color: #3B5998;
-  color: #FFFFFF;
-  width: 100px;
-  height: 100px;
-}
-
-.facebook-btn:hover {
-  background-color: #3A61B3;
-}
-
-.signup-btn.btn {
-  color: #333;
-}
-
-.signup-btn:hover {
-  background-color: #616467;
-  color: white;
-}

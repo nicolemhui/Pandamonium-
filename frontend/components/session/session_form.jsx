@@ -13,8 +13,8 @@ class SessionForm extends React.Component {
     this.handleDemoClick = this.handleDemoClick.bind(this);
   };
 
-  componentDidUpdate() {
-
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -30,8 +30,10 @@ class SessionForm extends React.Component {
   handleDemoClick(e) {
     e.preventDefault();
     const user = { username: "demouser", password: "password", email: "demo@user.com" };
-    this.props.action(user);
+    this.props.demo(user)
   }
+
+  //.then(() => this.props.history.push('/'));
 
   renderErrors() {
     return (
@@ -47,7 +49,9 @@ class SessionForm extends React.Component {
 
   render() {
     let usernameInput;
-
+    let rememberMe;
+    let sessionGreeting;
+    
     if (this.props.formType === "SIGN UP") {
       usernameInput = 
         <div>
@@ -60,9 +64,19 @@ class SessionForm extends React.Component {
               />
           </label>
           <br/>
-        </div>
+        </div>;
+      
+      rememberMe = "";
+      sessionGreeting = "Sign up with your email address";
     } else {
       usernameInput = ""
+      rememberMe = 
+        <div className="remember-me">
+          <input type="checkbox" id="remember" name="remember" />
+          <label htmlFor="remember">Remember me</label>
+        </div>;
+      sessionGreeting = "To continue, log into Pandamonium";
+    
     }
 
     return (
@@ -74,21 +88,27 @@ class SessionForm extends React.Component {
           </div>
         </div>
         <div className="login-mid-section">
-          <form className="login-signup-form" onSubmit={this.handleSubmit}>
-            <div className="demo-btn">
-              <button onClick={this.handleDemoClick}>DEMO USER</button>
-            </div>
+          
 
-            <div>
-              <fieldset className="login-separator">
-                <legend align="center" className="or-separator" >OR</legend>
-              </fieldset>
-            </div>
-            
+          <form className="login-signup-form" onSubmit={this.handleSubmit}>
+          <div className="demo-btn">
+            <button onClick={this.handleDemoClick}>DEMO USER</button>
+          </div>
+          
+          <div>
+            <fieldset className="login-separator">
+              <legend align="center" className="or-separator" >or</legend>
+            </fieldset>
+          </div>
+          
+          <div className="session-greeting">
+            <h4>{sessionGreeting}</h4>
+          </div>
+
             <div className="session-errors">{this.renderErrors()}</div>
             <br/>
             <label> 
-              <input type="text" 
+              <input type="email" 
                 className="session-input-field"
                 value={this.state.email} 
                 onChange={this.handleChange('email')}
@@ -107,21 +127,17 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <div className="submit-row">
-              <div className="remember-me">
-                <input type="checkbox" id="remember" name="remember"/>
-                <label htmlFor="remember">Remember me</label>
-              </div>
+              {rememberMe}
               <input type="submit"
                 className="session-submit-btn"
                 value={this.props.formType}
               />
            </div>
            
-          </form>
           <div className="nav-description"> 
-            {this.props.navDescription}
-            {this.props.navLink}
+            <p>{this.props.navDescription}    {this.props.navLink}</p>
           </div>
+          </form>
         </div>
       </div>
     );
