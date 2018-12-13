@@ -42,10 +42,17 @@ body {
 
 // make errors appear!
 .session-errors {
-  // width: 400px;
-  // height: 75px;
-  // background-color: #f39a35;
+  margin: 0 auto;
+  width: 420px;
+  list-style: none;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  background-color: #f59b23;
+  transition: .5s;
 }
+
 
 .session-input-field {
   width: 430px;
