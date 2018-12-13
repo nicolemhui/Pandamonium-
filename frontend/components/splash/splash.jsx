@@ -8,18 +8,16 @@ class Splash extends React.Component {
 
 
   render() {
-    const sessionLinks = () => (
-    <nav className="login-signup">
-      <h1> THIS IS THE SPLASH PAGE </h1>
-      <Link to="/login">Login</Link>
-      &nbsp;or&nbsp;
-      <Link to="/signup">Sign up!</Link>
-    </nav>
-  );
+  //   const sessionLinks = () => (
+  //   <nav className="login-signup">
+  //     <Link to="/login">Login</Link>
+  //     &nbsp;or&nbsp;
+  //     <Link to="/signup">Sign up!</Link>
+  //   </nav>
+  // );
 
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <h1> THIS IS THE SPLASH PAGE </h1>
       <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
       <Link to="/" className="logout-btn" onClick={this.props.logout}>Log Out</Link>
     </hgroup>
@@ -31,36 +29,22 @@ class Splash extends React.Component {
 
       <header className="header">
         <nav className="nav-bar">
+        <div className="nav-greeting-logout">
+          {this.props.currentUser ? personalGreeting() : ""}
+        </div>
           <div className="logo">
             <i className="fab fa-spotify"></i>
             <h1 className="header-logo">Pandamonium</h1>
           </div>
           <ul className="header-list">
-            <li><a href="#"><i className="fab fa-github"></i></a></li>
-            <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/nicolemhui"><i className="fab fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/nicolemhui/"><i className="fab fa-linkedin"></i></a></li>
             <li>|</li>
             <li><Link to="/signup">Sign Up</Link></li>
             <li><Link to="/login">Log In</Link></li>
           </ul>
         </nav>
       </header>
-
-      {/* <div class="responsive-nav">
-        <div class="hamburger-btn" id="hamburger-btn">
-          <div></div>
-            <i class="fas fa-bars"></i>
-        </div>
-
-        <div class="responsive-modal">
-          <ul>
-            <li>Sign Up</li>
-            <li>Log In</li>
-            <li>Demo</li>
-          </ul>
-        </div>
-      </div> */}
-
-      {this.props.currentUser ? personalGreeting() : sessionLinks()}
 
       <section className="main-content">
         <h1>Music for everyone.</h1>

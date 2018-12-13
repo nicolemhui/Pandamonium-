@@ -6,7 +6,9 @@ import { Route } from 'react-router-dom';
 import SplashContainer from './splash/splash_container';
 
 const App = () => (
-  <div>
+   
+  <div>   
+    
     <Route exact path="/" component={SplashContainer}/>
     <AuthRoute path="/login" component={LoginFormContainer}/>
     <AuthRoute path="/signup" component={SignupFormContainer}/>
