@@ -8,30 +8,12 @@ class Splash extends React.Component {
 
 
   render() {
-  //   const sessionLinks = () => (
-  //   <nav className="login-signup">
-  //     <Link to="/login">Login</Link>
-  //     &nbsp;or&nbsp;
-  //     <Link to="/signup">Sign up!</Link>
-  //   </nav>
-  // );
-
-  const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
-      <Link to="/" className="logout-btn" onClick={this.props.logout}>Log Out</Link>
-    </hgroup>
-  );
-
    
     return (
       <div> 
 
       <header className="header">
         <nav className="nav-bar">
-        <div className="nav-greeting-logout">
-          {this.props.currentUser ? personalGreeting() : ""}
-        </div>
           <div className="logo">
             <i className="fab fa-spotify"></i>
             <h1 className="header-logo">Pandamonium</h1>

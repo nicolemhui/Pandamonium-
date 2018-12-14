@@ -1,0 +1,71 @@
+body {
+  font-family: Proxima Nova, 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  background: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidenav {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 25px;
+  background-color: #000;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  /* -webkit-box-orient: vertical;
+  -webkit-box-direction: normal; */
+  /* background-color: rgba(0,0,0,.8); */
+}
+
+.sidenav-header-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.sidenav-header-logo h3{
+  display: block;
+  color: white;
+  letter-spacing: -0.05em;
+  text-decoration: none;
+}
+
+.sidenav-header-logo i{
+  display: block;
+  color: white;
+  font-size: 40px;
+}
+
+.sidenav-links li{
+  list-style: none;
+}
+
+.sidenav-links a{
+  color: #b3b3b3;
+  font-size: 18px;
+}
+
+.sidenav-links a:hover{
+  color: #FFF;
+  cursor: pointer;
+  transition: 0.5s
+}
+
+.recently-played {
+  // height: 400px;
+}
+
+
+.header-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: yellow;
+}
