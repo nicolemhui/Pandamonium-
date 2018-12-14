@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+class Api::SongsController < ApplicationController
   def show 
     @song = Song.find(params[:id])
     render 'api/songs/show'

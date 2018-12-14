@@ -12,5 +12,9 @@
 class Song < ApplicationRecord
   validates :title, presence: true
   
-  belongs_to :album
+  belongs_to :album, optional: true
+  has_many :artist_songs
+  has_many :artists, 
+    through: :artist_songs,
+    source: :artist
 end
