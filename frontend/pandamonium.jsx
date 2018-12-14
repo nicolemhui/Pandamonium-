@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { login, signup, logout } from './util/session_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
-import { receiveAllSongs, receiveSong, fetchSong, fetchSongs } from './util/song_api_util';
-import { receiveAllArtists, receiveArtist, fetchArtist, fetchArtists } from './util/artist_api_util';
-import { receiveAllAlbums, receiveAlbum, fetchAlbum, fetchAlbums } from './util/album_api_util';
+import { receiveAllSongs, receiveSong, fetchSong, fetchSongs } from './actions/song_actions';
+import { receiveAllArtists, receiveArtist, fetchArtist, fetchArtists } from './actions/artist_actions';
+import { receiveAllAlbums, receiveAlbum, fetchAlbum, fetchAlbums } from './actions/album_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');

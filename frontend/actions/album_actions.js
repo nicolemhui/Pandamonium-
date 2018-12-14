@@ -14,7 +14,9 @@ export const receiveAlbum = (album) => ({
 
 export const fetchAlbums = () => dispatch => (
   AlbumApiUtil.fetchAlbums()
-    .then(albums => dispatch(receiveAllAlbums(albums)))
+    .then(albums => 
+
+      dispatch(receiveAllAlbums(albums)))
 );
 
 export const fetchAlbum = (id) => dispatch => (

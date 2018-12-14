@@ -16,8 +16,10 @@ const App = () => (
       <Route exact path="/" component={SplashContainer} />
       <Redirect to="/" />
     </Switch>
+    
   </div>
 );
 
 export default App;
 
+{/* <ProtectedRoute path="/browse/featured" component={MainPageContainer}/> */}
