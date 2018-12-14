@@ -27,6 +27,9 @@ lp_hybrid_theory = Album.create(title: "Hybrid Theory", year: 2000)
 
 #Songs
 dp_aerodynamic = Song.create(title: "Aerodynamic", album_id: 1)
+dp_aero_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
+dp_aerodynamic.photo.attach(io: dp_aero_photo, filename: 'dp_discovery.png')
+
 dp_one_more_time = Song.create(title: "One More Time", album_id: 1)
 lp_in_the_end = Song.create(title: "In The End", album_id: 2)
 jz_numb_encore = Song.create!(title: "Numb/Encore")

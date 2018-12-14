@@ -17,4 +17,6 @@ class Song < ApplicationRecord
   has_many :artists, 
     through: :artist_songs,
     source: :artist
+  
+  has_one_attached :photo
 end

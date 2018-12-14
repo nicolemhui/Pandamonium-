@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_005747) do
+ActiveRecord::Schema.define(version: 2018_12_14_190052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "albums", force: :cascade do |t|
     t.string "title", null: false
@@ -50,6 +71,25 @@ ActiveRecord::Schema.define(version: 2018_12_14_005747) do
     t.index ["name"], name: "index_artists_on_name"
   end
 
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer "playlist_id", null: false
+    t.integer "song_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
+    t.index ["song_id"], name: "index_playlist_songs_on_song_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "creator_id", null: false
+    t.boolean "public", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_playlists_on_creator_id"
+    t.index ["name"], name: "index_playlists_on_name"
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "title", null: false
     t.integer "album_id"
@@ -70,4 +110,5 @@ ActiveRecord::Schema.define(version: 2018_12_14_005747) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end
