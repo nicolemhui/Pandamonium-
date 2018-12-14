@@ -1,6 +1,9 @@
-json.songs do 
+json.artists do 
   @songs.each do |song|
-    json.partial! 'api/songs/song', song: song 
+    artists = song.artists 
+    artists.each do |artist|
+      json.partial! 'api/artists/artist', artist: artist
+    end 
   end 
 end 
 
@@ -11,11 +14,8 @@ json.albums do
   end 
 end 
 
-json.artists do 
+json.songs do 
   @songs.each do |song|
-    artists = song.artists 
-    artists.each do |artist|
-      json.partial! 'api/artists/artist', artist: artist
-    end 
+    json.partial! 'api/songs/song', song: song 
   end 
 end 
