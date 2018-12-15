@@ -13,9 +13,7 @@ class Album < ApplicationRecord
   validates  :title, :year, presence: true 
 
   has_many :songs
-  has_many :artist_albums,
-    foreign_key: :album_id,
-    class_name: 'ArtistAlbum'
+  has_many :artist_albums
   has_many :artists, 
     through: :artist_albums, 
     source: :artist
