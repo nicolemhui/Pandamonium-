@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_14_190052) do
+=======
+ActiveRecord::Schema.define(version: 2018_12_13_170051) do
+>>>>>>> 118934a9abb5a6287a6833157daf2b2b81fd5664
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -90,11 +95,17 @@ ActiveRecord::Schema.define(version: 2018_12_14_190052) do
     t.index ["name"], name: "index_playlists_on_name"
   end
 
+=======
+>>>>>>> 118934a9abb5a6287a6833157daf2b2b81fd5664
   create_table "songs", force: :cascade do |t|
     t.string "title", null: false
     t.integer "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.index ["album_id"], name: "index_songs_on_album_id"
+>>>>>>> 118934a9abb5a6287a6833157daf2b2b81fd5664
     t.index ["title"], name: "index_songs_on_title"
   end
 

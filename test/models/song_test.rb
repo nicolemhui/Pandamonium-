@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # == Schema Information
 #
 # Table name: songs
@@ -9,6 +10,8 @@
 #  updated_at :datetime         not null
 #
 
+=======
+>>>>>>> 118934a9abb5a6287a6833157daf2b2b81fd5664
 require 'test_helper'
 
 class SongTest < ActiveSupport::TestCase
