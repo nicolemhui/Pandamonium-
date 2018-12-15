@@ -14,18 +14,20 @@ body {
 .featured-main {
   background-image: linear-gradient(#234666, black);
   // background-color: white;
-  width: -25%;
-  height: 1000px;
-  // padding: 0 32px;
-  // margin: 0 auto;
+  // box-sizing: border-box;
+  left: -25%;
+  height: 1500px;
+  padding: 0 32px;
+  margin: 0 auto;
   // max-width: 1480px;
 }
 
 .featured-container {
-  background-color: yellow;
-  width: 500px;
-  height: 700px;
+  // background-color: yellow;
+  left: -25%;
+  height: 100%;
   padding: 0 32px;
-  margin: 0 auto;
-  max-width: 1480px;
+  margin: 0px 0px 0px 250px;
+  // margin: 0 auto;
+  max-width: 1600px;
 }

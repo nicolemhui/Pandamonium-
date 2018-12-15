@@ -6,7 +6,7 @@ class BrowseLinks extends React.Component {
     return (
       <nav className="nav-links">
         <ul>
-          <li><a href="#">Featured</a></li>
+          <li><a href="/browse/featured">Featured</a></li>
           <li><a href="#">Podcasts</a></li>
           <li><a href="#">Charts</a></li>
           <li><a href="#">Genres & Moods</a></li>

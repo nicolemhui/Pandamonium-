@@ -10,8 +10,8 @@ class Featured extends React.Component {
   render() {
     return (
       <div className="featured-main">
-        <section className="featured-container">
-        </section>
+        <div className="featured-container">
+        </div>
       </div>
     )
   }
