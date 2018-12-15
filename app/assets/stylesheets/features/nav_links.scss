@@ -1,0 +1,27 @@
+.nav-links {
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  position: absolute;
+  justify-content: center;
+  left: 20%;
+  // right: 10px;
+}
+
+.nav-links ul {
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-links li {
+  display: inline;
+  margin: 0px 20px;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  // display: flex; 
+  // justify-content: space-evenly;
+  text-decoration: none;
+  color: white;
+}

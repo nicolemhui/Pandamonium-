@@ -1,6 +1,5 @@
-import React from 'react';
 import Featured from './featured';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
   //return playlists 
