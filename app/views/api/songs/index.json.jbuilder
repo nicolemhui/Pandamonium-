@@ -1,13 +1,13 @@
+json.songs do 
+  @songs.each do |song|
+    json.partial! 'api/songs/song', song: song 
+  end 
+end 
+
 json.albums do 
   @songs.each do |song|
     album = song.album
     json.partial! 'api/albums/album', album: album
-  end 
-end 
-
-json.songs do 
-  @songs.each do |song|
-    json.partial! 'api/songs/song', song: song 
   end 
 end 
 

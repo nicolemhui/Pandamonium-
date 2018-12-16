@@ -22,20 +22,9 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
   )} />
 );
 
-const ProtectedLoggedIn = ({ component: Component, path, loggedIn, exact }) => (
-  <Route path={path} exact={exact} render={(props) => (
-    loggedIn ? (
-      <Redirect to="/browse/featured" />
-    ) : (
-        <Redirect to="/" />
-      )
-  )} />
-);
-
 const mapStateToProps = state => {
   return { loggedIn: Boolean(state.session.id) };
 };
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
-export const ProtectedLoggedInRoute = withRouter(connect(mapStateToProps, null)(ProtectedLoggedIn));

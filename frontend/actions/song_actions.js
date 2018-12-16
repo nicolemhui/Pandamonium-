@@ -2,22 +2,22 @@ import * as SongApiUtil from '../util/song_api_util';
 export const RECEIVE_ALL_SONGS = "RECEIVE_ALL_SONGS";
 export const RECEIVE_SONG = "RECEIVE_SONG";
 
-export const receiveAllSongs = (songs) => ({
+export const receiveAllSongs = (payload) => ({
   type: RECEIVE_ALL_SONGS,
-  songs
+  payload
 });
 
-export const receiveSong = (song) => ({
+export const receiveSong = (payload) => ({
   type: RECEIVE_SONG,
-  song
+  payload
 });
 
 export const fetchSongs = () => dispatch => (
   SongApiUtil.fetchSongs()
-    .then(songs => dispatch(receiveAllSongs(songs)))
+    .then(payload => dispatch(receiveAllSongs(payload)))
 );
 
 export const fetchSong = (id) => dispatch => (
   SongApiUtil.fetchSong(id)
-    .then(song => dispatch(receiveSong(song)))
+    .then(payload => dispatch(receiveSong(payload)))
 );
