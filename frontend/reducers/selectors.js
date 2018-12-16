@@ -5,3 +5,9 @@ export const selectArtistId = (state, songId) => {
     .filter(artistSong => artistSong.song_id === songId)
     .map(artistSong => state.entities.artists[artistSong.artist_id])
 }
+
+export const selectAlbum = (state, artistId) => {
+  return Object.values(state.entities.artistAlbums)
+    .filter(artistAlbum => artistAlbum.artist_id === artistId)
+    .map(artistAlbum => state.entities.albums[artistAlbum.album_id])
+}

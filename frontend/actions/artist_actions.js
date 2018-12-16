@@ -2,22 +2,22 @@ import * as ArtistApiUtil from '../util/artist_api_util';
 export const RECEIVE_ALL_ARTISTS = "RECEIVE_ALL_ARTISTS";
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
 
-export const receiveAllArtists = (artists) => ({
+export const receiveAllArtists = (payload) => ({
   type: RECEIVE_ALL_ARTISTS,
-  artists
+  payload
 });
 
-export const receiveArtist = (artist) => ({
+export const receiveArtist = (payload) => ({
   type: RECEIVE_ARTIST,
-  artist
+  payload
 });
 
 export const fetchArtists = () => dispatch => (
   ArtistApiUtil.fetchArtists()
-    .then(artists => dispatch(receiveAllArtists(artists)))
+    .then(payload => dispatch(receiveAllArtists(payload)))
 );
 
 export const fetchArtist = (id) => dispatch => (
   ArtistApiUtil.fetchArtist(id)
-    .then(artist => dispatch(receiveArtist(artist)))
+    .then(payload => dispatch(receiveArtist(payload)))
 );

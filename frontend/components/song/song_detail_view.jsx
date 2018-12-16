@@ -7,9 +7,10 @@ class SongDetailView extends React.Component {
     
     const { song } = this.props;
     const artists = this.props.artists.map(artist => 
-      <li key={artist.id}><a href="#">{artist.name}</a></li>
-    )
-    // const songAlbum = song.albums[0];
+      <li key={artist.id}><a href="#">{artist.name}</a></li>);
+
+    const albums = this.props.albums.map(album => 
+      <li key={album.id}><a href="#">{album.title}</a></li>);
 
     // debugger
 
@@ -19,7 +20,7 @@ class SongDetailView extends React.Component {
 
         <div className="song-info">
           <div className="song-other-info">
-            {/* <a href="#">{songAlbum}</a> */}
+            {albums}
             •
             {artists}
             {/* <Link className="song-info-link" to={`/albums/${song.albumId}`}>{song.albumTitle}</Link> */}

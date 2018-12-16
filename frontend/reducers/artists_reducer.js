@@ -7,7 +7,7 @@ const artistsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_ARTISTS:
       //FIX ME !!
-      return action.artists.artists;
+      return action.payload.artists;
     case RECEIVE_ALL_SONGS: 
       return action.payload.artists;
     case RECEIVE_ARTIST:

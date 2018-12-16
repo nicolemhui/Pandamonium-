@@ -4,31 +4,24 @@ import { selectArtistId } from '../../reducers/selectors';
 
 //returns array 
 
-// const selectArtistId = (state, songId) => {
-//   debugger
-//   return Object.values(state.entities.artistSongs)
-//     .filter(artistSong => artistSong.song_id === songId)
-//     .map(artistSong => state.entities.artists[artistSong.artist_id])
-// }
-
-//same selector for album 
-// const selectAlbum = (state, songId) => {
-//   debugger
-//   return Object.values(state.entities.albums)
-//     .filter(album => artistSong.song_id === songId)
-//     .map(artistSong => state.entities.artists[artistSong.artist_id])
-// }
+export const selectAlbum = (state, songAlbumId) => {
+  return Object.values(state.entities.albums)
+    .filter(album => album.id === songAlbumId);
+    // .map(album => state.entities.albums[album.album_id]);
+};
 
 
 const mapStateToProps = (state, { song }) => {
   const artists = selectArtistId(state, song.id);
-
-  // debugger
+  const albums = selectAlbum(state, song.album_id);
+  
+  debugger
   return {
     song,
-    artists
-  }
-}
+    artists,
+    albums
+  };
+};
 
 export default connect(mapStateToProps, null)(SongDetailView);
 

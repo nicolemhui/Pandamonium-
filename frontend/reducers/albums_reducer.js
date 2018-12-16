@@ -6,8 +6,7 @@ const albumsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_ALBUMS:
-      //FIX ME!
-      return action.albums.albums;
+      return action.payload.albums;
     case RECEIVE_ALL_SONGS:
       return action.payload.albums;
     case RECEIVE_ALBUM:
