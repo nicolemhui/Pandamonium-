@@ -41,7 +41,8 @@ class SideNav extends React.Component {
           </li>
           <li>
             <div className="sidenav-links">
-              <a href="/search">
+            {/* default link to albums, change to playlists later */}
+              <a href="/collection/albums">
                 <i className="fas fa-grip-lines-vertical"></i>
                 <i className="fas fa-slash"></i>
                 <span className="sidenav-links-description">Your Library</span>

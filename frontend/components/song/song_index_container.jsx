@@ -4,15 +4,15 @@ import { fetchSongs } from '../../actions/song_actions';
 
 const mapStateToProps = (state) => {
   const songs = state.entities.songs;
-  const artists = state.entities.artists;
-  const albums = state.entities.albums;
-  
-  debugger 
-  return ({ 
+  const artistSongs = state.entities.artistSongs;
+  // const artists = state.entities.artists;
+  // const albums = state.entities.albums;
+ 
+  // debugger
+  return { 
     songs: Object.values(songs),
-    artists: Object.values(artists),
-    albums: Object.values(albums)
-  })
+    artistSongs: Object.values(artistSongs)
+  }
 };
 
 const mapDispatchToProps = dispatch => ({
