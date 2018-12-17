@@ -7,7 +7,7 @@ class SideNav extends React.Component {
   }
 
   render() {
-    const personalGreeting = () => (
+    const userGreeting = () => (
       <hgroup className="header-group">
         <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
         <Link to="/" className="logout-btn" onClick={this.props.logout}>Log Out</Link>
@@ -59,9 +59,11 @@ class SideNav extends React.Component {
               <li>Playlist 3</li>
           </ul>
         </div>
+        
+        <span className="nav-divider"></span>
 
         <div className="nav-greeting-logout">
-          {this.props.currentUser ? personalGreeting() : ""}
+          {this.props.currentUser ? userGreeting() : ""}
         </div>
       </aside>
     )

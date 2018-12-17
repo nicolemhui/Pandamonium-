@@ -1,4 +1,6 @@
 class Api::SongsController < ApplicationController
+  before_action :require_login
+
   def show 
     @song = Song.find(params[:id])
     render 'api/songs/show'

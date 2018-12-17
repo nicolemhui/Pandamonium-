@@ -6,6 +6,7 @@ import Root from './components/root';
 import { receiveAllSongs, receiveSong, fetchSong, fetchSongs } from './actions/song_actions';
 import { receiveAllArtists, receiveArtist, fetchArtist, fetchArtists } from './actions/artist_actions';
 import { receiveAllAlbums, receiveAlbum, fetchAlbum, fetchAlbums } from './actions/album_actions';
+import { fetchPlaylists, fetchPlaylist, createPlaylist, updatePlaylist, deletePlaylist } from './actions/playlist_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -44,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchArtist = fetchArtist;
   window.fetchAlbums = fetchAlbums;
   window.fetchAlbum = fetchAlbum;
+  window.fetchPlaylists = fetchPlaylists;
+  window.fetchPlaylist = fetchPlaylist;
+  window.deletePlaylist = deletePlaylist;
+  window.createPlaylist = createPlaylist;
+  window.updatePlaylist = updatePlaylist;
   
   ReactDOM.render(<Root store={store}/>, root);
 });

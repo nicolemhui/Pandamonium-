@@ -27,10 +27,11 @@ a {
 }
 
 .sidenav-header-logo {
-  display: flex;
-  justify-content: center;
+  display: block;
+  margin: 0 auto;
   
   h3 {
+    padding: 0;
     display: block;
     color: white;
     letter-spacing: -0.05em;
@@ -46,6 +47,7 @@ a {
 
 .sidenav-mid-content {
   text-align: left;
+  display: block;
 }
 
 .sidenav-links {

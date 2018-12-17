@@ -1,4 +1,6 @@
 class Api::AlbumsController < ApplicationController
+  before_action :require_login
+  
   def show 
     @album = Album.find(params[:id])
     render 'api/albums/show'

@@ -1,4 +1,6 @@
 class Api::PlaylistsSongsController < ApplicationController
+  before_action :require_login
+  
   def destroy 
     @playlist_song = PlaylistSong.find_by(params[:id])
     # delete from current playlist 

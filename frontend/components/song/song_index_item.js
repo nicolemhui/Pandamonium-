@@ -20,7 +20,7 @@ class SongIndexItem extends React.Component {
           </div>
 
           <div className="song-play-btn">
-            <i class="fas fa-play" />
+            <i className="fas fa-play" />
           </div>
         </div>
         

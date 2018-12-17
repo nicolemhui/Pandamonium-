@@ -1,4 +1,6 @@
 class Api::PlaylistsController < ApplicationController
+  before_action :require_login
+
   def create 
     @playlist = Playlist.new(playlist_params)
     @playlist.creator_id = current_user.id
@@ -12,23 +14,27 @@ class Api::PlaylistsController < ApplicationController
 
   def index
     @playlists = Playlist.all 
+    # @playlists = current_user.playlists
     render 'api/playlists/index'
   end 
 
   def show 
-    @playlist = Playlist.find_by(params[:id])
+    @playlist = Playlist.find(params[:id])
     render 'api/playlists/show'
   end 
 
   def update 
-    @playlist = Playlist.find_by(params[:id])
-    if @playlist.update_attributes(playlist_params)
+    @playlist = current_user.playlists.find(params[:id])
+
+    if @playlist.update(playlist_params)
+      render 'api/playlists/show'
     else 
+      render json: @playlist.errors.full_messages, status: 401
     end 
   end 
 
   def destroy 
-    @playlist = Playlist.find_by(params[:id])
+    @playlist = Playlist.find(params[:id])
     if @playlist.creator_id == current_user.id && current_user.playlists.include?(@playlist)
       @playlist.destroy 
       render 'api/playlists/index'
