@@ -21,8 +21,6 @@ const App = () => (
     {/* <ProtectedRoute path="/browse" component={BrowseLinks} /> */}
     {/* <ProtectedRoute path="/collection" component={CollectionLinks} /> */}
 
-    <h1>HERE</h1>
-
     <Switch>
       {/* <ProtectedRoute path="/artists" component={ArtistIndexContainer} />
       <ProtectedRoute path="/albums" component={AlbumIndexContainer} />

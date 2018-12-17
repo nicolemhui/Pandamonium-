@@ -4,8 +4,9 @@
   background-color: transparent;
   position: absolute;
   justify-content: center;
+  top: 0;
   left: 28%;
-  z-index: 2;
+  z-index: 4;
 }
 
 .nav-links ul {
@@ -13,16 +14,10 @@
   padding: 20px;
 }
 
-// .nav-links li {
-//   vertical-align: baseline;
-// }
-
 .nav-links-link {
-    display: inline;
-    margin: 0px 25px;
+  display: inline;
+  margin: 0px 25px;
   text-transform: uppercase;
-  // display: flex; 
-  // justify-content: space-evenly;
   text-decoration: none;
   color: #999a9c;
   letter-spacing: 0.1em;
@@ -36,7 +31,6 @@
 }
 
 
-
 .nav-links-link:active {
   color: #fff;
   transition: 0.3s;
@@ -46,63 +40,3 @@
   // margin: 0 auto; /* This will center the border. */
   // width: 50%;
 }
-
-
-
-
-
-
-
-///OLD CODE 
-
-// .nav-links {
-//   width: 1000px;
-//   height: 50;
-//   background-color: transparent;
-//   position: absolute;
-//   justify-content: center;
-//   left: 28%;
-//   z-index: 2;
-// }
-
-// .nav-links ul {
-//   list-style: none;
-//   padding: 20px;
-// }
-
-// .nav-links li {
-//   vertical-align: baseline;
-//   display: inline;
-//   margin: 0px 25px;
-//   text-transform: uppercase;
-// }
-
-// .nav-links a {
-//   // display: flex; 
-//   // justify-content: space-evenly;
-//   text-decoration: none;
-//   color: #999a9c;
-//   letter-spacing: 0.1em;
-//   font-size: 12px;
-//   line-height: 16px;
-// }
-
-// .nav-links a:hover {
-//   color: #fff;
-//   transition: 0.3s;
-// }
-
-// .nav-links a:active {
-//   border-bottom: 2px solid green;
-//   width: 50%;
-// }
-
-//   // content: "";
-//   // height: 2px;
-//   // background-color: #1db954;
-//   // width: 30px;
-//   // position: absolute;
-//   // display: block;
-//   // left: 50%;
-//   // bottom: 0;
-//   // margin-left: -15px;

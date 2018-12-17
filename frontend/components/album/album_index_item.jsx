@@ -10,20 +10,12 @@ class AlbumIndexItem extends React.Component {
     const { album } = this.props;
 
     return (
-      <div className="album-item-container">
-        <li className="album-list-row">
-
-          <div className="album-play-btn">
-            <i className="fas fa-music"></i>
-          </div>
-
-
-          <AlbumDetailViewContainer album={album} />
-
-        </li>
+      <div className="album-grid-item">
+        <AlbumDetailViewContainer album={album} />
       </div>
     )
   }
 }
 
 export default AlbumIndexItem;
+

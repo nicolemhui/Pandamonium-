@@ -3,31 +3,97 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .song-item-container {
-  margin-left: 300px;
-  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 3px;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  // width: 100%;
+  // position: relative;
+  top: 100px;
+  // left: 100px;
+  margin-left: 100px;
+  // background-color: lightblue;
   max-width: 1000px;
 }
 
-.songlist-row {
-  
-  
+.song-list {
+  margin-top: 200px;
+
+  .songlist-row {
+    width: 100%;
+    transition: .3s;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+  }
+
+  .song-icon-display {
+    float: left;
+    width: 50px;
+    justify-content: center;
+    align-content: center;
+  }
+
   .song-music-btn {
+    font-size: 16px;
     color: #b3b3b3;
+    margin: 0 auto;
   }
 
   .song-play-btn {
+    position: relative;
     display: none;
+  }
+
+}
+.songlist-row:hover {
+  background-color: rgba(18, 29, 56, 0.7);
+  
+  .song-music-btn {
+    display: none;
+  }
+
+  .song-play-btn {
+    position: relative;
+    color: #fff;
+    transition: .1s;
+    opacity: 1;
   }
 }
 
-.songlist-row:hover {
-  background-color: rgba(18, 29, 56, 0.3);
+.song-item-info {
+  text-align: left;
+
+  h3 {
+    color: white;
+  }
   
-  .song-music-btn {
-    display: none;
+  .song-info {
+    color: #b3b3b3;
+    font-family: "Montserrat";
+    font-size: 13px;
   }
 
-  .song-play-btn {
-    display: #fff;
+  .artist-text {
+    margin-left: 10px;
+  }
+
+  .album-text {
+    margin-right: 10px;
+  }
+
+  .song-other-info a {
+    color: #b3b3b3;
+    display: inline-block;
+    text-align: center;
+    // justify-content: space-evenly;
+  }
+
+  .song-other-info a:hover {
+    color: #fff;
+    text-decoration: underline;
   }
 }

@@ -10,7 +10,7 @@ end
 
 json.songs do 
   @playlists.each do |playlist|
-  debugger
+  #debugger
     playlist.playlist_songs.each do |playlist_song|
       json.partial! 'api/songs/song', song: playlist_song.song 
     end 

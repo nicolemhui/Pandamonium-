@@ -9,21 +9,24 @@ class SongDetailView extends React.Component {
 
     // how to get artist id??
     const artists = this.props.artists.map(artist => 
-      <NavLink to={`/collection/artists/{artistId}`}>
+      <NavLink to={`/collection/artists/{artistId}`}
+        className="artist-text">
         {artist.name}
       </NavLink>
     );
 
       
     const albums = this.props.albums.map(album => 
-      <NavLink to={`/collection/artists/{artistId}`}>
+      <NavLink to={`/collection/artists/{artistId}`}
+        className="album-text">
         {album.title}
       </NavLink>
     );
 
     return (
       <div className="song-item-info">
-        <h1 className="song-title">{song.title}</h1>
+
+        <h3 className="song-title">{song.title}</h3>
 
         <div className="song-info">
           <div className="song-other-info">

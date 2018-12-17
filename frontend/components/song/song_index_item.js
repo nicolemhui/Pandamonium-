@@ -9,23 +9,24 @@ class SongIndexItem extends React.Component {
   render() {
     const { song } = this.props;
 
+  
+
     return (
-      <div className="song-item-container">
+
       <li className="songlist-row">
-          
+        <div className="song-icon-display">
           <div className="song-music-btn">
-            <i className="fas fa-music"/>
+            <i className="fas fa-music" />
           </div>
 
-          <div className="song-hover-btn">
-            <i class="fas fa-play"/>
+          <div className="song-play-btn">
+            <i class="fas fa-play" />
           </div>
-          
+        </div>
         
-          <SongDetailViewContainer song={song} />
+        <SongDetailViewContainer song={song} />
   
       </li>
-    </div>
     )
   }
 }

@@ -2,8 +2,119 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.album-item-container {
-  margin-left: 300px;
-  background-color: lightblue;
-  max-width: 1000px;
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat';
 }
+
+// .album-item-container {
+  // margin-left: 300px;
+  // background-color: lightblue;
+  // max-width: 1000px;
+  // display: flex;
+  // flex-direction: column;
+  // color: white;
+  // font-family: 'Montserrat', sans-serif;
+  // line-height: 3px;
+  // top: 100px;
+  // margin-left: 100px;
+  // max-width: 1000px;
+// }
+
+// .song-item-container {
+//   display: flex;
+//   flex-direction: column;
+//   color: white;
+//   font-family: 'Montserrat', sans-serif;
+//   line-height: 3px;
+//   // padding-top: 20px;
+//   // padding-bottom: 20px;
+//   // width: 100%;
+//   // position: relative;
+//   top: 100px;
+//   // left: 100px;
+//   margin-left: 100px;
+//   // background-color: lightblue;
+//   max-width: 1000px;
+// }
+
+.albums-index-container {
+  // display: flex;
+  // flex-direction: row;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 3px;
+  max-width: 1480px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  top: 0px;
+  margin-left: 100px;
+}
+
+
+.album-grid {
+  padding-top: 200px;
+  // padding-right: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  }
+
+  .album-grid-item {
+    background-color: rgba(0,0,0,.5);
+    border: 1px solid transparent;
+    // width: 300px;
+    // height: 300px;
+    padding: 5%;
+    margin: 0 auto;
+  }
+
+  .album-item-info {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+  
+    .album-img {
+      height: 100%;
+      width: 100%;
+      // width: 200px;
+      // height: 200px;
+    }
+
+    .album-play-btn {
+      display: none;
+    }
+  }
+
+  .album-item-info:hover {
+    .album-img {
+      opacity: 0.5;
+      filter: alpha(opacity=40);
+    }
+
+    .album-play-btn {
+      color: white;
+      opacity: 1;
+    }
+  }
+
+  .album-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .album-artist {
+    font-size: 14px;
+    text-decoration: none;
+    color: gray;
+  }
+  
+  .album-artist:hover {
+    color: white;
+    text-decoration: underline;
+  }

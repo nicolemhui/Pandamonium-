@@ -12,7 +12,7 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     const albums = this.props.albums.map(album => {
       return (
         <AlbumIndexItem
@@ -22,11 +22,12 @@ class AlbumIndex extends React.Component {
       )
     });
 
+    // FIX ME!
     return (
-      <div className="albums-main">
-        <ul className="album-list">
+      <div className="album-item-container">
+        <div className="album-grid">
           {albums}
-        </ul>
+        </div>
       </div>
     )
   }
