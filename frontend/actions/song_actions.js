@@ -14,11 +14,8 @@ export const receiveSong = (payload) => ({
 
 export const fetchSongs = () => dispatch => (
   SongApiUtil.fetchSongs()
-    .then(payload => {
-      // debugger
-      dispatch(receiveAllSongs(payload));
-    }
-));
+    .then(payload => dispatch(receiveAllSongs(payload)))
+);
 
 export const fetchSong = (id) => dispatch => (
   SongApiUtil.fetchSong(id)

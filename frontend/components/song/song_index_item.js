@@ -7,13 +7,11 @@ class SongIndexItem extends React.Component {
   }
 
   render() {
-    // debugger
-
     const { song } = this.props;
 
     return (
       <div className="song-item-container">
-      {/* <li className="songlist-row"> */}
+      <li className="songlist-row">
           
           <div className="song-play-btn">
             <i className="fas fa-music"></i>
@@ -22,7 +20,7 @@ class SongIndexItem extends React.Component {
         
           <SongDetailViewContainer song={song} />
   
-      {/* </li> */}
+      </li>
     </div>
     )
   }

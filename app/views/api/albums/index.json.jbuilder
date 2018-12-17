@@ -21,3 +21,22 @@ json.songs do
     end 
   end 
 end 
+
+json.artistSongs do 
+  @albums.each do |album|
+    album.songs.each do |song|
+      song.artist_songs.each do |artist_song|
+        json.partial! 'api/artist_songs/artist_song', artist_song: artist_song
+      end
+    end 
+  end 
+end 
+
+json.artistAlbums do 
+  @albums.each do |album|
+    album.artist_albums.each do |artist_album|
+      json.partial! 'api/artist_albums/artist_album', artist_album: artist_album
+    end 
+  end 
+end 
+

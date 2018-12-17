@@ -21,7 +21,7 @@ class SongIndex extends React.Component {
           song={song}
         />
       )
-    })
+    });
 
     return (
       <div className="songs-main">

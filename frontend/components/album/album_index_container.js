@@ -1,19 +1,15 @@
-import AlbumIndex from './song_index';
+import AlbumIndex from './album_index';
 import { connect } from 'react-redux';
-import { fetchSongs } from '../../actions/song_actions';
+import { fetchAlbums } from '../../actions/album_actions';
 
 const mapStateToProps = (state) => {
-  const songs = state.entities.songs;
-  const artists = state.entities.artists;
   const albums = state.entities.albums;
+  const artistAlbums = state.entities.artistAlbums;
 
-
-  // debugger
-  return ({
-    songs: Object.values(songs),
-    artists: Object.values(artists),
-    albums: Object.values(albums)
-  })
+  return {
+    albums: Object.values(albums),
+    artistAlbums: Object.values(artistAlbums)
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -21,3 +17,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumIndex);
+

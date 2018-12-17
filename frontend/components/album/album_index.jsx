@@ -10,7 +10,6 @@ class AlbumIndex extends React.Component {
 
   componentWillMount() {
     this.props.fetchAlbums()
-    // .then(() => this.setState({ albums: this.props.albums }))
   }
 
   render() {
@@ -19,11 +18,9 @@ class AlbumIndex extends React.Component {
         <AlbumIndexItem
           key={album.id}
           album={album}
-          albums={this.props.albums}
-          artists={this.props.artists}
         />
       )
-    })
+    });
 
     return (
       <div className="albums-main">

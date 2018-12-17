@@ -4,7 +4,9 @@ import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import SplashContainer from './splash/splash_container';
-import SongIndexContainer from './song/song_index_container';
+//test
+// import SongIndexContainer from './song/song_index_container';
+import AlbumIndexContainer from './album/album_index_container';
 // import Main from './main';
 import FeaturedContainer from './browse/featured_container';
 import BrowseLinks from './header_links/browse_links';
@@ -19,7 +21,8 @@ const App = () => (
     <ProtectedRoute path="/collection" component={CollectionLinks} />
 
     <Switch>
-      <ProtectedRoute path="/songs" component={SongIndexContainer} />
+      <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
+      {/* <ProtectedRoute path="/songs" component={SongIndexContainer} /> */}
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/browse/featured" component={FeaturedContainer} />

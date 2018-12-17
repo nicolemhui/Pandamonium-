@@ -12,8 +12,6 @@ class SongDetailView extends React.Component {
     const albums = this.props.albums.map(album => 
       <li key={album.id}><a href="#">{album.title}</a></li>);
 
-    // debugger
-
     return (
       <div className="song-item-info">
         <h1 className="song-title">{song.title}</h1>
