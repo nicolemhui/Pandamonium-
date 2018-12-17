@@ -13,8 +13,12 @@ class SongIndexItem extends React.Component {
       <div className="song-item-container">
       <li className="songlist-row">
           
-          <div className="song-play-btn">
-            <i className="fas fa-music"></i>
+          <div className="song-music-btn">
+            <i className="fas fa-music"/>
+          </div>
+
+          <div className="song-hover-btn">
+            <i class="fas fa-play"/>
           </div>
           
         

@@ -27,14 +27,18 @@ const App = () => (
       {/* <ProtectedRoute path="/artists" component={ArtistIndexContainer} />
       <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
       <ProtectedRoute path="/songs" component={SongIndexContainer} /> */}
+      
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/browse" component={Main}/>
       <ProtectedRoute path="/collection" component={Main}/>
+      
       {/* <ProtectedRoute path="/browse/featured" component={Main}/> */}
       {/* <ProtectedRoute path="/browse/featured" component={FeaturedContainer} /> */}
       {/* <ProtectedRoute path="/collection" component={FeaturedContainer} /> */}
+      
       <AuthRoute path="/" component={SplashContainer} />
+
       {/* <AuthRoute path="/" component={SplashContainer} /> */}
     </Switch>
 
@@ -46,9 +50,8 @@ export default App;
 
 
 
-// changed the routes to include a main component 
 
-
+//TEST!
 // import React from 'react';
 // import LoginFormContainer from './session/login_form_container';
 // import SignupFormContainer from './session/signup_form_container';

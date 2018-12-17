@@ -1,16 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class SongDetailView extends React.Component {
   
   render() {
     
     const { song } = this.props;
-    const artists = this.props.artists.map(artist => 
-      <li key={artist.id}><a href="#">{artist.name}</a></li>);
 
+    // how to get artist id??
+    const artists = this.props.artists.map(artist => 
+      <NavLink to={`/collection/artists/{artistId}`}>
+        {artist.name}
+      </NavLink>
+    );
+
+      
     const albums = this.props.albums.map(album => 
-      <li key={album.id}><a href="#">{album.title}</a></li>);
+      <NavLink to={`/collection/artists/{artistId}`}>
+        {album.title}
+      </NavLink>
+    );
 
     return (
       <div className="song-item-info">

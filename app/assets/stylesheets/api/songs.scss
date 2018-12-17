@@ -7,3 +7,27 @@
   background-color: lightblue;
   max-width: 1000px;
 }
+
+.songlist-row {
+  
+  
+  .song-music-btn {
+    color: #b3b3b3;
+  }
+
+  .song-play-btn {
+    display: none;
+  }
+}
+
+.songlist-row:hover {
+  background-color: rgba(18, 29, 56, 0.3);
+  
+  .song-music-btn {
+    display: none;
+  }
+
+  .song-play-btn {
+    display: #fff;
+  }
+}

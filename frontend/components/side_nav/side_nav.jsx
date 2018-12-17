@@ -17,10 +17,10 @@ class SideNav extends React.Component {
     return (
       <aside className="sidenav">
         <div className="sidenav-header-logo">
-          <a href="/browse/featured">
+          <NavLink to="/browse/featured" className="links-detail">
             <i className="fab fa-spotify"></i>
             <h3 className="header-logo">Pandamonium</h3>
-          </a>
+          </NavLink>
         </div>
 
         <div className="sidenav-mid-content">
