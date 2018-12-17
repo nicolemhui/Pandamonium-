@@ -21,7 +21,6 @@ class SongDetailView extends React.Component {
             {albums}
             •
             {artists}
-            {/* <Link className="song-info-link" to={`/albums/${song.albumId}`}>{song.albumTitle}</Link> */}
           </div>
         </div>
       </div>

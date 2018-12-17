@@ -1,6 +1,5 @@
 import React from 'react';
 import AlbumIndexItem from './album_index_item';
-import { fetchAlbums } from '../../actions/album_actions';
 
 class AlbumIndex extends React.Component {
   constructor(props) {
