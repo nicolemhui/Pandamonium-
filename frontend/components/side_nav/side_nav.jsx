@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 class SideNav extends React.Component {
   constructor(props) {
@@ -22,40 +22,41 @@ class SideNav extends React.Component {
             <h3 className="header-logo">Pandamonium</h3>
           </a>
         </div>
-        <ul>
-          <li>
-            <div className="sidenav-links">
-              <a href="/search">
-                <i className="fas fa-search"></i>
-                <span className="sidenav-links-description">Search</span>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div className="sidenav-links">
-              <a href="/browse/featured">
-                <i className="fas fa-home"></i>
-                <span className="sidenav-links-description">Home</span>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div className="sidenav-links">
-            {/* default link to albums, change to playlists later */}
-              <a href="/collection/albums">
-                <i className="fas fa-grip-lines-vertical"></i>
-                <i className="fas fa-slash"></i>
-                <span className="sidenav-links-description">Your Library</span>
-              </a>
-            </div>
-          </li>
-        </ul>
 
-        <div className="recently-played">
+        <div className="sidenav-mid-content">
           <ul>
-            <li>Playlist 1</li>
-            <li>Playlist 2</li>
-            <li>Playlist 3</li>
+            <li>
+              <div className="sidenav-links">
+                <NavLink to="/search" className="links-detail">
+                  <i className="fas fa-search"></i>
+                  <span className="sidenav-links-description">Search</span>
+                </NavLink>
+              </div>
+            </li>
+            <li>
+              <div className="sidenav-links">
+                <NavLink to="/browse/featured" className="links-detail">
+                  <i className="fas fa-home"></i>
+                  <span className="sidenav-links-description">Home</span>
+                </NavLink>
+              </div>
+            </li>
+            <li>
+              <div className="sidenav-links">
+              {/* default link to albums, change to playlists later */}
+                <NavLink to="/collection/albums" className="links-detail">
+                  <i className="fas fa-grip-lines-vertical"></i>
+                  <i className="fas fa-slash"></i>
+                  <span className="sidenav-links-library">Your Library</span>
+                </NavLink>
+              </div>
+            </li>
+          </ul>
+          <ul className="recently-played">
+            <h5>Recently Played</h5>
+              <li>Playlist 1</li>
+              <li>Playlist 2</li>
+              <li>Playlist 3</li>
           </ul>
         </div>
 

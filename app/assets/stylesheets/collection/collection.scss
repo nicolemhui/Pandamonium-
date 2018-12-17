@@ -1,17 +1,17 @@
-// html, body, div
-// {
-//   height: 100%;
-//   width: 100%;
-// }
+html, body, div
+{
+  height: 100%;
+  width: 100%;
+}
 
-// body {
-//   height: 100%;
-//   margin: 0;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-// }
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
-.featured-main {
+.collection-main {
   background-image: linear-gradient(#234666, black);
   // background-color: white;
   // box-sizing: border-box;
@@ -22,10 +22,10 @@
   // max-width: 1480px;
 }
 
-.featured-container {
+.collection-container {
   // background-color: yellow;
   left: -25%;
-  height: 100%;
+  // height: 100%;
   padding: 0 32px;
   margin: 0px 0px 0px 250px;
   // margin: 0 auto;

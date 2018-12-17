@@ -29,40 +29,65 @@ a {
 .sidenav-header-logo {
   display: flex;
   justify-content: center;
+  
+  h3 {
+    display: block;
+    color: white;
+    letter-spacing: -0.05em;
+    text-decoration: none;
+  }
+
+  i {
+    display: block;
+    color: white;
+    font-size: 40px;
+  }
 }
 
-.sidenav-header-logo h3{
+.sidenav-mid-content {
+  text-align: left;
+}
+
+.sidenav-links {
   display: block;
-  color: white;
-  letter-spacing: -0.05em;
-  text-decoration: none;
-}
+  font-size: 16px;
 
-.sidenav-header-logo i{
-  display: block;
-  color: white;
-  font-size: 40px;
-}
+  li {
+    list-style: none;
+  }
 
-.sidenav-links li{
-  list-style: none;
-}
+  .links-detail {
+    color: #b3b3b3;
+  }
 
-.sidenav-links a{
-  color: #b3b3b3;
-  font-size: 18px;
-}
+  .links-detail:hover{
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.5s
+  }
 
-.sidenav-links a:hover{
-  color: #FFF;
-  cursor: pointer;
-  transition: 0.5s
+  .sidenav-links-description {
+    margin-left: 20px;
+    display: inline-block;
+  }
+
+  .sidenav-links-library {
+    margin-left: 10px;
+    display: inline-block;
+  }
 }
 
 .recently-played {
-  // height: 400px;
+  height: 200px;
+  
+  h5 {
+    margin-top: 10%;
+    color: #b3b3b3;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+  }
 }
-
 
 .header-name {
   font-size: 30px;

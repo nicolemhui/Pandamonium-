@@ -1,17 +1,18 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class BrowseLinks extends React.Component {
   render() {
     return (
       <nav className="nav-links">
         <ul>
-          <li><a href="/browse/featured">Featured</a></li>
-          <li><a href="#">Podcasts</a></li>
-          <li><a href="#">Charts</a></li>
-          <li><a href="#">Genres & Moods</a></li>
-          <li><a href="#">New Releases</a></li>
-          <li><a href="#">Discover</a></li>
+          <NavLink to="/browse/featured" className="nav-links-link">Featured</NavLink>
+          <NavLink to="/browse/featured" className="nav-links-link">Podcasts</NavLink>
+          <NavLink to="/browse/featured" className="nav-links-link">Charts</NavLink>
+          <NavLink to="/browse/featured" className="nav-links-link">Genres & Moods</NavLink>
+          <NavLink to="/browse/featured" className="nav-links-link">New Releases</NavLink>
+          <NavLink to="/browse/featured" className="nav-links-link">Discover</NavLink>
+
         </ul>
       </nav>
     )
@@ -20,6 +21,11 @@ class BrowseLinks extends React.Component {
 
 export default BrowseLinks
 
+  // < li > <a href="#">Podcasts</a></li >
+  //   <li><a href="#">Charts</a></li>
+  //   <li><a href="#">Genres & Moods</a></li>
+  //   <li><a href="#">New Releases</a></li>
+  //   <li><a href="#">Discover</a></li>
 
 // <NavLink to="/browse/featured">Featured</Link>
 // <Link to="/browse/featured">Podcasts</Link>
