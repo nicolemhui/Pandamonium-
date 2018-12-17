@@ -41,12 +41,10 @@
 .albums-index-container {
   // display: flex;
   // flex-direction: row;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 3px;
-  max-width: 1480px;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
+  line-height: 3px;
+  max-width: 1480px;
   top: 0px;
   margin-left: 100px;
 }
@@ -54,13 +52,11 @@
 
 .album-grid {
   padding-top: 200px;
-  // padding-right: 50px;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-  }
+}
 
   .album-grid-item {
     background-color: rgba(0,0,0,.5);
@@ -85,6 +81,11 @@
 
     .album-play-btn {
       display: none;
+      position: absolute;
+      font-size: 40px;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      // margin: 0 auto;	
     }
   }
 
@@ -95,8 +96,8 @@
     }
 
     .album-play-btn {
-      color: white;
-      opacity: 1;
+      display: block;
+      color: black;
     }
   }
 
@@ -113,7 +114,7 @@
     text-decoration: none;
     color: gray;
   }
-  
+
   .album-artist:hover {
     color: white;
     text-decoration: underline;

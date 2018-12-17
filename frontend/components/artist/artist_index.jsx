@@ -23,9 +23,9 @@ class ArtistIndex extends React.Component {
 
     return (
       <div className="artists-main">
-        <ul className="artist-list">
+        <div className="artist-grid">
           {artists}
-        </ul>
+        </div>
       </div>
     )
   }

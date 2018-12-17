@@ -2,8 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.artist-item-container {
-  margin-left: 300px;
-  background-color: lightblue;
-  max-width: 1000px;
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+.artists-main {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  line-height: 3px;
+  max-width: 1480px;
+  top: 0px;
+  margin-left: 100px;
+}
+
+.artist-grid {
+  padding-top: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+  .artist-grid-container {
+    border: 1px solid transparent;
+    padding: 5%;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+  }
+
+  .artist-grid-item {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+  }
+
+  .artist-item-info {
+    .artist-play-btn {
+      display: none;
+      position: relative;
+      font-size: 40px;
+      margin: 0 auto;	
+    }
+    .artist-img {
+      height: 50%;
+      width: 50%;
+    }
+    h3 {
+      font-size: 14px;
+    }
+  }
+}
+
+.artist-item-info:hover {
+  .artist-img {
+      opacity: 0.5;
+      filter: alpha(opacity=40);
+    }
+
+    .artist-play-btn {
+      display: block;
+      color: black;
+    }
 }

@@ -6,15 +6,18 @@ class ArtistIndexItem extends React.Component {
   }
   render() {
     const artist = this.props.artist;
-
+    
     return (
       <div className="artist-item-container">
-        <li className="artist-list-row">
-        <div className="artist-item-info">
-          <img src="" />Picture!
-          <h1 className="artist-name">{artist.name}</h1>
+        <div className="artist-grid-item">
+          <div className="artist-item-info">
+            <div className="artist-play-btn">
+              <i className="fas fa-play"></i>
+            </div>
+            <img className="artist-img" src="" />Picture!
+            <h3 className="artist-name">{artist.name}</h3>
+          </div>
         </div>
-        </li>
       </div>
     );
   }
