@@ -18,11 +18,11 @@ class SongDetailView extends React.Component {
 
     return (
       <div className="album-item-info">
+      <div className="album-play-btn">
+        <i className="fas fa-play"></i>
+      </div>
         <div className="album-img">IMAGE HERE <img src="../../../../app/assets/images/linkin_park_hybrid_theory.png"/></div>
-        <div className="album-play-btn">
-          <i className="fas fa-play"></i>
-        </div>
-
+  
         <h1 className="album-title">{album.title}</h1>
         
         {artists}

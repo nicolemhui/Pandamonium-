@@ -61,7 +61,7 @@
 
 .artist-item-info:hover {
   cursor: pointer;
-  
+
   .artist-img {
       opacity: 0.5;
       filter: alpha(opacity=40);
@@ -69,6 +69,7 @@
 
     .artist-play-btn {
       display: block;
-      color: black;
+      padding-top: 35%;
+      color: white;
     }
 }

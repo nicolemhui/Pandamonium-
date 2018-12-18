@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 class SongDetailView extends React.Component {
   
+  
   render() {
     const { song } = this.props;
     let artists = this.props.artists;
