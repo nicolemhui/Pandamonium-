@@ -31,3 +31,37 @@ body {
   // margin: 0 auto;
   max-width: 1600px;
 }
+
+
+.create-playlist-btn {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  background-color: #1DB954;
+  height: 35px;
+  width: 150px;
+  font-size: 12px;
+  border-radius: 200px;
+  letter-spacing: .03em;
+  text-decoration: none;
+  margin: 0 auto;
+  margin: 15px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  transition-duration: .3s;
+  border: transparent;
+
+  a {
+    color: white;
+  }
+}
+
+.create-playlist-btn:hover {
+  transform: scale(1.05);
+  // width: 165px;
+  // height: 37px;
+  background-color: #1ED760;
+  color: white;
+  cursor: pointer;
+}
