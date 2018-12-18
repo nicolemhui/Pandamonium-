@@ -8,7 +8,7 @@ class PlaylistIndexItem extends React.Component {
   }
   render() {
     const playlist = this.props.playlist;
-    // debugger
+    debugger
 
     return (
       <div className="playlist-grid-item">
@@ -18,7 +18,7 @@ class PlaylistIndexItem extends React.Component {
           </div>
           {/* <img className="playlist-img" src="" />Picture! */}
         </div>
-          <NavLink to={`collection/playlists/${playlist.id}`} className="playlist-name">{playlist.name}</NavLink>
+          <NavLink to={`playlists/${playlist.id}`} className="playlist-name">{playlist.name}</NavLink>
       </div>
   
     );
