@@ -8,19 +8,18 @@ class PlaylistForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-  };
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const playlist = Object.assign({}, this.state);
     this.props.createPlaylist(playlist).then(
-      () => this.props.closeModal());
-      // this.props.history.push("/playlist/" + playlistId);;
-  };
+      () => this.props.closeModal()).then(this.props.history.push("/playlists"));
+  }
 
   handleChange(field) {
     return (e) => this.setState({ [field]: e.target.value });
-  };
+  }
 
   render() {
 
