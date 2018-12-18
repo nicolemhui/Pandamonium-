@@ -24,9 +24,7 @@ class Collection extends React.Component {
 
       <div className="collection-main">
         <CollectionLinks></CollectionLinks>
-        <button className="create-playlist-btn" onClick={this.handleClick}>
-          <NavLink to="/api/playlists/new">NEW PLAYLIST</NavLink>
-        </button>
+        <button className="create-playlist-btn" onClick={this.handleClick}>NEW PLAYLIST</button>
         <div className="collection-container">
 
           <Switch>
@@ -34,6 +32,7 @@ class Collection extends React.Component {
             <ProtectedRoute path="/collection/artists" component={ArtistIndexContainer}/>
             <ProtectedRoute path="/collection/songs" component={SongIndexContainer}/>
             <ProtectedRoute path="/collection/playlists" component={PlaylistIndexContainer}/>
+            
           </Switch>
 
         </div>

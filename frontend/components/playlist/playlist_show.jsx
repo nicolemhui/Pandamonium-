@@ -29,7 +29,9 @@ class PlaylistShow extends React.Component {
 
       <div className="playlist-content-container">
         <aside className="playlist-info">
-          <img src="">PLAYLIST IMAGE</img>
+  
+          <div className="playlist-cover">PLAYLIST IMAGE</div>
+  
           <div className="playlist-info-text">
             <h3>{this.props.playlist.name}</h3>
             
@@ -53,3 +55,5 @@ class PlaylistShow extends React.Component {
     )
   }
 }
+
+export default PlaylistShow;

@@ -9,36 +9,24 @@ import SongIndexContainer from './song/song_index_container';
 import AlbumIndexContainer from './album/album_index_container';
 import ArtistIndexContainer from './artist/artist_index_container';
 import Main from './main';
-import FeaturedContainer from './browse/featured_container';
-import BrowseLinks from './header_links/browse_links';
-import CollectionLinks from './header_links/collection_links';
-import SideNavContainer from './side_nav/side_nav_container';
+import PlaylistShowContainer from './playlist/playlist_show_container';
 
 const App = () => (
   <div>
 
     {/* testing */}
-    {/* <ProtectedRoute path="/" component={SideNavContainer} /> */}
-    {/* <ProtectedRoute path="/browse" component={BrowseLinks} /> */}
-    {/* <ProtectedRoute path="/collection" component={CollectionLinks} /> */}
+   
 
     <Switch>
-      {/* <ProtectedRoute path="/artists" component={ArtistIndexContainer} />
-      <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
-      <ProtectedRoute path="/songs" component={SongIndexContainer} /> */}
-      
+      <ProtectedRoute path="/collection/playlists/:playlistId" component={PlaylistShowContainer} />
+
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/browse" component={Main}/>
       <ProtectedRoute path="/collection" component={Main}/>
       
-      {/* <ProtectedRoute path="/browse/featured" component={Main}/> */}
-      {/* <ProtectedRoute path="/browse/featured" component={FeaturedContainer} /> */}
-      {/* <ProtectedRoute path="/collection" component={FeaturedContainer} /> */}
-      
       <AuthRoute path="/" component={SplashContainer} />
 
-      {/* <AuthRoute path="/" component={SplashContainer} /> */}
     </Switch>
 
 

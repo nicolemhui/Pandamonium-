@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => {
   let playlist = state.entities.playlists[playlistId];
 
   return ({
-    debugger
     playlist: playlist,
   });
 };

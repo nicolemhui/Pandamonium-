@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
 
 class PlaylistIndexItem extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class PlaylistIndexItem extends React.Component {
   }
   render() {
     const playlist = this.props.playlist;
+    // debugger
 
     return (
       <div className="playlist-grid-item">
@@ -16,7 +18,7 @@ class PlaylistIndexItem extends React.Component {
           </div>
           {/* <img className="playlist-img" src="" />Picture! */}
         </div>
-          <NavLink to={`api/playlist/playlistId`} className="playlist-name">{playlist.name}</NavLink>
+          <NavLink to={`collection/playlists/${playlist.id}`} className="playlist-name">{playlist.name}</NavLink>
       </div>
   
     );

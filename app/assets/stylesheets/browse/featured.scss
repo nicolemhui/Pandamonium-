@@ -1,33 +1,15 @@
-// html, body, div
-// {
-//   height: 100%;
-//   width: 100%;
-// }
-
-// body {
-//   height: 100%;
-//   margin: 0;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-// }
-
 .featured-main {
-  background-image: linear-gradient(#234666, black);
-  // background-color: white;
-  // box-sizing: border-box;
+  background-image: linear-gradient( rgb(59, 127, 149), rgb(22, 34, 24));
   left: -25%;
   height: 1500px;
   padding: 0 32px;
   margin: 0 auto;
-  // max-width: 1480px;
 }
 
 .featured-container {
-  // background-color: yellow;
   left: -25%;
   height: 100%;
   padding: 0 32px;
   margin: 0px 0px 0px 250px;
-  // margin: 0 auto;
   max-width: 1600px;
 }
