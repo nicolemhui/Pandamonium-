@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, NavLink } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import CollectionLinks from '../header_links/collection_links';
 import AlbumIndexContainer from '../album/album_index_container';
@@ -10,6 +10,13 @@ import PlaylistIndexContainer from '../playlist/playlist_index_container';
 class Collection extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.openModal("create_new_playlist");
   }
 
   render() {
@@ -17,7 +24,9 @@ class Collection extends React.Component {
 
       <div className="collection-main">
         <CollectionLinks></CollectionLinks>
-
+        <button className="create-playlist-btn" onClick={this.handleClick}>
+          <NavLink to="/api/playlists/new">NEW PLAYLIST</NavLink>
+        </button>
         <div className="collection-container">
 
           <Switch>
