@@ -35,11 +35,6 @@ export const createPlaylist = (playlist) => dispatch => (
     .then(payload => dispatch(receivePlaylist(payload)))
 );
 
-export const updatePlaylist = (playlist) => dispatch => (
-  PlaylistApiUtil.updatePlaylist(playlist)
-    .then(playlist => dispatch(receivePlaylist(playlist)))
-);
-
 export const deletePlaylist = (payload) => dispatch => (
   PlaylistApiUtil.deletePlaylist(payload)
     .then(payload => dispatch(removePlaylist(payload)))

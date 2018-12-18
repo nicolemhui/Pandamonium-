@@ -16,6 +16,7 @@ import SideNavContainer from './side_nav/side_nav_container';
 
 const App = () => (
   <div>
+
     {/* testing */}
     {/* <ProtectedRoute path="/" component={SideNavContainer} /> */}
     {/* <ProtectedRoute path="/browse" component={BrowseLinks} /> */}

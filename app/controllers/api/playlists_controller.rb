@@ -31,16 +31,6 @@ class Api::PlaylistsController < ApplicationController
     render 'api/playlists/show'
   end 
 
-  def update 
-    @playlist = current_user.playlists.find(params[:id])
-
-    if @playlist.update(playlist_params)
-      render 'api/playlists/show'
-    else 
-      render json: @playlist.errors.full_messages, status: 401
-    end 
-  end 
-
   def destroy 
     @playlist = Playlist.find(params[:id])
     if @playlist.creator_id == current_user.id && current_user.playlists.include?(@playlist)

@@ -17,6 +17,7 @@
  @import './splash.scss';
  @import './main.scss';
  @import './session.scss';
+ @import './modal.scss';
  @import './features/side_nav.scss';
  @import './features/nav_links.scss';
  @import './browse/featured.scss';
@@ -25,3 +26,6 @@
  @import './api/albums.scss';
  @import './api/artists.scss';
  @import './api/playlists.scss';
+ @import './playlists/playlist_show.scss';
+ @import './music_player.scss';
+ 

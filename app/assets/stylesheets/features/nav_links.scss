@@ -35,15 +35,20 @@
   transition: 0.3s;
 }
 
-
+//FIX ME 
 .nav-links-link:active {
   color: #fff;
   transition: 0.3s;
   padding-bottom: 4px;
-  border-bottom: 3px solid green;
   // border-bottom-width: 2px;
   // margin: 0 auto; /* This will center the border. */
   // width: 50%;
+  span {
+    background-color: green;
+    height: 2px;
+    width: 10px;
+    margin: 0 auto;
+  }
 }
 
 .nav-divider {
@@ -53,6 +58,6 @@
   margin: 0 auto;
 }
 
-.nav-greeting-logout {
-  
-}
+
+
+

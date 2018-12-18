@@ -5,6 +5,8 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import SideNavContainer from './side_nav/side_nav_container';
 import FeaturedContainer from './browse/featured_container';
 import CollectionContainer from './collection/collection_container';
+import MusicPlayerContainer from './music_player/music_player_container';
+import Modal from './modal';
 
 class Main extends React.Component {
 
@@ -12,6 +14,8 @@ class Main extends React.Component {
     return (
 
       <div className="main-content">
+
+        <Modal />
 
         <ProtectedRoute path="/" component={SideNavContainer}/>
         {/* <ProtectedRoute path="/collection" component={CollectionLinks}/> */}
@@ -21,6 +25,7 @@ class Main extends React.Component {
           <ProtectedRoute path="/collection" component={CollectionContainer}/>
         </Switch>
 
+        <ProtectedRoute path="/" component={MusicPlayerContainer}/>
 
       </div>
     )
