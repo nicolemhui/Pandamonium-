@@ -20,14 +20,6 @@ export const createPlaylist = (playlist) => (
   })
 );
 
-export const updatePlaylist = (playlist) => (
-  $.ajax({
-    method: 'PATCH',
-    url: `api/playlists/${playlist.id}`,
-    data: { playlist }
-  })
-);
-
 export const deletePlaylist = (id) => (
   $.ajax({
     method: 'DELETE',

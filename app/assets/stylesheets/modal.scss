@@ -1,0 +1,110 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  font-family: 'Montserrat';
+  color: white;
+  z-index: 10;
+  overflow-y: scroll;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-exit {
+  background-color: transparent;
+  border: transparent;
+  font-size: 50px;
+  margin: 0 auto;
+}
+
+.login-signup-form-container h3 {
+  font-size: 60px;
+}
+
+.playlist-form {
+  // width: 100%;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  label {
+    text-align: left;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+}
+
+.playlist-input {
+  background: #2E2E2E;
+  height: 100px;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  caret-color: #1DB954;
+}
+ 
+input{
+  font-size: 50px;
+  color: white;
+  width: 100%;
+  height: 100px;
+  // margin: auto;
+  
+}
+
+
+.playlist-form-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .cancel-playlist-btn {
+    background-color: rgba(24,24,24,.7);
+    padding: 15px 45px;
+    width: 150px;
+    height: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 200px;
+    letter-spacing: .03em;
+    margin: 10px;
+  }
+
+  .create-playlist-btn {
+    background-color: #1DB954;
+    width: 150px;
+    height: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 200px;
+    letter-spacing: .03em;
+    padding: 15px 45px;
+    margin: 10px;
+  }
+}
+
+.cancel-playlist-btn:hover {
+  transform: scale(1.05);
+  background-color: #1ED760;
+  color: white;
+  cursor: pointer;
+}
+
+.create-playlist-btn:hover {
+  transform: scale(1.05);
+  background-color: #1ED760;
+  color: white;
+  cursor: pointer;
+}
+
