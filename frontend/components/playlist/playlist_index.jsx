@@ -7,11 +7,9 @@ class PlaylistIndex extends React.Component {
   }
 
   // componentWillMount() {
-  //   debugger
   //   this.props.fetchPlaylists()
   // }
   componentDidMount() {
-    // debugger
     this.props.fetchPlaylists()
   }
 

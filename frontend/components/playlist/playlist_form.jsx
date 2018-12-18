@@ -14,7 +14,7 @@ class PlaylistForm extends React.Component {
     e.preventDefault();
     const playlist = Object.assign({}, this.state);
     this.props.createPlaylist(playlist).then(
-      () => this.props.closeModal()).then(this.props.history.push("/playlists"));
+      () => this.props.closeModal());
   }
 
   handleChange(field) {

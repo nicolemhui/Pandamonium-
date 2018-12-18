@@ -12,7 +12,7 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
-    // debugger
+    if (!this.props.albums) return null;
     const albums = this.props.albums.map(album => {
       return (
         <AlbumIndexItem

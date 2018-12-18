@@ -11,7 +11,6 @@ class PlaylistShow extends React.Component {
   componentDidMount() {
     let playlistId = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistId);
-    debugger 
   }
 
   handleDelete() {
@@ -28,7 +27,7 @@ class PlaylistShow extends React.Component {
     return (
 
       <div className="playlist-content-container">
-        <aside className="playlist-info">
+        <div className="playlist-info">
   
           <div className="playlist-cover">PLAYLIST IMAGE</div>
   
@@ -39,11 +38,11 @@ class PlaylistShow extends React.Component {
           </div>
           <button 
             className="delete-playlist-btn"
-            onClick={this.handleDelete()}
+            onClick={this.handleDelete}
             > 
             DELETE
           </button>
-        </aside>
+        </div>
 
       <div className="playlist-song-container">
         <div className="playlist-song-list">
