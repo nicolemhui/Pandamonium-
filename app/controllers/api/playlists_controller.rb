@@ -13,10 +13,18 @@ class Api::PlaylistsController < ApplicationController
   end 
 
   def index
-    @playlists = Playlist.all 
-    # @playlists = current_user.playlists
+    # @playlists = Playlist.all 
+    @playlists = current_user.playlists
     render 'api/playlists/index'
   end 
+
+  def search 
+    @playlists = Playlist.where(name)
+  end 
+
+  # Routes.rb
+  # get '/playlists/search', to 'playlists#search'
+  #send back query in params when returning from ajax call 
 
   def show 
     @playlist = Playlist.find(params[:id])
@@ -37,7 +45,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
     if @playlist.creator_id == current_user.id && current_user.playlists.include?(@playlist)
       @playlist.destroy 
-      render 'api/playlists/index'
+      render 'api/playlists/show'
     else 
       render json: ['Unable to delete playlist']
     end 

@@ -1,3 +1,78 @@
 // Place all the styles related to the api/playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the Artists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+.playlists-index-container {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  line-height: 3px;
+  max-width: 1480px;
+  top: 0px;
+  margin-left: 100px;
+}
+
+.playlist-grid {
+  padding-top: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+
+  .playlist-grid-item {
+    background-color: rgba(0,0,0,.5);
+    border: 1px solid transparent;
+    padding: 5%;
+    margin: 0 auto;
+    // height: 100%;
+    // width: 100%;
+
+    .playlist-item-info {
+      width: 200px;
+      height: 200px;
+    }
+
+    .playlist-play-btn {
+      display: none;
+      position: relative;
+      font-size: 40px;
+      margin: 0 auto;	
+    }
+  }
+
+  // .playlist-item-info {
+  //   .playlist-play-btn {
+  //     display: none;
+  //     position: relative;
+  //     font-size: 40px;
+  //     margin: 0 auto;	
+  //   }
+    // .playlist-img {
+    //   height: 50%;
+    //   width: 50%;
+    // }
+    // h3 {
+    //   font-size: 14px;
+    // }
+  // }
+}
+
+.playlist-grid-item:hover {
+  .playlist-item-info {
+      opacity: 0.5;
+      filter: alpha(opacity=40);
+    }
+
+    .playlist-play-btn {
+      display: block;
+      color: black;
+    }
+}

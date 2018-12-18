@@ -29,16 +29,19 @@
     margin: 0 auto;
     height: 100%;
     width: 100%;
+  }
+  
+  .artist-grid-item {
+    width: 250px;
+    height: 250px;
     background-color: rgba(0,0,0,.5);
   }
-
-  .artist-grid-item {
+  
+  .artist-item-info {
     width: 200px;
     height: 200px;
     background-color: gray;
-  }
 
-  .artist-item-info {
     .artist-play-btn {
       display: none;
       position: relative;
@@ -49,13 +52,16 @@
       height: 50%;
       width: 50%;
     }
-    h3 {
-      font-size: 14px;
-    }
   }
 }
 
+.artist-grid-item a {
+  font-size: 14px;
+}
+
 .artist-item-info:hover {
+  cursor: pointer;
+  
   .artist-img {
       opacity: 0.5;
       filter: alpha(opacity=40);

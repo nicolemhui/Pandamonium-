@@ -12,6 +12,8 @@ const playlistSongsReducer = (state = {}, action) => {
       return action.payload.playlistSongs;
     case RECEIVE_PLAYLIST:
       return merge({}, state, action.payload.playlistSongs)
+      // case ADD_PLAYLIST_SONG:
+    // case REMOVE_PLAYLIST_SONG:
     default:
       return state;
   }

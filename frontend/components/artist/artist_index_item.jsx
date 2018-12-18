@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class ArtistIndexItem extends React.Component {
   constructor(props) {
@@ -15,8 +16,8 @@ class ArtistIndexItem extends React.Component {
               <i className="fas fa-play"></i>
             </div>
             <img className="artist-img" src="" />Picture!
-            <h3 className="artist-name">{artist.name}</h3>
           </div>
+            <NavLink to={`api/artists/artistId`} className="artist-name">{artist.name}</NavLink>
         </div>
       </div>
     );

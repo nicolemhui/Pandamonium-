@@ -49,7 +49,6 @@
   margin-left: 100px;
 }
 
-
 .album-grid {
   padding-top: 200px;
   display: grid;
@@ -58,64 +57,64 @@
   grid-auto-rows: minmax(100px, auto);
 }
 
-  .album-grid-item {
-    background-color: rgba(0,0,0,.5);
-    border: 1px solid transparent;
-    // width: 300px;
-    // height: 300px;
-    padding: 5%;
-    margin: 0 auto;
-  }
+.album-grid-item {
+  background-color: rgba(0,0,0,.5);
+  border: 1px solid transparent;
+  // width: 300px;
+  // height: 300px;
+  padding: 5%;
+  margin: 0 auto;
+}
 
-  .album-item-info {
-    width: 200px;
-    height: 200px;
-    background-color: gray;
+.album-item-info {
+  width: 200px;
+  height: 200px;
+  background-color: gray;
   
-    .album-img {
-      height: 100%;
-      width: 100%;
-      // width: 200px;
-      // height: 200px;
-    }
-
-    .album-play-btn {
-      display: none;
-      position: absolute;
-      font-size: 40px;
-      padding-left: 100px;
-      padding-bottom: 100px;
-      // margin: 0 auto;	
-    }
+  .album-img {
+    height: 100%;
+    width: 100%;
+    // width: 200px;
+    // height: 200px;
   }
 
-  .album-item-info:hover {
-    .album-img {
-      opacity: 0.5;
-      filter: alpha(opacity=40);
-    }
+  .album-play-btn {
+    display: none;
+    position: absolute;
+    font-size: 40px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+    // margin: 0 auto;	
+  }
+}
 
-    .album-play-btn {
-      display: block;
-      color: black;
-    }
+.album-item-info:hover {
+  .album-img {
+    opacity: 0.5;
+    filter: alpha(opacity=40);
   }
 
-  .album-title {
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
+  .album-play-btn {
+    display: block;
+    color: black;
   }
+}
+
+.album-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
 
 
-  .album-artist {
-    font-size: 14px;
-    text-decoration: none;
-    color: gray;
-  }
+.album-artist {
+  font-size: 14px;
+  text-decoration: none;
+  color: gray;
+}
 
-  .album-artist:hover {
-    color: white;
-    text-decoration: underline;
-  }
+.album-artist:hover {
+  color: white;
+  text-decoration: underline;
+}

@@ -5,7 +5,7 @@ import CollectionLinks from '../header_links/collection_links';
 import AlbumIndexContainer from '../album/album_index_container';
 import ArtistIndexContainer from '../artist/artist_index_container';
 import SongIndexContainer from '../song/song_index_container';
-// import PlaylistIndex from '../playlist/playlist_index';
+import PlaylistIndexContainer from '../playlist/playlist_index_container';
 
 class Collection extends React.Component {
   constructor(props) {
@@ -21,10 +21,10 @@ class Collection extends React.Component {
         <div className="collection-container">
 
           <Switch>
-            <ProtectedRoute path="/collection/albums" component={AlbumIndexContainer}></ProtectedRoute>
-            <ProtectedRoute path="/collection/artists" component={ArtistIndexContainer}></ProtectedRoute>
-            <ProtectedRoute path="/collection/songs" component={SongIndexContainer}></ProtectedRoute>
-            {/* <ProtectedRoute path="/collection/playlists" component={PlaylistIndex}></ProtectedRoute> */}
+            <ProtectedRoute path="/collection/albums" component={AlbumIndexContainer}/>
+            <ProtectedRoute path="/collection/artists" component={ArtistIndexContainer}/>
+            <ProtectedRoute path="/collection/songs" component={SongIndexContainer}/>
+            <ProtectedRoute path="/collection/playlists" component={PlaylistIndexContainer}/>
           </Switch>
 
         </div>

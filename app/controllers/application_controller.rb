@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless logged_in?
-      render json: { base: ['Invalid credentials'] }, status: 401
+      render json: { base: ['Error'] }, status: 401
     end
   end
 end

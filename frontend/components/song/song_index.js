@@ -9,12 +9,16 @@ class SongIndex extends React.Component {
   }
 
   componentWillMount() {
+  // componentDidMount() {
     this.props.fetchSongs()
     // .then(() => this.setState({ songs: this.props.songs }))
   }
 
   render() {
-    const songs = this.props.songs.map( song => {
+    let songs = this.props.songs;
+    if (!songs) return null;
+    
+    songs = this.props.songs.map( song => {
       return (
         <SongIndexItem
           key={song.id}
@@ -22,7 +26,9 @@ class SongIndex extends React.Component {
         />
       )
     });
-
+    
+    
+    
     return (
       <div className="song-item-container">
         <ul className="song-list">
