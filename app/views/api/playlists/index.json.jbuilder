@@ -13,7 +13,6 @@ json.songs do
 end 
 
 json.artists do 
-debugger
   @playlists.each do |playlist|
     playlist.songs.each do |song|
       song.artists.each do |artist|

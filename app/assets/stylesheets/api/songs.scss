@@ -83,17 +83,17 @@
   }
   
   .artist-text {
-    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .album-text {
-    margin-right: 10px;
+    margin-left: 10px;
   }
 
   .song-other-info a {
     color: #b3b3b3;
     display: inline-block;
-    text-align: left;
+    // text-align: left;
     // justify-content: space-evenly;
   }
 
@@ -101,8 +101,4 @@
     color: #fff;
     text-decoration: underline;
   }
-}
-
-.song-artists-links {
-  margin-left: -10px;
 }

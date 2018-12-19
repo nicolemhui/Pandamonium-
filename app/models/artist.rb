@@ -20,4 +20,6 @@ class Artist < ApplicationRecord
   has_many :albums,
     through: :artist_albums, 
     source: :album
+
+  has_one_attached :photo
 end

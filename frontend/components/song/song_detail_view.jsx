@@ -35,9 +35,9 @@ class SongDetailView extends React.Component {
       </div>
     } else {
       songInfoText = <div>
-        {albums}
-        •
         {artists}
+        •
+        {albums}
       </div>;
     }
 
