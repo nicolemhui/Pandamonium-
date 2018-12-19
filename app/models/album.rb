@@ -17,4 +17,6 @@ class Album < ApplicationRecord
   has_many :artists, 
     through: :artist_albums, 
     source: :artist
+
+  has_one_attached :cover_photo
 end

@@ -16,6 +16,8 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
   
+  has_one_attached :photo
+  
   has_many :playlists,
     foreign_key: :creator_id,
     class_name: 'Playlist'

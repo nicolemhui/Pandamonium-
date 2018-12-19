@@ -16,7 +16,7 @@ class ArtistIndexItem extends React.Component {
             <div className="artist-play-btn">
               <i className="fas fa-play"></i>
             </div>
-            <img className="artist-img" src="" />Picture!
+            <img className="artist-img" src={artist.photoUrl} />Picture!
           </div>
             <NavLink to={`api/artists/artistId`} className="artist-name">{artist.name}</NavLink>
         </div>
