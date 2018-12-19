@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class SongDetailView extends React.Component {
 
@@ -9,7 +9,7 @@ class SongDetailView extends React.Component {
 
     const artists = this.props.artists.map(artist =>
       <li key={artist.id}>
-        <NavLink to="/collection/artists"
+        <NavLink to={`/artists/${artist.id}`}
           className="album-artist">
         {artist.name}</NavLink>
       </li>
@@ -18,12 +18,14 @@ class SongDetailView extends React.Component {
     // debugger 
     return (
       <div className="album-item-info">
-        <div className="album-img">IMAGE HERE <img src={album.coverPhotoUrl}/></div>
+        <div className="album-img">IMAGE HERE <img src={album.coverPhotoUrl}></img></div>
         <div className="album-play-btn">
           <i className="fas fa-play"></i>
         </div>
 
-        <h1 className="album-title">{album.title}</h1>
+        <h1 className="album-title">
+          <Link to={`albums/${album.id}`} className="playlist-name">{album.title}</Link>
+        </h1>
         
         {artists}
 

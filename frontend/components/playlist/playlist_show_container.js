@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => {
 
   let playlistId = ownProps.match.params.playlistId;
   let playlist = state.entities.playlists[playlistId];
-  let songs = Object.values(state.entities.playlistSongs);
 
   let playlistSongs = selectPlaylistSongs(state, parseInt(playlistId));
 
