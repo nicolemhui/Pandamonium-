@@ -20,7 +20,7 @@
 }
 
 .song-list {
-  margin-top: 200px;
+  margin-top: 100px;
 
   .songlist-row {
     width: 100%;
@@ -35,6 +35,10 @@
     width: 50px;
     justify-content: center;
     align-content: center;
+  }
+
+  i {
+    margin-top: 10px;
   }
 
   .song-music-btn {
@@ -75,8 +79,9 @@
     color: #b3b3b3;
     font-family: "Montserrat";
     font-size: 13px;
+    align-content: left;
   }
-
+  
   .artist-text {
     margin-left: 10px;
   }
@@ -88,7 +93,7 @@
   .song-other-info a {
     color: #b3b3b3;
     display: inline-block;
-    text-align: center;
+    text-align: left;
     // justify-content: space-evenly;
   }
 
@@ -96,4 +101,8 @@
     color: #fff;
     text-decoration: underline;
   }
+}
+
+.song-artists-links {
+  margin-left: -10px;
 }

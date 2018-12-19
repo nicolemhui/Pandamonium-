@@ -26,6 +26,20 @@ class SongDetailView extends React.Component {
       </NavLink>
     );
 
+    let songInfoText;
+
+    if (albums.length === 0) {
+      songInfoText = <div className="song-artists-links">
+      {artists}
+      </div>
+    } else {
+      songInfoText = <div>
+        {albums}
+        •
+        {artists}
+      </div>;
+    }
+
     return (
       <div className="song-item-info">
 
@@ -34,9 +48,10 @@ class SongDetailView extends React.Component {
         <div className="song-info">
           <div className="song-other-info">
             {/* FIX ME  */}
-            {albums}
+            {songInfoText}
+            {/* { (!albums) ? "" : albums }
             •
-            {artists}
+            {artists} */}
           </div>
         </div>
       </div>

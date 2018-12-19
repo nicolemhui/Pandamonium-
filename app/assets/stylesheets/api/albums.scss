@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-  box-sizing: border-box;
-  font-family: 'Montserrat';
-}
+// * {
+//   box-sizing: border-box;
+//   font-family: 'Montserrat';
+// }
 
 // .album-item-container {
   // margin-left: 300px;
@@ -50,9 +50,9 @@
 }
 
 .album-grid {
-  padding-top: 200px;
+  padding-top: 100px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
 }

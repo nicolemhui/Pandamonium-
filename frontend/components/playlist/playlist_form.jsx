@@ -31,15 +31,17 @@ class PlaylistForm extends React.Component {
         <div className="playlist-input-section">
 
           <form className="playlist-form" onSubmit={this.handleSubmit}>
-            <label>
+              <label>
               <h4>Playlist Name</h4>
-              <input type="text"
-                className="playlist-input"
-                value={this.state.name}
-                onChange={this.handleChange('name')}
-                placeholder="Start typing..."
-              />
-            </label>
+              <div className="text-input-field">
+                  <input type="text"
+                    className="playlist-input"
+                    value={this.state.name}
+                    onChange={this.handleChange('name')}
+                    placeholder="Start typing..."
+                  />
+              </div>
+              </label>
             
             <div className="playlist-form-btns">
               <button type="text" 
