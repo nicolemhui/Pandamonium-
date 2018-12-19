@@ -9,7 +9,6 @@ class SongIndexItem extends React.Component {
   render() {
     const { song } = this.props;
     if (!song) return null;
-  
 
     return (
 

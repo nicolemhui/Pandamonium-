@@ -1,4 +1,5 @@
 import React from 'react';
+import SongIndexItem from '../song/song_index_item';
 import { Link } from 'react-router-dom';
 
 class PlaylistShow extends React.Component {
@@ -22,33 +23,44 @@ class PlaylistShow extends React.Component {
 
   render() {
     let { playlist } = this.props;
-    if (!playlist) return null;
+    let { playlistSongs } = this.props;
+    if (!playlist || !playlistSongs) return null;
+    
 
+    playlistSongs = playlistSongs.map( song => {
+      return (
+        <SongIndexItem
+        key={song.id}
+        song={song}
+        />
+        );
+      });
+    
+    
     return (
-
-      <div className="playlist-content-container">
-        <div className="playlist-info">
-  
-          <div className="playlist-cover">PLAYLIST IMAGE</div>
-  
-          <div className="playlist-info-text">
-            <h3>{this.props.playlist.name}</h3>
-            
-            <h5>User Name</h5>
+      <div className="playlist-main-container">
+        <div className="playlist-content-container">
+          <div className="playlist-info">
+    
+            <div className="playlist-cover">PLAYLIST IMAGE</div>
+    
+            <div className="playlist-info-text">
+              <h3>{playlist.name}</h3>
+              
+              <h5>User Name</h5>
+            </div>
+            <button 
+              className="delete-playlist-btn"
+              onClick={this.handleDelete}> 
+              DELETE
+            </button>
           </div>
-          <button 
-            className="delete-playlist-btn"
-            onClick={this.handleDelete}
-            > 
-            DELETE
-          </button>
-        </div>
 
-      <div className="playlist-song-container">
-        <div className="playlist-song-list">
-        {/* FIX ME! */}
-        {/* render song list items that are IN playlist-- use selector */}
-        </div>
+          <div className="playlist-song-container">
+            <ul className="song-list">
+              {playlistSongs}
+            </ul>
+          </div>
       </div>
     </div>
     )

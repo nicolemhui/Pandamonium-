@@ -33,6 +33,7 @@ class SongDetailView extends React.Component {
 
         <div className="song-info">
           <div className="song-other-info">
+            {/* FIX ME  */}
             {albums}
             •
             {artists}
