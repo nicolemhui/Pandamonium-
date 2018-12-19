@@ -23,7 +23,7 @@ nikki = User.create!(username: "nikki", email: "nikki@email.com", password: "pas
 #Aritsts
 daft_punk = Artist.create!(name: "Daft Punk")
 dp_artist_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
-daft_punk.photo.attach({io: dp_artist_photo, filename: 'dp_discovery.png'})
+daft_punk.photo.attach(io: dp_artist_photo, filename: 'dp_discovery.png')
 
 
 linkin_park = Artist.create(name: "Linkin Park")
@@ -33,8 +33,9 @@ odesza = Artist.create(name: "Odesza")
 
 #Albums
 dp_discovery = Album.create!(title: "Discovery", year: 2001)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
-dp_discovery.cover_photo.attach({io: dp_discovery_photo, filename: 'dp_discovery.png'})
+dp_discovery_photo = File.open("app/assets/images/daft_punk_discovery.png")
+# dp_discovery_photo = EzDownload.open("https://upload.wikimedia.org/wikipedia/en/a/ae/Daft_Punk_-_Discovery.jpg")
+dp_discovery.cover_photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 
 dp_ram = Album.create(title: "Random Access Memories", year: 2013)
@@ -44,15 +45,15 @@ od_a_moment_apart = Album.create(title: "A Moment Apart", year: 2017)
 
 #Daft Punk - Discovery Songs
 dp_aerodynamic = Song.create(title: "Aerodynamic", album_id: dp_discovery.id)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
+# dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
 # dp_aerodynamic.photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 dp_superheroes = Song.create(title: "Superheroes", album_id: dp_discovery.id)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
+# dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
 # dp_superheroes.photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 dp_one_more_time = Song.create(title: "One More Time", album_id: dp_discovery.id)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
+# dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
 # dp_one_more_time.photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 
