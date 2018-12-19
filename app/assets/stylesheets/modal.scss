@@ -19,11 +19,17 @@
 }
 
 .modal-exit {
+  color: white;
   background-color: transparent;
   border: transparent;
   font-size: 50px;
-  margin: 0 auto;
+  margin-left: 50%;
 }
+
+.modal-exit:active{
+    outline: none;
+}
+
 
 .login-signup-form-container h3 {
   font-size: 60px;
