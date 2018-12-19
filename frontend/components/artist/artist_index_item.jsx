@@ -7,6 +7,7 @@ class ArtistIndexItem extends React.Component {
   }
   render() {
     const artist = this.props.artist;
+    if (!artist) return null;
     
     return (
       <div className="artist-item-container">

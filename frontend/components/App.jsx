@@ -9,37 +9,33 @@ import SongIndexContainer from './song/song_index_container';
 import AlbumIndexContainer from './album/album_index_container';
 import ArtistIndexContainer from './artist/artist_index_container';
 import Main from './main';
-import FeaturedContainer from './browse/featured_container';
-import BrowseLinks from './header_links/browse_links';
-import CollectionLinks from './header_links/collection_links';
+import PlaylistShowContainer from './playlist/playlist_show_container';
 import SideNavContainer from './side_nav/side_nav_container';
+import FeaturedContainer from './browse/featured_container';
+import CollectionContainer from './collection/collection_container';
+import MusicPlayerContainer from './music_player/music_player_container';
+import Modal from './modal';
 
 const App = () => (
   <div>
 
     {/* testing */}
-    {/* <ProtectedRoute path="/" component={SideNavContainer} /> */}
-    {/* <ProtectedRoute path="/browse" component={BrowseLinks} /> */}
-    {/* <ProtectedRoute path="/collection" component={CollectionLinks} /> */}
+   
+
+    <Modal />
+
+    <ProtectedRoute path="/" component={SideNavContainer} />
 
     <Switch>
-      {/* <ProtectedRoute path="/artists" component={ArtistIndexContainer} />
-      <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
-      <ProtectedRoute path="/songs" component={SongIndexContainer} /> */}
-      
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/browse" component={Main}/>
-      <ProtectedRoute path="/collection" component={Main}/>
-      
-      {/* <ProtectedRoute path="/browse/featured" component={Main}/> */}
-      {/* <ProtectedRoute path="/browse/featured" component={FeaturedContainer} /> */}
-      {/* <ProtectedRoute path="/collection" component={FeaturedContainer} /> */}
-      
+      <ProtectedRoute path="/collection/playlists/:playlistId" component={PlaylistShowContainer} />
+      <ProtectedRoute path="/browse" component={FeaturedContainer} />
+      <ProtectedRoute path="/collection" component={CollectionContainer} />
       <AuthRoute path="/" component={SplashContainer} />
-
-      {/* <AuthRoute path="/" component={SplashContainer} /> */}
     </Switch>
+
+    <ProtectedRoute path="/" component={MusicPlayerContainer} />
 
 
   </div>
@@ -48,6 +44,20 @@ const App = () => (
 export default App;
 
 
+
+//2ND EDIT 
+{/* <Switch>
+
+  <AuthRoute path="/login" component={LoginFormContainer} />
+  <AuthRoute path="/signup" component={SignupFormContainer} />
+  <ProtectedRoute path="/browse" component={Main}/>
+  <ProtectedRoute path="/collection" component={Main}/>
+
+
+
+  <AuthRoute path="/" component={SplashContainer} />
+
+</Switch> */}
 
 
 //TEST!

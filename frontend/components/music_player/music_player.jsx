@@ -1,6 +1,11 @@
 import React from 'react';
 
 class MusicPlayer extends React.Component {
+  // FIX ME - need to handle change to value
+  handleChange() {
+    return e => e.target.value
+  }
+
   render() {
     return (
       <div className="music-player-container">
@@ -22,7 +27,7 @@ class MusicPlayer extends React.Component {
           <div className="right-container">
             <div className="volume-slider">
               <i className="fas fa-volume-up"></i>
-              <input type="range" id="volumeRange" min="1" max="100" value="0" className="slider"/>
+              <input type="range" id="volumeRange" min="1" max="100" value="0" className="slider" onChange={this.handleChange()}/>
             </div>
           </div>
         </footer>

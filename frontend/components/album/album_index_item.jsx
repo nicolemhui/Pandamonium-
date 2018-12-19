@@ -8,6 +8,7 @@ class AlbumIndexItem extends React.Component {
 
   render() {
     const { album } = this.props;
+    if (!album) return null;
 
     return (
       <div className="album-grid-item">

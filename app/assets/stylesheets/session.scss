@@ -40,7 +40,7 @@ body {
   margin: 0 auto;
 }
 
-// make errors appear!
+// make errors appear
 .session-errors {
   margin: 0 auto;
   width: 420px;
@@ -52,7 +52,6 @@ body {
   background-color: #f59b23;
   transition: .5s;
 }
-
 
 .session-input-field {
   width: 430px;
@@ -158,6 +157,7 @@ input[type='checkbox'] {
   width: 400px;
   height: 50px;
   border-radius: 200px;
+  border: transparent;
   background-color: #3B5998;
   margin: 25px;
   color: white;

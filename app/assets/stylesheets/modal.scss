@@ -19,14 +19,21 @@
 }
 
 .modal-exit {
+  color: white;
   background-color: transparent;
   border: transparent;
   font-size: 50px;
-  margin: 0 auto;
+  margin-left: 50%;
 }
+
+.modal-exit:active{
+    outline: none;
+}
+
 
 .login-signup-form-container h3 {
   font-size: 60px;
+  text-align: center;
 }
 
 .playlist-form {
@@ -37,21 +44,31 @@
   
   label {
     text-align: left;
+    width: 100%;
+    background-color: #2E2E2E;
   }
-
+  
   h4 {
+    margin: 10px 0px 0px 450px;
     font-size: 16px;
   }
 
 }
 
+.text-input-field {
+  width: 1680px;
+  background-color: 2E2E2E;
+}
+
 .playlist-input {
-  background: #2E2E2E;
-  height: 100px;
+  background-color: #2E2E2E;
+  margin-left: 450px;
+  // height: 100px;
   color: white;
-  padding: 15px;
+  // padding: 15px;
   text-align: left;
   caret-color: #1DB954;
+  border: transparent;
 }
  
 input{
@@ -63,17 +80,24 @@ input{
   
 }
 
+input:focus, input:focus{
+    outline: none;
+}
+
+
 
 .playlist-form-btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 25px;
 
   .cancel-playlist-btn {
     background-color: rgba(24,24,24,.7);
+    color: white;
     padding: 15px 45px;
-    width: 150px;
-    height: 50px;
+    width: 145px;
+    height: 45px;
     font-size: 12px;
     font-weight: bold;
     border-radius: 200px;
@@ -81,10 +105,10 @@ input{
     margin: 10px;
   }
 
-  .create-playlist-btn {
+  .new-playlist-btn {
     background-color: #1DB954;
-    width: 150px;
-    height: 50px;
+    width: 145px;
+    height: 45px;
     font-size: 12px;
     font-weight: bold;
     border-radius: 200px;
@@ -93,18 +117,16 @@ input{
     margin: 10px;
   }
 }
+
 
 .cancel-playlist-btn:hover {
   transform: scale(1.05);
-  background-color: #1ED760;
-  color: white;
   cursor: pointer;
 }
 
-.create-playlist-btn:hover {
+.new-playlist-btn:hover {
   transform: scale(1.05);
   background-color: #1ED760;
   color: white;
   cursor: pointer;
 }
-

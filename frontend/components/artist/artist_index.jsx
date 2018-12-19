@@ -12,6 +12,8 @@ class ArtistIndex extends React.Component {
   }
 
   render() {
+    if (!this.props.artists) return null;
+    
     const artists = this.props.artists.map(artist => {
       return (
         <ArtistIndexItem

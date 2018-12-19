@@ -6,6 +6,7 @@ import AlbumIndexContainer from '../album/album_index_container';
 import ArtistIndexContainer from '../artist/artist_index_container';
 import SongIndexContainer from '../song/song_index_container';
 import PlaylistIndexContainer from '../playlist/playlist_index_container';
+// import PlaylistShowContainer from '../playlist/playlist_show_container';
 
 class Collection extends React.Component {
   constructor(props) {
@@ -24,16 +25,16 @@ class Collection extends React.Component {
 
       <div className="collection-main">
         <CollectionLinks></CollectionLinks>
-        <button className="create-playlist-btn" onClick={this.handleClick}>
-          <NavLink to="/api/playlists/new">NEW PLAYLIST</NavLink>
-        </button>
+        <button className="create-playlist-btn" onClick={this.handleClick}>NEW PLAYLIST</button>
         <div className="collection-container">
 
           <Switch>
+            {/* <ProtectedRoute path="/playlists/playlistId" component={PlaylistShowContainer}/> */}
             <ProtectedRoute path="/collection/albums" component={AlbumIndexContainer}/>
             <ProtectedRoute path="/collection/artists" component={ArtistIndexContainer}/>
             <ProtectedRoute path="/collection/songs" component={SongIndexContainer}/>
             <ProtectedRoute path="/collection/playlists" component={PlaylistIndexContainer}/>
+            
           </Switch>
 
         </div>
