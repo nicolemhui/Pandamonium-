@@ -33,9 +33,9 @@ class SongIndexItem extends React.Component {
         <SongDetailViewContainer song={song} />
         
         <button className="add-playlist-btn" 
-        value="•••"
+        // value="•••"
         onClick={this.handleClick}
-        />
+        > ADD </button>
       </li>
     )
   }
