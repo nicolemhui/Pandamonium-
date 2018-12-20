@@ -12,17 +12,18 @@ class Api::PlaylistsSongsController < ApplicationController
   end 
 
   def destroy 
-    @playlist_song = PlaylistSong.find_by(params[:id])
+    # debugger
+    @playlist_song = PlaylistSong.find_by(playlist_id: params[:playlist_id], song_id: params[:song_id])
     # delete from current playlist 
     @playlist_song.delete 
     #return to playlist show page 
-    render 'api/playlists/show'
+    render 'api/playlist_songs/show'
   end 
 
   private 
 
+  # QUESTION - why does params not have both playlist_id and song_id?? nested route
   # def playlist_params
-  #   debugger
   #   params.require(:playlist_song).permit(:playlist_id, :song_id)
   # end 
 

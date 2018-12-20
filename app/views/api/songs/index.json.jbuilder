@@ -4,6 +4,7 @@ json.songs do
   end 
 end 
 
+json.albums ({})
 json.albums do 
   @songs.each do |song|
     album = song.album

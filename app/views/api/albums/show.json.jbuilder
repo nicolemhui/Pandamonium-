@@ -9,6 +9,7 @@ json.artists do
   end 
 end 
 
+json.songs ({})
 json.songs do 
   songs = @album.songs
   songs.each do |song|

@@ -8,18 +8,21 @@ json.playlistSongs do
   end 
 end 
 
+json.songs ({})
 json.songs do |song|
   @playlist.songs.each do |song|
     json.partial! 'api/songs/song', song: song
   end 
 end 
 
+json.albums ({})
 json.albums do 
   @playlist.songs.each do |song|
     json.partial! 'api/albums/album', album: song.album
   end 
 end 
 
+json.artists ({})
 json.artists do 
   @playlist.songs.each do |song|
     song.artists.each do |artist|
