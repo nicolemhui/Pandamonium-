@@ -94,15 +94,18 @@
 .album-item-info:hover {
   .album-img {
     opacity: 0.5;
-    filter: alpha(opacity=40);
+    filter: alpha(opacity=80);
     cursor: pointer;
   }
 
-  // .album-play-btn {
-  //   display: block;
-  //   // padding: 35%;
-  //   color: white;
-  // }
+  .album-play-btn {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    // display: block;
+    // padding: 35%;
+    color: white;
+  }
 }
 
 .album-title {

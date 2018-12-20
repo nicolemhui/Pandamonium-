@@ -27,17 +27,11 @@ class ArtistShow extends React.Component {
       );
     });
 
-    if (artistAlbums.length > 1) {
-      artistAlbums = artistAlbums.map(album => {
-        return (
-          <AlbumIndexItem key={album.id} album={album} />
-          );
-        });
-    } else {
-      artistAlbums = "";
-    }
-
-
+    artistAlbums = artistAlbums.map(album => {
+      return (
+        <AlbumIndexItem key={album.id} album={album} />
+        );
+      });
 
     return (
       <div className="artist-main-container">
@@ -59,7 +53,9 @@ class ArtistShow extends React.Component {
               {artistSongs}
             </ul>
           </div>
+          <br/>
           <div className="artist-album-container">
+            <h2>Albums</h2>
             <div className="album-grid">
               {artistAlbums}
             </div>

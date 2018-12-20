@@ -126,22 +126,27 @@
 }
 
 .artist-content-container {
-  background-color: cornflowerblue;
   display: flex;
+  flex-direction: column;
   margin-left: 230px;
-  margin-bottom: 100px;
-  // height: 100%;
+  padding-bottom: 200px;
   
-  .artist-song-container {
-    h2 {
-      color: white;
-      font-size: 36px;
-      margin: 0px 0px 0px 40px
-    }
+  h2 {
+    color: white;
+    font-size: 36px;
+    margin: 0px 0px 0px 40px
+  }
 
+  .artist-song-container {
     .song-list {
       margin-top: 0;
     }
+  }
+
+  .artist-album-container {
+    .album-grid {
+       margin-top: -50px;
+     }
   }
 }
 
