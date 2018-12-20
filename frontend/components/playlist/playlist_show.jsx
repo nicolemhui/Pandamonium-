@@ -26,15 +26,21 @@ class PlaylistShow extends React.Component {
     let { playlistSongs } = this.props;
     if (!playlist || !playlistSongs) return null;
     
-
     playlistSongs = playlistSongs.map( song => {
-      return (
-        <SongIndexItem
-        key={song.id}
-        song={song}
-        />
-        );
-      });
+      if (song) {
+        return (
+          <SongIndexItem
+          key={song.id}
+          song={song}
+          deletePlaylistSong={this.props.deletePlaylistSong}
+          playlist={playlist}
+          />
+          );
+      } else {
+        return null;
+      }
+    });
+    
     
     
     return (

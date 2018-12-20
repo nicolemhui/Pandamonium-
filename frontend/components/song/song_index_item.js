@@ -6,6 +6,7 @@ class SongIndexItem extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleClick(e) {
@@ -13,9 +14,25 @@ class SongIndexItem extends React.Component {
     this.props.openModal("add_song_to_playlist", this.props.song.id);
   }
 
+  // FIX ME !
+  // ONLY IF THIS IS ON PLAYLIST PAGE 
+  handleDelete() {
+    const playlist = this.props.playlist;
+    this.props.deletePlaylistSong(playlist.id, this.props.song.id)
+  }
+
   render() {
     const { song } = this.props;
     if (!song) return null;
+
+    // put some logic here to determine if songs is on the playlist page, if so then have PLAY, DELETE buttons 
+    //if songs is on songs page, have ADD and PLAY buttons
+    //if songs is on albums page, have ADD and PLAY buttons
+
+    // <div> 
+    //   case switch statement  --- reference modal 
+    //   switch(type)
+    // </div>
 
     return (
 
@@ -38,6 +55,7 @@ class SongIndexItem extends React.Component {
         > ADD </button>
 
         <button className="add-playlist-btn"> PLAY </button>
+        <button className="add-playlist-btn" onClick={this.handleDelete}> DELETE </button>
       </li>
     )
   }

@@ -11,7 +11,7 @@ const songsReducer = (state = {}, action) => {
     case RECEIVE_PLAYLIST:
     case RECEIVE_ALBUM:
     case RECEIVE_ARTIST:
-      if (action.payload.songs === undefined) return null;
+      // if (action.payload.songs === undefined) return null;
       return action.payload.songs;
       // return merge({}, state, action.payload.songs);
     case RECEIVE_SONG:

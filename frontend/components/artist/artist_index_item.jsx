@@ -13,7 +13,7 @@ class ArtistIndexItem extends React.Component {
     return (
       <div className="album-grid-item">
         <div className="album-item-info">
-          <div className="album-img"><img src={artist.photoUrl}></img></div>
+          <div className="album-img"><Link to={`/artists/${artist.id}`}><img src={artist.photoUrl}></img></Link></div>
           <div className="album-play-btn">
             <i className="fas fa-play"></i>
           </div>
