@@ -10,6 +10,8 @@ import AlbumIndexContainer from './album/album_index_container';
 import ArtistIndexContainer from './artist/artist_index_container';
 import Main from './main';
 import PlaylistShowContainer from './playlist/playlist_show_container';
+import AlbumShowContainer from './album/album_show_container';
+import ArtistShowContainer from './artist/artist_show_container';
 import SideNavContainer from './side_nav/side_nav_container';
 import FeaturedContainer from './browse/featured_container';
 import CollectionContainer from './collection/collection_container';
@@ -30,6 +32,8 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/collection/playlists/:playlistId" component={PlaylistShowContainer} />
+      <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
+      <ProtectedRoute path="/artists/:artistId" component={ArtistShowContainer} />
       <ProtectedRoute path="/browse" component={FeaturedContainer} />
       <ProtectedRoute path="/collection" component={CollectionContainer} />
       <AuthRoute path="/" component={SplashContainer} />

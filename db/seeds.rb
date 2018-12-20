@@ -22,42 +22,52 @@ nikki = User.create!(username: "nikki", email: "nikki@email.com", password: "pas
 
 #Aritsts
 daft_punk = Artist.create!(name: "Daft Punk")
-dp_artist_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
-daft_punk.photo.attach({io: dp_artist_photo, filename: 'dp_discovery.png'})
-
+dp_artist_photo = File.open("app/assets/images/daft_punk_artist_pic.jpg")
+daft_punk.photo.attach(io: dp_artist_photo, filename: 'daft_punk_artist.jpg')
 
 linkin_park = Artist.create(name: "Linkin Park")
+lp_artist_photo = File.open("app/assets/images/linkin_park_group.jpg")
+linkin_park.photo.attach(io: lp_artist_photo, filename: 'linkin_park_artist.jpg')
+
 jay_z = Artist.create(name: "Jay-Z")
 odesza = Artist.create(name: "Odesza")
 
 
 #Albums
 dp_discovery = Album.create!(title: "Discovery", year: 2001)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
-dp_discovery.cover_photo.attach({io: dp_discovery_photo, filename: 'dp_discovery.png'})
+dp_discovery_photo = File.open("app/assets/images/daft_punk_discovery.png")
+dp_discovery.cover_photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 
 dp_ram = Album.create(title: "Random Access Memories", year: 2013)
+dp_discovery_photo = File.open("app/assets/images/daft_punk_discovery.png")
+dp_ram.cover_photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
+
 lp_hybrid_theory = Album.create(title: "Hybrid Theory", year: 2000)
+dp_discovery_photo = File.open("app/assets/images/daft_punk_discovery.png")
+lp_hybrid_theory.cover_photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
+
 od_a_moment_apart = Album.create(title: "A Moment Apart", year: 2017)
+dp_discovery_photo = File.open("app/assets/images/daft_punk_discovery.png")
+od_a_moment_apart.cover_photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 
 #Daft Punk - Discovery Songs
 dp_aerodynamic = Song.create(title: "Aerodynamic", album_id: dp_discovery.id)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
+# dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
 # dp_aerodynamic.photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 dp_superheroes = Song.create(title: "Superheroes", album_id: dp_discovery.id)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
+# dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
 # dp_superheroes.photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 dp_one_more_time = Song.create(title: "One More Time", album_id: dp_discovery.id)
-dp_discovery_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
+# dp_discovery_photo = EzDownload.ospen("https://s3-us-west-1.amazonaws.com/pandamonium-dev/daft_punk_discovery.png")
 # dp_one_more_time.photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
 
 
 #Linkin Park / Jay Z Songs 
-lp_in_the_end = Song.create(title: "In The End", album_id: dp_ram.id)
+lp_in_the_end = Song.create(title: "In The End", album_id: lp_hybrid_theory.id)
 jz_numb_encore = Song.create!(title: "Numb/Encore")
 
 

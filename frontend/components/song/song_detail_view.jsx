@@ -5,22 +5,27 @@ class SongDetailView extends React.Component {
   
   
   render() {
-    const { song } = this.props;
-    let artists = this.props.artists;
-    if (!artists) return null;
+    const { song, artists, albums } = this.props;
 
+    // console.log(song, albums, artists);
+    
+    if (!artists || !song || !albums) return null;
+    
     //FIX ME!
     // how to get artist id??
-    artists = artists.map(artist => 
-      <NavLink to={`/collection/artists/{artistId}`}
+    const songArtists = artists.map(artist => {
+    
+      return (
+        <NavLink to={`/collection/artists/${artist.id}`}
         className="artist-text"
         key={artist.id}>
         {artist.name}
       </NavLink>
+      )}
     );
 
-    const albums = this.props.albums.map(album => 
-      <NavLink to={`/collection/artists/{artistId}`}
+    const songAlbums = albums.map(album => 
+      <NavLink to={`/collection/albums/${album.id}`}
         className="album-text"
         key={album.id}>
         {album.title}
@@ -29,15 +34,15 @@ class SongDetailView extends React.Component {
 
     let songInfoText;
 
-    if (albums.length === 0) {
+    if (songAlbums.length === 0) {
       songInfoText = <div className="song-artists-links">
-      {artists}
+      {songArtists}
       </div>
     } else {
       songInfoText = <div>
-        {artists}
+        {songArtists}
         •
-        {albums}
+        {songAlbums}
       </div>;
     }
 
@@ -48,11 +53,7 @@ class SongDetailView extends React.Component {
 
         <div className="song-info">
           <div className="song-other-info">
-            {/* FIX ME  */}
             {songInfoText}
-            {/* { (!albums) ? "" : albums }
-            •
-            {artists} */}
           </div>
         </div>
       </div>

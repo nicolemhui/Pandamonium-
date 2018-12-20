@@ -71,11 +71,14 @@
   height: 200px;
   background-color: gray;
   
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
   .album-img {
-    height: 100%;
-    width: 100%;
-    // width: 200px;
-    // height: 200px;
+    // height: 100%;
+    // width: 100%;
   }
 
   .album-play-btn {
@@ -91,12 +94,16 @@
 .album-item-info:hover {
   .album-img {
     opacity: 0.5;
-    filter: alpha(opacity=40);
+    filter: alpha(opacity=80);
+    cursor: pointer;
   }
 
   .album-play-btn {
-    display: block;
-    color: white;
+    // position: absolute;
+    // top: 0; 
+    // left: 0;
+    // display: block;
+    // color: white;
   }
 }
 

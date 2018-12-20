@@ -23,6 +23,7 @@ class SongIndex extends React.Component {
         <SongIndexItem
           key={song.id}
           song={song}
+          openModal={this.props.openModal}
         />
       )
     });

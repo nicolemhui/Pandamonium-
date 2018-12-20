@@ -1,6 +1,7 @@
 import SongIndex from './song_index';
 import { connect } from 'react-redux';
 import { fetchSongs } from '../../actions/song_actions';
+import { openModal } from'../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   const songs = state.entities.songs;
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchSongs: () => dispatch(fetchSongs()),
+  openModal: (modal, songId) => dispatch(openModal(modal, songId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongIndex);

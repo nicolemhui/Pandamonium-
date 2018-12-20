@@ -24,8 +24,8 @@ class ArtistIndex extends React.Component {
     });
 
     return (
-      <div className="artists-main">
-        <div className="artist-grid">
+      <div className="album-item-container">
+        <div className="album-grid">
           {artists}
         </div>
       </div>
@@ -34,3 +34,9 @@ class ArtistIndex extends React.Component {
 }
 
 export default ArtistIndex;
+
+// <div className="artists-main">
+//   <div className="artist-grid">
+//     {artists}
+//   </div>
+// </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../actions/modal_actions';
 import PlaylistFormContainer from './playlist/playlist_form_container';
+import SongToPlaylistFormContainer from './playlist_song/song_to_playlist_form_container';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -15,19 +16,17 @@ class Modal extends React.Component {
       return null;
     }
 
-
     let component;
     switch (modal) {
       case 'create_new_playlist':
         component = <PlaylistFormContainer />;
         break;
-      // FIX ME!  --  add modal for adding songs to playlists
-      // case ''
-        // component = 
+      case 'add_song_to_playlist':
+        component = <SongToPlaylistFormContainer />;
+        break;
       default:
         return null;
     }
-
 
     return (
       <div className="modal-background" onClick={closeModal}>
@@ -41,13 +40,13 @@ class Modal extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal.modalType,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
   };
 };
 
