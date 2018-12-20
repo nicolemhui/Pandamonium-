@@ -35,6 +35,7 @@ class ArtistShow extends React.Component {
 
     return (
       <div className="artist-main-container">
+        <img src={artist.photoUrl}></img>
         <header className="artist-cover">
           <div className="artist-info">
             <h1>{artist.name}</h1>

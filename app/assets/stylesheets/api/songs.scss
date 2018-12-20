@@ -52,6 +52,20 @@
     display: none;
   }
 
+  .add-playlist-btn {
+    color: white;
+    background-color: #1DB954;
+    height: 35px;
+    width: px;
+    font-size: 12px;
+    border-radius: 200px;
+    letter-spacing: .03em;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .3s;
+    border: transparent;
+  }
 }
 .songlist-row:hover {
   background-color: rgba(18, 29, 56, 0.6);

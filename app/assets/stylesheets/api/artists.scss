@@ -79,11 +79,18 @@
 //Artist show page 
 .artist-main-container {
   background-color: #181818;
+  
+  img {
+    position: absolute;
+     width: 100%;
+     opacity: 0.5;
+     filter: alpha(opacity=50);
+     repeat: no-repeat;
+   }
 }
 
+
 .artist-cover {
-  background-color: lightblue;
-  background-image: url('../../images/daft_punk_artist_pic.jpg');
   width: 100%;
   height: 350px;
   display: flex;

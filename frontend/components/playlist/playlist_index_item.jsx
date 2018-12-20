@@ -6,6 +6,11 @@ class PlaylistIndexItem extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  handleClick() {
+    
+  }
+
   render() {
     const playlist = this.props.playlist;
 
