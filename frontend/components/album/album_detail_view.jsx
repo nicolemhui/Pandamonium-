@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom';
 class SongDetailView extends React.Component {
 
   render() {
-
     const { album } = this.props;
 
     const artists = this.props.artists.map(artist =>
@@ -15,16 +14,15 @@ class SongDetailView extends React.Component {
       </li>
     );
 
-    // debugger 
     return (
       <div className="album-item-info">
-        <div className="album-img">IMAGE HERE <img src={album.coverPhotoUrl}></img></div>
+        <div className="album-img"><img src={album.coverPhotoUrl}></img></div>
         <div className="album-play-btn">
           <i className="fas fa-play"></i>
         </div>
 
         <h1 className="album-title">
-          <Link to={`albums/${album.id}`} className="playlist-name">{album.title}</Link>
+          <Link to={`/albums/${album.id}`} className="playlist-name">{album.title}</Link>
         </h1>
         
         {artists}
