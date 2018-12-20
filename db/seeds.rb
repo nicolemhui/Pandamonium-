@@ -299,7 +299,7 @@ odesza_song_5 = ArtistSong.create(artist_id: odesza.id, song_id: od_sun_models.i
 odesza_song_6 = ArtistSong.create(artist_id: odesza.id, song_id: od_light.id, ord: 1)
 odesza_song_7 = ArtistSong.create(artist_id: odesza.id, song_id: od_line_of_sight.id, ord: 1)
 
-odesza_album_1 = ArtistAlbum.create(artist_id: odesza.id, album_id: odesza_in_return.id)
+odesza_album_1 = ArtistAlbum.create(artist_id: odesza.id, album_id: od_in_return.id)
 
 
 
@@ -326,8 +326,8 @@ playlist7 = Playlist.create(name: "Carefree weeeeee", creator_id: nikki.id, publ
 
 
 #PlaylistSongs 
-playlist1_song_1 = PlaylistSong.create(playlist_id: playlist1.id, song_id: od_across_the_room.id)
-playlist1_song_2 = PlaylistSong.create(playlist_id: playlist1.id, song_id: od_falls.id)
+playlist1_song_1 = PlaylistSong.create(playlist_id: playlist1.id, song_id: od_say_my_name.id)
+playlist1_song_2 = PlaylistSong.create(playlist_id: playlist1.id, song_id: od_line_of_sight.id)
 playlist1_song_3 = PlaylistSong.create(playlist_id: playlist1.id, song_id: ty_dive.id)
 playlist1_song_4 = PlaylistSong.create(playlist_id: playlist1.id, song_id: ty_melanine.id)
 playlist1_song_5 = PlaylistSong.create(playlist_id: playlist4.id, song_id: pr_shelter.id)
