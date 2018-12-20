@@ -21,7 +21,6 @@ export const createPlaylistSong = (playlistId, songId) => dispatch => (
 export const deletePlaylistSong = (playlistId, songId) => dispatch => (
   PlaylistSongUtil.deletePlaylistSong(playlistId, songId)
     .then( playlistSong => { 
-      debugger;
       dispatch(removePlaylistSong(playlistSong))
     })
 );

@@ -30,10 +30,12 @@ class PlaylistShow extends React.Component {
       if (song) {
         return (
           <SongIndexItem
+          type={"playlist_show"}
           key={song.id}
           song={song}
           deletePlaylistSong={this.props.deletePlaylistSong}
           playlist={playlist}
+          // playlistSongs={}
           />
           );
       } else {

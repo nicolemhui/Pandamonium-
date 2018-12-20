@@ -7,6 +7,7 @@ class SongIndexItem extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.playSong = this.playSong.bind(this);
   }
 
   handleClick(e) {
@@ -19,6 +20,10 @@ class SongIndexItem extends React.Component {
   handleDelete() {
     const playlist = this.props.playlist;
     this.props.deletePlaylistSong(playlist.id, this.props.song.id)
+  }
+
+  playSong() {
+
   }
 
   render() {
@@ -54,7 +59,7 @@ class SongIndexItem extends React.Component {
         onClick={this.handleClick}
         > ADD </button>
 
-        <button className="add-playlist-btn"> PLAY </button>
+        <button className="add-playlist-btn" onClick={this.playSong}> PLAY </button>
         <button className="add-playlist-btn" onClick={this.handleDelete}> DELETE </button>
       </li>
     )
