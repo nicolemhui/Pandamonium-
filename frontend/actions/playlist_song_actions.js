@@ -9,7 +9,7 @@ export const receivePlaylistSong = (playlistSong) => ({
 
 export const removePlaylistSong = (playlistSong) => ({
   type: REMOVE_PLAYLIST_SONG,
-  playlistSongId: playlistSong.id
+  playlistSong
 });
 
 //thunk creators
@@ -18,7 +18,9 @@ export const createPlaylistSong = (playlistId, songId) => dispatch => (
     .then( playlistSong => dispatch(receivePlaylistSong(playlistSong)))
 );
 
-export const deletePlaylistSong = (id) => dispatch => (
-  PlaylistSongUtil.deletePlaylistSong(id)
-    .then( playlistSong => dispatch(removePlaylistSong(playlistSong)))
+export const deletePlaylistSong = (playlistId, songId) => dispatch => (
+  PlaylistSongUtil.deletePlaylistSong(playlistId, songId)
+    .then( playlistSong => { 
+      dispatch(removePlaylistSong(playlistSong))
+    })
 );

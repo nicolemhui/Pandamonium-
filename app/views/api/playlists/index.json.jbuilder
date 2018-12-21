@@ -4,6 +4,7 @@ json.playlists do
   end 
 end 
 
+json.songs ({})
 json.songs do 
   @playlists.each do |playlist|
     playlist.songs.each do |song|
@@ -12,20 +13,13 @@ json.songs do
   end 
 end 
 
+json.artists ({})
 json.artists do 
   @playlists.each do |playlist|
     playlist.songs.each do |song|
       song.artists.each do |artist|
         json.partial! 'api/artists/artist', artist: artist 
       end 
-    end 
-  end 
-end 
-
-json.playlistSongs do 
-  @playlists.each do |playlist|
-    playlist.playlist_songs.each do |playlist_song|
-      json.partial! 'api/playlist_songs/playlist_song', playlist_song: playlist_song
     end 
   end 
 end 

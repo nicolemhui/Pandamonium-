@@ -34,6 +34,7 @@ export const selectArtistAlbums = (state, artistId) => {
 
 // return songs belonging to specific album through song.album_id
 export const selectAlbumSongs = (state, albumId) => {
+  
   return Object.values(state.entities.songs)
     .filter(song => song.album_id === albumId)
     // .map(artistAlbum => state.entities.albums[artistAlbum.album_id])

@@ -1,5 +1,5 @@
 import React from 'react';
-import SongIndexItem from '../song/song_index_item';
+import SongIndexItemContainer from '../song/song_index_item_container';
 import { Link } from 'react-router-dom';
 
 class AlbumShow extends React.Component {
@@ -14,19 +14,13 @@ class AlbumShow extends React.Component {
 
   render() {
     let { album, albumArtists, albumSongs } = this.props;
-
-    // console.log(album, albumArtists, albumSongs);
-
     if (!album || !albumArtists || !albumSongs) return null;
-
-    
 
     albumSongs = albumSongs.map(song => {
       return (
-        <SongIndexItem
+        <SongIndexItemContainer
           key={song.id}
-          song={song}
-        />
+          song={song} />
       );
     });
 

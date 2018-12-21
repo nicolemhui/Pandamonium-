@@ -1,5 +1,5 @@
 import React from 'react';
-import SongIndexItem from './song_index_item';
+import SongIndexItemContainer from './song_index_item_container';
 import { fetchSongs } from '../../actions/song_actions';
 
 class SongIndex extends React.Component {
@@ -14,21 +14,22 @@ class SongIndex extends React.Component {
     // .then(() => this.setState({ songs: this.props.songs }))
   }
 
+  handlePlay() {
+    this.props.receiveCurrentSong(song);
+  }
+  
   render() {
     let songs = this.props.songs;
     if (!songs) return null;
     
     songs = this.props.songs.map( song => {
       return (
-        <SongIndexItem
+        <SongIndexItemContainer
           key={song.id}
           song={song}
-          openModal={this.props.openModal}
         />
       )
-    });
-    
-    
+    });  
     
     return (
       <div className="song-item-container">
