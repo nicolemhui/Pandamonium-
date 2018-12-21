@@ -322,7 +322,7 @@ playlist2 = Playlist.create(name: "Workout", creator_id: demoUser.id, public: tr
 playlist2.photo.attach(io: File.open("app/assets/images/hello_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist3 = Playlist.create(name: "Study", creator_id: demoUser.id, public: false)
-playlist3.photo.attach(io: File.open("app/assets/images/unicorn_panda.jpg"), filename: 'playlist1_photo.jpg')
+playlist3.photo.attach(io: File.open("app/assets/images/unicorn_panda.jpgg"), filename: 'playlist1_photo.jpg')
 
 playlist4 = Playlist.create(name: "Jammin ~", creator_id: demoUser.id, public: false)
 playlist4.photo.attach(io: File.open("app/assets/images/new_playlist.png"), filename: 'playlist1_photo.jpg')

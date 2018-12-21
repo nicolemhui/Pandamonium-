@@ -17,18 +17,22 @@ class ArtistShow extends React.Component {
     let { artist, artistAlbums, artistSongs } = this.props;
     if (!artist || !artistAlbums || !artistSongs) return null;
 
+    console.warn(artistSongs);
 
     artistSongs = artistSongs.map(song => {
-      if (song) {
+      // if (song === undefined) {
+      //   debugger 
+      // }
+      // if (song) {
         return (
           <SongIndexItem
           key={song.id}
           song={song}
           />
           );
-      } else {
-        return null;
-      }
+      // } else {
+      //   return null;
+      // }
     });
 
     artistAlbums = artistAlbums.map(album => {

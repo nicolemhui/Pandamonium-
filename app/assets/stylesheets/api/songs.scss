@@ -121,3 +121,48 @@
     text-decoration: underline;
   }
 }
+
+.drop-down-container {
+  width: 200px;
+  height: 200px;
+}
+
+
+.song-options-container {
+  margin-top: 20px;
+  margin-right: 100px;
+  
+  .song-option-btn {
+    // font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+  }
+  
+  .song-option-btn:hover {
+    transition: .3s;
+  }
+
+
+  .song-options-dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    
+    .option {
+      color: white;
+      text-align: left;
+      font-size: 14px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border: none;
+    }
+  }
+}
+
+ .song-option-btn:active {
+    outline: none;
+    border: none;
+  }
