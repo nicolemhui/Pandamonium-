@@ -1,3 +1,4 @@
+// OLD CODE
 import React from 'react';
 import SongDetailViewContainer from './song_detail_view_container';
 
@@ -38,25 +39,29 @@ class SongIndexItem extends React.Component {
     return (
 
       <li className="songlist-row">
-        <div className="song-icon-display">
-          <div className="song-music-btn">
-            <i className="fas fa-music" />
-          </div>
+        <div className="left-song-details">
+          <div className="song-icon-display">
+            <div className="song-music-btn">
+              <i className="fas fa-music" />
+            </div>
 
-          <div className="song-play-btn">
-            <i className="fas fa-play" />
+            <div className="song-play-btn">
+              <i className="fas fa-play" />
+            </div>
           </div>
+          
+          <SongDetailViewContainer song={song} />
         </div>
         
-        <SongDetailViewContainer song={song} />
-        
-        <button className="add-playlist-btn" 
-        // value="•••"
-        onClick={this.handleClick}
-        > ADD </button>
+        <div className="song-option-btns">
+          <button className="add-playlist-btn" 
+          // value="•••"
+          onClick={this.handleClick}
+          > ADD </button>
 
-        <button className="add-playlist-btn" onClick={() => this.props.setCurrentSong(song)}> PLAY </button>
-        <button className="add-playlist-btn" onClick={this.handleDelete}> DELETE </button>
+          <button className="add-playlist-btn" onClick={() => this.props.setCurrentSong(song)}> PLAY </button>
+          <button className="add-playlist-btn" onClick={this.handleDelete}> DELETE </button>
+        </div>
       </li>
     )
   }
@@ -64,13 +69,10 @@ class SongIndexItem extends React.Component {
 
 export default SongIndexItem;
 
-//can props be passed down like this?
 
 
 
-
-
-// //NEW EDIT 
+// //NEW EDIT  -- TEST THIS ONE !
 // import React from 'react';
 // import SongDetailViewContainer from './song_detail_view_container';
 

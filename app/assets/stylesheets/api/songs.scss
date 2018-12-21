@@ -27,14 +27,18 @@
     transition: .3s;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     height: 60px;
+
+    .left-song-detail {
+      display: flex;
+      justify-content: row;
+    }
   }
 
   .song-icon-display {
     float: left;
     width: 50px;
-    justify-content: center;
-    align-content: center;
   }
 
   i {
@@ -84,6 +88,7 @@
 
 .song-item-info {
   text-align: left;
+  float: right;
 
   h3 {
     color: white;

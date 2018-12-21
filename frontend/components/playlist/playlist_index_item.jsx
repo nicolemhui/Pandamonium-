@@ -32,8 +32,9 @@ class PlaylistIndexItem extends React.Component {
 
     let linkAction = (
       <Link to={`playlists/${playlist.id}`} className="playlist-name" onClick={click}>
-        <div className="playlist-item-info">
-          <div className="playlist-play-btn">
+        <div className="album-item-info">
+          <div className="album-img"><img src={playlist.photo_url}></img></div>
+          <div className="album-play-btn">
             <i className="fas fa-play"></i>
           </div>
         </div>
@@ -42,7 +43,8 @@ class PlaylistIndexItem extends React.Component {
     );
 
     return (
-      <div className="playlist-grid-item">
+      <div className="album-grid-item">
+          
           {linkAction}
       </div>
   

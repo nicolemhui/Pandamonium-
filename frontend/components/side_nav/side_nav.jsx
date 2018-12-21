@@ -17,7 +17,7 @@ class SideNav extends React.Component {
     return (
       <aside className="sidenav">
         <div className="sidenav-header-logo">
-          <NavLink to="/browse/featured" className="links-detail">
+          <NavLink to="/collection/playlists" className="links-detail">
             <i className="fab fa-spotify"></i>
             <h3 className="header-logo">Pandamonium</h3>
           </NavLink>
