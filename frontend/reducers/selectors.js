@@ -9,7 +9,9 @@ export const selectSongArtists = (state, songId) => {
 export const selectArtistSongs = (state, artistId) => {
   return Object.values(state.entities.artistSongs)
     .filter(artistSong => artistSong.artist_id === artistId)
-    .map(artistSong => state.entities.songs[artistSong.song_id])
+    .map(artistSong => {
+
+      return state.entities.songs[artistSong.song_id] });
 };
 
 //return selected album from artist id
