@@ -34,8 +34,8 @@ const App = () => (
       <ProtectedRoute path="/collection/playlists/:playlistId" component={PlaylistShowContainer} />
       <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
       <ProtectedRoute path="/artists/:artistId" component={ArtistShowContainer} />
-      <ProtectedRoute path="/browse" component={FeaturedContainer} />
       <ProtectedRoute path="/collection" component={CollectionContainer} />
+      <ProtectedRoute path="/browse" component={FeaturedContainer} />
       <AuthRoute path="/" component={SplashContainer} />
     </Switch>
 

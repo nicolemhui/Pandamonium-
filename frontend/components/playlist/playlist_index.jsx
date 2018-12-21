@@ -28,9 +28,9 @@ class PlaylistIndex extends React.Component {
     });
 
     return (
-      <div className="playlists-index-container">
-        <div className="playlist-grid">
-          {playlists}
+      <div className="album-item-container">
+        <div className="album-grid">
+            {playlists}
         </div>
       </div>
     )

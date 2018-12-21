@@ -19,12 +19,16 @@ class ArtistShow extends React.Component {
 
 
     artistSongs = artistSongs.map(song => {
-      return (
-        <SongIndexItem
+      if (song) {
+        return (
+          <SongIndexItem
           key={song.id}
           song={song}
-        />
-      );
+          />
+          );
+      } else {
+        return null;
+      }
     });
 
     artistAlbums = artistAlbums.map(album => {
@@ -35,7 +39,7 @@ class ArtistShow extends React.Component {
 
     return (
       <div className="artist-main-container">
-        <img src={artist.photoUrl}></img>
+       <div><img src={artist.photoUrl} className="artist-cover-photo"></img></div> 
         <header className="artist-cover">
           <div className="artist-info">
             <h1>{artist.name}</h1>
@@ -50,15 +54,19 @@ class ArtistShow extends React.Component {
         <div className="artist-content-container">
           <div className="artist-song-container">
             <h2>Songs</h2>
-            <ul className="song-list">
-              {artistSongs}
-            </ul>
+            <div className="song-item-container">
+              <ul className="song-list">
+                {artistSongs}
+              </ul>
+            </div>
           </div>
           <br/>
           <div className="artist-album-container">
             <h2>Albums</h2>
-            <div className="album-grid">
+            <div className="album-item-container">
+              <div className="album-grid">
               {artistAlbums}
+              </div>
             </div>
           </div>
         </div>

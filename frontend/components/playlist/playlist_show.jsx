@@ -55,12 +55,12 @@ class PlaylistShow extends React.Component {
         <div className="playlist-content-container">
           <div className="playlist-info">
     
-            <div className="playlist-cover">PLAYLIST IMAGE</div>
+            <div className="playlist-cover"><img src={playlist.photo_url} className="cover-photo"></img></div>
     
             <div className="playlist-info-text">
               <h3>{playlist.name}</h3>
               
-              <h5>User Name</h5>
+              {/* <h5>User Name</h5> */}
             </div>
             <button 
               className="delete-playlist-btn"
@@ -68,7 +68,7 @@ class PlaylistShow extends React.Component {
               DELETE
             </button>
           </div>
-
+          <br/>
           <div className="playlist-song-container">
             <ul className="song-list">
               {playlistSongs}
