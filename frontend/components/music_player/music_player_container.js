@@ -1,7 +1,6 @@
-import React from 'react';
 import MusicPlayer from './music_player';
 import { connect } from 'react-redux';
-import { setCurrentSong } from '../../actions/music_player_actions';
+import { setCurrentSong, toggleSong } from '../../actions/music_player_actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +10,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentSong: (song) => dispatch(setCurrentSong(song))
+  setCurrentSong: (song) => dispatch(setCurrentSong(song)),
+  toggleSong: () => dispatch(toggleSong()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MusicPlayer);

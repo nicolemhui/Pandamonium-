@@ -17,8 +17,9 @@ class MusicPlayer extends React.Component {
       const audio = document.getElementById('audio')
       audio.currentTime = 0;
       
-      this.props.isPlaying ? audio.play() : audio.pause();
-      // this.props.isPlaying ? audio.pause() : audio.play();
+      // this.props.isPlaying ? audio.play() : audio.pause();
+      this.props.isPlaying ? audio.pause() : audio.play();
+      this.props.toggleSong();
     }
   }
 
@@ -26,7 +27,7 @@ class MusicPlayer extends React.Component {
     let { currentSong } = this.props;
 
     let playPauseIcon;
-    if (this.props.isPlaying === false) { 
+    if (this.props.isPlaying === true) { 
       playPauseIcon = <i className="far fa-pause-circle" onClick={this.togglePlay}></i>
     } else {
       playPauseIcon = <i className="fa fa-play-circle" onClick={this.togglePlay}></i>
@@ -51,7 +52,7 @@ class MusicPlayer extends React.Component {
 
             <div>
               {/* FIX ME */}
-              <audio id="audio" src={currentSong.audio_url}></audio>
+              <audio id="audio" src={currentSong.audio_url} autoPlay></audio>
             </div>
           </div>
 
