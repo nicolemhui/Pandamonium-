@@ -14,6 +14,10 @@ class SongIndex extends React.Component {
     // .then(() => this.setState({ songs: this.props.songs }))
   }
 
+  handlePlay() {
+    this.props.receiveCurrentSong(song);
+  }
+  
   render() {
     let songs = this.props.songs;
     if (!songs) return null;
@@ -26,9 +30,7 @@ class SongIndex extends React.Component {
           openModal={this.props.openModal}
         />
       )
-    });
-    
-    
+    });  
     
     return (
       <div className="song-item-container">

@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { setCurrentSong } from '../../actions/music_player_actions';
 
 const mapStateToProps = state => {
-  debugger
   return {
-    currentSong: state.entities.ui.musicPlayer.currentSong,
+    currentSong: state.ui.musicPlayer.currentSong,
+    isPlaying: state.ui.musicPlayer.isPlaying,
   }
 };
 

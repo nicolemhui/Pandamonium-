@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
   return {
     //FIX ME
-    currentSong: state.entities.ui.musicPlayer.currentSong
+    currentSong: state.ui.musicPlayer.currentSong
   }
 };
 

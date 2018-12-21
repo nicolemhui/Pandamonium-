@@ -3,6 +3,8 @@ import React from 'react';
 class MusicPlayer extends React.Component {
   constructor(props) {
     super(props);
+
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
   // FIX ME - need to handle change to value
@@ -10,16 +12,26 @@ class MusicPlayer extends React.Component {
     return e => e.target.value
   }
 
-  playSong() {
+  togglePlay() {
     if (this.props.currentSong) {
-      // this.props.currentSong.songUrl
-      const track = document.getElementById('audio')
-      track.play();
+      const audio = document.getElementById('audio')
+      audio.currentTime = 0;
+      
+      this.props.isPlaying ? audio.play() : audio.pause();
+      // this.props.isPlaying ? audio.pause() : audio.play();
     }
   }
 
   render() {
     let { currentSong } = this.props;
+
+    let playPauseIcon;
+    if (this.props.isPlaying === false) { 
+      playPauseIcon = <i className="far fa-pause-circle" onClick={this.togglePlay}></i>
+    } else {
+      playPauseIcon = <i className="fa fa-play-circle" onClick={this.togglePlay}></i>
+    }
+      
 
     return (
       <div className="music-player-container">
@@ -32,15 +44,14 @@ class MusicPlayer extends React.Component {
             <div className="controls-player">
               <i className="fa fa-random"></i>
               <i className="fa fa-step-backward"></i>
-              {/* <i className="fa fa-play-circle"></i> */}
-              <i className="fa fa-play-circle" onClick={this.playSong}></i>
+              {playPauseIcon} 
               <i className="fa fa-step-forward"></i>
               <i className="fa fa-redo-alt"></i>
             </div>
 
             <div>
               {/* FIX ME */}
-              <audio id="audio" ref="" src={currentSong.songUrl}/>
+              <audio id="audio" src={currentSong.audio_url}></audio>
             </div>
           </div>
 

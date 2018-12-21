@@ -18,6 +18,7 @@ export default function musicPlayerReducer(state = initialState, action) {
     case RECEIVE_CURRENT_SONG:
       let newState = merge({}, state);
       newState.currentSong = action.song;
+      newState.isPlaying = true;
       return newState;
     default:
       return state;
