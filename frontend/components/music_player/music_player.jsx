@@ -3,8 +3,10 @@ import React from 'react';
 class MusicPlayer extends React.Component {
   constructor(props) {
     super(props);
+    this.audio = document.getElementById('audio');
 
     this.togglePlay = this.togglePlay.bind(this);
+    this.handleSound = this.handleSound.bind(this);
   }
 
   // FIX ME - need to handle change to value
@@ -14,12 +16,31 @@ class MusicPlayer extends React.Component {
 
   togglePlay() {
     if (this.props.currentSong) {
-      const audio = document.getElementById('audio')
-      audio.currentTime = 0;
+      // audio.currentTime = 0;
       
       // this.props.isPlaying ? audio.play() : audio.pause();
       this.props.isPlaying ? audio.pause() : audio.play();
       this.props.toggleSong();
+    }
+  }
+
+  handleSound() {
+    audio.muted = (this.props.isPlaying && (audio.muted === false)) ? true : false;
+  }
+
+  handleVolume() {
+    const volumeSlider = document.getElementById("volume-slider");
+    volumeSlider.addEventListener("mousemove", () => { audio.volume = volumeSlider.value / 100; });
+  }
+  
+
+
+  testtest(e) {
+    var value = rangeInput.value;
+    if (value > 0 && value < 5) {
+      alert("First");
+    } else {
+      alert("Second");
     }
   }
 
@@ -58,9 +79,10 @@ class MusicPlayer extends React.Component {
 
           <div className="right-container">
             <div className="volume-slider">
-              <i className="fas fa-volume-up"></i>
+              <i className="fas fa-volume-up" onClick={this.handleSound}></i>
               
-              <input type="range" id="volumeRange" min="1" max="100" value="0" className="slider" onChange={this.handleChange()}/>
+              <input id="volume-slider" type="range" min="0" max="100" value="0" step="1" className="slider" onChange={this.handleVolumeRange}/>
+
             </div>
           </div>
         </footer>

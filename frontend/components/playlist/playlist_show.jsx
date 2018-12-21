@@ -1,6 +1,5 @@
 import React from 'react';
-import SongIndexItem from '../song/song_index_item';
-import { Link } from 'react-router-dom';
+import SongIndexItemContainer from '../song/song_index_item_container';
 
 class PlaylistShow extends React.Component {
   constructor(props) {
@@ -29,14 +28,20 @@ class PlaylistShow extends React.Component {
     playlistSongs = playlistSongs.map( song => {
       if (song) {
         return (
-          <SongIndexItem
-          type={"playlist_show"}
-          key={song.id}
-          song={song}
-          deletePlaylistSong={this.props.deletePlaylistSong}
-          playlist={playlist}
-          // playlistSongs={}
+          <SongIndexItemContainer 
+            type={"playlist_show"}
+            key={song.id}
+            song={song}
+            playlist={playlist}  
           />
+          // <SongIndexItem
+          // type={"playlist_show"}
+          // key={song.id}
+          // song={song}
+          // deletePlaylistSong={this.props.deletePlaylistSong}
+          // playlist={playlist}
+          // // playlistSongs={}
+          // />
           );
       } else {
         return null;
