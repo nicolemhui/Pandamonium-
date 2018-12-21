@@ -90,11 +90,11 @@ bm_24k_magic = Album.create(title: "24K Magic", year: 2016)
 bm_24k_magic_photo = File.open("app/assets/images/bruno_mars_24k_magic.png")
 bm_24k_magic.cover_photo.attach(io: bm_24k_magic_photo, filename: 'bm_24k_magic.png')
 
-bm_finesse = Song.create(title: "Finesse", album_id: bm_doo_wops_hooligans.id)
+bm_finesse = Song.create(title: "Finesse", album_id: bm_24k_magic.id)
 bm_finesse_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars%2C+24K+Magic+-+Finesse.mp3")
 bm_finesse.audio.attach(io: bm_finesse_audio, filename: 'bm_finesse.mp3')
 
-bm_thats_what_i_like = Song.create(title: "That's What I Like", album_id: bm_doo_wops_hooligans.id)
+bm_thats_what_i_like = Song.create(title: "That's What I Like", album_id: bm_24k_magic.id)
 bm_thats_what_i_like_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars%2C+24K+Magic+-+That's+What+I+Like.mp3")
 bm_thats_what_i_like.audio.attach(io: bm_thats_what_i_like_audio, filename: 'bm_thats_what_i_like.mp3')
 
@@ -322,7 +322,7 @@ playlist2 = Playlist.create(name: "Workout", creator_id: demoUser.id, public: tr
 playlist2.photo.attach(io: File.open("app/assets/images/hello_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist3 = Playlist.create(name: "Study", creator_id: demoUser.id, public: false)
-playlist3.photo.attach(io: File.open("app/assets/images/unicorn_panda.jpgg"), filename: 'playlist1_photo.jpg')
+playlist3.photo.attach(io: File.open("app/assets/images/unicorn_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist4 = Playlist.create(name: "Jammin ~", creator_id: demoUser.id, public: false)
 playlist4.photo.attach(io: File.open("app/assets/images/new_playlist.png"), filename: 'playlist1_photo.jpg')
