@@ -5,11 +5,18 @@ import { Link } from 'react-router-dom';
 class AlbumShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleQueue = this.handleQueue.bind(this);
   }
 
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
     this.props.fetchAlbum(albumId);
+  }
+
+  handleQueue() {
+    this.props.updateQueue(this.props.albumSongs);
+    // this.props.setCurrentSong(this.props.albumSongs[0]);
   }
 
   render() {
@@ -24,9 +31,12 @@ class AlbumShow extends React.Component {
       );
     });
 
+
+    //FIX ME -- url path has albums/.....
     albumArtists = albumArtists.map(artist => {
       return (
         <Link to={`artists/${artist.id}`} 
+        // <Link to={`collection/artists/${artist.id}`} 
         key={artist.id}
         className="artist-link">{artist.name}</Link>
       );
@@ -35,7 +45,7 @@ class AlbumShow extends React.Component {
 
     return (
       <div className="playlist-main-container">
-
+  
         <div className="playlist-content-container">
           <div className="playlist-song-container">
             <ul className="song-list">
@@ -44,7 +54,12 @@ class AlbumShow extends React.Component {
           </div>
 
           <div className="playlist-info">
+            {/* <button
+              onClick={this.handleQueue}>
+              PLAY
+            </button> */}
 
+            {/*  FIX ME -- want to add songs into queue and play song!  */}
             <div className="playlist-cover"><img src={album.coverPhotoUrl}></img></div>
 
             <div className="playlist-info-text">
@@ -54,7 +69,8 @@ class AlbumShow extends React.Component {
             </div>
             {/* FIX ME */}
             <button
-              className="delete-playlist-btn">
+              className="delete-playlist-btn"
+              onClick={this.handleQueue}>
               PLAY 
             </button>
             <button

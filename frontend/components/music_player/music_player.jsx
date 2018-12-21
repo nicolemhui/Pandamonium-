@@ -7,6 +7,7 @@ class MusicPlayer extends React.Component {
     // this.audio = document.getElementById('audio');
 
     this.togglePlay = this.togglePlay.bind(this);
+    this.playNextSong = this.playNextSong.bind(this);
   }
 
   // FIX ME - need to handle change to value
@@ -19,6 +20,10 @@ class MusicPlayer extends React.Component {
       this.props.isPlaying ? audio.pause() : audio.play();
       this.props.toggleSong();
     }
+  }
+
+  playNextSong(song) {
+
   }
 
   render() {
@@ -44,6 +49,7 @@ class MusicPlayer extends React.Component {
               <i className="fa fa-step-backward"></i>
               {playPauseIcon} 
               <i className="fa fa-step-forward"></i>
+              {/* <i className="fa fa-step-forward" onClick={this.playNextSong(song)}></i> */}
               <i className="fa fa-redo-alt"></i>
             </div>
 
