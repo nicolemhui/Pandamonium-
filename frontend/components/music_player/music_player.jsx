@@ -69,3 +69,5 @@ class MusicPlayer extends React.Component {
 }
 
 export default MusicPlayer;
+
+//FIX ME! -- bug with song playing 

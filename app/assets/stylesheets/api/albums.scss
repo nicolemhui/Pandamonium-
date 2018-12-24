@@ -50,11 +50,11 @@
 }
 
 .album-grid {
-  padding-top: 100px;
+  // padding-top: 100px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: minmax(180px, auto);
 }
 
 .album-grid-item {

@@ -1,51 +1,45 @@
 body {
-  height: 100%;
+  // height: 100%;
   margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  padding-bottom: 150px;
 }
 
 .collection-main {
   background-image: linear-gradient(#234666,black);
-  left: -25%;
-  height: 1500px;
-  padding: 0 32px;
-  margin: 0 auto;
+  // left: -25%;
+  // padding: 0 32px;
+  // margin: 0 auto;
+  // padding-bottom: 150px;
+}
+
+.collection-links {
+  
 }
 
 .collection-container {
-  left: -25%;
-  padding: 0 32px;
+  // padding: 0 32px;
   margin: 0px 0px 0px 250px;
-  max-width: 1600px;
+  max-width: 1200px;
 }
 
 
 .create-playlist-btn {
-  position: absolute;
-  color: white;
-  top: 1%;
-  right: 1%;
-  background-color: #1DB954;
-  height: 35px;
-  width: 150px;
-  font-size: 12px;
-  border-radius: 200px;
-  letter-spacing: .03em;
-  text-decoration: none;
-  margin: 0 auto;
-  margin: 15px;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  transition-duration: .3s;
-  border: transparent;
+    color: white;
+    background-color: #1DB954;
+    height: 35px;
+    width: 150px;
+    font-size: 12px;
+    border-radius: 200px;
+    letter-spacing: .03em;
+    text-decoration: none;
+    margin: 0 auto;
+    margin: 15px;
+    transition-duration: .3s;
+    border: transparent;
 }
 
 .create-playlist-btn:hover {
   transform: scale(1.05);
-  // width: 165px;
-  // height: 37px;
   background-color: #1ED760;
   color: white;
   cursor: pointer;

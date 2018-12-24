@@ -25,9 +25,7 @@ class Collection extends React.Component {
 
       <div className="collection-main">
         <CollectionLinks></CollectionLinks>
-        <button className="create-playlist-btn" onClick={this.handleClick}>NEW PLAYLIST</button>
         <div className="collection-container">
-
           <Switch>
             {/* <ProtectedRoute path="/playlists/playlistId" component={PlaylistShowContainer}/> */}
             <ProtectedRoute path="/collection/albums" component={AlbumIndexContainer}/>

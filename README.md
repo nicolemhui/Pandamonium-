@@ -1,5 +1,15 @@
 # README
 
+# Pandamonium
+
+---
+
+Pandamonium is music website modeled after Spotify, where users can create their own playlists and listen to music by artists, albums and songs. This application is built on Ruby on Rails, PostgresSQL, React.js, Redux.
+
+This application was built within 10 days with room for more features.
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
