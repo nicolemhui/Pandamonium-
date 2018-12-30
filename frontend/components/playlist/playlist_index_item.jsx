@@ -35,7 +35,8 @@ class PlaylistIndexItem extends React.Component {
         <div className="album-item-info">
           <div className="album-img"><img src={playlist.photo_url}></img></div>
           <div className="album-play-btn">
-            <i className="fas fa-play"></i>
+            <i class="far fa-play-circle"></i>
+            {/* <i className="fas fa-play"></i> */}
           </div>
         </div>
         {playlist.name}
@@ -53,10 +54,3 @@ class PlaylistIndexItem extends React.Component {
 }
 
 export default PlaylistIndexItem;
-
-/* <div className="playlist-item-info">
-  <div className="playlist-play-btn">
-    <i className="fas fa-play"></i>
-  </div>
-  {/* <img className="playlist-img" src="" />Picture! */
-// </div>

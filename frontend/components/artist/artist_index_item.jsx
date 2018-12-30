@@ -15,7 +15,8 @@ class ArtistIndexItem extends React.Component {
         <div className="album-item-info">
           <div className="album-img"><Link to={`/artists/${artist.id}`}><img src={artist.photoUrl}></img></Link></div>
           <div className="album-play-btn">
-            <i className="fas fa-play"></i>
+            <i class="far fa-play-circle"></i>
+            {/* <i className="fas fa-play"></i> */}
           </div>
 
           <h1 className="album-title">

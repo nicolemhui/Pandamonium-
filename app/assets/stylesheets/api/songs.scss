@@ -12,15 +12,15 @@
   // padding-bottom: 20px;
   // width: 100%;
   // position: relative;
-  top: 100px;
+  // top: 100px;
   // left: 100px;
-  margin-left: 100px;
+  // margin-left: 150px;
   // background-color: lightblue;
   // max-width: 800px;
 }
 
 .song-list {
-  margin-top: 100px;
+  margin-top: 50px;
 
   .songlist-row {
     width: 100%;
@@ -39,6 +39,8 @@
   .song-icon-display {
     float: left;
     width: 50px;
+    position: relative;
+    margin-left: 10px;
   }
 
   i {
@@ -49,11 +51,15 @@
     font-size: 16px;
     color: #b3b3b3;
     margin: 0 auto;
+    position: absolute;
+    top: 5px;
+    left: 5px;
   }
 
   .song-play-btn {
-    position: relative;
-    display: none;
+    font-size: 16px;
+    position: absolute;
+    visibility: hidden;
   }
 
   .add-playlist-btn {
@@ -79,7 +85,9 @@
   }
 
   .song-play-btn {
-    position: relative;
+    visibility: visible;
+    top: 5px;
+    left: 7px;
     color: #fff;
     transition: .1s;
     opacity: 1;

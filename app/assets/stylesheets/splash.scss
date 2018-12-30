@@ -21,33 +21,9 @@ a {
 }
 
 .header {
-  /* background-color: rgba(0, 0, 0, 0.6); */
   color: #fff;
-  /* height: 100px; */
 }
 
-// .responsive-menu{
-// 	display: none;
-//   background-color: #444;
-//   border-style: solid;
-//   border-color: #252525;
-//   border-width: 5px;
-//   padding: 5px;
-//   width: 300px;
-//   height: 150px;
-//   font-size: 20px;
-//   ul{
-//     margin: 0px 0px 0px -40px;
-
-//   }
-//   li {
-//     background-color: #383838;
-//     margin: 4px;
-//     padding: 5px;
-//     color: white;
-//     list-style-type: none;
-//   }
-// }
 
 .nav-bar {
   background-color: rgba(0, 0, 0, 0.6);
@@ -59,7 +35,6 @@ a {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  /* font-size: 18px; */
 }
 
 .logo {
@@ -81,7 +56,6 @@ a {
   font-weight: bold;
   font-size: 25px;
   float: left;
-  // display: flex;
   text-align: center;
   padding: 25px 5px;
 }
@@ -92,7 +66,6 @@ a {
   align-items: center;
   list-style: none;
   margin-right: 3%;
-  // float: right;
 }
 
 .header a {
@@ -114,12 +87,11 @@ a {
 /* Main content */
 .main-content {
   background: url(image_path('splash_bg.png'));
-  background-color: pink;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin-top: -75px;
-  height: 700px;
+  height: 800px;
   width: 100%;
   color: white;
   font-family: "Poppins";
@@ -153,15 +125,6 @@ a {
 .main-content > a:hover {
   background-color: #1ED760;
   cursor: pointer;
-
-}
-
-/* Section class */
-.content-main {
-  background-color: #FFFFFF;
-  width: 100%;
-  height: 400px;
-  text-align: center;
 }
 
 /* Footer */

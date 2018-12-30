@@ -70,6 +70,7 @@
   background-color: gray;
   text-align: center;
   margin: 0 auto;
+  position: relative;
   
   img {
     width: 200px;
@@ -82,29 +83,33 @@
   }
 
   .album-play-btn {
-    display: none;
+    visibility: hidden;
     position: absolute;
-    font-size: 40px;
-    padding-left: 100px;
-    padding-bottom: 100px;
-    // margin: 0 auto;	
+    font-size: 70px;
+    left: 65px;
+    top: 60px;
   }
 }
 
+
 .album-item-info:hover {
   .album-img {
-    opacity: 0.3;
-    filter: alpha(opacity=80);
+    opacity: 0.6;
+    filter: alpha(opacity=60);
     cursor: pointer;
   }
 
   .album-play-btn {
-    // position: absolute;
-    // top: 0; 
-    // left: 0;
-    // display: block;
-    // color: white;
+    transition: 1s;
+    visibility: visible;
   }
+}
+
+.album-play-btn .far fa-play-circle {
+  color: gray;
+}
+.album-play-btn .far fa-play-circle:hover {
+  color: white;
 }
 
 .album-title {

@@ -1,15 +1,32 @@
-body {
-  // height: 100%;
+body { 
   margin: 0;
-  padding-bottom: 150px;
+  // background-image: linear-gradient(#234666, black);
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
 }
 
 .collection-main {
-  background-image: linear-gradient(#234666,black);
+  background-image: linear-gradient(#234666, black);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-image: linear-gradient(#234666,black);
+  // height: 100%;
   // left: -25%;
   // padding: 0 32px;
   // margin: 0 auto;
-  // padding-bottom: 150px;
+  padding-bottom: 150px;
+
+  // FIX ME!!!
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
 }
 
 .collection-links {
@@ -17,25 +34,25 @@ body {
 }
 
 .collection-container {
-  // padding: 0 32px;
   margin: 0px 0px 0px 250px;
-  max-width: 1200px;
+  // padding: 0 32px;
+  // max-width: 1200px;
 }
 
 
 .create-playlist-btn {
-    color: white;
-    background-color: #1DB954;
-    height: 35px;
-    width: 150px;
-    font-size: 12px;
-    border-radius: 200px;
-    letter-spacing: .03em;
-    text-decoration: none;
-    margin: 0 auto;
-    margin: 15px;
-    transition-duration: .3s;
-    border: transparent;
+  color: white;
+  background-color: #1DB954;
+  height: 35px;
+  width: 150px;
+  font-size: 12px;
+  border-radius: 200px;
+  letter-spacing: .03em;
+  text-decoration: none;
+  margin: 0 auto;
+  margin: 15px;
+  transition-duration: .3s;
+  border: transparent;
 }
 
 .create-playlist-btn:hover {

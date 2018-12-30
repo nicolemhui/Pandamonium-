@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// * {
-//   box-sizing: border-box;
-//   font-family: 'Montserrat';
-// }
-
 .artists-main {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
@@ -160,7 +155,6 @@
     margin-top: 50px;
     
     .song-list {
-      margin-left: -10%;
       margin-top: 0;
     }
   }

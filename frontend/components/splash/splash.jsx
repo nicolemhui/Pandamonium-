@@ -34,11 +34,7 @@ class Splash extends React.Component {
         <a href="#">GET PANDAMONIUM FREE</a>
 
       </section>
-
-      <section className="content-main">
-        <h1>Ads and stuff :)</h1>
-      </section>
-
+      
       <footer className="footer">
 
         <div className="footer-logo">
