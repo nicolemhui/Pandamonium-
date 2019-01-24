@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   
-
+//FIX ME
   window.store = store;
   window.login = login;
   window.signup = signup;

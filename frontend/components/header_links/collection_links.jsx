@@ -2,6 +2,17 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 class CollectionLinks extends React.Component {  
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.openModal("create_new_playlist");
+  }
+
   render() {
     return (
       <nav className="nav-links">

@@ -9,22 +9,22 @@ import PlaylistIndexContainer from '../playlist/playlist_index_container';
 // import PlaylistShowContainer from '../playlist/playlist_show_container';
 
 class Collection extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  //   this.handleClick = this.handleClick.bind(this);
+  // }
 
-  handleClick(e) {
-    e.preventDefault();
-    this.props.openModal("create_new_playlist");
-  }
+  // handleClick(e) {
+  //   e.preventDefault();
+  //   this.props.openModal("create_new_playlist");
+  // }
 
   render() {
     return (
 
       <div className="collection-main">
-        <CollectionLinks></CollectionLinks>
+        <CollectionLinks openModal={this.props.openModal}/>
         <div className="collection-container">
           <Switch>
             {/* <ProtectedRoute path="/playlists/playlistId" component={PlaylistShowContainer}/> */}
@@ -36,6 +36,9 @@ class Collection extends React.Component {
           </Switch>
 
         </div>
+        {/* <div className="nav-link-button">
+          <div><button className="create-playlist-btn" onClick={this.handleClick}>NEW PLAYLIST</button></div>
+        </div> */}
       </div>
     )
   }
