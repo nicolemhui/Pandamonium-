@@ -28,10 +28,10 @@ class Collection extends React.Component {
         <div className="collection-container">
           <Switch>
             {/* <ProtectedRoute path="/playlists/playlistId" component={PlaylistShowContainer}/> */}
+            <ProtectedRoute path="/collection/playlists" component={PlaylistIndexContainer}/>
             <ProtectedRoute path="/collection/albums" component={AlbumIndexContainer}/>
             <ProtectedRoute path="/collection/artists" component={ArtistIndexContainer}/>
             <ProtectedRoute path="/collection/songs" component={SongIndexContainer}/>
-            <ProtectedRoute path="/collection/playlists" component={PlaylistIndexContainer}/>
             
           </Switch>
 

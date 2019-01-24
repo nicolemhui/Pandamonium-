@@ -1,4 +1,4 @@
-import Featured from './featured';
+import Browse from './browse';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
@@ -7,4 +7,4 @@ const mapStateToProps = (state) => ({
   currentUser: state.entities.users[state.session.id]
 });
 
-export default connect(mapStateToProps, null)(Featured);
+export default connect(mapStateToProps, null)(Browse);

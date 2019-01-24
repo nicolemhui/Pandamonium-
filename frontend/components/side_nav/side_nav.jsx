@@ -35,7 +35,7 @@ class SideNav extends React.Component {
             </li>
             <li>
               <div className="sidenav-links">
-                <NavLink to="/browse/featured" className="links-detail">
+                <NavLink to="/browse/playlists" className="links-detail">
                   <i className="fas fa-home"></i>
                   <span className="sidenav-links-description">Home</span>
                 </NavLink>
@@ -44,7 +44,7 @@ class SideNav extends React.Component {
             <li>
               <div className="sidenav-links">
               {/* default link to albums, change to playlists later */}
-                <NavLink to="/collection/albums" className="links-detail">
+                <NavLink to="/collection/playlists" className="links-detail">
                   <i className="fas fa-grip-lines-vertical"></i>
                   <i className="fas fa-slash"></i>
                   <span className="sidenav-links-library">Your Library</span>

@@ -18,7 +18,7 @@ class SongDetailView extends React.Component {
       <div className="album-item-info">
         <div className="album-img"><img src={album.coverPhotoUrl}></img></div>
         <div className="album-play-btn">
-          <i class="far fa-play-circle"></i>
+          <i className="far fa-play-circle"></i>
           {/* <i className="fas fa-play"></i> */}
         </div>
 

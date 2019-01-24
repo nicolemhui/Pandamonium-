@@ -6,34 +6,18 @@ class BrowseLinks extends React.Component {
     return (
       <nav className="nav-links">
         <ul>
-          <NavLink to="/browse/featured" className="nav-links-link">Featured</NavLink>
-          <NavLink to="/browse/featured" className="nav-links-link">Podcasts</NavLink>
-          <NavLink to="/browse/featured" className="nav-links-link">Charts</NavLink>
-          <NavLink to="/browse/featured" className="nav-links-link">Genres & Moods</NavLink>
-          <NavLink to="/browse/featured" className="nav-links-link">New Releases</NavLink>
-          <NavLink to="/browse/featured" className="nav-links-link">Discover</NavLink>
-
+          <div className="nav-bar-links">
+            <NavLink to="/browse/playlists" className="nav-links-link">Playlists<span></span></NavLink>
+            <NavLink to="/browse/made-for-you" className="nav-links-link">Made for you<span></span></NavLink>
+            <NavLink to="/browse/songs" className="nav-links-link">Songs<span></span></NavLink>
+            <NavLink to="/browse/albums" className="nav-links-link">Albums<span></span></NavLink>
+            <NavLink to="/browse/artists" className="nav-links-link">Artists<span></span></NavLink>
+          </div>
         </ul>
+
       </nav>
     )
   }
 }
 
 export default BrowseLinks
-
-  // < li > <a href="#">Podcasts</a></li >
-  //   <li><a href="#">Charts</a></li>
-  //   <li><a href="#">Genres & Moods</a></li>
-  //   <li><a href="#">New Releases</a></li>
-  //   <li><a href="#">Discover</a></li>
-
-// <NavLink to="/browse/featured">Featured</Link>
-// <Link to="/browse/featured">Podcasts</Link>
-// <Link to="/browse/featured">Charts</Link>
-// <Link to="/browse/featured">Genres & Moods</Link>
-// <Link to="/browse/featured">New Releases</Link>
-// <Link to="/browse/featured">Discover</Link>
-
-// letter-style: upcase for all links 
-
-//maybe turn this into a functional component
