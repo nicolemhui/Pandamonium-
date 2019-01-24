@@ -16,8 +16,11 @@ class PlaylistShow extends React.Component {
   handleDelete() {
     const playlist = this.props.playlist;
 
-    this.props.deletePlaylist(playlist.id)
-      .then(() => this.props.history.push(`/collection/playlists/`))
+    // this.props.deletePlaylist(playlist.id);
+      // .then(() => this.props.history.push(`/collection/playlists/`))
+
+    this.props.deletePlaylist(playlist.id);
+    this.props.history.push(`/collection/playlists/`);
   }
 
   render() {
@@ -34,6 +37,7 @@ class PlaylistShow extends React.Component {
             song={song}
             playlist={playlist}  
           />
+          
           // <SongIndexItem
           // type={"playlist_show"}
           // key={song.id}

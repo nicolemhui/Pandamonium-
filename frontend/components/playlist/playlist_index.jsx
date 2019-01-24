@@ -5,12 +5,9 @@ class PlaylistIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  // componentWillMount() {
-  //   this.props.fetchPlaylists()
-  // }
+  
   componentDidMount() {
-    this.props.fetchPlaylists()
+    this.props.fetchPlaylists();
   }
 
   render() {

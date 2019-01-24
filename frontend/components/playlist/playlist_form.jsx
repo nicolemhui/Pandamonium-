@@ -13,8 +13,9 @@ class PlaylistForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const playlist = Object.assign({}, this.state);
-    this.props.createPlaylist(playlist).then(
-      () => this.props.closeModal());
+
+    this.props.createPlaylist(playlist);
+    this.props.closeModal();
   }
 
   handleChange(field) {
@@ -26,7 +27,7 @@ class PlaylistForm extends React.Component {
     return (
       <div className="login-signup-form-container">
         <button className="modal-exit" 
-        onClick={e => this.props.closeModal}>X</button>
+        onClick={this.props.closeModal}>X</button>
         
         <h3>Create new playlist</h3>
 
