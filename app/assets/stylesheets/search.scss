@@ -1,0 +1,42 @@
+//FIX ME!
+html, body {
+  background-color: rgb(29, 27, 31)
+}
+
+.search-container {
+  // background-image: linear-gradient( rgb(97, 55, 165), rgb(53, 21, 53));
+  background-image: linear-gradient( rgb(53, 21, 53),  rgb(29, 16, 29));
+  margin-left: 230px;
+  height: 800px;
+  
+  .search-bar {
+    width: 100%;
+    color: black;
+    font-size: 40px;
+    padding-left: 40px;
+    font-weight: bold;
+    background-color: #2E2E2E;
+    color: white;
+    caret-color: #1DB954;
+    border: transparent;
+  }
+}
+
+.no-search-content {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+
+  h1 {
+    font-size: 28px;
+    letter-spacing: -.03em;
+  }
+
+  h5 {
+    color: #b3b3b3;
+  }
+}
+
+.search-content {
+
+}

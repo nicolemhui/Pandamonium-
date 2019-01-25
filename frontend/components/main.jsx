@@ -9,8 +9,7 @@ import PlaylistShowContainer from './playlist/playlist_show_container';
 import AlbumShowContainer from './album/album_show_container';
 import ArtistShowContainer from './artist/artist_show_container';
 import MusicPlayerContainer from './music_player/music_player_container';
-import Browse from './browse/browse';
-// import PlaylistShowContainer from './playlist/playlist_show_container';
+import Search from './search/search';
 
 
 class Main extends React.Component {
@@ -24,7 +23,7 @@ class Main extends React.Component {
         <Switch>
           <Route path="/collection" component={CollectionContainer} />
           <Route path="/browse" component={BrowseContainer} />
-          {/* <Route path="/search" component={Search} /> */}
+          <Route path="/search" component={Search} />
           <Route path="/playlists/:playlistId" component={PlaylistShowContainer} />
           <Route path="/albums/:albumId" component={AlbumShowContainer} />
           <Route path="/artists/:artistId" component={ArtistShowContainer} />

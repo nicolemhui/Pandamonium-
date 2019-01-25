@@ -42,8 +42,6 @@ class PlaylistIndexItem extends React.Component {
           <div className="album-img"><img src={photoUrl}></img></div>
           <div className="album-play-btn">
             {playIcon}
-            {/* <i className="far fa-play-circle"></i> */}
-            {/* <i className="fas fa-play"></i> */}
           </div>
         </div>
         {playlist.name}

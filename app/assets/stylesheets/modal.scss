@@ -28,10 +28,13 @@
   margin-left: 50%;
 }
 
-.modal-exit:active{
-    outline: none;
+.modal-exit:active {
+  outline: none;
 }
 
+.modal-exit:hover {
+  transform: scale(1.05);
+}
 
 .login-signup-form-container h3 {
   font-size: 60px;
@@ -65,9 +68,7 @@
 .playlist-input {
   background-color: #2E2E2E;
   margin-left: 450px;
-  // height: 100px;
   color: white;
-  // padding: 15px;
   text-align: left;
   caret-color: #1DB954;
   border: transparent;
@@ -78,15 +79,11 @@ input{
   color: white;
   width: 100%;
   height: 100px;
-  // margin: auto;
-  
 }
 
 input:focus, input:focus{
     outline: none;
 }
-
-
 
 .playlist-form-btns {
   display: flex;

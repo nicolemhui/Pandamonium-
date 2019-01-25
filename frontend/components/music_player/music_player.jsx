@@ -65,7 +65,8 @@ class MusicPlayer extends React.Component {
               {playPauseIcon} 
               <i className="fa fa-step-forward"></i>
               {/* <i className="fa fa-step-forward" onClick={this.playNextSong(song)}></i> */}
-              <i className="fa fa-redo-alt"></i>
+              {/* <i className="fa fa-redo-alt"></i> */}
+              <i class="fas fa-infinity"></i>
             </div>
 
             <div>
