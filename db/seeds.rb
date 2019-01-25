@@ -103,8 +103,8 @@ bm_song_1 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_grenade.id, 
 bm_song_2 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_just_the_way_you_are.id, ord: 1)
 bm_song_3 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_lazy_song.id, ord: 1)
 bm_song_4 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_marry_you.id, ord: 1)
-bm_song_5 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_just_the_way_you_are.id, ord: 1)
-bm_song_6 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_lazy_song.id, ord: 1)
+bm_song_5 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_finesse.id, ord: 1)
+bm_song_6 = ArtistSong.create(artist_id: bruno_mars.id, song_id: bm_thats_what_i_like.id, ord: 1)
 
 bm_album_1 = ArtistAlbum.create(artist_id: bruno_mars.id, album_id: bm_doo_wops_hooligans.id)
 bm_album_2 = ArtistAlbum.create(artist_id: bruno_mars.id, album_id: bm_24k_magic.id)

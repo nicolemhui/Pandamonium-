@@ -88,6 +88,7 @@ class SongIndexItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.showOptions = this.showOptions.bind(this);
     this.hideOptions = this.hideOptions.bind(this);
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
 
@@ -117,6 +118,25 @@ class SongIndexItem extends React.Component {
     });
   }
 
+  togglePlay() {
+    if (this.props.currentSong) {
+      this.props.isPlaying ? audio.pause() : audio.play();
+      this.props.toggleSong();
+    }
+  }
+
+  // renderPlayButton(){
+  //   let playBtn;
+    
+  //   <div className="song-play-btn" onClick={() => this.props.setCurrentSong(song)}>
+  //     <i className="fas fa-play" />
+  //   </div>
+
+  //     <div className="song-pause-btn" onClick={() => this.togglePlay()}>
+  //       <i className="fas fa-pause" />
+  //     </div>
+  // }
+
   render() {
     const { song } = this.props;
     if (!song) return null;
@@ -124,18 +144,7 @@ class SongIndexItem extends React.Component {
     // put some logic here to determine if songs is on the playlist page, if so then have PLAY, DELETE buttons 
     //if songs is on songs page, have ADD and PLAY buttons
     //if songs is on albums page, have ADD and PLAY buttons
-
-    // <div>
-    //   case switch statement  --- reference modal
-    //   switch(type)
-    // </div>
-    //type = ""
-
-    let songOptions;
-    let addButton = <button className="add-playlist-btn" onClick={this.handleClick}>ADD</button>;
-    let deleteButton = <button className="add-playlist-btn" onClick={this.handleDelete}>DELETE</button>
-    let playButton = <button className="add-playlist-btn" onClick={() => this.props.setCurrentSong(song)}>PLAY</button>
-
+    
     //FIX ME
     // switch (this.props.type) {
     //   case 'playlist_show':
@@ -159,35 +168,6 @@ class SongIndexItem extends React.Component {
     //   default:
     //     return null;
     // }
-
-
-    // let dropdownMenu;
-    // if (this.state.menuOpen) {
-    //   dropdownMenu = 
-    //     <div className="drop-down-container">
-    //       <div className="song-option-dropdown" onClick={this.showOptions}> ••• </div>
-    //       <div className="song-option-dropdown"> 
-
-    //         {/* {songOptions}  */}
-    //       <button className="add-playlist-btn" onClick={this.handleClick}>ADD</button>;
-    //       <button className="add-playlist-btn" onClick={this.handleDelete}>DELETE</button>
-    // l
-    //       </div>
-    //     </div>
-    // } else {
-    //   null 
-    // };
-
-    
-
-    // let dropdownMenu;
-    // if (!menuOpen) {
-    //   dropdownMenu = <div className="song-option-dropdown"> ••• </div>
-    // } else {
-    //   dropdownMenu = <div className="song-option-dropdown"> {songOptions} </div>
-    // }
-
-
     
     return (
 
@@ -200,7 +180,7 @@ class SongIndexItem extends React.Component {
               <i className="fas fa-music" />
             </div>
 
-            <div className="song-play-btn">
+            <div className="song-play-btn" onClick={() => this.props.setCurrentSong(song)}>
               <i className="fas fa-play" />
             </div>
           </div>
@@ -219,7 +199,7 @@ class SongIndexItem extends React.Component {
                 <div className="song-options-dropdown">
                   <button className="option" onClick={this.handleClick}>Add to playlist</button>
                   <button className="option" onClick={this.handleDelete}>Delete from playlist</button>
-                  <button className="option" onClick={() => this.props.setCurrentSong(song)}>Play song</button>
+                  {/* <button className="option" onClick={() => this.props.setCurrentSong(song)}>Play song</button> */}
                 </div>
               )
               : (
@@ -234,33 +214,3 @@ class SongIndexItem extends React.Component {
 }
 
 export default SongIndexItem;
-
-
-
-// return (
-
-//   <li className="songlist-row">
-//     <div className="left-song-details">
-//       <div className="song-icon-display">
-//         <div className="song-music-btn">
-//           <i className="fas fa-music" />
-//         </div>
-
-//         <div className="song-play-btn">
-//           <i className="fas fa-play" />
-//         </div>
-//       </div>
-
-//       <SongDetailViewContainer song={song} />
-//     </div>
-
-//     <div className="song-option-btns">
-//       {/* <button className="add-playlist-btn"
-//             // value="•••"
-//             onClick={this.handleClick}
-//           > ADD </button> */}
-
-//       {dropdownMenu}
-
-//     </div>
-//   </li>

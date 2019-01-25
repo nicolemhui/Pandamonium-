@@ -108,8 +108,10 @@
 .album-play-btn .far fa-play-circle {
   color: gray;
 }
+
 .album-play-btn .far fa-play-circle:hover {
   color: white;
+  cursor: pointer;
 }
 
 .album-title {
