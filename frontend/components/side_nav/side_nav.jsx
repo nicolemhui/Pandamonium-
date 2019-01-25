@@ -10,6 +10,7 @@ class SideNav extends React.Component {
     const userGreeting = () => (
       <hgroup className="header-group">
         <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
+        <i class="fas fa-user-circle"></i>
         <Link to="/" className="logout-btn" onClick={this.props.logout}>Log Out</Link>
       </hgroup>
     );
@@ -43,28 +44,27 @@ class SideNav extends React.Component {
             </li>
             <li>
               <div className="sidenav-links">
-              {/* default link to albums, change to playlists later */}
                 <NavLink to="/collection/playlists" className="links-detail">
-                  <i className="fas fa-grip-lines-vertical"></i>
-                  <i className="fas fa-slash"></i>
-                  <span className="sidenav-links-library">Your Library</span>
+                  <i class="fas fa-book-open"></i>
+                  <span className="sidenav-links-description">Your Library</span>
                 </NavLink>
               </div>
             </li>
           </ul>
-          <ul className="recently-played">
+          {/* <ul className="recently-played">
             <h5>Recently Played</h5>
               <li>Playlist 1</li>
               <li>Playlist 2</li>
               <li>Playlist 3</li>
-          </ul>
+          </ul> */}
         </div>
         
-        <span className="nav-divider"></span>
+        {/* <div className="sidenav-bottom"> */}
 
-        <div className="nav-greeting-logout">
-          {this.props.currentUser ? userGreeting() : ""}
-        </div>
+          <div className="nav-greeting-logout">
+            {this.props.currentUser ? userGreeting() : ""}
+          </div>
+        {/* </div> */}
       </aside>
     )
   }

@@ -79,9 +79,10 @@ a {
   font-size: 22px;
 }
 
-.nav-greeting-logout {
-  font-size: 10px;
-  text-align: center;
+.header-list i:hover {
+  color: #1DB954;
+  cursor: pointer;
+  font-size: 22px;
 }
 
 /* Main content */
@@ -91,7 +92,7 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   margin-top: -75px;
-  height: 800px;
+  height: 850px;
   width: 100%;
   color: white;
   font-family: "Poppins";

@@ -31,7 +31,7 @@ class Splash extends React.Component {
       <section className="main-content">
         <h1>Music for everyone.</h1>
         <h3>Millions of songs. No credit card needed.</h3>
-        <a href="#">GET PANDAMONIUM FREE</a>
+        <Link to="/signup">GET PANDAMONIUM FREE</Link>
 
       </section>
       

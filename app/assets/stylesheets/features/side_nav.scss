@@ -67,11 +67,6 @@ a {
     margin-left: 20px;
     display: inline-block;
   }
-
-  .sidenav-links-library {
-    margin-left: 10px;
-    display: inline-block;
-  }
 }
 
 .recently-played {
@@ -86,8 +81,43 @@ a {
   }
 }
 
-.header-name {
-  font-size: 30px;
-  font-weight: bold;
-  color: yellow;
+
+.nav-greeting-logout {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #5e5d5d;
+  width: 200px;
+  text-align: center;
+  position: absolute;
+  bottom: 150px;
+  left: 15px;
 }
+
+.header-group {
+  .header-name {
+    font-size: 26px;
+    font-weight: bold;
+    color: yellow;
+  }
+
+  .fas {
+    font-size: 30px;
+    color: #b3b3b3;
+    margin: 5px;
+  }
+}
+
+.logout-btn {
+  // color: #b3b3b3;
+  padding: 5px 10px;
+  border-radius: 200px;
+  border: 1px solid #b3b3b3;
+}
+
+.logout-btn:hover {
+  padding: 7px 12px;
+  border-radius: 200px;
+  border: 1px solid #fff;
+  transform: scale(1.05);
+}
+
