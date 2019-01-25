@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import SongToPlaylistForm from './song_to_playlist_form';
 import { fetchPlaylists } from '../../actions/playlist_actions';
 import { createPlaylistSong } from '../../actions/playlist_song_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
   return {
@@ -13,6 +14,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    closeModal: () => dispatch(closeModal()),
     fetchPlaylists: () => dispatch(fetchPlaylists()),
     createPlaylistSong: (playlistId, songId) => dispatch(createPlaylistSong(playlistId, songId))
   };

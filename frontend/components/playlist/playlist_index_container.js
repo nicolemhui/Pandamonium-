@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
 
   return {
     playlists: Object.values(playlists),
+    modalType: state.ui.modal.modalType,
   };
 };
 

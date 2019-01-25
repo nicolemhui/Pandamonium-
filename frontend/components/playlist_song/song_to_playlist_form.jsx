@@ -1,8 +1,6 @@
 import React from 'react';
 import PlaylistIndexItem from '../playlist/playlist_index_item';
 
-
-
 class SongToPlaylistForm extends React.Component {
   constructor(props) {
     super(props);
@@ -31,8 +29,7 @@ class SongToPlaylistForm extends React.Component {
 
     return (
       <div className="login-signup-form-container">
-        <button className="modal-exit"
-          onClick={e => this.props.closeModal}>X</button>
+        <button className="modal-exit" onClick={this.props.closeModal}>X</button>
 
         <h3>Add to playlist</h3>
 

@@ -26,8 +26,7 @@ class PlaylistForm extends React.Component {
 
     return (
       <div className="login-signup-form-container">
-        <button className="modal-exit" 
-        onClick={this.props.closeModal}>X</button>
+        <button className="modal-exit" onClick={this.props.closeModal}>X</button>
         
         <h3>Create new playlist</h3>
 
