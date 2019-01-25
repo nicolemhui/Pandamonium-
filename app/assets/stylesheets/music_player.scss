@@ -25,7 +25,44 @@
 
 .left-container {
   float: left;
+  // width: 25%;
+  // height: 100%;
+
+  .song-info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 3%;
+    margin-top: 2%;
+
+    .song-title-artist {
+      margin-left: 15px;
+    }
+  }
+
+  .player-image {
+    // width: 75px;  
+    // height: 75px;  
+    // background-color: black;
+
+    img {
+      width: 75px;  
+      height: 75px;  
+      background-color: black;
+    }
+  }
+  
+  .player-song-title {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .player-song-artists {
+    font-size: 12px;
+  }
 }
+
 
 .middle-container {
   /* width: 400px;
