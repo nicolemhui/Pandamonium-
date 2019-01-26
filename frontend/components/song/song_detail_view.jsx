@@ -7,8 +7,6 @@ class SongDetailView extends React.Component {
   render() {
     const { song, artists, albums } = this.props;
 
-    // console.log(song, albums, artists);
-    
     if (!artists || !song || !albums) return null;
     
     //FIX ME!

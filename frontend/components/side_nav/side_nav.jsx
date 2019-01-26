@@ -10,7 +10,7 @@ class SideNav extends React.Component {
     const userGreeting = () => (
       <hgroup className="header-group">
         <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
-        <i class="fas fa-user-circle"></i>
+        <i className="fas fa-user-circle"></i>
         <Link to="/" className="logout-btn" onClick={this.props.logout}>Log Out</Link>
       </hgroup>
     );
@@ -45,7 +45,7 @@ class SideNav extends React.Component {
             <li>
               <div className="sidenav-links">
                 <NavLink to="/collection/playlists" className="links-detail">
-                  <i class="fas fa-book-open"></i>
+                  <i className="fas fa-book-open"></i>
                   <span className="sidenav-links-description">Your Library</span>
                 </NavLink>
               </div>

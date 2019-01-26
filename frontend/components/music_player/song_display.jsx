@@ -28,10 +28,6 @@ class SongDisplay extends React.Component {
       albumPhoto = <img src={album.coverPhotoUrl} />
     }
 
-    console.log(album);
-    
-    // debugger;
-
     return (
       <div className="left-container">
         <div className="song-info-container">
@@ -47,7 +43,7 @@ class SongDisplay extends React.Component {
           </div>
 
           {/* <div className="favorite-song">
-            <i class="fas fa-plus"></i>
+            <i className="fas fa-plus"></i>
           </div> */}
         </div>
       </div>

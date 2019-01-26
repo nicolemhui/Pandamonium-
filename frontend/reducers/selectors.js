@@ -48,4 +48,3 @@ export const selectPlaylistSongs = (state, playlistId) => {
     .filter(playlistSong => playlistSong.playlist_id === playlistId)
     .map(playlistSong => state.entities.songs[playlistSong.song_id])
 };
-
