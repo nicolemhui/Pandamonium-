@@ -21,3 +21,8 @@ export const fetchAlbum = (id) => dispatch => (
   AlbumApiUtil.fetchAlbum(id)
     .then(payload => dispatch(receiveAlbum(payload)))
 );
+
+export const fetchSearchedAlbums = (searchString) => dispatch => (
+  AlbumApiUtil.fetchSearchedAlbums(searchString)
+    .then(payload => dispatch(receiveAllAlbums(payload)))
+);

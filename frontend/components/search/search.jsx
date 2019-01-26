@@ -5,20 +5,20 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      queryStr: "",
+      queryString: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    this.setState({ queryStr: e.target.value });
+    this.setState({ queryString: e.target.value });
   }
 
   render() {
     let results;
 
-    if (this.state.queryStr.length === 0) {
+    if (this.state.queryString.length === 0) {
       results =
         <div className="no-search-content">
           <h1> Search Pandamonium </h1>
@@ -27,7 +27,7 @@ class Search extends React.Component {
     } else {
       results =
         <div className="search-content">
-          <SearchResults queryStr={this.state.queryStr} />
+          <SearchResults searchString={this.state.queryString} />
         </div>
     }
 
@@ -35,7 +35,7 @@ class Search extends React.Component {
       <div className="search-container">
         <input className="search-bar"
             type="text"
-            value={this.state.queryStr}
+            value={this.state.queryString}
             placeholder="Start typing..."
             onChange={this.handleChange}>
           </input>
