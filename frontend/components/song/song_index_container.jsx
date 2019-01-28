@@ -1,6 +1,7 @@
 import SongIndex from './song_index';
 import { connect } from 'react-redux';
 import { fetchSongs } from '../../actions/song_actions';
+import { updateQueue } from '../../actions/music_player_actions';
 // import { openModal } from'../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchSongs: () => dispatch(fetchSongs()),
+  updateQueue: (queue) => dispatch(updateQueue(queue)),
   // openModal: (modal, songId) => dispatch(openModal(modal, songId)),
 });
 

@@ -84,6 +84,7 @@ class SongIndexItem extends React.Component {
       menuOpen: false,
     }
 
+    this.handlePlay = this.handlePlay.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.showOptions = this.showOptions.bind(this);
@@ -95,6 +96,14 @@ class SongIndexItem extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.props.openModal("add_song_to_playlist", this.props.song.id);
+  }
+
+  //FIX ME -- get the queue 
+  handlePlay() {
+    debugger;
+    
+    this.props.updateQueue(this.props.getSongQueue);
+    this.props.setCurrentSong(this.props.song);
   }
 
   // FIX ME !
@@ -180,7 +189,8 @@ class SongIndexItem extends React.Component {
               <i className="fas fa-music" />
             </div>
 
-            <div className="song-play-btn" onClick={() => this.props.setCurrentSong(song)}>
+            <div className="song-play-btn" onClick={this.handlePlay}>
+            {/* <div className="song-play-btn" onClick={() => this.props.setCurrentSong(song)}> */}
               <i className="fas fa-play" />
             </div>
           </div>

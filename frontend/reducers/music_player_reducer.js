@@ -24,7 +24,9 @@ export default function musicPlayerReducer(state = initialState, action) {
       newState.songQueue.push(action.song);
       return newState;
     case UPDATE_QUEUE:
-      let newSongQueue = action.songs;
+      let newSongQueue = action.songs;   
+      // debugger;
+
       newState = merge({}, state, {
         currentSong: newSongQueue[0],
         isPlaying: true,
