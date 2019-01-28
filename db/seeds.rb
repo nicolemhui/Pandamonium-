@@ -33,7 +33,7 @@ dp_aerodynamic = Song.create(title: "Aerodynamic", album_id: dp_discovery.id)
 dp_aerodynamic_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Daft+Punk+-+Aerodynamic.mp3")
 dp_aerodynamic.audio.attach(io: dp_aerodynamic_audio, filename: 'dp_aerodynamic.mp3')
 
-dp_digital_love = Song.create(title: "Superheroes", album_id: dp_discovery.id)
+dp_digital_love = Song.create(title: "Digital Love", album_id: dp_discovery.id)
 dp_digital_love_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Daft+Punk+-+Digital+Love.mp3")
 dp_digital_love.audio.attach(io: dp_digital_love_audio, filename: 'dp_digital_love.jpg')
 
