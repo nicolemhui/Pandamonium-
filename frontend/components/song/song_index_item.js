@@ -100,8 +100,8 @@ class SongIndexItem extends React.Component {
 
   //FIX ME -- get the queue 
   handlePlay() {
-    debugger;
-    
+    // debugger;
+
     this.props.updateQueue(this.props.getSongQueue);
     this.props.setCurrentSong(this.props.song);
   }

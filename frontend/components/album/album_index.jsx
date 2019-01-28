@@ -10,7 +10,7 @@ class AlbumIndex extends React.Component {
   componentDidMount() {
     let { searchString } = this.props;
 
-    if (searchString.length !== 0) {
+    if ((searchString) && (searchString.length !== 0)) {
       this.props.fetchSearchedAlbums(searchString);
     } else {
       this.props.fetchAlbums();

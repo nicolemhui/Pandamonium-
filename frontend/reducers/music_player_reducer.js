@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_CURRENT_SONG, TOGGLE_SONG, ADD_SONG_TO_QUEUE, UPDATE_QUEUE, PLAY_NEXT_SONG } from '../actions/music_player_actions';
+import { RECEIVE_CURRENT_SONG, TOGGLE_SONG, ADD_SONG_TO_QUEUE, UPDATE_QUEUE, PLAY_NEXT_SONG, PLAY_PREVIOUS_SONG } from '../actions/music_player_actions';
 
 const initialState = {
   currentSong: {},
@@ -10,6 +10,7 @@ const initialState = {
 
 export default function musicPlayerReducer(state = initialState, action) {
   let newState = merge({}, state);
+  let currentSong;
 
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
@@ -25,8 +26,6 @@ export default function musicPlayerReducer(state = initialState, action) {
       return newState;
     case UPDATE_QUEUE:
       let newSongQueue = action.songs;   
-      // debugger;
-
       newState = merge({}, state, {
         currentSong: newSongQueue[0],
         isPlaying: true,
@@ -35,10 +34,20 @@ export default function musicPlayerReducer(state = initialState, action) {
       return newState;
     case PLAY_NEXT_SONG:
       let nextSongIdx = (state.currentSongIdx + 1) % state.songQueue.length;
-      let currentSong = songQueue[nextSongIdx];
+      currentSong = state.songQueue[nextSongIdx];
       newState = merge({}, state, {
         currentSong: currentSong,
         currentSongIdx: nextSongIdx
+      });
+      return newState;
+    case PLAY_PREVIOUS_SONG:
+      let prevSongIdx;
+      (state.currentSongIdx === 0) ? prevSongIdx = state.songQueue.length - 1 : prevSongIdx = state.currentSongIdx - 1;   
+
+      currentSong = state.songQueue[prevSongIdx];
+      newState = merge({}, state, {
+        currentSong: currentSong,
+        currentSongIdx: prevSongIdx
       });
       return newState;
     default:

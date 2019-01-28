@@ -3,6 +3,7 @@ export const TOGGLE_SONG = 'TOGGLE_SONG';
 export const ADD_SONG_TO_QUEUE = 'ADD_SONG_TO_QUEUE';
 export const UPDATE_QUEUE = 'UPDATE_QUEUE';
 export const PLAY_NEXT_SONG = 'PLAY_NEXT_SONG';
+export const PLAY_PREVIOUS_SONG = 'PLAY_PREVIOUS_SONG';
 
 export const setCurrentSong = (song, songIdx = 0) => ({
   type: RECEIVE_CURRENT_SONG,
@@ -24,7 +25,10 @@ export const updateQueue = (songs) => ({
   songs
 });
 
-export const playNextSong = (songs) => ({
+export const playNextSong = () => ({
   type: PLAY_NEXT_SONG,
-  songs
+});
+
+export const playPreviousSong = () => ({
+  type: PLAY_PREVIOUS_SONG,
 });
