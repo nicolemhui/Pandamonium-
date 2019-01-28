@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     resources :artists, only: [:index, :show] 
     resources :albums, only: [:index, :show] 
     resources :playlists, only: [:create, :index, :show, :destroy]
-    # resources :playlists_songs, only: [:destroy]
   end
   
+  get 'api/albums/search/:search_string', to: 'api/albums#search'
   post 'api/playlists/:playlist_id/song/:song_id', to: 'api/playlists_songs#create'
   delete 'api/playlists/:playlist_id/song/:song_id', to: 'api/playlists_songs#destroy'
 

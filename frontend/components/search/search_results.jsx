@@ -13,18 +13,20 @@ class SearchResults extends React.Component {
     };
   }
 
-  // checkCategoryResults() {
-  // }
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchString != newProps.searchString) {
+        this.setState({ searchString: newProps.searchString });
+    }
+  }
   
   render() {
     let { searchString } = this.props;
-
+    
     // let artists = <ArtistIndex searchString={searchString} />;
     // let songs = <SongIndexItem searchString={searchString} />;
     let albums = <AlbumIndexContainer searchString={searchString} />;
     // let artists = <PlaylistIndex searchString={searchString} />;
     
-
     return (
       <div className="search-results">
         HELLO

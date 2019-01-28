@@ -25,6 +25,8 @@ class Search extends React.Component {
           <h5>Find your favorite songs, artists, albums, podcasts and playlists.</h5>
         </div>
     } else {
+      console.log(this.state.queryString);
+      
       results =
         <div className="search-content">
           <SearchResults searchString={this.state.queryString} />

@@ -12,10 +12,8 @@ class Api::AlbumsController < ApplicationController
   end 
 
   def search 
-    debugger;
-    
     search_string = params[:search_string]
-    @albums = Album.where('lower(title) LIKE ?', "%#{search_string.downcase}%").limit(5)
+    @albums = Album.where('lower(title) LIKE ? OR lower(title) LIKE ?', "% #{search_string.downcase}%", "#{search_string.downcase}%")
     render :index
   end 
 end
