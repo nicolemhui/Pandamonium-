@@ -89,7 +89,7 @@ class SongIndexItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.showOptions = this.showOptions.bind(this);
     this.hideOptions = this.hideOptions.bind(this);
-    this.togglePlay = this.togglePlay.bind(this);
+    // this.togglePlay = this.togglePlay.bind(this);
   }
 
 
@@ -126,25 +126,6 @@ class SongIndexItem extends React.Component {
       document.removeEventListener('click', this.hideOptions);
     });
   }
-
-  togglePlay() {
-    if (this.props.currentSong) {
-      this.props.isPlaying ? audio.pause() : audio.play();
-      this.props.toggleSong();
-    }
-  }
-
-  // renderPlayButton(){
-  //   let playBtn;
-    
-  //   <div className="song-play-btn" onClick={() => this.props.setCurrentSong(song)}>
-  //     <i className="fas fa-play" />
-  //   </div>
-
-  //     <div className="song-pause-btn" onClick={() => this.togglePlay()}>
-  //       <i className="fas fa-pause" />
-  //     </div>
-  // }
 
   render() {
     const { song } = this.props;

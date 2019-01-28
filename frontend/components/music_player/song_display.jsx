@@ -7,18 +7,32 @@ class SongDisplay extends React.Component {
   }
   
   render () {
-    let { currentSong, albums, artists } = this.props;    
+    let { currentSong, albums, artists, albumArtists } = this.props;    
+    let songArtists;
+
     
-    const songArtists = artists.map(artist => {
-      return (
-        <Link to={`/artists/${artist.id}`}
+    if (artists) {
+      songArtists = artists.map(artist => {
+        return (
+          <Link to={`/artists/${artist.id}`}
           className="player-song-artists"
           key={artist.id}>
-          {artist.name}
-        </Link>
-      )
-    });
-    
+            {artist.name}
+          </Link>
+        )
+      });
+    } else {
+      songArtists = albumArtists.map(artist => {
+        return (
+          <Link to={`/artists/${artist.id}`}
+            className="player-song-artists"
+            key={artist.id}>
+            {artist.name}
+          </Link>
+        )
+      });
+    }
+
     let album = albums[0];
     let albumPhoto;
 

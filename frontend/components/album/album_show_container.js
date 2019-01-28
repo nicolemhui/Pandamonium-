@@ -13,15 +13,15 @@ const mapStateToProps = (state, ownProps) => {
   const albumSongs = selectAlbumSongs(state, parseInt(albumId));
 
   return ({
-    album: album,
-    albumArtists: albumArtists,
-    albumSongs: albumSongs,
+    album,
+    albumArtists,
+    albumSongs,
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchAlbum: (id) => dispatch(fetchAlbum(id)),
-  updateQueue: (songs) => dispatch(updateQueue(songs)),
+  updateQueue: (queue) => dispatch(updateQueue(queue)),
   setCurrentSong: (song, idx) => dispatch(setCurrentSong(song, idx)),
 });
 

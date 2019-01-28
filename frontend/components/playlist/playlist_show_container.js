@@ -4,6 +4,7 @@ import PlaylistShow from './playlist_show';
 import { fetchPlaylist, deletePlaylist } from '../../actions/playlist_actions';
 import { deletePlaylistSong } from '../../actions/playlist_song_actions';
 import { selectPlaylistSongs} from '../../reducers/selectors';
+import { setCurrentSong, toggleSong, updateQueue } from '../../actions/music_player_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -22,6 +23,7 @@ const mapDispatchToProps = dispatch => ({
   fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
   deletePlaylist: (id) => dispatch(deletePlaylist(id)),
   deletePlaylistSong: (playlistId, songId) => dispatch(deletePlaylistSong(playlistId, songId)),
+  updateQueue: (queue) => dispatch(updateQueue(queue)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistShow);

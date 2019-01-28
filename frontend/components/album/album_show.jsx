@@ -6,7 +6,12 @@ class AlbumShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleQueue = this.handleQueue.bind(this);
+    this.state = {
+      queue: this.props.albumSongs
+    };
+
+    this.getSongQueue = this.getSongQueue.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
   componentDidMount() {
@@ -14,9 +19,25 @@ class AlbumShow extends React.Component {
     this.props.fetchAlbum(albumId);
   }
 
-  handleQueue() {
+  getSongQueue(songId) {
+    let { albumSongs } = this.props;
+    let songIdx = 0;
+
+    for (let i = 0; i < albumSongs.length; i++) {
+      if (albumSongs[i].id === songId) {
+        songIdx = i;
+      }
+    }
+
+    const songQueue = albumSongs.slice(songIdx).concat(albumSongs.slice(0, songIdx));
+    return songQueue;
+  }
+
+  handlePlay() {
     this.props.updateQueue(this.props.albumSongs);
-    // this.props.setCurrentSong(this.props.albumSongs[0]);
+
+    // let currSong = this.props.albumsSongs[0];
+    this.props.setCurrentSong(this.props.albumSongs[0]);
   }
 
   render() {
@@ -27,7 +48,8 @@ class AlbumShow extends React.Component {
       return (
         <SongIndexItemContainer
           key={song.id}
-          song={song} />
+          song={song} 
+          getSongQueue={this.getSongQueue(song.id)} />
       );
     });
 
@@ -41,7 +63,6 @@ class AlbumShow extends React.Component {
         className="artist-link">{artist.name}</Link>
       );
     });
-
 
     return (
       <div className="playlist-main-container">
@@ -70,7 +91,7 @@ class AlbumShow extends React.Component {
             {/* FIX ME */}
             <button
               className="delete-playlist-btn"
-              onClick={this.handleQueue}>
+              onClick={this.handlePlay}>
               PLAY 
             </button>
             <button

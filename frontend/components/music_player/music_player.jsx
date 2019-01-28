@@ -10,6 +10,8 @@ class MusicPlayer extends React.Component {
     this.togglePlay = this.togglePlay.bind(this);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
+    this.shuffle = this.shuffle.bind(this);
+    this.repeat = this.repeat.bind(this);
   }
 
   // FIX ME - need to handle change to value
@@ -32,6 +34,28 @@ class MusicPlayer extends React.Component {
     this.props.playPreviousSong();
   }
 
+  shuffle() {
+    let songQueue = this.props.songQueue;
+    
+    for (let i = songQueue.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [songQueue[i], songQueue[j]] = [songQueue[j], songQueue[i]];
+    }
+
+    this.props.updateQueue(songQueue);
+  
+    return songQueue;
+  }
+
+  repeat() {
+    if (this.props.currentSong) {
+      this.props.isPlaying ? audio.loop = true : audio.loop = false; 
+    }
+
+    this.props.loopSong();
+    // debugger;
+  }
+
   render() {
     let { currentSong, isPlaying } = this.props;
 
@@ -42,12 +66,11 @@ class MusicPlayer extends React.Component {
       playPauseIcon = <i className="fa fa-play-circle" onClick={this.togglePlay}></i>
     }
     
-    let album;
+    // let album;
 
-    let artists = currentSong.artists;
+    // let artists = currentSong.artists;
     // debugger;
     
-
     return (
       <div className="music-player-container">
         <footer className="music-player">
@@ -65,13 +88,13 @@ class MusicPlayer extends React.Component {
           <div className="middle-container">
 
             <div className="controls-player">
-              <i className="fa fa-random"></i>
+              <i className="fa fa-random" onClick={this.shuffle}></i>
               <i className="fa fa-step-backward" onClick={this.previous}></i>
               {playPauseIcon} 
               <i className="fa fa-step-forward" onClick={this.next}></i>
               {/* <i className="fa fa-step-forward" onClick={this.playNextSong(song)}></i> */}
               {/* <i className="fa fa-redo-alt"></i> */}
-              <i className="fas fa-infinity"></i>
+              <i className="fas fa-infinity" onClick={this.repeat}></i>
             </div>
 
             <div>

@@ -6,6 +6,7 @@ class PlaylistShow extends React.Component {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.getSongQueue = this.getSongQueue.bind(this);
   }
   
   componentDidMount() {
@@ -23,35 +24,43 @@ class PlaylistShow extends React.Component {
     this.props.history.push(`/collection/playlists/`);
   }
 
+  getSongQueue(songId) {
+    let { playlistSongs } = this.props;
+    let songIdx = 0;
+
+    for (let i = 0; i < playlistSongs.length; i++) {
+      if (playlistSongs[i].id === songId) {
+        songIdx = i;
+      }
+    }
+
+    const songQueue = playlistSongs.slice(songIdx).concat(playlistSongs.slice(0, songIdx));
+    return songQueue;
+  }
+
   render() {
     let { playlist } = this.props;
     let { playlistSongs } = this.props;
-    if (!playlist || !playlistSongs) return null;
-    
-    playlistSongs = playlistSongs.map( song => {
-      if (song) {
-        return (
-          <SongIndexItemContainer 
-            type={"playlist_show"}
-            key={song.id}
-            song={song}
-            playlist={playlist}  
-          />
-          
-          // <SongIndexItem
-          // type={"playlist_show"}
-          // key={song.id}
-          // song={song}
-          // deletePlaylistSong={this.props.deletePlaylistSong}
-          // playlist={playlist}
-          // // playlistSongs={}
-          // />
+
+    if (!playlist || !playlistSongs) {
+      return null;
+    } else {
+      playlistSongs = playlistSongs.map( song => {
+        if (song) {
+          return (
+            <SongIndexItemContainer 
+              type={"playlist_show"}
+              key={song.id * Math.random()}
+              song={song}
+              playlist={playlist}  
+              getSongQueue={this.getSongQueue(song.id)}
+            />
           );
-      } else {
-        return null;
-      }
-    });
-    
+        } else {
+          return null;
+        }
+      });
+    }
     
     
     return (

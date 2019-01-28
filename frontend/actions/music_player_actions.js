@@ -1,5 +1,6 @@
 export const RECEIVE_CURRENT_SONG = 'RECEIVE_CURRENT_SONG';
 export const TOGGLE_SONG = 'TOGGLE_SONG';
+export const LOOP_SONG = 'LOOP_SONG';
 export const ADD_SONG_TO_QUEUE = 'ADD_SONG_TO_QUEUE';
 export const UPDATE_QUEUE = 'UPDATE_QUEUE';
 export const PLAY_NEXT_SONG = 'PLAY_NEXT_SONG';
@@ -13,6 +14,10 @@ export const setCurrentSong = (song, songIdx = 0) => ({
 
 export const toggleSong = () => ({
   type: TOGGLE_SONG,
+});
+
+export const loopSong = () => ({
+  type: LOOP_SONG,
 });
 
 export const addSongToQueue = (song) => ({
