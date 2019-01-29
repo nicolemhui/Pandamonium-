@@ -16,8 +16,9 @@ ArtistAlbum.destroy_all
 ArtistSong.destroy_all
 
 #Users
-demoUser = User.create(username: "demouser", email: "demo@user.com", password: "password")
-nikki = User.create(username: "nikki", email: "nikki@email.com", password: "password")
+demoUser = User.create(username: "Demo User", email: "demo@user.com", password: "password")
+nikki = User.create(username: "Nikki", email: "nikki@email.com", password: "password")
+djMango = User.create(username: "DJ Mango", email: "nikki@email.com", password: "password")
 
 
 #Daft Punk 
@@ -316,25 +317,28 @@ odesza_album_1 = ArtistAlbum.create(artist_id: odesza.id, album_id: od_in_return
 
 #Playlists 
 playlist1 = Playlist.create(name: "Chill Vibes", creator_id: demoUser.id, public: false)
-playlist1.photo.attach(io: File.open("app/assets/images/sleepy_panda.jpg"), filename: 'playlist1_photo.jpg')
+playlist1.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
+# playlist1.photo.attach(io: File.open("app/assets/images/sleepy_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist2 = Playlist.create(name: "Workout", creator_id: demoUser.id, public: true)
-playlist2.photo.attach(io: File.open("app/assets/images/hello_panda.jpg"), filename: 'playlist1_photo.jpg')
+playlist2.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
+# playlist2.photo.attach(io: File.open("app/assets/images/hello_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist3 = Playlist.create(name: "Study", creator_id: demoUser.id, public: false)
-playlist3.photo.attach(io: File.open("app/assets/images/unicorn_panda.jpg"), filename: 'playlist1_photo.jpg')
+playlist3.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
+# playlist3.photo.attach(io: File.open("app/assets/images/unicorn_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist4 = Playlist.create(name: "Jammin ~", creator_id: demoUser.id, public: false)
-playlist4.photo.attach(io: File.open("app/assets/images/new_playlist.png"), filename: 'playlist1_photo.jpg')
+playlist4.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 playlist5 = Playlist.create(name: "Rainy days", creator_id: demoUser.id, public: false)
-playlist5.photo.attach(io: File.open("app/assets/images/new_playlist.png"), filename: 'playlist1_photo.jpg')
+playlist5.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 playlist6 = Playlist.create(name: "Happy days", creator_id: nikki.id, public: true)
-playlist6.photo.attach(io: File.open("app/assets/images/new_playlist.png"), filename: 'playlist1_photo.jpg')
+playlist6.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 playlist7 = Playlist.create(name: "Carefree weeeeee", creator_id: nikki.id, public: false)
-playlist7.photo.attach(io: File.open("app/assets/images/new_playlist.png"), filename: 'playlist1_photo.jpg')
+playlist7.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 
 #PlaylistSongs 
@@ -359,6 +363,12 @@ playlist4_song_2 = PlaylistSong.create(playlist_id: playlist4.id, song_id: dp_ae
 playlist4_song_3 = PlaylistSong.create(playlist_id: playlist4.id, song_id: lp_hands_held_high.id)
 playlist4_song_4 = PlaylistSong.create(playlist_id: playlist4.id, song_id: pr_lionhearted.id)
 playlist4_song_5 = PlaylistSong.create(playlist_id: playlist4.id, song_id: pr_shelter.id)
+
+playlist5_song_1 = PlaylistSong.create(playlist_id: playlist5.id, song_id: lp_shadow_of_the_day.id)
+playlist5_song_2 = PlaylistSong.create(playlist_id: playlist5.id, song_id: pr_sad_machine.id)
+playlist5_song_3 = PlaylistSong.create(playlist_id: playlist5.id, song_id: bm_grenade.id)
+playlist5_song_4 = PlaylistSong.create(playlist_id: playlist5.id, song_id: ty_daydream.id)
+playlist5_song_5 = PlaylistSong.create(playlist_id: playlist5.id, song_id: lp_leave_out_all_the_rest.id)
 
 
 
