@@ -5,7 +5,8 @@ class Volume extends React.Component {
     super(props);
     this.state = {
       volumeClass: 'fas fa-volume-up',
-    }
+      volume: 0.5,
+    };
 
     this.audio = document.getElementById('audio');
 
@@ -24,19 +25,30 @@ class Volume extends React.Component {
   }
 
   handleVolume() {
-    const volumeSlider = document.getElementById("volume-slider");
-    volumeSlider.addEventListener("mousemove", () => { audio.volume = volumeSlider.value / 100; });
+    return (e) => {
+      this.setState({
+        volume: e.target.value / 100,
+      });
+
+      audio.volume = this.state.volume;
+    };
   }
 
   render() {
+    let { volume } = this.state;
 
     return (
       <div className="right-container">
         <div className="volume-slider">
           <i className={this.state.volumeClass} onClick={this.handleSound}></i>
-
-          <input id="volume-slider" type="range" min="0" max="100" value="0" step="1" className="slider" onChange={this.handleVolumeRange} />
-
+          <input id="slider" 
+            className="slider" 
+            type="range" 
+            min={0}
+            max={100} 
+            value={volume * 100} 
+            onChange={this.handleVolume()} 
+          />
         </div>
       </div>
     )
