@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ArtistShow from './artist_show';
 import { fetchArtist } from '../../actions/artist_actions';
+import { updateQueue } from '../../actions/music_player_actions';
 
 import { selectArtistAlbums, selectArtistSongs } from '../../reducers/selectors';
 
@@ -20,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchArtist: (id) => dispatch(fetchArtist(id))
+  fetchArtist: (id) => dispatch(fetchArtist(id)),
+  updateQueue: (queue) => dispatch(updateQueue(queue)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistShow);

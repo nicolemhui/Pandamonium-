@@ -12,34 +12,22 @@ class ArtistIndexItem extends React.Component {
     //FIX ME
     return (
       <div className="album-grid-item">
+        <Link to={`/artists/${artist.id}`}>
         <div className="album-item-info">
-          <div className="album-img"><Link to={`/artists/${artist.id}`}><img src={artist.photoUrl}></img></Link></div>
+          <div className="album-img"><img src={artist.photoUrl}></img></div>
           <div className="album-play-btn">
             <i className="far fa-play-circle"></i>
             {/* <i className="fas fa-play"></i> */}
           </div>
 
           <h1 className="album-title">
-            <Link to={`/artists/${artist.id}`} className="artist-name">{artist.name}</Link>
+            <h3 className="artist-name">{artist.name}</h3>
           </h1>
         </div>
+        </Link>
       </div>
     );
   }
 }
 
 export default ArtistIndexItem;
-
-
-// return (
-//   <div className="artist-item-container">
-//     <div className="artist-grid-item">
-//       <div className="artist-item-info">
-//         <div className="artist-play-btn">
-//           <i className="fas fa-play"></i>
-//         </div>
-//         <img className="artist-img" src={artist.photoUrl} />Picture!
-//           </div>
-//       <NavLink to={`/artists/${artist.id}`} className="artist-name">{artist.name}</NavLink>
-//     </div>
-//   </div>

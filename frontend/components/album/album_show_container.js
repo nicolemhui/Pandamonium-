@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import AlbumShow from './album_show';
 import { fetchAlbum } from '../../actions/album_actions';
 import { selectAlbumArtists, selectAlbumSongs } from '../../reducers/selectors';
@@ -10,6 +11,9 @@ const mapStateToProps = (state, ownProps) => {
   const album = state.entities.albums[albumId];
 
   const albumArtists = selectAlbumArtists(state, parseInt(albumId));
+  
+  // debugger;
+
   const albumSongs = selectAlbumSongs(state, parseInt(albumId));
 
   return ({
@@ -25,6 +29,6 @@ const mapDispatchToProps = dispatch => ({
   setCurrentSong: (song, idx) => dispatch(setCurrentSong(song, idx)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AlbumShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AlbumShow));
 
 

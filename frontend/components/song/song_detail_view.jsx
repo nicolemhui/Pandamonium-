@@ -14,7 +14,7 @@ class SongDetailView extends React.Component {
     const songArtists = artists.map(artist => {
     
       return (
-        <NavLink to={`/collection/artists/${artist.id}`}
+      <NavLink to={`/collection/artists/${artist.id}`}
         className="artist-text"
         key={artist.id}>
         {artist.name}

@@ -75,6 +75,12 @@ class PlaylistShow extends React.Component {
               
               {/* <h5>User Name</h5> */}
             </div>
+            <button
+              className="delete-playlist-btn"
+              onClick={this.handlePlay}>
+              PLAY
+            </button>
+            
             <button 
               className="delete-playlist-btn"
               onClick={this.handleDelete}> 

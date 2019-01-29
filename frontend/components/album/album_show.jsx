@@ -7,17 +7,35 @@ class AlbumShow extends React.Component {
     super(props);
 
     this.state = {
-      queue: this.props.albumSongs
+      queue: this.props.albumSongs,
+      albumArtists: this.props.albumArtists,
     };
 
     this.getSongQueue = this.getSongQueue.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    // debugger;
+
+    console.log("new props", newProps);
+
+    this.setState({ albumArtists: newProps.albumArtists });
+  }
+
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
     this.props.fetchAlbum(albumId);
   }
+
+    // this.props.fetchAlbum(albumId).then(() => this.setInitialState());
+  // }
+
+  // setInitialState() {
+  //   this.setState({ albumArtists: this.props.albumArtists });
+  // }
+
+    
 
   getSongQueue(songId) {
     let { albumSongs } = this.props;
@@ -41,28 +59,38 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    let { album, albumArtists, albumSongs } = this.props;
-    if (!album || !albumArtists || !albumSongs) return null;
+    let { album, albumSongs } = this.props;
+    let { albumArtists } = this.state;
 
+    
+    
+    if (!album || !albumArtists || !albumSongs) return null;
+    
     albumSongs = albumSongs.map(song => {
       return (
         <SongIndexItemContainer
           key={song.id}
           song={song} 
-          getSongQueue={this.getSongQueue(song.id)} />
+          getSongQueue={this.getSongQueue(song.id)} 
+        />
       );
     });
 
-
+    
     //FIX ME -- url path has albums/.....
     albumArtists = albumArtists.map(artist => {
+
+      console.log("album artists", albumArtists);
+      console.log("artist", artist);
+      
       return (
         <Link to={`artists/${artist.id}`} 
         // <Link to={`collection/artists/${artist.id}`} 
         key={artist.id}
         className="artist-link">{artist.name}</Link>
-      );
-    });
+        );
+      });
+
 
     return (
       <div className="playlist-main-container">
@@ -93,10 +121,6 @@ class AlbumShow extends React.Component {
               className="delete-playlist-btn"
               onClick={this.handlePlay}>
               PLAY 
-            </button>
-            <button
-              className="delete-playlist-btn">
-              DELETE 
             </button>
           </div>
 

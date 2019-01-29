@@ -9,14 +9,13 @@ class SongDisplay extends React.Component {
   render () {
     let { currentSong, albums, artists, albumArtists } = this.props;    
     let songArtists;
-
     
     if (artists) {
       songArtists = artists.map(artist => {
         return (
           <Link to={`/artists/${artist.id}`}
-          className="player-song-artists"
-          key={artist.id}>
+            className="player-song-artists"
+            key={artist.id}>
             {artist.name}
           </Link>
         )

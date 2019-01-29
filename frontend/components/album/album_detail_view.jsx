@@ -16,18 +16,19 @@ class SongDetailView extends React.Component {
 
     return (
       <div className="album-item-info">
-        <div className="album-img"><img src={album.coverPhotoUrl}></img></div>
-        <div className="album-play-btn">
-          <i className="far fa-play-circle"></i>
-          {/* <i className="fas fa-play"></i> */}
-        </div>
+        <Link to={`/albums/${album.id}`}>
+          <div className="album-img"><img src={album.coverPhotoUrl}></img></div>
+          <div className="album-play-btn">
+            <i className="far fa-play-circle"></i>
+            {/* <i className="fas fa-play"></i> */}
+          </div>
 
-        <h1 className="album-title">
-          <Link to={`/albums/${album.id}`} className="playlist-name">{album.title}</Link>
-        </h1>
+          <h1 className="album-title">
+            {album.title}
+          </h1>
+        </Link>
         
         {artists}
-
       </div>
     );
   }

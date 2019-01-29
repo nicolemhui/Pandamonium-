@@ -1,11 +1,13 @@
 import React from 'react';
-import SongIndexItem from '../song/song_index_item';
+import SongIndexItemContainer from '../song/song_index_item_container';
 import AlbumIndexItem from '../album/album_index_item';
 import { Link } from 'react-router-dom';
 
 class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.getSongQueue = this.getSongQueue.bind(this);
   }
 
   componentDidMount() {
@@ -13,28 +15,37 @@ class ArtistShow extends React.Component {
     this.props.fetchArtist(artistId);
   }
 
+  getSongQueue(songId) {
+    let { artistSongs } = this.props;
+    let songIdx = 0;
+
+    for (let i = 0; i < artistSongs.length; i++) {
+      if (artistSongs[i].id === songId) {
+        songIdx = i;
+      }
+    }
+
+    const songQueue = artistSongs.slice(songIdx).concat(artistSongs.slice(0, songIdx));
+    return songQueue;
+  }
+
   render() {
     let { artist, artistAlbums, artistSongs } = this.props;
     if (!artist || !artistAlbums || !artistSongs) return null;
 
     console.warn(artistSongs);
-
+    
     artistSongs = artistSongs.map(song => {
-      // if (song === undefined) {
-      //   debugger 
-      // }
-      // if (song) {
-        return (
-          <SongIndexItem
+      return (
+        <SongIndexItemContainer
           key={song.id}
           song={song}
-          />
-          );
-      // } else {
-      //   return null;
-      // }
+          getSongQueue={this.getSongQueue(song.id)}
+        />
+      );
     });
-
+      
+        
     artistAlbums = artistAlbums.map(album => {
       return (
         <AlbumIndexItem key={album.id} album={album} />
