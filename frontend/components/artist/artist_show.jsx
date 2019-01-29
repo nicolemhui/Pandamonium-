@@ -79,9 +79,9 @@ class ArtistShow extends React.Component {
           <div className="artist-album-container">
             <h2>Albums</h2>
             <div className="album-item-container">
-              <div className="album-grid">
+              <ul className="index-item-row">
               {artistAlbums}
-              </div>
+              </ul>
             </div>
           </div>
         </div>

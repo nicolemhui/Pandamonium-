@@ -11,9 +11,9 @@ class AlbumIndexItem extends React.Component {
     if (!album) return null;
 
     return (
-      <div className="album-grid-item">
+      <li className="index-item">
         <AlbumDetailViewContainer album={album} />
-      </div>
+      </li>
     )
   }
 }

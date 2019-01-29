@@ -11,7 +11,7 @@ class ArtistIndexItem extends React.Component {
     
     //FIX ME
     return (
-      <div className="album-grid-item">
+      <li className="index-item">
         <Link to={`/artists/${artist.id}`}>
         <div className="album-item-info">
           <div className="album-img"><img src={artist.photoUrl}></img></div>
@@ -25,7 +25,7 @@ class ArtistIndexItem extends React.Component {
           </h1>
         </div>
         </Link>
-      </div>
+      </li>
     );
   }
 }

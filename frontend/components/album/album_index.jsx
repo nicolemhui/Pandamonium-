@@ -28,9 +28,9 @@ class AlbumIndex extends React.Component {
     // FIX ME!
     return (
       <div className="album-item-container">
-        <div className="album-grid">
+        <ul className="index-item-row">
           {albums}
-        </div>
+        </ul>
       </div>
     )
   }
