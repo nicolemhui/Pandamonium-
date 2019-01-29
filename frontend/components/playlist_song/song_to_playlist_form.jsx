@@ -18,17 +18,17 @@ class SongToPlaylistForm extends React.Component {
     playlists = this.props.playlists.map( (playlist, i) => {
       return (
         <PlaylistIndexItem
-        key={i}
-        playlist={playlist}
-        createPlaylistSong={this.props.createPlaylistSong}
-        songId={songId}
-        modalType={modalType}
+          key={i}
+          playlist={playlist}
+          createPlaylistSong={this.props.createPlaylistSong}
+          songId={songId}
+          modalType={modalType}
         />
         )
       });
 
     return (
-      <div className="login-signup-form-container">
+      <div className="song-to-playlist-container">
         <button className="modal-exit" onClick={this.props.closeModal}>X</button>
 
         <h3>Add to playlist</h3>

@@ -7,7 +7,10 @@
 //   font-family: 'Montserrat';
 // }
 
-// .album-item-container {
+.album-item-container {
+  // width: 85%;
+  margin: 0 auto;
+  
   // margin-left: 300px;
   // background-color: lightblue;
   // max-width: 1000px;
@@ -19,7 +22,7 @@
   // top: 100px;
   // margin-left: 100px;
   // max-width: 1000px;
-// }
+}
 
 // .song-item-container {
 //   display: flex;
@@ -53,7 +56,7 @@
   // padding-top: 100px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 5px;
+  // grid-gap: 50px;
   grid-auto-rows: minmax(180px, auto);
 }
 
@@ -83,6 +86,7 @@
   }
 
   .album-play-btn {
+    color: white;
     visibility: hidden;
     position: absolute;
     font-size: 70px;
@@ -106,12 +110,19 @@
 }
 
 .album-play-btn .far fa-play-circle {
-  color: black;
+  color: white;
   // color: gray;
 }
 
 .album-play-btn .far fa-play-circle:hover {
-  color: white;
+  // color: white;
+  // transform: scale(1.10);
+  cursor: pointer;
+}
+
+.album-play-btn i:hover {
+  // color: white;
+  transform: scale(1.10);
   cursor: pointer;
 }
 
@@ -120,6 +131,10 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
+
+  h3 {
+    font-size: 16px;
+  }
 }
 
 

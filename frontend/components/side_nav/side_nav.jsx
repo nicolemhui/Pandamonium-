@@ -9,8 +9,10 @@ class SideNav extends React.Component {
   render() {
     const userGreeting = () => (
       <hgroup className="header-group">
-        <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
-        <i className="fas fa-user-circle"></i>
+        <div className="header-content">
+          <i className="fas fa-user-circle"></i>
+          <h4 className="header-name">{this.props.currentUser.username}</h4>
+        </div>
         <Link to="/" className="logout-btn" onClick={this.props.logout}>Log Out</Link>
       </hgroup>
     );

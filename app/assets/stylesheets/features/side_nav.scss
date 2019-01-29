@@ -43,6 +43,10 @@ a {
   text-align: left;
   display: block;
   color: #b3b3b3;
+
+  li {
+    margin-bottom: 20px;
+  }
 }
 
 .sidenav-links {
@@ -94,10 +98,18 @@ a {
 }
 
 .header-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+
+  .header-content {
+    display: flex;
+  }
+
   .header-name {
-    font-size: 26px;
-    font-weight: bold;
-    color: yellow;
+    color: white;
   }
 
   .fas {
@@ -108,16 +120,13 @@ a {
 }
 
 .logout-btn {
-  // color: #b3b3b3;
   padding: 5px 10px;
   border-radius: 200px;
-  border: 1px solid #b3b3b3;
+  background-color: #1DB954;
 }
 
 .logout-btn:hover {
-  padding: 7px 12px;
-  border-radius: 200px;
-  border: 1px solid #fff;
+  background-color: #1ED760;
   transform: scale(1.05);
 }
 
