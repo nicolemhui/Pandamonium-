@@ -5,7 +5,12 @@ import SongDisplayContainer from './song_display_container';
 class MusicPlayer extends React.Component {
   constructor(props) {
     super(props);
-    // this.audio = document.getElementById('audio');
+
+    this.state = {
+      progress: 0
+    };
+
+    this.audio = document.getElementById('audio');
 
     this.togglePlay = this.togglePlay.bind(this);
     this.next = this.next.bind(this);
@@ -53,7 +58,20 @@ class MusicPlayer extends React.Component {
     }
 
     this.props.loopSong();
-    // debugger;
+  }
+
+  onProgressSliderChange() {
+    console.log(this);
+
+    return event => {
+
+      const newProgress =
+        (event.target.value * this.audio.duration) / 100;
+      // this.player.currentTime = newProgress;
+      this.setState({
+        progress: newProgress
+      });
+    };
   }
 
   render() {
@@ -66,45 +84,50 @@ class MusicPlayer extends React.Component {
       playPauseIcon = <i className="fa fa-play-circle" onClick={this.togglePlay}></i>
     }
     
-    // let album;
+    let progressBar = 
+      <input
+        id="progress-bar"
+        type="range"
+        min={0}
+        max={100}
+        value={0}
+        // currentSong
+        // ? ((this.state.progress / this.audio.duration) * 100)
+        // : 0 }
+        onChange={this.onProgressSliderChange()}
+      // onMouseDown={this.onSeekBegin()}
+      // onMouseUp={this.onSeekEnd()}
+      />
 
-    // let artists = currentSong.artists;
-    // debugger;
-    
     return (
       <div className="music-player-container">
         <footer className="music-player">
           
           <SongDisplayContainer />
-          {/* <div className="left-container"> */}
 
-            {/* <img className="song-info-img" src={currentSong.album} /> */}
-
-            {/* <div className="song-info-container"> */}
-              {/* <Link to={`/albums/${currentSong.album_id}`}><h6 className="song-info-title">{currentSong.title}</h6></Link> */}
-              {/* <h6 className="song-info-artist-name">{currentSong.artists}</h6> */}
-            {/* </div> */}
-          {/* </div> */}
           <div className="middle-container">
 
             <div className="controls-player">
-              <i className="fa fa-random" onClick={this.shuffle}></i>
-              <i className="fa fa-step-backward" onClick={this.previous}></i>
-              {playPauseIcon} 
-              <i className="fa fa-step-forward" onClick={this.next}></i>
-              {/* <i className="fa fa-step-forward" onClick={this.playNextSong(song)}></i> */}
-              {/* <i className="fa fa-redo-alt"></i> */}
-              <i className="fas fa-infinity" onClick={this.repeat}></i>
+              <div className="control-icons">
+                <i className="fa fa-random" onClick={this.shuffle}></i>
+                <i className="fa fa-step-backward" onClick={this.previous}></i>
+                {playPauseIcon} 
+                <i className="fa fa-step-forward" onClick={this.next}></i>
+                <i className="fas fa-infinity" onClick={this.repeat}></i>
+              </div>
+           
+              {/* <div className="song-progress">
+                <div id="progress-bar"></div>
+              </div> */}
             </div>
 
+
             <div>
-              {/* FIX ME */}
               <audio id="audio" src={currentSong.audio_url} autoPlay></audio>
             </div>
           </div>
 
           <VolumeContainer />
-
     
         </footer>
       </div>
@@ -113,82 +136,3 @@ class MusicPlayer extends React.Component {
 }
 
 export default MusicPlayer;
-
-//FIX ME! -- bug with song playing 
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { NavLink } from 'react-router-dom';
-
-// class SongDetailView extends React.Component {
-
-
-//   render() {
-//     const { song, artists, albums } = this.props;
-
-//     // console.log(song, albums, artists);
-
-//     if (!artists || !song || !albums) return null;
-
-//     //FIX ME!
-//     // how to get artist id??
-//     const songArtists = artists.map(artist => {
-
-//       return (
-//         <NavLink to={`/collection/artists/${artist.id}`}
-//           className="artist-text"
-//           key={artist.id}>
-//           {artist.name}
-//         </NavLink>
-//       )
-//     }
-//     );
-
-//     const songAlbums = albums.map(album =>
-//       <NavLink to={`/collection/albums/${album.id}`}
-//         className="album-text"
-//         key={album.id}>
-//         {album.title}
-//       </NavLink>
-//     );
-
-//     let songInfoText;
-
-//     if (songAlbums.length === 0) {
-//       songInfoText = <div className="song-artists-links">
-//         {songArtists}
-//       </div>
-//     } else {
-//       songInfoText = <div>
-//         {songArtists}
-//         •
-//         {songAlbums}
-//       </div>;
-//     }
-
-//     return (
-//       <div className="song-item-info">
-
-//         <h3 className="song-title">{song.title}</h3>
-
-//         <div className="song-info">
-//           <div className="song-other-info">
-//             {songInfoText}
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default SongDetailView;
