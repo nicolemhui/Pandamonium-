@@ -16,26 +16,13 @@ class AlbumShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    // debugger;
-
-    console.log("new props", newProps);
-
-    this.setState({ albumArtists: newProps.albumArtists });
+    this.setState({ albumArtists: [newProps.artists] });
   }
 
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
-    this.props.fetchAlbum(albumId);
+    this.props.fetchAlbum(albumId)
   }
-
-    // this.props.fetchAlbum(albumId).then(() => this.setInitialState());
-  // }
-
-  // setInitialState() {
-  //   this.setState({ albumArtists: this.props.albumArtists });
-  // }
-
-    
 
   getSongQueue(songId) {
     let { albumSongs } = this.props;
@@ -53,44 +40,36 @@ class AlbumShow extends React.Component {
 
   handlePlay() {
     this.props.updateQueue(this.props.albumSongs);
-
-    // let currSong = this.props.albumsSongs[0];
     this.props.setCurrentSong(this.props.albumSongs[0]);
   }
 
   render() {
     let { album, albumSongs } = this.props;
     let { albumArtists } = this.state;
-
-    
     
     if (!album || !albumArtists || !albumSongs) return null;
     
+    albumArtists = albumArtists.map(artist => {
+      let key = Object.keys(artist)[0];
+      artist = artist[key];
+      return (
+        <Link to={`artists/${artist.id}`} 
+        key={artist.id * Math.random()}
+        className="artist-link">{artist.name}</Link>
+        );
+      });
+      
     albumSongs = albumSongs.map(song => {
       return (
         <SongIndexItemContainer
           key={song.id}
           song={song} 
+          type={"album_show"}
           getSongQueue={this.getSongQueue(song.id)} 
+          songArtists={albumArtists}
         />
       );
     });
-
-    
-    //FIX ME -- url path has albums/.....
-    albumArtists = albumArtists.map(artist => {
-
-      console.log("album artists", albumArtists);
-      console.log("artist", artist);
-      
-      return (
-        <Link to={`artists/${artist.id}`} 
-        // <Link to={`collection/artists/${artist.id}`} 
-        key={artist.id}
-        className="artist-link">{artist.name}</Link>
-        );
-      });
-
 
     return (
       <div className="playlist-main-container">
