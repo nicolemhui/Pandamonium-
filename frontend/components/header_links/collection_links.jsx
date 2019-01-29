@@ -16,7 +16,7 @@ class CollectionLinks extends React.Component {
   render() {
     return (
       <nav className="nav-links">
-        <ul>
+        <div className="nav-links-container">
           <div className="nav-bar-links">
             <NavLink to="/collection/playlists" className="nav-links-link">Playlists<span></span></NavLink>
             <NavLink to="/collection/songs" className="nav-links-link">Songs<span></span></NavLink>
@@ -27,7 +27,7 @@ class CollectionLinks extends React.Component {
           <div className="nav-link-button"> 
             <div><button className="create-playlist-btn" onClick={this.handleClick}>NEW PLAYLIST</button></div>
           </div>
-        </ul>
+        </div>
         
       </nav>
     )

@@ -37,7 +37,7 @@ class PlaylistIndexItem extends React.Component {
     this.props.modalType === "add_song_to_playlist" ? playIcon = null : playIcon = <i className="far fa-play-circle"></i>;
 
     return (
-      <div className="album-grid-item">
+      <li className="index-item">
         <Link to={`/playlists/${playlist.id}`} className="playlist-name" onClick={click}>
           <div className="album-item-info">
             <div className="album-img"><img src={photoUrl}></img></div>
@@ -51,7 +51,7 @@ class PlaylistIndexItem extends React.Component {
             {/* <Link to={`/playlists/${playlist.id}`} className="playlist-name">{playlist.name}</Link> */}
           </h1>
         </Link>
-      </div>
+      </li>
   
     );
   }

@@ -1,13 +1,31 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_SONG, TOGGLE_SONG, LOOP_SONG, ADD_SONG_TO_QUEUE, UPDATE_QUEUE, PLAY_NEXT_SONG, PLAY_PREVIOUS_SONG } from '../actions/music_player_actions';
 
+// FIX ME!
+// const currQueue = [
+//   {
+//     id: 510,
+//     title: "That's What I Like",
+//     album_id: 140,
+//     audio_url: "https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars%2C+24K+Magic+-+That's+What+I+Like.mp3"
+//   },
+//   { 
+//     id: 523, 
+//     title: "Shelter", 
+//     album_id: null, 
+//     audio_url: "https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson+-+Shelter.mp3" 
+//   },
+// ];
+
 const initialState = {
+  // currentSong: currQueue[0],
   currentSong: {},
   isPlaying: false,
+  // songQueue: currQueue,
   songQueue: [],
   currentSongIdx: 0,
   loop: false,
-}
+};
 
 export default function musicPlayerReducer(state = initialState, action) {
   let newState = merge({}, state);

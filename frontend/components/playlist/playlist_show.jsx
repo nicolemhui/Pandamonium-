@@ -80,7 +80,6 @@ class PlaylistShow extends React.Component {
               onClick={this.handlePlay}>
               PLAY
             </button>
-            
             <button 
               className="delete-playlist-btn"
               onClick={this.handleDelete}> 

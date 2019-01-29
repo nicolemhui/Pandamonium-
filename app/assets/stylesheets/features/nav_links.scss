@@ -4,21 +4,20 @@
 }
 
 .nav-links {
-  //FIX ME!! 
-  
-  // width: 1000px;
-  // height: 50px;
   margin-left: 500px;
+  // margin-left: 500px;
   background-color: transparent;
-  /* position: absolute; */
-  /* display: flex; */
+  display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   align-items: center;
   z-index: 4;
+
+  .nav-link-button {
+    margin-left: 200px;
+  }
 }
 
-.nav-links ul {
+.nav-links-container {
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -41,14 +40,11 @@
   transition: 0.3s;
 }
 
-//FIX ME 
 .nav-links-link:active {
   color: #fff;
   transition: 0.3s;
   padding-bottom: 4px;
-  // border-bottom-width: 2px;
-  // margin: 0 auto; /* This will center the border. */
-  // width: 50%;
+
   span {
     background-color: green;
     height: 2px;
@@ -56,6 +52,8 @@
     margin: 0 auto;
   }
 }
+
+
 
 
 

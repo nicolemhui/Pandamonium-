@@ -3,3 +3,23 @@
 //   height: 100%;
 //   background-color: yellow;
 // }
+
+.index-item-row {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: left;
+  margin: 0 45px;
+  // padding-top: 100px;
+  // display: grid;
+  // grid-template-columns: repeat(5, 1fr);
+  // grid-auto-rows: minmax(180px, auto);
+}
+
+.index-item {
+  border: 1px solid transparent;
+  margin: 15px;
+  text-align: center;
+  margin-bottom: 75px;
+}
+

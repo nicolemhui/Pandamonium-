@@ -43,7 +43,7 @@ class SongIndex extends React.Component {
         <SongIndexItemContainer
           key={song.id}
           song={song}
-          type= "song_index"
+          type={"song_index"}
           getSongQueue={this.getSongQueue(song.id)}
         />
       )

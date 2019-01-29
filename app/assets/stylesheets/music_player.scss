@@ -72,10 +72,18 @@
 
 .controls-player {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 400px;
   height: 100px;
+
+  .control-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .controls-player i {
@@ -84,6 +92,7 @@
 }
 
 .controls-player i:hover {
+  cursor: pointer;
   color: #FFFFFF;
 
   .fa.fa-play-circle {
@@ -95,14 +104,21 @@
   font-size: 34px;
 }
 
-// i:hover{
-//   color: #FFFFFF;
-// }
+.song-progress {
+  margin-top: 20px;
+  width: 400px;
+  background-color: grey;
+}
+
+#progress-bar {
+  width: 1%;
+  height: 5px;
+  background-color: green;
+}
 
 /* right volume container */
 .right-container {
   float: right;
-  /* display: block; */
   font-size: 16px;
   display: flex;
   justify-content: center;
@@ -113,9 +129,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  i:hover {
+    cursor: pointer;
+    color: #ffffff;
+  }
 }
 
-.slider {
+#slider {
   -webkit-appearance: none;
   margin-left: 5px;
   width: 125px;

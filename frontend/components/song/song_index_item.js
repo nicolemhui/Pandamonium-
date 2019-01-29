@@ -92,7 +92,6 @@ class SongIndexItem extends React.Component {
     // this.togglePlay = this.togglePlay.bind(this);
   }
 
-
   handleClick(e) {
     e.preventDefault();
     this.props.openModal("add_song_to_playlist", this.props.song.id);
@@ -100,8 +99,6 @@ class SongIndexItem extends React.Component {
 
   //FIX ME -- get the queue 
   handlePlay() {
-    // debugger;
-
     this.props.updateQueue(this.props.getSongQueue);
     this.props.setCurrentSong(this.props.song);
   }
@@ -136,34 +133,31 @@ class SongIndexItem extends React.Component {
     //if songs is on albums page, have ADD and PLAY buttons
     
     //FIX ME
-    // switch (this.props.type) {
-    //   case 'playlist_show':
-    //     songOptions = <div>
-    //       {playButton}
-    //       {deleteButton}
-    //     </div>
-    //     break;
-    //   case 'album_show':
-    //     songOptions = <div>
-    //       {playButton}
-    //       {addButton}
-    //     </div>;
-    //     break;
-    //   case 'song_index':
-    //     songOptions = <div>
-    //       {playButton}
-    //       {addButton}
-    //     </div>
-    //     break;
-    //   default:
-    //     return null;
-    // }
-    
+    const playButton = <button className="option" onClick={this.handlePlay}>Play song</button>;
+    const addButton = <button className="option" onClick={this.handleClick}>Add to playlist</button>;
+    const deleteButton = <button className="option" onClick={this.handleDelete}>Delete from playlist</button>;
+
+    let songOptions;
+
+    if (this.props.type === "playlist_show") {
+      songOptions = <div>{deleteButton}</div>
+    } else if (this.props.type === "album_show") {
+      songOptions = <div>
+        {playButton}
+        {addButton}
+      </div>;
+    } else if (this.props.type === "song_index" || this.props.type === "artist_show") {
+      songOptions = <div>
+        {playButton}
+        {addButton}
+      </div>
+    } else {
+      songOptions = ""
+    };
+
+
     return (
-
       <li className="songlist-row">
-
-        {/* {dropdownMenu}  */}
         <div className="left-song-details">
           <div className="song-icon-display">
             <div className="song-music-btn">
@@ -171,7 +165,6 @@ class SongIndexItem extends React.Component {
             </div>
 
             <div className="song-play-btn" onClick={this.handlePlay}>
-            {/* <div className="song-play-btn" onClick={() => this.props.setCurrentSong(song)}> */}
               <i className="fas fa-play" />
             </div>
           </div>
@@ -188,9 +181,10 @@ class SongIndexItem extends React.Component {
             this.state.menuOpen
               ? (
                 <div className="song-options-dropdown">
-                  <button className="option" onClick={this.handleClick}>Add to playlist</button>
-                  <button className="option" onClick={this.handleDelete}>Delete from playlist</button>
-                  {/* <button className="option" onClick={() => this.props.setCurrentSong(song)}>Play song</button> */}
+                  {songOptions}
+
+                  {/* {<button className="option" onClick={this.handleClick}>Add to playlist</button>} */}
+                  {/* <button className="option" onClick={this.handleDelete}>Delete from playlist</button> */}
                 </div>
               )
               : (

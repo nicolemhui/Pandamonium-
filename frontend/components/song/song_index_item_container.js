@@ -6,11 +6,9 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    //FIX ME
     currentSong: state.ui.musicPlayer.currentSong,
     isPlaying: state.ui.musicPlayer.isPlaying,
-    type: "song_index",
-  }
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

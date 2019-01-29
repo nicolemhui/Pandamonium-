@@ -9,7 +9,7 @@ class PlaylistIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPlaylists();
   }
-
+  
   render() {
     let { playlists } = this.props;
     if (!playlists) return null;
@@ -26,9 +26,9 @@ class PlaylistIndex extends React.Component {
 
     return (
       <div className="album-item-container">
-        <div className="album-grid">
+        <ul className="index-item-row">
             {playlists}
-        </div>
+        </ul>
       </div>
     )
   }
