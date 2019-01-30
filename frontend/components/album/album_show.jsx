@@ -73,21 +73,8 @@ class AlbumShow extends React.Component {
 
     return (
       <div className="playlist-main-container">
-  
         <div className="playlist-content-container">
-          <div className="playlist-song-container">
-            <ul className="song-list">
-              {albumSongs}
-            </ul>
-          </div>
-
           <div className="playlist-info">
-            {/* <button
-              onClick={this.handleQueue}>
-              PLAY
-            </button> */}
-
-            {/*  FIX ME -- want to add songs into queue and play song!  */}
             <div className="playlist-cover"><img src={album.coverPhotoUrl}></img></div>
 
             <div className="playlist-info-text">
@@ -95,7 +82,6 @@ class AlbumShow extends React.Component {
 
               <h5>{albumArtists}</h5>
             </div>
-            {/* FIX ME */}
             <button
               className="delete-playlist-btn"
               onClick={this.handlePlay}>
@@ -103,6 +89,11 @@ class AlbumShow extends React.Component {
             </button>
           </div>
 
+          <div className="playlist-song-container">
+            <ul className="song-list">
+              {albumSongs}
+            </ul>
+          </div>
         </div>
       </div>
     )

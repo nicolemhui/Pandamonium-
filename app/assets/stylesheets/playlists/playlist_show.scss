@@ -4,7 +4,15 @@
   background-attachment: fixed;
 }
 
-.playlists-content-container {
+// .playlist-content-container {
+//   display:flex;
+//   flex-direction:row;
+//   justify-content: space-around;
+//   font-family: 'Montserrat', sans-serif;
+//   color: #fff;
+// }
+
+.playlist-content-container {
   display:flex;
   flex-direction:row;
   justify-content: space-around;
@@ -14,9 +22,9 @@
 
 .playlist-info {
   color: #fff;
-  width: 500px;
-  max-width: 600px;
-  height: 600px;
+  // width: 500px;
+  // max-width: 600px;
+  // height: 600px;
   margin-left: 250px;
   text-align: center;
   display: flex;
@@ -70,13 +78,10 @@
 }
 
 .playlist-song-container {
-  position: absolute;
-  top: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   float: right;
-  margin-left: 50px;
+  // margin-left: 50px;
   margin-right: 100px; 
   width: 850px;
 
