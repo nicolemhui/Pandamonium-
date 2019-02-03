@@ -25,12 +25,11 @@ class AlbumIndex extends React.Component {
       )
     });
 
-    // FIX ME!
     return (
       <div className="album-item-container">
-        <ul className="index-item-row">
+        <li className="index-item-row">
           {albums}
-        </ul>
+        </li>
       </div>
     )
   }

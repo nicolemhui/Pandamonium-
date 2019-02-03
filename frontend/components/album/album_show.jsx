@@ -21,7 +21,7 @@ class AlbumShow extends React.Component {
 
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
-    this.props.fetchAlbum(albumId)
+    this.props.fetchAlbum(albumId);
   }
 
   getSongQueue(songId) {
@@ -53,9 +53,9 @@ class AlbumShow extends React.Component {
       let key = Object.keys(artist)[0];
       artist = artist[key];
       return (
-        <Link to={`artists/${artist.id}`} 
-        key={artist.id * Math.random()}
-        className="artist-link">{artist.name}</Link>
+        <Link to={`/artists/${artist.id}`} 
+          key={artist.id * Math.random()}
+          className="artist-link">{artist.name}</Link>
         );
       });
       

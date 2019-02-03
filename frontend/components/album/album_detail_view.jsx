@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-class SongDetailView extends React.Component {
+class AlbumDetailView extends React.Component {
 
   render() {
     const { album } = this.props;
 
     const artists = this.props.artists.map(artist =>
-      <li key={artist.id}>
+      <div key={artist.id}>
         <NavLink to={`/artists/${artist.id}`}
           className="album-artist">
         {artist.name}</NavLink>
-      </li>
+      </div>
     );
 
     return (
@@ -36,4 +36,4 @@ class SongDetailView extends React.Component {
 
 
 
-export default SongDetailView;
+export default AlbumDetailView;
