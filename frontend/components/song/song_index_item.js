@@ -157,7 +157,7 @@ class SongIndexItem extends React.Component {
 
 
     return (
-      <li className="songlist-row">
+      <div className="songlist-row">
         <div className="left-song-details">
           <div className="song-icon-display">
             <div className="song-music-btn">
@@ -169,7 +169,7 @@ class SongIndexItem extends React.Component {
             </div>
           </div>
 
-          <SongDetailViewContainer song={song} />
+          <SongDetailViewContainer song={song} songArtists={this.props.songArtists} />
         </div>
 
         <div className="song-options-container">
@@ -193,7 +193,7 @@ class SongIndexItem extends React.Component {
           }
         </div> 
          
-      </li>
+      </div>
     )
   }
 }

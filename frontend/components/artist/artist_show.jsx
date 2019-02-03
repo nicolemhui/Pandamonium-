@@ -33,8 +33,6 @@ class ArtistShow extends React.Component {
     let { artist, artistAlbums, artistSongs } = this.props;
     if (!artist || !artistAlbums || !artistSongs) return null;
 
-    console.warn(artistSongs);
-    
     artistSongs = artistSongs.map(song => {
       return (
         <SongIndexItemContainer
@@ -45,12 +43,12 @@ class ArtistShow extends React.Component {
       );
     });
       
-        
+    
     artistAlbums = artistAlbums.map(album => {
       return (
         <AlbumIndexItem key={album.id} album={album} />
-        );
-      });
+      );
+    });
 
     return (
       <div className="artist-main-container">

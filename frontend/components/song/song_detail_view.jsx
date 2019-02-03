@@ -9,12 +9,10 @@ class SongDetailView extends React.Component {
 
     if (!artists || !song || !albums) return null;
     
-    //FIX ME!
-    // how to get artist id??
     const songArtists = artists.map(artist => {
     
       return (
-      <NavLink to={`/collection/artists/${artist.id}`}
+      <NavLink to={`/artists/${artist.id}`}
         className="artist-text"
         key={artist.id}>
         {artist.name}
@@ -23,7 +21,7 @@ class SongDetailView extends React.Component {
     );
 
     const songAlbums = albums.map(album => 
-      <NavLink to={`/collection/albums/${album.id}`}
+      <NavLink to={`/albums/${album.id}`}
         className="album-text"
         key={album.id}>
         {album.title}

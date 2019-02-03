@@ -120,10 +120,6 @@ lp_minutes_to_midnight = Album.create(title: "Minutes to Midnight", year: 2007)
 lp_minutes_to_midnight_photo = File.open("app/assets/images/linkin_park_minutes_to_midnight.png")
 lp_minutes_to_midnight.cover_photo.attach(io: lp_minutes_to_midnight_photo, filename: 'lp_minutes_to_midnight.png')
 
-# lp_hybrid_theory = Album.create(title: "Minutes to Midnight", year: 2007)
-# lp_hybrid_theory_photo = File.open("app/assets/images/linkin_park_hybrid_theory.png")
-# lp_hybrid_theory.cover_photo.attach(io: lp_hybrid_theory_photo, filename: 'lp_hybrid_theory.png')
-
 lp_leave_out_all_the_rest = Song.create(title: "Leave Out All The Rest", album_id: lp_minutes_to_midnight.id)
 lp_leave_out_all_the_rest_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+03+Leave+Out+All+The+Rest.mp3")
 lp_leave_out_all_the_rest.audio.attach(io: lp_leave_out_all_the_rest_audio, filename: 'lp_leave_out_all_the_rest.mp3')
@@ -303,30 +299,15 @@ odesza_song_7 = ArtistSong.create(artist_id: odesza.id, song_id: od_line_of_sigh
 odesza_album_1 = ArtistAlbum.create(artist_id: odesza.id, album_id: od_in_return.id)
 
 
-
-# od_line_of_sight = Song.create(title: "Line of Sight", album_id: od_a_moment_apart.id)
-# od_falls = Song.create(title: "Falls", album_id: od_a_moment_apart.id)
-# od_across_the_room = Song.create(title: "Across The Room", album_id: od_a_moment_apart.id)
-# od_higher_ground = Song.create(title: "Higher Ground", album_id: od_a_moment_apart.id)
-
-
-
-
-
-
-
 #Playlists 
 playlist1 = Playlist.create(name: "Chill Vibes", creator_id: demoUser.id, public: false)
 playlist1.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
-# playlist1.photo.attach(io: File.open("app/assets/images/sleepy_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist2 = Playlist.create(name: "Workout", creator_id: demoUser.id, public: true)
 playlist2.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
-# playlist2.photo.attach(io: File.open("app/assets/images/hello_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist3 = Playlist.create(name: "Study", creator_id: demoUser.id, public: false)
 playlist3.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
-# playlist3.photo.attach(io: File.open("app/assets/images/unicorn_panda.jpg"), filename: 'playlist1_photo.jpg')
 
 playlist4 = Playlist.create(name: "Jammin ~", creator_id: demoUser.id, public: false)
 playlist4.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')

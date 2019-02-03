@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
   const albumId = ownProps.match.params.albumId;
   const album = state.entities.albums[albumId];
   const artists = state.entities.artists;
-  const songs = state.entities.songs;
 
   const albumArtists = selectAlbumArtists(state, parseInt(albumId));
   const albumSongs = selectAlbumSongs(state, parseInt(albumId));
@@ -21,7 +20,6 @@ const mapStateToProps = (state, ownProps) => {
     albumArtists,
     albumSongs,
     artists,
-    songs,
   });
 };
 

@@ -31,7 +31,7 @@ class PlaylistIndexItem extends React.Component {
       : ()=>{};
 
     let photoUrl;
-    playlist.photo_url ? photoUrl = playlist.photo_url : photoUrl = "https://s3-us-west-1.amazonaws.com/pandamonium-resources/new_playlist.png";
+    playlist.photo_url ? photoUrl = playlist.photo_url : photoUrl = "https://s3-us-west-1.amazonaws.com/pandamonium-resources/gradient.jpg";
 
     let playIcon;
     this.props.modalType === "add_song_to_playlist" ? playIcon = null : playIcon = <i className="far fa-play-circle"></i>;

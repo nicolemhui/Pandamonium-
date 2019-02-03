@@ -29,7 +29,6 @@ class SearchResults extends React.Component {
     
     return (
       <div className="search-results">
-        HELLO
         {/* {artists} */}
         {/* {songs} */}
         {albums}

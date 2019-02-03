@@ -9,7 +9,6 @@ class ArtistIndexItem extends React.Component {
     const artist = this.props.artist;
     if (!artist) return null;
     
-    //FIX ME
     return (
       <li className="index-item">
         <Link to={`/artists/${artist.id}`}>
@@ -17,12 +16,11 @@ class ArtistIndexItem extends React.Component {
           <div className="album-img"><img src={artist.photoUrl}></img></div>
           <div className="album-play-btn">
             <i className="far fa-play-circle"></i>
-            {/* <i className="fas fa-play"></i> */}
           </div>
 
-          <h1 className="album-title">
+          <div className="album-title">
             <h3 className="artist-name">{artist.name}</h3>
-          </h1>
+          </div>
         </div>
         </Link>
       </li>
