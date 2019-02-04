@@ -5,7 +5,7 @@ class Volume extends React.Component {
     super(props);
     this.state = {
       volumeClass: 'fas fa-volume-up',
-      volume: 0.5,
+      volume: 0.3,
     };
 
     this.audio = document.getElementById('audio');

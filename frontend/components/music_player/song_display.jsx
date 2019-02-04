@@ -35,7 +35,9 @@ class SongDisplay extends React.Component {
     let album = albums[0];
     let albumPhoto;
 
-    if (!album) {
+     if (currentSong.photoUrl) {
+      albumPhoto = <img src={currentSong.photoUrl} />
+    } else if (!album) {
       albumPhoto = <img src="https://s3-us-west-1.amazonaws.com/pandamonium-resources/new_playlist.png" />
     } else {
       albumPhoto = <img src={album.coverPhotoUrl} />
@@ -50,8 +52,7 @@ class SongDisplay extends React.Component {
           </div>
 
           <div className="song-title-artist">
-            {/* <p>{album.name}</p> */}
-            <Link to={`/albums/${currentSong.album_id}`}><h6 className="player-song-title">{currentSong.title}</h6></Link>
+            <h6 className="player-song-title">{currentSong.title}</h6>
             {songArtists}
           </div>
 
