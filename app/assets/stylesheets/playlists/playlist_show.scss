@@ -32,6 +32,11 @@
   flex-direction: column;
   align-items: center;
   
+  .playlist-btns { 
+    display: flex;
+    flex-direction: column;
+  }
+  
   .playlist-cover {
     margin-top: 100px;
     width: 300px;

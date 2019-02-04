@@ -4,4 +4,8 @@ json.set! song.id do
   if song.audio.attached?
 	  json.audio_url url_for(song.audio)
   end 
+
+  if song.photo.attached?
+	  json.photoUrl url_for(song.photo)
+  end 
 end 
