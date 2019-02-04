@@ -143,6 +143,8 @@ lp_in_pieces.audio.attach(io: lp_in_pieces_audio, filename: 'lp_in_pieces.mp3')
 lp_in_the_end = Song.create(title: "In The End")
 lp_in_the_end_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+08+In+The+End.mp3")
 lp_in_the_end.audio.attach(io: lp_in_the_end_audio, filename: 'lp_in_the_end.mp3')
+lp_in_the_end_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/in_the_end.png")
+lp_in_the_end.photo.attach(io: lp_in_the_end_photo, filename: 'lp_in_the_end.png')
 
 #numb / encore !!
 
@@ -197,6 +199,8 @@ pr_goodbye_to_a_world.audio.attach(io: pr_goodbye_to_a_world_audio, filename: 'p
 pr_shelter = Song.create(title: "Shelter")
 pr_shelter_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson+-+Shelter.mp3")
 pr_shelter.audio.attach(io: pr_shelter_audio, filename: 'pr_shelter.mp3')
+pr_shelter_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/shelter.png")
+pr_shelter.photo.attach(io: pr_shelter_photo, filename: 'pr_shelter.png')
 
 #pr songs & albums 
 pr_song_1 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_divinity.id, ord: 1)
@@ -208,7 +212,7 @@ pr_song_6 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_goodbye
 pr_song_7 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_shelter.id, ord: 1)
 
 pr_album_1 = ArtistAlbum.create(artist_id: porter_robinson.id, album_id: pr_worlds.id)
-
+pr_album_2 = ArtistAlbum.create(artist_id: porter_robinson.id, album_id: pr_shelter.id)
 
 #Tycho 
 tycho = Artist.create(name: "Tycho")
@@ -299,26 +303,154 @@ odesza_song_7 = ArtistSong.create(artist_id: odesza.id, song_id: od_line_of_sigh
 odesza_album_1 = ArtistAlbum.create(artist_id: odesza.id, album_id: od_in_return.id)
 
 
+
+#One Republic
+one_republic = Artist.create(name: "One Republic")
+one_republic_artist_photo = File.open("app/assets/images/one_republic_artist.jpg")
+one_republic.photo.attach(io: one_republic_artist_photo, filename: 'one_republic_artist.jpg')
+
+or_waking_up = Album.create(title: "Waking Up", year: 2009)
+or_waking_up_photo = File.open("app/assets/images/one_republic_waking_up.png")
+or_waking_up.cover_photo.attach(io: or_waking_up_photo, filename: 'or_waking_up.png')
+
+or_made_for_you = Song.create(title: "Made For You", album_id: or_waking_up.id)
+or_made_for_you_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+01+Made+For+You.mp3")
+or_made_for_you.audio.attach(io: or_made_for_you_audio, filename: 'or_made_for_you.mp3')
+
+or_all_the_right_moves = Song.create(title: "All The Right Moves", album_id: or_waking_up.id)
+or_all_the_right_moves_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+02+All+The+Right+Moves.mp3")
+or_all_the_right_moves.audio.attach(io: or_all_the_right_moves_audio, filename: 'or_all_the_right_moves.mp3')
+
+or_secrets = Song.create(title: "Secrets", album_id: or_waking_up.id)
+or_secrets_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+03+Secrets.mp3")
+or_secrets.audio.attach(io: or_secrets_audio, filename: 'or_secrets.mp3')
+
+or_everybody_loves_me = Song.create(title: "Everybody Loves Me", album_id: or_waking_up.id)
+or_everybody_loves_me_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+04+Everybody+Loves+Me.mp3")
+or_everybody_loves_me.audio.attach(io: or_everybody_loves_me_audio, filename: 'or_everybody_loves_me.mp3')
+
+or_good_life = Song.create(title: "Good Life", album_id: or_waking_up.id)
+or_good_life_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+06+Good+Life.mp3")
+or_good_life.audio.attach(io: or_good_life_audio, filename: 'or_good_life.mp3')
+
+or_all_this_time = Song.create(title: "All This Time", album_id: or_waking_up.id)
+or_all_this_time_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+07+All+This+Time.mp3")
+or_all_this_time.audio.attach(io: or_all_this_time_audio, filename: 'or_all_this_time.mp3')
+
+#one_republic songs & albums 
+one_republic_song_1 = ArtistSong.create(artist_id: one_republic.id, song_id: or_made_for_you.id, ord: 1)
+one_republic_song_2 = ArtistSong.create(artist_id: one_republic.id, song_id: or_all_the_right_moves.id, ord: 1)
+one_republic_song_3 = ArtistSong.create(artist_id: one_republic.id, song_id: or_secrets.id, ord: 1)
+one_republic_song_4 = ArtistSong.create(artist_id: one_republic.id, song_id: or_everybody_loves_me.id, ord: 1)
+one_republic_song_5 = ArtistSong.create(artist_id: one_republic.id, song_id: or_good_life.id, ord: 1)
+one_republic_song_6 = ArtistSong.create(artist_id: one_republic.id, song_id: or_all_this_time.id, ord: 1)
+
+one_republic_album_1 = ArtistAlbum.create(artist_id: one_republic.id, album_id: or_waking_up.id)
+
+
+#Madeon
+madeon = Artist.create(name: "Madeon")
+madeon_artist_photo = File.open("app/assets/images/madeon_artist.jpg")
+madeon.photo.attach(io: madeon_artist_photo, filename: 'madeon_artist.jpg')
+
+madeon_adventure = Album.create(title: "Adventure", year: 2015)
+madeon_adventure_photo = File.open("app/assets/images/madeon_album.png")
+madeon_adventure.cover_photo.attach(io: madeon_adventure_photo, filename: 'madeon_adventure.png')
+
+madeon_youre_on = Song.create(title: "You're On", album_id: madeon_adventure.id)
+madeon_youre_on_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Madeon+-+02+You're+On+(feat.+Kyan).mp3")
+madeon_youre_on.audio.attach(io: madeon_youre_on_audio, filename: 'madeon_youre_on.mp3')
+
+madeon_pay_no_mind = Song.create(title: "Pay No Mind", album_id: madeon_adventure.id)
+madeon_pay_no_mind_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Madeon+-+05+Pay+No+Mind+(feat.+Passion+Pit).mp3")
+madeon_pay_no_mind.audio.attach(io: madeon_pay_no_mind_audio, filename: 'madeon_pay_no_mind.mp3')
+
+madeon_beings = Song.create(title: "Beings", album_id: madeon_adventure.id)
+madeon_beings_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Madeon+-+06+Beings.mp3")
+madeon_beings.audio.attach(io: madeon_beings_audio, filename: 'madeon_beings.mp3')
+
+madeon_innocence = Song.create(title: "Innocence", album_id: madeon_adventure.id)
+madeon_innocence_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Madeon+-+10+Innocence+(feat.+Aquilo).mp3")
+madeon_innocence.audio.attach(io: madeon_innocence_audio, filename: 'madeon_innocence.mp3')
+
+madeon_the_city = Song.create(title: "The City", album_id: madeon_adventure.id)
+madeon_the_city_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Madeon+-+15+The+City.mp3")
+madeon_the_city.audio.attach(io: madeon_the_city_audio, filename: 'madeon_the_city.mp3')
+
+#madeon songs & albums 
+madeon_song_1 = ArtistSong.create(artist_id: madeon.id, song_id: madeon_youre_on.id, ord: 1)
+madeon_song_2 = ArtistSong.create(artist_id: madeon.id, song_id: madeon_pay_no_mind.id, ord: 1)
+madeon_song_3 = ArtistSong.create(artist_id: madeon.id, song_id: madeon_beings.id, ord: 1)
+madeon_song_4 = ArtistSong.create(artist_id: madeon.id, song_id: madeon_innocence.id, ord: 1)
+madeon_song_5 = ArtistSong.create(artist_id: madeon.id, song_id: madeon_the_city.id, ord: 1)
+
+madeon_album_1 = ArtistAlbum.create(artist_id: madeon.id, album_id: madeon_adventure.id)
+
+
+#Maroon 5
+maroon_5 = Artist.create(name: "Maroon 5")
+maroon_5_artist_photo = File.open("app/assets/images/maroon_5_artist.jpg")
+maroon_5.photo.attach(io: maroon_5_artist_photo, filename: 'maroon_5_artist.jpg')
+
+maroon_5_songs_about_jane = Album.create(title: "Songs About Jane", year: 2009)
+maroon_5_songs_about_jane_photo = File.open("app/assets/images/maroon_5_songs_about_jane.png")
+maroon_5_songs_about_jane.cover_photo.attach(io: maroon_5_songs_about_jane_photo, filename: 'maroon_5_songs_about_jane.png')
+
+maroon_5_harder_to_breathe = Song.create(title: "Harder to Breathe", album_id: maroon_5_songs_about_jane.id)
+maroon_5_harder_to_breathe_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+01+Harder+To+Breathe.m4a")
+maroon_5_harder_to_breathe.audio.attach(io: maroon_5_harder_to_breathe_audio, filename: 'maroon_5_harder_to_breathe.mp3')
+
+maroon_5_this_love = Song.create(title: "This Love", album_id: maroon_5_songs_about_jane.id)
+maroon_5_this_love_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+02+This+Love.m4a")
+maroon_5_this_love.audio.attach(io: maroon_5_this_love_audio, filename: 'maroon_5_this_love.mp3')
+
+maroon_5_she_will_be_loved = Song.create(title: "She Will Be Loved", album_id: maroon_5_songs_about_jane.id)
+maroon_5_she_will_be_loved_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+04+She+Will+Be+Loved.m4a")
+maroon_5_she_will_be_loved.audio.attach(io: maroon_5_she_will_be_loved_audio, filename: 'maroon_5_she_will_be_loved.mp3')
+
+maroon_5_tangled = Song.create(title: "Tangled", album_id: maroon_5_songs_about_jane.id)
+maroon_5_tangled_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+05+Tangled.m4a")
+maroon_5_tangled.audio.attach(io: maroon_5_tangled_audio, filename: 'maroon_5_tangled.mp3')
+
+maroon_5_sunday_mornings = Song.create(title: "Sunday Mornings", album_id: maroon_5_songs_about_jane.id)
+maroon_5_sunday_mornings_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+08+Sunday+Mornings.m4a")
+maroon_5_sunday_mornings.audio.attach(io: maroon_5_sunday_mornings_audio, filename: 'maroon_5_sunday_mornings.mp3')
+
+maroon_5_secret = Song.create(title: "Secret", album_id: maroon_5_songs_about_jane.id)
+maroon_5_secret_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+09+Secret.m4a")
+maroon_5_secret.audio.attach(io: maroon_5_secret_audio, filename: 'maroon_5_secret.mp3')
+
+#maroon_5 songs & albums 
+maroon_5_song_1 = ArtistSong.create(artist_id: maroon_5.id, song_id: maroon_5_harder_to_breathe.id, ord: 1)
+maroon_5_song_2 = ArtistSong.create(artist_id: maroon_5.id, song_id: maroon_5_this_love.id, ord: 1)
+maroon_5_song_3 = ArtistSong.create(artist_id: maroon_5.id, song_id: maroon_5_she_will_be_loved.id, ord: 1)
+maroon_5_song_4 = ArtistSong.create(artist_id: maroon_5.id, song_id: maroon_5_tangled.id, ord: 1)
+maroon_5_song_5 = ArtistSong.create(artist_id: maroon_5.id, song_id: maroon_5_sunday_mornings.id, ord: 1)
+maroon_5_song_6 = ArtistSong.create(artist_id: maroon_5.id, song_id: maroon_5_secret.id, ord: 1)
+
+maroon_5_album_1 = ArtistAlbum.create(artist_id: maroon_5.id, album_id: maroon_5_songs_about_jane.id)
+
+
 #Playlists 
-playlist1 = Playlist.create(name: "Chill Vibes", creator_id: demoUser.id, public: false)
+playlist1 = Playlist.create(name: "Chill Vibes", creator_id: demoUser.id, public: true)
 playlist1.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 playlist2 = Playlist.create(name: "Workout", creator_id: demoUser.id, public: true)
 playlist2.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist3 = Playlist.create(name: "Study", creator_id: demoUser.id, public: false)
+playlist3 = Playlist.create(name: "Study", creator_id: demoUser.id, public: true)
 playlist3.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist4 = Playlist.create(name: "Jammin ~", creator_id: demoUser.id, public: false)
+playlist4 = Playlist.create(name: "Jammin ~", creator_id: demoUser.id, public: true)
 playlist4.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist5 = Playlist.create(name: "Rainy days", creator_id: demoUser.id, public: false)
+playlist5 = Playlist.create(name: "Rainy days", creator_id: demoUser.id, public: true)
 playlist5.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 playlist6 = Playlist.create(name: "Happy days", creator_id: nikki.id, public: true)
 playlist6.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist7 = Playlist.create(name: "Carefree weeeeee", creator_id: nikki.id, public: false)
+playlist7 = Playlist.create(name: "Carefree weeeeee", creator_id: nikki.id, public: true)
 playlist7.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 
@@ -327,17 +459,25 @@ playlist1_song_1 = PlaylistSong.create(playlist_id: playlist1.id, song_id: od_sa
 playlist1_song_2 = PlaylistSong.create(playlist_id: playlist1.id, song_id: od_line_of_sight.id)
 playlist1_song_3 = PlaylistSong.create(playlist_id: playlist1.id, song_id: ty_dive.id)
 playlist1_song_4 = PlaylistSong.create(playlist_id: playlist1.id, song_id: ty_melanine.id)
-playlist1_song_5 = PlaylistSong.create(playlist_id: playlist4.id, song_id: pr_shelter.id)
-playlist1_song_6 = PlaylistSong.create(playlist_id: playlist4.id, song_id: bm_lazy_song.id)
+playlist1_song_5 = PlaylistSong.create(playlist_id: playlist1.id, song_id: pr_shelter.id)
+playlist1_song_6 = PlaylistSong.create(playlist_id: playlist1.id, song_id: bm_lazy_song.id)
+playlist1_song_7 = PlaylistSong.create(playlist_id: playlist1.id, song_id: or_good_life.id)
+playlist1_song_8 = PlaylistSong.create(playlist_id: playlist1.id, song_id: madeon_beings.id)
+playlist1_song_9 = PlaylistSong.create(playlist_id: playlist1.id, song_id: madeon_pay_no_mind.id)
+playlist1_song_10 = PlaylistSong.create(playlist_id: playlist1.id, song_id: maroon_5_sunday_mornings.id)
 
 playlist2_song_1 = PlaylistSong.create(playlist_id: playlist2.id, song_id: lp_in_the_end.id)
 playlist2_song_2 = PlaylistSong.create(playlist_id: playlist2.id, song_id: lp_what_ive_done.id)
 playlist2_song_3 = PlaylistSong.create(playlist_id: playlist2.id, song_id: dp_one_more_time.id)
-playlist2_song_3 = PlaylistSong.create(playlist_id: playlist2.id, song_id: dp_harder_better_faster_stronger.id)
+playlist2_song_4 = PlaylistSong.create(playlist_id: playlist2.id, song_id: dp_harder_better_faster_stronger.id)
+playlist2_song_5 = PlaylistSong.create(playlist_id: playlist2.id, song_id: maroon_5_harder_to_breathe.id)
+playlist2_song_6 = PlaylistSong.create(playlist_id: playlist2.id, song_id: madeon_youre_on.id)
 
 playlist3_song_1 = PlaylistSong.create(playlist_id: playlist3.id, song_id: ty_a_walk.id)
 playlist3_song_2 = PlaylistSong.create(playlist_id: playlist3.id, song_id: od_light.id)
 playlist3_song_3 = PlaylistSong.create(playlist_id: playlist3.id, song_id: dp_digital_love.id)
+playlist3_song_4 = PlaylistSong.create(playlist_id: playlist3.id, song_id: or_all_the_right_moves.id)
+playlist3_song_5 = PlaylistSong.create(playlist_id: playlist3.id, song_id: or_good_life.id)
 
 playlist4_song_1 = PlaylistSong.create(playlist_id: playlist4.id, song_id: od_line_of_sight.id)
 playlist4_song_2 = PlaylistSong.create(playlist_id: playlist4.id, song_id: dp_aerodynamic.id)
@@ -350,22 +490,18 @@ playlist5_song_2 = PlaylistSong.create(playlist_id: playlist5.id, song_id: pr_sa
 playlist5_song_3 = PlaylistSong.create(playlist_id: playlist5.id, song_id: bm_grenade.id)
 playlist5_song_4 = PlaylistSong.create(playlist_id: playlist5.id, song_id: ty_daydream.id)
 playlist5_song_5 = PlaylistSong.create(playlist_id: playlist5.id, song_id: lp_leave_out_all_the_rest.id)
+playlist5_song_6 = PlaylistSong.create(playlist_id: playlist3.id, song_id: or_secrets.id)
 
+playlist6_song_1 = PlaylistSong.create(playlist_id: playlist6.id, song_id: lp_what_ive_done.id)
+playlist6_song_2 = PlaylistSong.create(playlist_id: playlist6.id, song_id: pr_lionhearted.id)
+playlist6_song_3 = PlaylistSong.create(playlist_id: playlist6.id, song_id: bm_finesse.id)
+playlist6_song_4 = PlaylistSong.create(playlist_id: playlist6.id, song_id: bm_marry_you.id)
+playlist6_song_5 = PlaylistSong.create(playlist_id: playlist6.id, song_id: od_light.id)
+playlist6_song_6 = PlaylistSong.create(playlist_id: playlist6.id, song_id: or_good_life.id)
+playlist6_song_7 = PlaylistSong.create(playlist_id: playlist6.id, song_id: madeon_pay_no_mind.id)
 
-
-# #ArtistSongs
-
-
-# artist_song_4 = ArtistSong.create(artist_id: linkin_park.id, song_id: lp_in_the_end.id, ord: 1)
-# artist_song_5 = ArtistSong.create(artist_id: linkin_park.id, song_id: jz_numb_encore.id, ord: 2)
-
-# artist_song_6 = ArtistSong.create(artist_id: jay_z.id, song_id: jz_numb_encore.id, ord: 1)
-
-# artist_song_7 = ArtistSong.create(artist_id: odesza.id, song_id: od_higher_ground.id, ord: 1)
-# artist_song_8 = ArtistSong.create(artist_id: odesza.id, song_id: od_across_the_room.id, ord: 1)
-# artist_song_9 = ArtistSong.create(artist_id: odesza.id, song_id: od_falls.id, ord: 1)
-# artist_song_10 = ArtistSong.create(artist_id: odesza.id, song_id: od_line_of_sight.id, ord: 1)
-
-# #ArtistAlbums
-# artist_album_2 = ArtistAlbum.create(artist_id: linkin_park.id, album_id: lp_hybrid_theory.id)
-# artist_album_3 = ArtistAlbum.create(artist_id: odesza.id, album_id: od_a_moment_apart.id)
+playlist7_song_1 = PlaylistSong.create(playlist_id: playlist7.id, song_id: pr_shelter.id)
+playlist7_song_2 = PlaylistSong.create(playlist_id: playlist7.id, song_id: bm_thats_what_i_like.id)
+playlist7_song_3 = PlaylistSong.create(playlist_id: playlist7.id, song_id: bm_finesse.id)
+playlist7_song_4 = PlaylistSong.create(playlist_id: playlist7.id, song_id: ty_dive.id)
+playlist7_song_5 = PlaylistSong.create(playlist_id: playlist7.id, song_id: od_sun_models.id)
