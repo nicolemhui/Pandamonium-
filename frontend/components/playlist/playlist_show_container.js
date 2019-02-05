@@ -7,6 +7,7 @@ import { selectPlaylistSongs} from '../../reducers/selectors';
 import { setCurrentSong, toggleSong, updateQueue } from '../../actions/music_player_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  let userId = state.session.id;
 
   let playlistId = ownProps.match.params.playlistId;
   let playlist = state.entities.playlists[playlistId];
@@ -14,8 +15,9 @@ const mapStateToProps = (state, ownProps) => {
   let playlistSongs = selectPlaylistSongs(state, parseInt(playlistId));
 
   return ({
-    playlist: playlist,
-    playlistSongs: playlistSongs
+    playlist,
+    playlistSongs,
+    userId,
   });
 };
 

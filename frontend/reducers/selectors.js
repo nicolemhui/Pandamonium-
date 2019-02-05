@@ -2,7 +2,7 @@
 export const selectSongArtists = (state, songId) => {
   return Object.values(state.entities.artistSongs)
     .filter(artistSong => artistSong.song_id === songId)
-    .map(artistSong => state.entities.artists[artistSong.artist_id])
+    .map(artistSong => state.entities.artists[artistSong.artist_id]);
 };
 
 // returns artist songs 
@@ -14,7 +14,7 @@ export const selectArtistSongs = (state, artistId) => {
       return state.entities.songs[artistSong.song_id] });
 };
 
-//return selected album from artist id
+//return selected album
 export const selectSongAlbums = (state, songAlbumId) => {
   return Object.values(state.entities.albums)
     .filter(album => album.id === songAlbumId);

@@ -9,7 +9,7 @@ class SongDisplay extends React.Component {
   render () {
     let { currentSong, albums, artists, albumArtists } = this.props;    
     let songArtists;
-    
+
     if (artists) {
       songArtists = artists.map(artist => {
         return (

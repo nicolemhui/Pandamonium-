@@ -2,8 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 class SongDetailView extends React.Component {
-  
-  
+
   render() {
     const { song, artists, albums } = this.props;
 

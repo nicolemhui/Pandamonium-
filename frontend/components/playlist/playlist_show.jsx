@@ -62,29 +62,45 @@ class PlaylistShow extends React.Component {
       });
     }
     
+    let buttons;
     
+    if (this.props.userId === playlist.creator_id) {
+      buttons = 
+        <div className="playlist-btns">
+          <button
+            className="delete-playlist-btn"
+            onClick={this.handlePlay}>
+            PLAY
+          </button>
+          <button
+              className="delete-playlist-btn"
+              onClick={this.handleDelete}>
+              DELETE
+          </button>
+        </div>
+    } else {
+      buttons =
+        <div className="playlist-btns">
+          <button
+            className="delete-playlist-btn"
+            onClick={this.handlePlay}>
+            PLAY
+          </button>
+        </div>
+    }
+
+
     return (
       <div className="playlist-main-container">
         <div className="playlist-content-container">
           <div className="playlist-info">
-    
             <div className="playlist-cover"><img src={playlist.photo_url} className="cover-photo"></img></div>
     
             <div className="playlist-info-text">
               <h3>{playlist.name}</h3>
-              
-              {/* <h5>User Name</h5> */}
             </div>
-            <button
-              className="delete-playlist-btn"
-              onClick={this.handlePlay}>
-              PLAY
-            </button>
-            <button 
-              className="delete-playlist-btn"
-              onClick={this.handleDelete}> 
-              DELETE
-            </button>
+
+            {buttons}
           </div>
           <br/>
           <div className="playlist-song-container">
