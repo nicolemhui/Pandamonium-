@@ -62,8 +62,8 @@ dp_album_1 = ArtistAlbum.create(artist_id: daft_punk.id, album_id: dp_discovery.
 
 #Bruno Mars
 bruno_mars = Artist.create(name: "Bruno Mars")
-bm_artist_photo = File.open("app/assets/images/bruno_mars_artist.jpg")
-bruno_mars.photo.attach(io: bm_artist_photo, filename: 'bruno_mars_artist.jpg')
+bm_artist_photo = File.open("app/assets/images/bruno_mars_artist.png")
+bruno_mars.photo.attach(io: bm_artist_photo, filename: 'bruno_mars_artist.png')
 
 #Doo Wops & Hooligans
 bm_doo_wops_hooligans = Album.create(title: "Doo-Wops & Hooligans", year: 2010)
@@ -113,8 +113,8 @@ bm_album_2 = ArtistAlbum.create(artist_id: bruno_mars.id, album_id: bm_24k_magic
 
 #Linkin Park
 linkin_park = Artist.create(name: "Linkin Park")
-lp_artist_photo = File.open("app/assets/images/linkin_park_artist.jpg")
-linkin_park.photo.attach(io: lp_artist_photo, filename: 'linkin_park_artist.jpg')
+lp_artist_photo = File.open("app/assets/images/linkin_park_artist.png")
+linkin_park.photo.attach(io: lp_artist_photo, filename: 'linkin_park_artist.png')
 
 lp_minutes_to_midnight = Album.create(title: "Minutes to Midnight", year: 2007)
 lp_minutes_to_midnight_photo = File.open("app/assets/images/linkin_park_minutes_to_midnight.png")
@@ -389,8 +389,8 @@ madeon_album_1 = ArtistAlbum.create(artist_id: madeon.id, album_id: madeon_adven
 
 #Maroon 5
 maroon_5 = Artist.create(name: "Maroon 5")
-maroon_5_artist_photo = File.open("app/assets/images/maroon_5_artist.jpg")
-maroon_5.photo.attach(io: maroon_5_artist_photo, filename: 'maroon_5_artist.jpg')
+maroon_5_artist_photo = File.open("app/assets/images/maroon_5_artist.png")
+maroon_5.photo.attach(io: maroon_5_artist_photo, filename: 'maroon_5_artist.png')
 
 maroon_5_songs_about_jane = Album.create(title: "Songs About Jane", year: 2009)
 maroon_5_songs_about_jane_photo = File.open("app/assets/images/maroon_5_songs_about_jane.png")

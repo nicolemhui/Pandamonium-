@@ -29,6 +29,7 @@
     flex-direction: row;
     justify-content: space-between;
     height: 60px;
+    align-items: center;
 
     .left-song-detail {
       display: flex;
@@ -141,7 +142,7 @@
 
 
 .song-options-container {
-  margin-top: 20px;
+  // margin-top: 20px;
   margin-right: 100px;
   
   .song-option-btn {
