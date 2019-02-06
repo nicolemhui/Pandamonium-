@@ -5,6 +5,9 @@ if album
     if album.cover_photo.attached?
 	    json.coverPhotoUrl url_for(album.cover_photo)
     end 
+
   end
 end  
 
+
+#json.saved user.saved_album_ids.include?(@album.id)

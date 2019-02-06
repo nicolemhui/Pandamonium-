@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_190052) do
+ActiveRecord::Schema.define(version: 2019_02_05_024718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,15 @@ ActiveRecord::Schema.define(version: 2018_12_14_190052) do
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_playlists_on_creator_id"
     t.index ["name"], name: "index_playlists_on_name"
+  end
+
+  create_table "saves", force: :cascade do |t|
+    t.integer "user_id"
+    t.bigint "saveable_id"
+    t.string "saveable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["saveable_type", "saveable_id"], name: "index_saves_on_saveable_type_and_saveable_id"
   end
 
   create_table "songs", force: :cascade do |t|
