@@ -5,15 +5,36 @@ class AlbumIndex extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      searchString: props.searchString
+    };
   }
 
   componentDidMount() {
     let { searchString } = this.props;
 
-    if ((searchString) && (searchString.length !== 0)) {
+    // if ((searchString) && (searchString.length !== 0)) {
+    //   this.props.fetchSearchedAlbums(searchString);
+    // } else {
+    //   this.props.fetchAlbums();
+    // }
+
+    if (this.props.searchString != undefined) {
       this.props.fetchSearchedAlbums(searchString);
     } else {
       this.props.fetchAlbums();
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchString != newProps.searchString) {
+      // this.setState({ searchString: newProps.searchString });
+      console.log("search string: ", this.props.searchString);
+      debugger;
+      
+
+      this.props.fetchSearchedAlbums(newProps.searchString)
+        .then( (res) => console.log(res) );
     }
   }
 
@@ -27,9 +48,9 @@ class AlbumIndex extends React.Component {
 
     return (
       <div className="album-item-container">
-        <li className="index-item-row">
+        <ul className="index-item-row">
           {albums}
-        </li>
+        </ul>
       </div>
     )
   }

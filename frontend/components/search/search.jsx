@@ -21,17 +21,19 @@ class Search extends React.Component {
     if (this.state.queryString.length === 0) {
       results =
         <div className="no-search-content">
-          <h1> Search Pandamonium </h1>
+          <h1>Search Pandamonium</h1>
           <h5>Find your favorite songs, artists, albums, podcasts and playlists.</h5>
         </div>
     } else {
-      console.log(this.state.queryString);
-      
       results =
         <div className="search-content">
           <SearchResults searchString={this.state.queryString} />
         </div>
     }
+
+    // <div className="no-search-content">
+    //   <h1>Nothing to see here...</h1>
+    // </div>
 
     return (
       <div className="search-container">

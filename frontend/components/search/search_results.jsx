@@ -15,7 +15,7 @@ class SearchResults extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props.searchString != newProps.searchString) {
-        this.setState({ searchString: newProps.searchString });
+      this.setState({ searchString: newProps.searchString });
     }
   }
   

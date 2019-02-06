@@ -7,29 +7,31 @@ class AlbumDetailView extends React.Component {
     const { album } = this.props;
 
     const artists = this.props.artists.map(artist =>
-      <div key={artist.id}>
-        <NavLink to={`/artists/${artist.id}`}
-          className="album-artist">
+      // <div key={artist.id}>
+        <NavLink key={artist.id}to={`/artists/${artist.id}`}
+          className="album-artist"
+          key={artist.id}>
         {artist.name}</NavLink>
-      </div>
+      // </div>
     );
 
     return (
-      <div className="album-item-info">
-        <Link to={`/albums/${album.id}`}>
+      <li className="index-item">
+
+      <Link to={`/albums/${album.id}`}>
+        <div className="album-item-info">
           <div className="album-img"><img src={album.coverPhotoUrl}></img></div>
           <div className="album-play-btn">
             <i className="far fa-play-circle"></i>
-            {/* <i className="fas fa-play"></i> */}
           </div>
 
-          <h1 className="album-title">
-            {album.title}
-          </h1>
-        </Link>
+          <h1 className="album-title">{album.title}</h1>
+        </div>
+      </Link>
+      
+      iii<h1>{artists}</h1>
         
-        {artists}
-      </div>
+      </li>
     );
   }
 }

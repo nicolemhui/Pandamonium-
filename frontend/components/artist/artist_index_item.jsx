@@ -13,15 +13,12 @@ class ArtistIndexItem extends React.Component {
       <li className="index-item">
         <Link to={`/artists/${artist.id}`}>
         <div className="album-item-info">
-          <div className="album-img"><img src={artist.photoUrl}></img></div>
+          <div className="artist-img"><img src={artist.photoUrl}></img></div>
           <div className="album-play-btn">
             <i className="far fa-play-circle"></i>
           </div>
-
-          <div className="album-title">
-            <h3 className="artist-name">{artist.name}</h3>
-          </div>
         </div>
+          <h1 className="album-title">{artist.name}</h1>
         </Link>
       </li>
     );
