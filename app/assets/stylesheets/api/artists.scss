@@ -43,6 +43,7 @@
       font-size: 40px;
       margin: 0 auto;	
     }
+
     .artist-img {
       overflow: hidden;
       height: 100%;
@@ -58,10 +59,10 @@
 .artist-item-info:hover {
   cursor: pointer;
 
-  .artist-img {
-      opacity: 0.5;
-      filter: alpha(opacity=40);
-    }
+  // .artist-img {
+  //     opacity: 0.5;
+  //     filter: alpha(opacity=40);
+  //   }
 
     // FIX ME!
     // .artist-play-btn {
@@ -170,3 +171,7 @@
   }
 }
 
+.artist-img img {
+  border-radius: 50%;
+  object-fit: cover;
+}

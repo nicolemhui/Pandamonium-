@@ -350,8 +350,8 @@ one_republic_album_1 = ArtistAlbum.create(artist_id: one_republic.id, album_id: 
 
 #Madeon
 madeon = Artist.create(name: "Madeon")
-madeon_artist_photo = File.open("app/assets/images/madeon_artist.jpg")
-madeon.photo.attach(io: madeon_artist_photo, filename: 'madeon_artist.jpg')
+madeon_artist_photo = File.open("app/assets/images/madeon_artist.png")
+madeon.photo.attach(io: madeon_artist_photo, filename: 'madeon_artist.png')
 
 madeon_adventure = Album.create(title: "Adventure", year: 2015)
 madeon_adventure_photo = File.open("app/assets/images/madeon_album.png")
