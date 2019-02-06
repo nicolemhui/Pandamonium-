@@ -21,5 +21,7 @@ class Artist < ApplicationRecord
     through: :artist_albums, 
     source: :album
 
+  has_many :saves, as: :saveable
+  
   has_one_attached :photo
 end

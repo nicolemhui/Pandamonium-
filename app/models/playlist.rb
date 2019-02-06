@@ -24,6 +24,8 @@ class Playlist < ApplicationRecord
     through: :playlist_songs,
     source: :song
 
+  has_many :saves, as: :saveable
+  
   has_one_attached :photo
   
 end

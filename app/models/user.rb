@@ -17,11 +17,35 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
   
   has_one_attached :photo
-  
-  has_many :playlists,
-    foreign_key: :creator_id,
-    class_name: 'Playlist'
 
+  has_many :playlists,
+  foreign_key: :creator_id,
+  class_name: 'Playlist'
+  
+  has_many :saves,
+    foreign_key: :user_id,
+    class_name: 'Save'
+
+  has_many :saved_songs,
+    through: :saves,
+    source: :saveable,
+    source_type: 'Song'
+
+  has_many :saved_albums,
+    through: :saves,
+    source: :saveable,
+    source_type: 'Album'
+
+  has_many :saved_artists,
+    through: :saves,
+    source: :saveable,
+    source_type: 'Artist'
+
+  has_many :saved_playlists,
+    through: :saves,
+    source: :saveable,
+    source_type: 'Playlist' 
+    
   attr_reader :password
   after_initialize :ensure_session_token
 
