@@ -9,6 +9,14 @@ const artistsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_ARTISTS:
+      if (action.payload.artists === undefined) {
+        return {};
+      } else {
+        return action.payload.artists;
+      }
+
+    debugger;
+
     case RECEIVE_ALL_ALBUMS:
     case RECEIVE_ALL_SONGS: 
     case RECEIVE_PLAYLIST:

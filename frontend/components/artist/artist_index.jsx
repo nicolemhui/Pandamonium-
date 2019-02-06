@@ -6,14 +6,36 @@ class ArtistIndex extends React.Component {
     super(props);
   }
 
-  //FIX ME!
   componentDidMount() {
-    this.props.fetchArtists()
+    let { searchString } = this.props;
+
+    debugger;
+
+    if (this.props.searchString != undefined) {
+      this.props.fetchSearchedArtists(searchString);
+    } else {
+      this.props.fetchArtists();
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchString != newProps.searchString) {
+      this.props.fetchSearchedArtists(newProps.searchString);
+    }
   }
 
   render() {
     if (!this.props.artists) return null;
     
+    let noResults;
+    if (this.props.artists.length === 0) {
+      noResults = <div className="no-search-content">
+        <h1>Nothing to see...</h1>
+      </div>
+    } else {
+      noResults = "";
+    }
+
     const artists = this.props.artists.map(artist => {
       return (
         <ArtistIndexItem
@@ -25,6 +47,7 @@ class ArtistIndex extends React.Component {
 
     return (
       <div className="album-item-container">
+        {noResults}
         <ul className="index-item-row">
           {artists}
         </ul>

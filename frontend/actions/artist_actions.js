@@ -21,3 +21,8 @@ export const fetchArtist = (id) => dispatch => (
   ArtistApiUtil.fetchArtist(id)
     .then(payload => dispatch(receiveArtist(payload)))
 );
+
+export const fetchSearchedArtists = (searchString) => dispatch => (
+  ArtistApiUtil.fetchSearchedArtists(searchString)
+    .then(payload => dispatch(receiveAllArtists(payload)))
+);
