@@ -29,7 +29,7 @@ class AlbumDetailView extends React.Component {
         </div>
       </Link>
       
-      iii<h1>{artists}</h1>
+      <h1>{artists}</h1>
         
       </li>
     );

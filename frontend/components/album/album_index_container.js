@@ -12,10 +12,15 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchAlbums: () => dispatch(fetchAlbums()),
-  fetchSearchedAlbums: (searchString) => dispatch(fetchSearchedAlbums(searchString)),
-});
+const mapDispatchToProps = dispatch => {
+  return ({
+    fetchAlbums: () => dispatch(fetchAlbums()),
+    fetchSearchedAlbums: (searchString) => dispatch(fetchSearchedAlbums(searchString)),
+    // fetchSearchedAlbums: (searchString) => dispatch(fetchSearchedAlbums(searchString)).then(res => console.log("api response", res)),
+  });
+  
+  
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumIndex);
 

@@ -12,13 +12,7 @@ class AlbumIndex extends React.Component {
 
   componentDidMount() {
     let { searchString } = this.props;
-
-    // if ((searchString) && (searchString.length !== 0)) {
-    //   this.props.fetchSearchedAlbums(searchString);
-    // } else {
-    //   this.props.fetchAlbums();
-    // }
-
+    
     if (this.props.searchString != undefined) {
       this.props.fetchSearchedAlbums(searchString);
     } else {
@@ -29,17 +23,24 @@ class AlbumIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     if (this.props.searchString != newProps.searchString) {
       // this.setState({ searchString: newProps.searchString });
-      console.log("search string: ", this.props.searchString);
-      debugger;
-      
-
+      // console.log("search string: ", this.props.searchString);
       this.props.fetchSearchedAlbums(newProps.searchString)
-        .then( (res) => console.log(res) );
+        // .then( (res) => console.log("new response receive props", res) );
     }
   }
 
   render() {
     if (!this.props.albums) return null;
+
+    let noResults;
+    if (this.props.albums.length === 0) {
+      noResults = <div className="no-search-content">
+        <h1>Nothing to see...</h1>
+      </div>
+    } else {
+      noResults = "";
+    }
+    
     const albums = this.props.albums.map(album => {
       return (
         <AlbumIndexItem key={album.id} album={album}/>
@@ -48,6 +49,7 @@ class AlbumIndex extends React.Component {
 
     return (
       <div className="album-item-container">
+        {noResults}
         <ul className="index-item-row">
           {albums}
         </ul>

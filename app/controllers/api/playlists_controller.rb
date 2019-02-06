@@ -24,7 +24,7 @@ class Api::PlaylistsController < ApplicationController
 
   # Routes.rb
   # get '/playlists/search', to 'playlists#search'
-  #send back query in params when returning from ajax call 
+  # send back query in params when returning from ajax call 
 
   def show 
     @playlist = Playlist.find(params[:id])

@@ -8,6 +8,11 @@ const albumsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_ALBUMS:
+      if (action.payload.albums === undefined) {
+        return {};
+      } else {
+        return action.payload.albums;
+      }
     case RECEIVE_ALL_SONGS:
     case RECEIVE_PLAYLIST:
     case RECEIVE_ARTIST:

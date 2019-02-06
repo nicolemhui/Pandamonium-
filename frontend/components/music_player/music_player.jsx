@@ -61,7 +61,7 @@ class MusicPlayer extends React.Component {
   }
 
   onProgressSliderChange() {
-    console.log(this);
+    // console.log(this);
 
     return event => {
 

@@ -31,10 +31,6 @@ class Search extends React.Component {
         </div>
     }
 
-    // <div className="no-search-content">
-    //   <h1>Nothing to see here...</h1>
-    // </div>
-
     return (
       <div className="search-container">
         <input className="search-bar"
