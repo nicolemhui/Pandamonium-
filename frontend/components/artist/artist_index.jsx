@@ -9,7 +9,7 @@ class ArtistIndex extends React.Component {
   componentDidMount() {
     let { searchString } = this.props;
 
-    debugger;
+    // debugger;
 
     if (this.props.searchString != undefined) {
       this.props.fetchSearchedArtists(searchString);

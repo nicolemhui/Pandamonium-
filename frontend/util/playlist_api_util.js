@@ -26,3 +26,10 @@ export const deletePlaylist = (id) => (
     url: `api/playlists/${id}`,
   })
 );
+
+export const fetchSearchedPlaylists = (searchString) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/playlists/search/${searchString}`,
+  })
+);

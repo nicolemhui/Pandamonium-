@@ -9,7 +9,11 @@ const playlistsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_PLAYLISTS:
-      return action.payload.playlists;
+      if (action.payload.playlists === undefined) {
+        return {};
+      } else {
+        return action.payload.playlists;
+      }
     case RECEIVE_PLAYLIST:
       return merge({}, state, action.payload.playlist);
     case REMOVE_PLAYLIST:

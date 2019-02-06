@@ -40,3 +40,8 @@ export const deletePlaylist = (payload) => dispatch => (
     .then(payload => dispatch(removePlaylist(payload)))
 );
 
+export const fetchSearchedPlaylists = (searchString) => dispatch => (
+  PlaylistApiUtil.fetchSearchedPlaylists(searchString)
+    .then(payload => dispatch(receiveAllPlaylists(payload)))
+);
+
