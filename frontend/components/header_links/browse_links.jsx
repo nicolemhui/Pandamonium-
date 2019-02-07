@@ -24,4 +24,4 @@ class BrowseLinks extends React.Component {
   }
 }
 
-export default BrowseLinks
+export default BrowseLinks;

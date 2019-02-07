@@ -10,4 +10,10 @@ class Api::SongsController < ApplicationController
     @songs = Song.all
     render 'api/songs/index'
   end 
+
+  def search 
+    search_string = params[:search_string]
+    @songs = Song.where('lower(title) LIKE ? OR lower(title) LIKE ?', "%#{search_string.downcase}%", "#{search_string.downcase}%")
+    render 'api/songs/index'
+  end 
 end

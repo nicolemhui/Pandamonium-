@@ -21,3 +21,8 @@ export const fetchSong = (id) => dispatch => (
   SongApiUtil.fetchSong(id)
     .then(payload => dispatch(receiveSong(payload)))
 );
+
+export const fetchSearchedSongs = (searchString) => dispatch => (
+  SongApiUtil.fetchSearchedSongs(searchString)
+    .then(payload => dispatch(receiveAllSongs(payload)))
+);

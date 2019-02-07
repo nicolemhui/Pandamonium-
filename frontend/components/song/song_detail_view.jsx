@@ -33,12 +33,14 @@ class SongDetailView extends React.Component {
       songInfoText = <div className="song-artists-links"> {songArtists} </div>
     } else if (songArtists.length === 0) {
       songInfoText = <div className="song-artists-links"> {songAlbums} </div>
-    } else {
+    } else if ((songAlbums.length > 0) && (songArtists.length > 0)) {
       songInfoText = <div>
         {songArtists}
         •
         {songAlbums}
       </div>;
+    } else {
+      songInfoText = <div></div>;
     }
 
     return (

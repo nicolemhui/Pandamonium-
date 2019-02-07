@@ -146,12 +146,6 @@ lp_in_the_end.audio.attach(io: lp_in_the_end_audio, filename: 'lp_in_the_end.mp3
 lp_in_the_end_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/in_the_end.png")
 lp_in_the_end.photo.attach(io: lp_in_the_end_photo, filename: 'lp_in_the_end.png')
 
-#numb / encore !!
-
-# #Linkin Park / Jay Z Songs 
-# lp_in_the_end = Song.create(title: "In The End", album_id: lp_hybrid_theory.id)
-# jz_numb_encore = Song.create(title: "Numb/Encore")
-
 #lp songs & albums 
 lp_song_1 = ArtistSong.create(artist_id: linkin_park.id, song_id: lp_leave_out_all_the_rest.id, ord: 1)
 lp_song_2 = ArtistSong.create(artist_id: linkin_park.id, song_id: lp_shadow_of_the_day.id, ord: 1)
@@ -214,6 +208,7 @@ pr_song_7 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_shelter
 pr_album_1 = ArtistAlbum.create(artist_id: porter_robinson.id, album_id: pr_worlds.id)
 pr_album_2 = ArtistAlbum.create(artist_id: porter_robinson.id, album_id: pr_shelter.id)
 
+
 #Tycho 
 tycho = Artist.create(name: "Tycho")
 tycho_artist_photo = File.open("app/assets/images/tycho_artist.jpg")
@@ -251,7 +246,6 @@ tycho_song_4 = ArtistSong.create(artist_id: tycho.id, song_id: ty_coastal_brake.
 tycho_song_5 = ArtistSong.create(artist_id: tycho.id, song_id: ty_melanine.id, ord: 1)
 
 tycho_album_1 = ArtistAlbum.create(artist_id: tycho.id, album_id: tycho_dive.id)
-
 
 
 #Odesza
@@ -301,7 +295,6 @@ odesza_song_6 = ArtistSong.create(artist_id: odesza.id, song_id: od_light.id, or
 odesza_song_7 = ArtistSong.create(artist_id: odesza.id, song_id: od_line_of_sight.id, ord: 1)
 
 odesza_album_1 = ArtistAlbum.create(artist_id: odesza.id, album_id: od_in_return.id)
-
 
 
 #One Republic

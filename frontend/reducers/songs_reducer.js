@@ -8,6 +8,7 @@ const songsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_SONGS:
+      return action.payload.songs;
     case RECEIVE_PLAYLIST:
     case RECEIVE_ALBUM:
     case RECEIVE_ARTIST:

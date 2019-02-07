@@ -1,12 +1,27 @@
 import React from 'react';
 import SongIndexItemContainer from './song_index_item_container';
-import { fetchSongs } from '../../actions/song_actions';
 
 class SongIndex extends React.Component {
   constructor(props) {
     super(props);
 
     this.getSongQueue = this.getSongQueue.bind(this);
+  }
+
+  componentDidMount() {
+    let { searchString } = this.props;
+
+    if (this.props.searchString != undefined) {
+      this.props.fetchSearchedSongs(searchString);
+    } else {
+      this.props.fetchSongs();
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchString != newProps.searchString) {
+      this.props.fetchSearchedSongs(newProps.searchString);
+    }
   }
 
   componentWillMount() {
@@ -31,12 +46,20 @@ class SongIndex extends React.Component {
 
     const songQueue = songs.slice(songIdx).concat(songs.slice(0, songIdx));
     return songQueue;
-    // this.props.updateQueue(songQueue);
   }
   
   render() {
     let songs = this.props.songs;
     if (!songs) return null;
+
+    let noResults;
+    if (songs.length === 0) {
+      noResults = <div className="no-search-content">
+        <h1>Nothing to see...</h1>
+      </div>
+    } else {
+      noResults = "";
+    }
     
     songs = this.props.songs.map( (song, idx) => {
       return (
@@ -51,6 +74,7 @@ class SongIndex extends React.Component {
     
     return (
       <div className="song-item-container">
+        {noResults}
         <ul className="song-list">
           {songs}
         </ul>
