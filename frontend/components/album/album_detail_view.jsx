@@ -6,14 +6,27 @@ class AlbumDetailView extends React.Component {
   render() {
     const { album } = this.props;
 
-    const artists = this.props.artists.map(artist =>
+    console.log("props", this.props);
+    // debugger;
+
+    //FIX ME!!!
+
+    // If the path location is api/search/albums then don't display the artist name 
+    let artists;
+    debugger;
+    
+    if (window.location.pathname == "/search/albums") {
+      artists = <div></div>
+    } else {
+      artists = this.props.artists.map(artist =>
       // <div key={artist.id}>
         <NavLink key={artist.id}to={`/artists/${artist.id}`}
-          className="album-artist"
-          key={artist.id}>
+        className="album-artist"
+        key={artist.id}>
         {artist.name}</NavLink>
       // </div>
-    );
+      );
+    }
 
     return (
       <li className="index-item">

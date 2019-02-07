@@ -14,7 +14,7 @@ class Api::AlbumsController < ApplicationController
   def search 
     search_string = params[:search_string]
     @albums = Album.where('lower(title) LIKE ? OR lower(title) LIKE ?', "%#{search_string.downcase}%", "#{search_string.downcase}%")
-    render :index
+    render 'api/albums/index'
   end 
 
   def saved_albums
