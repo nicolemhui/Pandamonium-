@@ -35,14 +35,14 @@ class SearchResults extends React.Component {
 
 
       <div className="search-results">
-        <h1 className="search-category">Albums</h1>
-          {albums}
-        {/* <h1 className="search-category">Artists</h1>
-          {artists}
-        <h1 className="search-category">Playlists</h1>
-          {playlists}
+        {/* <h1 className="search-category">Albums</h1> */}
+          {/* {albums} */}
+        {/* <h1 className="search-category">Artists</h1> */}
+          {/* {artists} */}
+        {/* <h1 className="search-category">Playlists</h1> */}
+          {/* {playlists} */}
         <h1 className="search-category">Songs</h1>
-          {songs} */}
+          {songs}
       </div>
 
         {/* <nav className="nav-links">
