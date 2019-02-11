@@ -1,14 +1,6 @@
-//FIX ME!
-html, body {
-  // background-color: rgb(29, 27, 31)
-}
-
 .search-container {
-  // background-image: linear-gradient( rgb(97, 55, 165), rgb(53, 21, 53));
   background-image: linear-gradient( rgb(53, 21, 53),  rgb(29, 16, 29));
   margin-left: 230px;
-  height: 100vh;
-  
   .search-bar {
     width: 100%;
     color: black;
@@ -26,6 +18,7 @@ html, body {
   color: white;
   text-align: center;
   margin-top: 100px;
+  height: 100vh;
 
   h1 {
     font-size: 28px;
@@ -39,8 +32,9 @@ html, body {
 
 .search-content {
   .search-results {
+    padding-bottom: 200px;
+
     .search-category {
-      // font-size: 14px;
       color: white;
       margin-left: 100px;
     }

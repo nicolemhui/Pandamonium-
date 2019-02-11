@@ -1,22 +1,9 @@
-// Place all the styles related to the Songs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .song-item-container {
   display: flex;
   flex-direction: column;
   color: white;
   font-family: 'Montserrat', sans-serif;
   line-height: 3px;
-  // padding-top: 20px;
-  // padding-bottom: 20px;
-  // width: 100%;
-  // position: relative;
-  // top: 100px;
-  // left: 100px;
-  // margin-left: 150px;
-  // background-color: lightblue;
-  // max-width: 800px;
 }
 
 .song-list {
@@ -125,8 +112,6 @@
   .song-other-info a {
     color: #b3b3b3;
     display: inline-block;
-    // text-align: left;
-    // justify-content: space-evenly;
   }
 
   .song-other-info a:hover {
@@ -142,11 +127,9 @@
 
 
 .song-options-container {
-  // margin-top: 20px;
   margin-right: 100px;
   
   .song-option-btn {
-    // font-size: 20px;
     color: white;
     background-color: transparent;
     border: none;
@@ -160,10 +143,13 @@
 
   .song-options-dropdown {
     position: absolute;
-    display: flex;
-    flex-direction: column;
     width: 200px;
     
+    .song-options-container {
+      display: flex;
+      flex-direction: column;
+    }
+
     .option {
       color: white;
       text-align: left;

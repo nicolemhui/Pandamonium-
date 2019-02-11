@@ -1,49 +1,8 @@
-// Place all the styles related to the Albums controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-// * {
-//   box-sizing: border-box;
-//   font-family: 'Montserrat';
-// }
-
 .album-item-container {
-  // width: 85%;
   margin: 0 auto;
-  
-  // margin-left: 300px;
-  // background-color: lightblue;
-  // max-width: 1000px;
-  // display: flex;
-  // flex-direction: column;
-  // color: white;
-  // font-family: 'Montserrat', sans-serif;
-  // line-height: 3px;
-  // top: 100px;
-  // margin-left: 100px;
-  // max-width: 1000px;
 }
 
-// .song-item-container {
-//   display: flex;
-//   flex-direction: column;
-//   color: white;
-//   font-family: 'Montserrat', sans-serif;
-//   line-height: 3px;
-//   // padding-top: 20px;
-//   // padding-bottom: 20px;
-//   // width: 100%;
-//   // position: relative;
-//   top: 100px;
-//   // left: 100px;
-//   margin-left: 100px;
-//   // background-color: lightblue;
-//   max-width: 1000px;
-// }
-
 .albums-index-container {
-  // display: flex;
-  // flex-direction: row;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   line-height: 3px;
@@ -55,7 +14,6 @@
 .album-item-info {
   width: 200px;
   height: 200px;
-  // background-color: gray;
   text-align: center;
   margin: 0 auto;
   position: relative;
@@ -95,17 +53,13 @@
 
 .album-play-btn .far fa-play-circle {
   color: white;
-  // color: gray;
 }
 
 .album-play-btn .far fa-play-circle:hover {
-  // color: white;
-  // transform: scale(1.10);
   cursor: pointer;
 }
 
 .album-play-btn i:hover {
-  // color: white;
   transform: scale(1.10);
   cursor: pointer;
 }
