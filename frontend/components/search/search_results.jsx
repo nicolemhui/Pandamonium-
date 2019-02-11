@@ -32,7 +32,20 @@ class SearchResults extends React.Component {
     return (
       
       <div className="search-nav-and-results">
-        <nav className="nav-links">
+
+
+      <div className="search-results">
+        <h1 className="search-category">Albums</h1>
+          {albums}
+        {/* <h1 className="search-category">Artists</h1>
+          {artists}
+        <h1 className="search-category">Playlists</h1>
+          {playlists}
+        <h1 className="search-category">Songs</h1>
+          {songs} */}
+      </div>
+
+        {/* <nav className="nav-links">
           <div className="nav-links-container">
             <div className="nav-bar-links">
               <NavLink to="/search/playlists" className="nav-links-link">Playlists<span></span></NavLink>
@@ -58,7 +71,7 @@ class SearchResults extends React.Component {
           />
 
           <Redirect to="/search" />
-        </Switch>
+        </Switch> */}
       </div>
       
     );
@@ -68,18 +81,3 @@ class SearchResults extends React.Component {
 
 
 export default SearchResults;
-
-
-{/* // </div >
-
-
-      // <div className="search-results">
-        // <h1 className="search-category">Albums</h1>
-          // {albums}
-        // <h1 className="search-category">Artists</h1>
-          // {artists}
-        // <h1 className="search-category">Playlists</h1>
-          // {playlists}
-        // <h1 className="search-category">Songs</h1>
-          // {songs}
-      // </div> */}

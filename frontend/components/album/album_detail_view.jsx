@@ -1,30 +1,30 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
 class AlbumDetailView extends React.Component {
 
   render() {
     const { album } = this.props;
 
-    console.log("props", this.props);
+    // console.log("props", this.props);
     // debugger;
 
     //FIX ME!!!
 
     // If the path location is api/search/albums then don't display the artist name 
     let artists;
-    debugger;
     
-    if (window.location.pathname == "/search/albums") {
-      artists = <div></div>
+    if (this.props.location.pathname == "/search") {
+      artists = <NavLink to={`/artists/${album.artistId}`}
+        className="album-artist"
+        key={album.artistId}>
+        {album.artistName}</NavLink>
     } else {
       artists = this.props.artists.map(artist =>
-      // <div key={artist.id}>
-        <NavLink key={artist.id}to={`/artists/${artist.id}`}
+        <NavLink to={`/artists/${artist.id}`}
         className="album-artist"
         key={artist.id}>
         {artist.name}</NavLink>
-      // </div>
       );
     }
 
@@ -50,5 +50,4 @@ class AlbumDetailView extends React.Component {
 }
 
 
-
-export default AlbumDetailView;
+export default withRouter(AlbumDetailView);

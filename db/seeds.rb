@@ -23,6 +23,14 @@ djMango = User.create(username: "DJ Mango", email: "nikki@email.com", password: 
 
 #Daft Punk 
 daft_punk = Artist.create(name: "Daft Punk")
+# daft_punk = Artist.create(name: "Daft Punk", bio: "Even as they evolved from French house pioneers in the '90s to dance tastemakers in the 2000s to mainstream heroes in the 2010s, 
+#   Daft Punk remained one of dance music's most influential and iconic acts. The combined talents of Guy-Manuel de Homem-Christo and Thomas Bangalter, the Parisian duo quickly won 
+#   acclaim for their unique blend of first-wave acid house and techno with pop, indie rock, and hip-hop. One of the pair's first projects together was Darling, an instrumental indie 
+#   cover band; their current recording name derives from a review in U.K. music weekly Melody Maker of a compilation tape Darling were featured on, released by Krautrock revivalists 
+#   Stereolab (their lo-fi D.I.Y. cover of a Beach Boys song was derided as "daft punk"). Subsequently ditching the almost inevitable creative cul-de-sac of rock for the more appealing 
+#   rush of the dancefloor, the pair released their debut single, "The New Wave," in 1993 on the celebrated Soma label. Instantly hailed by the dance music press as the work of a new 
+#   breed of house innovators, the single was followed by "Da Funk," the band's first true hit (the record sold 30,000 copies worldwide and saw thorough rinsings by everyone from Kris 
+#   Needs to the Chemical Brothers).")
 dp_artist_photo = File.open("app/assets/images/daft_punk_artist.jpg")
 daft_punk.photo.attach(io: dp_artist_photo, filename: 'daft_punk_artist.jpg')
 
