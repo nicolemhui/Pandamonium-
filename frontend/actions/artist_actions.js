@@ -1,6 +1,7 @@
 import * as ArtistApiUtil from '../util/artist_api_util';
 export const RECEIVE_ALL_ARTISTS = "RECEIVE_ALL_ARTISTS";
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
+export const RECEIVE_SEARCHED_ARTISTS = "RECEIVE_SEARCHED_ARTISTS";
 
 export const receiveAllArtists = (payload) => ({
   type: RECEIVE_ALL_ARTISTS,
@@ -9,6 +10,11 @@ export const receiveAllArtists = (payload) => ({
 
 export const receiveArtist = (payload) => ({
   type: RECEIVE_ARTIST,
+  payload
+});
+
+export const receiveSearchedArtists = (payload) => ({
+  type: RECEIVE_SEARCHED_ARTISTS,
   payload
 });
 
@@ -24,5 +30,5 @@ export const fetchArtist = (id) => dispatch => (
 
 export const fetchSearchedArtists = (searchString) => dispatch => (
   ArtistApiUtil.fetchSearchedArtists(searchString)
-    .then(payload => dispatch(receiveAllArtists(payload)))
+    .then(payload => dispatch(receiveSearchedArtists(payload)))
 );
