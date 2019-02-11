@@ -31,15 +31,6 @@ class AlbumIndex extends React.Component {
 
   render() {
     if (!this.props.albums) return null;
-
-    let noResults;
-    if (this.props.albums.length === 0) {
-      noResults = <div className="no-search-content">
-        <h1>Nothing to see...</h1>
-      </div>
-    } else {
-      noResults = "";
-    }
     
     const albums = this.props.albums.map(album => {
       return (
@@ -49,7 +40,6 @@ class AlbumIndex extends React.Component {
 
     return (
       <div className="album-item-container">
-        {noResults}
         <ul className="index-item-row">
           {albums}
         </ul>

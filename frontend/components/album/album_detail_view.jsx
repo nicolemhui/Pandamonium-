@@ -5,13 +5,6 @@ class AlbumDetailView extends React.Component {
 
   render() {
     const { album } = this.props;
-
-    // console.log("props", this.props);
-    // debugger;
-
-    //FIX ME!!!
-
-    // If the path location is api/search/albums then don't display the artist name 
     let artists;
     
     if (this.props.location.pathname == "/search") {

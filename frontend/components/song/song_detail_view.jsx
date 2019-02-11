@@ -14,13 +14,13 @@ class SongDetailView extends React.Component {
     if (this.props.location.pathname == "/search") {
       songArtists = <NavLink to={`/artists/${song.artistId}`}
           className="artist-text"
-          key={Math.floor(Math.random() * song.artistId)}>
+          key={Math.floor((Math.random() * song.artistId) + 1)}>
           {song.artistName}
         </NavLink>
 
       songAlbums = <NavLink to={`/albums/${song.albumId}`}
         className="album-text"
-        key={Math.floor(Math.random() * song.albumId)}>
+        key={Math.floor((Math.random() * song.albumId)) + 1}>
         {song.albumTitle}
       </NavLink>
 
@@ -28,7 +28,7 @@ class SongDetailView extends React.Component {
       songArtists = artists.map(artist =>
         <NavLink to={`/artists/${artist.id}`}
           className="artist-text"
-          key={artist.id}>
+          key={Math.floor((Math.random() * artist.id) + 1)}>
           {artist.name}
         </NavLink>
       );
@@ -36,14 +36,11 @@ class SongDetailView extends React.Component {
       songAlbums = albums.map(album =>
         <NavLink to={`/albums/${album.id}`}
           className="album-text"
-          key={album.id}>
+          key={Math.floor((Math.random() * album.id) + 1)}>
           {album.title}
         </NavLink>
       );
     }
-
-    console.log("song albums", songAlbums);
-    console.log("song artists", songArtists);
 
     let songInfoText;
 
@@ -59,22 +56,6 @@ class SongDetailView extends React.Component {
       </div>
     } 
 
-    // let songInfoText;
-
-    // if (songAlbums.length === 0) {
-    //   songInfoText = <div className="song-artists-links"> {songArtists} </div>
-    // } else if (songArtists.length === 0) {
-    //   songInfoText = <div className="song-artists-links"> {songAlbums} </div>
-    // } else if ((songAlbums.length > 0) && (songArtists.length > 0)) {
-    //   songInfoText = <div>
-    //     {songArtists}
-    //     •
-    //     {songAlbums}
-    //   </div>;
-    // } else {
-    //   songInfoText = <div></div>;
-    // }
-
     return (
       <div className="song-item-info">
 
@@ -82,7 +63,6 @@ class SongDetailView extends React.Component {
 
         <div className="song-info">
           <div className="song-other-info">
-            {/* {songArtists} • {songAlbums} */}
             {songInfoText}
           </div>
         </div>

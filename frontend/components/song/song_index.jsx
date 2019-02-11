@@ -52,15 +52,6 @@ class SongIndex extends React.Component {
     let songs = this.props.songs;
     if (!songs) return null;
 
-    let noResults;
-    if (songs.length === 0) {
-      noResults = <div className="no-search-content">
-        <h1>Nothing to see...</h1>
-      </div>
-    } else {
-      noResults = "";
-    }
-    
     songs = this.props.songs.map( (song, idx) => {
       return (
         <SongIndexItemContainer
@@ -74,7 +65,6 @@ class SongIndex extends React.Component {
     
     return (
       <div className="song-item-container">
-        {noResults}
         <ul className="song-list">
           {songs}
         </ul>
