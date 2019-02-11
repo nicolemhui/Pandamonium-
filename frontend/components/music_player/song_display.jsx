@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SongDisplay extends React.Component {
   constructor(props) {
@@ -8,9 +8,16 @@ class SongDisplay extends React.Component {
   
   render () {
     let { currentSong, albums, artists, albumArtists } = this.props;    
+    
     let songArtists;
-
-    if (artists) {
+    
+    if (this.props.location.pathname == "/search") {
+      songArtists = <Link to={`/artists/${currentSong.artistId}`}
+        className="player-song-artists"
+        key={currentSong.artistId}>
+        {currentSong.artistName}
+      </Link>
+    } else if (artists) {
       songArtists = artists.map(artist => {
         return (
           <Link to={`/artists/${artist.id}`}
@@ -35,8 +42,10 @@ class SongDisplay extends React.Component {
     let album = albums[0];
     let albumPhoto;
 
-     if (currentSong.photoUrl) {
+    if (currentSong.photoUrl) {
       albumPhoto = <img src={currentSong.photoUrl} />
+    } else if (currentSong.albumCoverPhotoUrl) {
+      albumPhoto = <img src={currentSong.albumCoverPhotoUrl} />
     } else if (!album) {
       albumPhoto = <img src="https://s3-us-west-1.amazonaws.com/pandamonium-resources/new_playlist.png" />
     } else {
@@ -47,7 +56,6 @@ class SongDisplay extends React.Component {
       <div className="left-container">
         <div className="song-info-container">
           <div className="player-image">
-
             {albumPhoto}
           </div>
 
@@ -56,13 +64,11 @@ class SongDisplay extends React.Component {
             {songArtists}
           </div>
 
-          {/* <div className="favorite-song">
-            <i className="fas fa-plus"></i>
-          </div> */}
         </div>
       </div>
+
     )
   }    
 }
 
-export default SongDisplay;
+export default withRouter(SongDisplay);

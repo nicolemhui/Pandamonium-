@@ -2,6 +2,7 @@ import * as PlaylistApiUtil from '../util/playlist_api_util';
 export const RECEIVE_ALL_PLAYLISTS = "RECEIVE_ALL_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
+export const RECEIVE_SEARCHED_PLAYLISTS = "RECEIVE_SEARCHED_PLAYLISTS";
 
 export const receiveAllPlaylists = (payload) => ({
   type: RECEIVE_ALL_PLAYLISTS,
@@ -18,6 +19,10 @@ export const removePlaylist = () => ({
   playlistId: playlist.id
 });
 
+export const receiveSearchedPlaylists = (payload) => ({
+  type: RECEIVE_SEARCHED_PLAYLISTS,
+  payload
+});
 
 //thunk creators
 export const fetchPlaylists = () => dispatch => (
@@ -42,6 +47,6 @@ export const deletePlaylist = (payload) => dispatch => (
 
 export const fetchSearchedPlaylists = (searchString) => dispatch => (
   PlaylistApiUtil.fetchSearchedPlaylists(searchString)
-    .then(payload => dispatch(receiveAllPlaylists(payload)))
+    .then(payload => dispatch(receiveSearchedPlaylists(payload)))
 );
 

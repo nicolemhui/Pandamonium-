@@ -35,8 +35,8 @@ class Api::PlaylistsController < ApplicationController
   
   def search 
     search_string = params[:search_string]
-    @playlists = Playlist.where('lower(name) LIKE ? OR lower(name) LIKE ?', "%#{search_string.downcase}%", "#{search_string.downcase}%")
-    render 'api/playlists/index'
+    @playlists = Playlist.where('lower(name) LIKE ?', "%#{search_string.downcase}%")
+    render 'api/playlists/search'
   end 
 
   private 

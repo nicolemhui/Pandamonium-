@@ -1,77 +1,3 @@
-// // OLD CODE
-// import React from 'react';
-// import SongDetailViewContainer from './song_detail_view_container';
-
-// class SongIndexItem extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.handleClick = this.handleClick.bind(this);
-//     this.handleDelete = this.handleDelete.bind(this);
-//   }
-
-
-//   handleClick(e) {
-//     e.preventDefault();
-//     this.props.openModal("add_song_to_playlist", this.props.song.id);
-//   }
-
-//   // FIX ME !
-//   // ONLY IF THIS IS ON PLAYLIST PAGE 
-//   handleDelete() {
-//     const playlist = this.props.playlist;
-//     this.props.deletePlaylistSong(playlist.id, this.props.song.id)
-//   }
-
-//   render() {
-//     const { song } = this.props;
-//     if (!song) return null;
-
-//     // put some logic here to determine if songs is on the playlist page, if so then have PLAY, DELETE buttons 
-//     //if songs is on songs page, have ADD and PLAY buttons
-//     //if songs is on albums page, have ADD and PLAY buttons
-
-//     // <div> 
-//     //   case switch statement  --- reference modal 
-//     //   switch(type)
-//     // </div>
-    
-    // return (
-
-    //   <li className="songlist-row">
-    //     <div className="left-song-details">
-    //       <div className="song-icon-display">
-    //         <div className="song-music-btn">
-    //           <i className="fas fa-music" />
-    //         </div>
-
-    //         <div className="song-play-btn">
-    //           <i className="fas fa-play" />
-    //         </div>
-    //       </div>
-          
-    //       <SongDetailViewContainer song={song} />
-    //     </div>
-        
-    //     <div className="song-option-btns">
-    //       <button className="add-playlist-btn" 
-    //       // value="•••"
-    //       onClick={this.handleClick}
-    //       > ADD </button>
-
-    //       <button className="add-playlist-btn" onClick={() => this.props.setCurrentSong(song)}> PLAY </button>
-    //       <button className="add-playlist-btn" onClick={this.handleDelete}> DELETE </button>
-    //     </div>
-    //   </li>
-    // )
-//   }
-// }
-
-// export default SongIndexItem;
-
-
-
-
 // //NEW EDIT  -- TEST THIS ONE !
 import React from 'react';
 import SongDetailViewContainer from './song_detail_view_container';
@@ -89,7 +15,6 @@ class SongIndexItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.showOptions = this.showOptions.bind(this);
     this.hideOptions = this.hideOptions.bind(this);
-    // this.togglePlay = this.togglePlay.bind(this);
   }
 
   handleClick(e) {
@@ -97,14 +22,11 @@ class SongIndexItem extends React.Component {
     this.props.openModal("add_song_to_playlist", this.props.song.id);
   }
 
-  //FIX ME -- get the queue 
   handlePlay() {
     this.props.updateQueue(this.props.getSongQueue);
     this.props.setCurrentSong(this.props.song);
   }
 
-  // FIX ME !
-  // ONLY IF THIS IS ON PLAYLIST PAGE 
   handleDelete() {
     const playlist = this.props.playlist;
     this.props.deletePlaylistSong(playlist.id, this.props.song.id)
@@ -128,11 +50,6 @@ class SongIndexItem extends React.Component {
     const { song } = this.props;
     if (!song) return null;
 
-    // put some logic here to determine if songs is on the playlist page, if so then have PLAY, DELETE buttons 
-    //if songs is on songs page, have ADD and PLAY buttons
-    //if songs is on albums page, have ADD and PLAY buttons
-    
-    //FIX ME
     const playButton = <button className="option" onClick={this.handlePlay}>Play song</button>;
     const addButton = <button className="option" onClick={this.handleClick}>Add to playlist</button>;
     const deleteButton = <button className="option" onClick={this.handleDelete}>Delete from playlist</button>;
@@ -142,12 +59,12 @@ class SongIndexItem extends React.Component {
     if (this.props.type === "playlist_show") {
       songOptions = <div>{deleteButton}</div>
     } else if (this.props.type === "album_show") {
-      songOptions = <div>
+      songOptions = <div className="song-options-container">
         {playButton}
         {addButton}
       </div>;
     } else if (this.props.type === "song_index" || this.props.type === "artist_show") {
-      songOptions = <div>
+      songOptions = <div className="song-options-container">
         {playButton}
         {addButton}
       </div>
@@ -168,7 +85,7 @@ class SongIndexItem extends React.Component {
               <i className="fas fa-play" />
             </div>
           </div>
-
+          
           <SongDetailViewContainer song={song} songArtists={this.props.songArtists} />
         </div>
 
@@ -182,9 +99,6 @@ class SongIndexItem extends React.Component {
               ? (
                 <div className="song-options-dropdown">
                   {songOptions}
-
-                  {/* {<button className="option" onClick={this.handleClick}>Add to playlist</button>} */}
-                  {/* <button className="option" onClick={this.handleDelete}>Delete from playlist</button> */}
                 </div>
               )
               : (
@@ -192,7 +106,6 @@ class SongIndexItem extends React.Component {
               )
           }
         </div> 
-         
       </div>
     )
   }

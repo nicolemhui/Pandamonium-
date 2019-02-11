@@ -25,16 +25,7 @@ class PlaylistIndex extends React.Component {
   render() {
     let { playlists } = this.props;
     if (!playlists) return null;
-      
-    let noResults;
-    if (playlists.length === 0) {
-      noResults = <div className="no-search-content">
-        <h1>Nothing to see...</h1>
-      </div>
-    } else {
-      noResults = "";
-    }
-
+    
     playlists = this.props.playlists.map( (playlist, i) => {
       return (
         <PlaylistIndexItem 
@@ -46,7 +37,6 @@ class PlaylistIndex extends React.Component {
 
     return (
       <div className="album-item-container">
-        {noResults}
         <ul className="index-item-row">
           {playlists}
         </ul>

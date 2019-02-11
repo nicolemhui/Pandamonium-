@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 class SongDetailView extends React.Component {
 
@@ -8,24 +8,39 @@ class SongDetailView extends React.Component {
 
     if (!artists || !song || !albums) return null;
     
-    const songArtists = artists.map(artist => {
-    
-      return (
-      <NavLink to={`/artists/${artist.id}`}
-        className="artist-text"
-        key={artist.id}>
-        {artist.name}
-      </NavLink>
-      )}
-    );
+    let songArtists;
+    let songAlbums;
 
-    const songAlbums = albums.map(album => 
-      <NavLink to={`/albums/${album.id}`}
+    if (this.props.location.pathname == "/search") {
+      songArtists = <NavLink to={`/artists/${song.artistId}`}
+          className="artist-text"
+          key={Math.floor((Math.random() * song.artistId) + 1)}>
+          {song.artistName}
+        </NavLink>
+
+      songAlbums = <NavLink to={`/albums/${song.albumId}`}
         className="album-text"
-        key={album.id}>
-        {album.title}
+        key={Math.floor((Math.random() * song.albumId)) + 1}>
+        {song.albumTitle}
       </NavLink>
-    );
+
+    } else {
+      songArtists = artists.map(artist =>
+        <NavLink to={`/artists/${artist.id}`}
+          className="artist-text"
+          key={Math.floor((Math.random() * artist.id) + 1)}>
+          {artist.name}
+        </NavLink>
+      );
+
+      songAlbums = albums.map(album =>
+        <NavLink to={`/albums/${album.id}`}
+          className="album-text"
+          key={Math.floor((Math.random() * album.id) + 1)}>
+          {album.title}
+        </NavLink>
+      );
+    }
 
     let songInfoText;
 
@@ -33,15 +48,13 @@ class SongDetailView extends React.Component {
       songInfoText = <div className="song-artists-links"> {songArtists} </div>
     } else if (songArtists.length === 0) {
       songInfoText = <div className="song-artists-links"> {songAlbums} </div>
-    } else if ((songAlbums.length > 0) && (songArtists.length > 0)) {
+    } else {
       songInfoText = <div>
         {songArtists}
         •
         {songAlbums}
-      </div>;
-    } else {
-      songInfoText = <div></div>;
-    }
+      </div>
+    } 
 
     return (
       <div className="song-item-info">
@@ -58,4 +71,4 @@ class SongDetailView extends React.Component {
   }
 }
 
-export default SongDetailView;
+export default withRouter(SongDetailView);

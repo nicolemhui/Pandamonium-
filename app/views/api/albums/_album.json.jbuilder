@@ -8,6 +8,3 @@ if album
 
   end
 end  
-
-
-#json.saved user.saved_album_ids.include?(@album.id)

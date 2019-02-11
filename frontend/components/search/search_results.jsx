@@ -1,10 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import AlbumIndexContainer from '../album/album_index_container';
 import ArtistIndexContainer from '../artist/artist_index_container';
 import PlaylistIndexContainer from '../playlist/playlist_index_container';
 import SongIndexContainer from '../song/song_index_container';
-import { NavLink, Route, Redirect, Switch } from 'react-router-dom';
-import BrowseLinks from '../header_links/browse_links';
 
 class SearchResults extends React.Component {
   constructor(props) {
@@ -22,64 +22,49 @@ class SearchResults extends React.Component {
   }
   
   render() {
-    let { searchString } = this.props;
+    let { searchString, playlists, songs, artists, albums } = this.props;
     
-    let playlists = <PlaylistIndexContainer searchString={searchString} />;
-    let artists = <ArtistIndexContainer searchString={searchString} />;
-    let albums = <AlbumIndexContainer searchString={searchString} />;
-    let songs = <SongIndexContainer searchString={searchString} />;
+    let searchedPlaylists = <PlaylistIndexContainer searchString={searchString} />;
+    let searchedArtists = <ArtistIndexContainer searchString={searchString} />;
+    let searchedAlbums = <AlbumIndexContainer searchString={searchString} />;
+    let searchedSongs = <SongIndexContainer searchString={searchString} />;
     
-    return (
-      
-      <div className="search-nav-and-results">
-        <nav className="nav-links">
-          <div className="nav-links-container">
-            <div className="nav-bar-links">
-              <NavLink to="/search/playlists" className="nav-links-link">Playlists<span></span></NavLink>
-              <NavLink to="/search/songs" className="nav-links-link">Songs<span></span></NavLink>
-              <NavLink to="/search/albums" className="nav-links-link">Albums<span></span></NavLink>
-              <NavLink to="/search/artists" className="nav-links-link">Artists<span></span></NavLink>
-            </div>
-          </div>
-        </nav>
 
-        <Switch>
-          <Route path="/search/albums" render={() =>
-            <AlbumIndexContainer searchString={searchString} />}
-          />
-          <Route path="/search/artists" render={() =>
-            <ArtistIndexContainer searchString={searchString} />}
-          />
-          <Route path="/search/playlists" render={() =>
-            <PlaylistIndexContainer searchString={searchString} />}
-          />
-          <Route path="/search/songs" render={() =>
-            <SongIndexContainer searchString={searchString} />}
-          />
-
-          <Redirect to="/search" />
-        </Switch>
+    let noResults;
+    if ((Object.entries(playlists).length === 0) && (Object.entries(albums).length === 0) 
+      && (Object.entries(artists).length === 0) && (Object.entries(songs).length === 0)){
+      noResults = <div className="no-search-content">
+        <h1>Nothing to see...</h1>
       </div>
-      
+    } 
+
+    return (
+      <div className="search-nav-and-results">
+        <div className="search-results">
+          {noResults}
+
+          <h1 className="search-category">Songs</h1>
+            {searchedSongs}
+          <h1 className="search-category">Artists</h1>
+            {searchedArtists}
+          <h1 className="search-category">Albums</h1>
+            {searchedAlbums}
+          <h1 className="search-category">Playlists</h1>
+            {searchedPlaylists}
+        </div>
+      </div>
     );
   }
 }
 
 
+const mapStateToProps = (state) => ({
+  songs: state.entities.songs,
+  albums: state.entities.albums,
+  artists: state.entities.artists,
+  playlists: state.entities.playlists,
+})
 
-export default SearchResults;
+export default withRouter(connect(mapStateToProps, null)(SearchResults));
 
-
-{/* // </div >
-
-
-      // <div className="search-results">
-        // <h1 className="search-category">Albums</h1>
-          // {albums}
-        // <h1 className="search-category">Artists</h1>
-          // {artists}
-        // <h1 className="search-category">Playlists</h1>
-          // {playlists}
-        // <h1 className="search-category">Songs</h1>
-          // {songs}
-      // </div> */}
+// export default SearchResults;

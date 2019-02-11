@@ -19,9 +19,8 @@ class MusicPlayer extends React.Component {
     this.repeat = this.repeat.bind(this);
   }
 
-  // FIX ME - need to handle change to value
   handleChange() {
-    return e => e.target.value
+    return e => e.target.value;
   }
 
   togglePlay() {
@@ -67,7 +66,6 @@ class MusicPlayer extends React.Component {
 
       const newProgress =
         (event.target.value * this.audio.duration) / 100;
-      // this.player.currentTime = newProgress;
       this.setState({
         progress: newProgress
       });
@@ -91,12 +89,7 @@ class MusicPlayer extends React.Component {
         min={0}
         max={100}
         value={0}
-        // currentSong
-        // ? ((this.state.progress / this.audio.duration) * 100)
-        // : 0 }
         onChange={this.onProgressSliderChange()}
-      // onMouseDown={this.onSeekBegin()}
-      // onMouseUp={this.onSeekEnd()}
       />
 
     return (
@@ -115,15 +108,11 @@ class MusicPlayer extends React.Component {
                 <i className="fa fa-step-forward" onClick={this.next}></i>
                 <i className="fas fa-infinity" onClick={this.repeat}></i>
               </div>
-           
-              {/* <div className="song-progress">
-                <div id="progress-bar"></div>
-              </div> */}
             </div>
 
 
             <div>
-              <audio id="audio" src={currentSong.audio_url} autoPlay></audio>
+              <audio id="audio" src={currentSong.audioUrl} autoPlay></audio>
             </div>
           </div>
 
