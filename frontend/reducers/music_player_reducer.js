@@ -7,13 +7,13 @@ import { RECEIVE_CURRENT_SONG, TOGGLE_SONG, LOOP_SONG, ADD_SONG_TO_QUEUE, UPDATE
 //     id: 510,
 //     title: "That's What I Like",
 //     album_id: 140,
-//     audio_url: "https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars%2C+24K+Magic+-+That's+What+I+Like.mp3"
+//     audioUrl: "https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars%2C+24K+Magic+-+That's+What+I+Like.mp3"
 //   },
 //   { 
 //     id: 523, 
 //     title: "Shelter", 
 //     album_id: null, 
-//     audio_url: "https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson+-+Shelter.mp3" 
+//     audioUrl: "https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson+-+Shelter.mp3" 
 //   },
 // ];
 

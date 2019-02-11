@@ -123,7 +123,7 @@ class MusicPlayer extends React.Component {
 
 
             <div>
-              <audio id="audio" src={currentSong.audio_url} autoPlay></audio>
+              <audio id="audio" src={currentSong.audioUrl} autoPlay></audio>
             </div>
           </div>
 
