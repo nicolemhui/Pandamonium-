@@ -28,7 +28,7 @@ class Main extends React.Component {
           <Route path="/albums/:albumId" component={AlbumShowContainer} />
           <Route path="/artists/:artistId" component={ArtistShowContainer} />
 
-          <Redirect to="/browse/playlists" />
+          <Redirect to="/browse/albums" />
         </Switch>
 
 

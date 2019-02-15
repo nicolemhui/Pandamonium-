@@ -12,6 +12,16 @@
     <link rel="icon" href= <%= asset_path("spotify_icon.png") %> >
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132742821-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-132742821-1');
+    </script>
+
     </head>
     
     <body>
