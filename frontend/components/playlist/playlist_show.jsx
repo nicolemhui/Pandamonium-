@@ -89,12 +89,15 @@ class PlaylistShow extends React.Component {
         </div>
     }
 
+    let photoUrl;
+    playlist.photo_url ? photoUrl = playlist.photo_url : photoUrl = "https://s3-us-west-1.amazonaws.com/pandamonium-resources/gradient.jpg";
 
     return (
       <div className="playlist-main-container">
         <div className="playlist-content-container">
           <div className="playlist-info">
-            <div className="playlist-cover"><img src={playlist.photo_url} className="cover-photo"></img></div>
+            <div className="playlist-cover"><img src={photoUrl} className="cover-photo"></img></div>
+            {/* <div className="playlist-cover"><img src={playlist.photo_url} className="cover-photo"></img></div> */}
     
             <div className="playlist-info-text">
               <h3>{playlist.name}</h3>
