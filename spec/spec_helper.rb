@@ -13,6 +13,37 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
+require 'rspec/rails'
+require 'capybara/rails'
+
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+if ENV['grading'] == 'true'
+  %w(
+    SessionsController
+    UsersController
+    ArtistsController
+    SongsController
+    AlbumsController
+    PlaylistsController
+    User
+    Artist
+    Song
+    Album
+    Playlist
+  ).each do |constant|
+    begin
+      constant.constantize
+    rescue
+      Kernel.const_set(constant, nil)
+    end
+  end
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -94,3 +125,5 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+
