@@ -2,8 +2,6 @@ import { RECEIVE_ALL_ALBUMS, RECEIVE_ALBUM } from '../actions/album_actions';
 import { RECEIVE_ALL_SONGS, RECEIVE_SONG } from '../actions/song_actions';
 import { RECEIVE_PLAYLIST, RECEIVE_ALL_PLAYLISTS } from '../actions/playlist_actions';
 import { RECEIVE_ARTIST } from '../actions/artist_actions';
-import { LOCATION_CHANGE } from 'react-router-redux';
-
 import merge from 'lodash/merge';
 
 const artistAlbumsReducer = (state = {}, action) => {
