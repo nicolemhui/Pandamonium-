@@ -128,6 +128,10 @@ lp_minutes_to_midnight = Album.create(title: "Minutes to Midnight", year: 2007)
 lp_minutes_to_midnight_photo = File.open("app/assets/images/linkin_park_minutes_to_midnight.png")
 lp_minutes_to_midnight.cover_photo.attach(io: lp_minutes_to_midnight_photo, filename: 'lp_minutes_to_midnight.png')
 
+lp_hybrid_theory = Album.create(title: "Hybrid Theory", year: 2000)
+lp_hybrid_theory_photo = File.open("app/assets/images/linkin_park_hybrid_theory.png")
+lp_hybrid_theory.cover_photo.attach(io: lp_hybrid_theory_photo, filename: 'lp_hybrid_theory.png')
+
 lp_leave_out_all_the_rest = Song.create(title: "Leave Out All The Rest", album_id: lp_minutes_to_midnight.id)
 lp_leave_out_all_the_rest_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+03+Leave+Out+All+The+Rest.mp3")
 lp_leave_out_all_the_rest.audio.attach(io: lp_leave_out_all_the_rest_audio, filename: 'lp_leave_out_all_the_rest.mp3')
@@ -148,11 +152,9 @@ lp_in_pieces = Song.create(title: "In Pieces", album_id: lp_minutes_to_midnight.
 lp_in_pieces_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+11+In+Pieces.mp3")
 lp_in_pieces.audio.attach(io: lp_in_pieces_audio, filename: 'lp_in_pieces.mp3')
 
-lp_in_the_end = Song.create(title: "In The End")
+lp_in_the_end = Song.create(title: "In The End", album_id: lp_hybrid_theory.id)
 lp_in_the_end_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+08+In+The+End.mp3")
 lp_in_the_end.audio.attach(io: lp_in_the_end_audio, filename: 'lp_in_the_end.mp3')
-lp_in_the_end_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/in_the_end.png")
-lp_in_the_end.photo.attach(io: lp_in_the_end_photo, filename: 'lp_in_the_end.png')
 
 #lp songs & albums 
 lp_song_1 = ArtistSong.create(artist_id: linkin_park.id, song_id: lp_leave_out_all_the_rest.id, ord: 1)
@@ -163,6 +165,7 @@ lp_song_5 = ArtistSong.create(artist_id: linkin_park.id, song_id: lp_in_pieces.i
 lp_song_6 = ArtistSong.create(artist_id: linkin_park.id, song_id: lp_in_the_end.id, ord: 1)
 
 lp_album_1 = ArtistAlbum.create(artist_id: linkin_park.id, album_id: lp_minutes_to_midnight.id)
+lp_album_2 = ArtistAlbum.create(artist_id: linkin_park.id, album_id: lp_hybrid_theory.id)
 
 
 #Porter Robinson
@@ -173,6 +176,10 @@ porter_robinson.photo.attach(io: pr_artist_photo, filename: 'porter_robinson_art
 pr_worlds = Album.create(title: "Worlds", year: 2014)
 pr_worlds_photo = File.open("app/assets/images/porter_robinson_worlds.png")
 pr_worlds.cover_photo.attach(io: pr_worlds_photo, filename: 'pr_worlds.png')
+
+pr_shelter_album = Album.create(title: "Shelter", year: 2016)
+pr_shelter_album_photo = File.open("app/assets/images/shelter.png")
+pr_shelter_album.cover_photo.attach(io: pr_shelter_album_photo, filename: 'pr_shelter_album.png')
 
 pr_divinity = Song.create(title: "Divinity", album_id: pr_worlds.id)
 pr_divinity_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson%2C+Worlds+-+01+Divinity.mp3")
@@ -198,11 +205,9 @@ pr_goodbye_to_a_world = Song.create(title: "Goodbye To A World", album_id: pr_wo
 pr_goodbye_to_a_world_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson%2C+Worlds+-+12+Goodbye+To+A+World.mp3")
 pr_goodbye_to_a_world.audio.attach(io: pr_goodbye_to_a_world_audio, filename: 'pr_goodbye_to_a_world.mp3')
 
-pr_shelter = Song.create(title: "Shelter")
+pr_shelter = Song.create(title: "Shelter", album_id: pr_shelter_album.id)
 pr_shelter_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson+-+Shelter.mp3")
-pr_shelter.audio.attach(io: pr_shelter_audio, filename: 'pr_shelter.mp3')
-pr_shelter_photo = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/shelter.png")
-pr_shelter.photo.attach(io: pr_shelter_photo, filename: 'pr_shelter.png')
+pr_shelter.audio.attach(io: pr_shelter_audio, filename: 'pr_shelter_audio.mp3')
 
 #pr songs & albums 
 pr_song_1 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_divinity.id, ord: 1)
@@ -214,7 +219,7 @@ pr_song_6 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_goodbye
 pr_song_7 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_shelter.id, ord: 1)
 
 pr_album_1 = ArtistAlbum.create(artist_id: porter_robinson.id, album_id: pr_worlds.id)
-pr_album_2 = ArtistAlbum.create(artist_id: porter_robinson.id, album_id: pr_shelter.id)
+pr_album_2 = ArtistAlbum.create(artist_id: porter_robinson.id, album_id: pr_shelter_album.id)
 
 
 #Tycho 
@@ -289,7 +294,7 @@ od_light = Song.create(title: "Light", album_id: od_in_return.id)
 od_light_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Odesza+-+14+Light+(feat.+Little+Dragon).mp3")
 od_light.audio.attach(io: od_light_audio, filename: 'od_light.mp3')
 
-od_line_of_sight = Song.create(title: "Line of Sight")
+od_line_of_sight = Song.create(title: "Line of Sight", album_id: od_in_return.id)
 od_line_of_sight_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Odesza+-+Line+Of+Sight+(feat.+WYNNE+%26+Mansionair).mp3")
 od_line_of_sight.audio.attach(io: od_line_of_sight_audio, filename: 'od_line_of_sight.mp3')
 

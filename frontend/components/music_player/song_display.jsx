@@ -8,7 +8,6 @@ class SongDisplay extends React.Component {
   
   render () {
     let { currentSong, albums, artists, albumArtists } = this.props;    
-    
     let songArtists;
     
     if (this.props.location.pathname == "/search") {

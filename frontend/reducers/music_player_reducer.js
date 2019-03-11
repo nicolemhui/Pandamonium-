@@ -1,5 +1,13 @@
 import merge from 'lodash/merge';
-import { RECEIVE_CURRENT_SONG, TOGGLE_SONG, LOOP_SONG, ADD_SONG_TO_QUEUE, UPDATE_QUEUE, PLAY_NEXT_SONG, PLAY_PREVIOUS_SONG } from '../actions/music_player_actions';
+import { 
+  RECEIVE_CURRENT_SONG, 
+  TOGGLE_SONG, 
+  LOOP_SONG, 
+  ADD_SONG_TO_QUEUE, 
+  UPDATE_QUEUE, 
+  PLAY_NEXT_SONG, 
+  PLAY_PREVIOUS_SONG 
+} from '../actions/music_player_actions';
 
 // FIX ME!
 // const currQueue = [
@@ -46,10 +54,12 @@ export default function musicPlayerReducer(state = initialState, action) {
       return newState;
     case UPDATE_QUEUE:
       let newSongQueue = action.songs;   
-      newState = merge({}, state, {
+      newState = merge({}, {
         currentSong: newSongQueue[0],
         isPlaying: true,
-        songQueue: newSongQueue
+        songQueue: newSongQueue,
+        currentSongIdx: 0,
+        loop: false
       });
       return newState;
     case PLAY_NEXT_SONG:

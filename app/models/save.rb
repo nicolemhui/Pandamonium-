@@ -11,7 +11,6 @@
 #
 
 class Save < ApplicationRecord
-  belongs_to :saveable, polymorphic: true
-
   belongs_to :user
+  belongs_to :saveable, polymorphic: true
 end

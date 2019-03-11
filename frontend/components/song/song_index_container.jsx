@@ -16,8 +16,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   fetchSongs: () => dispatch(fetchSongs()),
   fetchSearchedSongs: (searchString) => dispatch(fetchSearchedSongs(searchString)),
-  // fetchSearchedSongs: (searchString) => dispatch(fetchSearchedSongs(searchString)).then(res => console.log("api response", res)),
-
   updateQueue: (queue) => dispatch(updateQueue(queue)),
 });
 

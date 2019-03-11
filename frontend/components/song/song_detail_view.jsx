@@ -43,13 +43,14 @@ class SongDetailView extends React.Component {
     }
 
     let songInfoText;
+    let songClass = "song-other-info";
 
     if (songAlbums.length === 0) {
-      songInfoText = <div className="song-artists-links"> {songArtists} </div>
+      songInfoText = <div className="song-artists-links">{songArtists}</div>
     } else if (songArtists.length === 0) {
-      songInfoText = <div className="song-artists-links"> {songAlbums} </div>
+      songInfoText = <div className="song-artists-links">{songAlbums}</div>
     } else {
-      songInfoText = <div>
+      songInfoText = <div className={songClass}>
         {songArtists}
         •
         {songAlbums}
@@ -58,14 +59,12 @@ class SongDetailView extends React.Component {
 
     return (
       <div className="song-item-info">
-
         <h3 className="song-title">{song.title}</h3>
-
-        <div className="song-info">
-          <div className="song-other-info">
+        {/* <div className="song-info"> */}
+          {/* <div className="song-other-info"> */}
             {songInfoText}
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </div>
     );
   }

@@ -24,12 +24,6 @@ class SongIndex extends React.Component {
     }
   }
 
-  componentWillMount() {
-  // componentDidMount() {
-    // this.props.fetchSongs()
-    // .then(() => this.setState({ songs: this.props.songs }))
-  }
-
   handlePlay() {
     this.props.receiveCurrentSong(song);
   }
