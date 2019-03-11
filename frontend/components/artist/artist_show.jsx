@@ -1,13 +1,26 @@
 import React from 'react';
 import SongIndexItemContainer from '../song/song_index_item_container';
 import AlbumIndexItem from '../album/album_index_item';
-import { Link } from 'react-router-dom';
 
 class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      queue: this.props.artistSongs,
+      artistAlbums: this.props.artistAlbums,
+      artistSongs: this.props.artistSongs,
+    };
 
     this.getSongQueue = this.getSongQueue.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({ 
+      artistAlbums: newProps.artistAlbums,
+      artistSongs: newProps.artistSongs,
+      queue: newProps.artistSongs
+    });
   }
 
   componentDidMount() {
@@ -29,27 +42,38 @@ class ArtistShow extends React.Component {
     return songQueue;
   }
 
+  handlePlay() {
+    let { queue } = this.state;
+    this.props.updateQueue(queue);
+    this.props.setCurrentSong(queue[0]);
+  }
+  
   render() {
-    let { artist, artistAlbums, artistSongs } = this.props;
+    let { artist } = this.props;
+    let { artistAlbums, artistSongs } = this.state;
     if (!artist || !artistAlbums || !artistSongs) return null;
 
-    artistSongs = artistSongs.map(song => {
-      return (
-        <SongIndexItemContainer
-          key={song.id}
-          song={song}
-          getSongQueue={this.getSongQueue(song.id)}
-        />
-      );
-    });
-      
-    
-    artistAlbums = artistAlbums.map(album => {
-      return (
-        <AlbumIndexItem key={album.id} album={album} />
-      );
-    });
+    if ((artistSongs.length !== 0) && (artistSongs[0] !== undefined)) {
+      artistSongs = artistSongs.map((song, idx) => {
+        return (
+          <SongIndexItemContainer
+            key={song.id}
+            song={song}
+            getSongQueue={this.getSongQueue(song.id)}
+            type="artist_show"
+          />
+        );
+      });
+    }
 
+    if ((artistAlbums.length !== 0) && (artistAlbums[0] !== undefined)) {
+      artistAlbums = artistAlbums.map(album => {
+        return (
+          <AlbumIndexItem key={album.id} album={album} />
+        );
+      });
+    }
+    
     return (
       <div className="artist-main-container">
        <div><img src={artist.photoUrl} className="artist-cover-photo"></img></div> 
@@ -58,7 +82,8 @@ class ArtistShow extends React.Component {
             <h1>{artist.name}</h1>
 
             <button
-              className="play-artist-songs-btn">
+              className="play-artist-songs-btn"
+              onClick={this.handlePlay}>
               PLAY
             </button>
           </div>

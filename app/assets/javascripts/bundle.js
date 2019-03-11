@@ -902,8 +902,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchSearchedAlbums: function fetchSearchedAlbums(searchString) {
       return dispatch(Object(_actions_album_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSearchedAlbums"])(searchString));
-    } // fetchSearchedAlbums: (searchString) => dispatch(fetchSearchedAlbums(searchString)).then(res => console.log("api response", res)),
-
+    }
   };
 };
 
@@ -1399,7 +1398,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _song_song_index_item_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../song/song_index_item_container */ "./frontend/components/song/song_index_item_container.js");
 /* harmony import */ var _album_album_index_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../album/album_index_item */ "./frontend/components/album/album_index_item.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1422,7 +1420,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
-
 var ArtistShow =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1435,20 +1432,22 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ArtistShow).call(this, props));
     _this.state = {
+      queue: _this.props.artistSongs,
       artistAlbums: _this.props.artistAlbums,
       artistSongs: _this.props.artistSongs
     };
     _this.getSongQueue = _this.getSongQueue.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handlePlay = _this.handlePlay.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
   _createClass(ArtistShow, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(newProps) {
-      // debugger;
       this.setState({
-        artistAlbums: [newProps.artistAlbums],
-        artistSongs: [newProps.artistSongs]
+        artistAlbums: newProps.artistAlbums,
+        artistSongs: newProps.artistSongs,
+        queue: newProps.artistSongs
       });
     }
   }, {
@@ -1473,30 +1472,43 @@ function (_React$Component) {
       return songQueue;
     }
   }, {
+    key: "handlePlay",
+    value: function handlePlay() {
+      var queue = this.state.queue;
+      this.props.updateQueue(queue);
+      this.props.setCurrentSong(queue[0]);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var _this$props = this.props,
-          artist = _this$props.artist,
-          artistAlbums = _this$props.artistAlbums,
-          artistSongs = _this$props.artistSongs;
-      if (!artist || !artistAlbums || !artistSongs) return null; // if (Object.entries(artistAlbums).length !== 0 && (artistAlbums).constructor === Object) { 
-      // debugger;
+      var artist = this.props.artist;
+      var _this$state = this.state,
+          artistAlbums = _this$state.artistAlbums,
+          artistSongs = _this$state.artistSongs;
+      if (!artist || !artistAlbums || !artistSongs) return null;
 
-      artistSongs = artistSongs.map(function (song) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_song_song_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: song.id,
-          song: song,
-          getSongQueue: _this2.getSongQueue(song.id)
+      if (artistSongs.length !== 0 && artistSongs[0] !== undefined) {
+        artistSongs = artistSongs.map(function (song, idx) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_song_song_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: song.id,
+            song: song,
+            getSongQueue: _this2.getSongQueue(song.id),
+            type: "artist_show"
+          });
         });
-      });
-      artistAlbums = artistAlbums.map(function (album) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_album_album_index_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          key: album.id,
-          album: album
+      }
+
+      if (artistAlbums.length !== 0 && artistAlbums[0] !== undefined) {
+        artistAlbums = artistAlbums.map(function (album) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_album_album_index_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            key: album.id,
+            album: album
+          });
         });
-      });
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-main-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1507,7 +1519,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, artist.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "play-artist-songs-btn"
+        className: "play-artist-songs-btn",
+        onClick: this.handlePlay
       }, "PLAY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-content-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1558,21 +1571,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var artistId = ownProps.match.params.artistId;
-  var artist = state.entities.artists[artistId]; // let artistAlbums;
-  // let artistSongs;
-
+  var artist = state.entities.artists[artistId];
   var artistAlbums = Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_5__["selectArtistAlbums"])(state, parseInt(artistId));
-  var artistSongs = Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_5__["selectArtistSongs"])(state, parseInt(artistId)); // if (Object.entries(state.entities.artistAlbums).length !== 0 && (state.entities.artistAlbums).constructor === Object) { 
-  //   artistAlbums = selectArtistAlbums(state, parseInt(artistId));
-  //   artistSongs = selectArtistSongs(state, parseInt(artistId));
-  // } else {
-  //   artistAlbums = null;
-  //   // artistAlbums = {};
-  //   artistSongs = null;
-  //   // artistSongs = {};
-  // }
-  // debugger;
-
+  var artistSongs = Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_5__["selectArtistSongs"])(state, parseInt(artistId));
   return {
     artist: artist,
     artistAlbums: artistAlbums,
@@ -1587,17 +1588,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     updateQueue: function updateQueue(queue) {
       return dispatch(Object(_actions_music_player_actions__WEBPACK_IMPORTED_MODULE_4__["updateQueue"])(queue));
+    },
+    setCurrentSong: function setCurrentSong(song, idx) {
+      return dispatch(Object(_actions_music_player_actions__WEBPACK_IMPORTED_MODULE_4__["setCurrentSong"])(song, idx));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_artist_show__WEBPACK_IMPORTED_MODULE_2__["default"])); //FIX ME!! 
-//when searching artist and then clicking on artist, artistSongs is not able to populate b/c the 
-//state does not contain all of the necessary information..
-// ISSUE:
-// how do i get all the necessary info to populate? -- my selector requires state.. 
-// -- I could query all the proper info from DB and then send it up 
-//REDUCER??
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_artist_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -2617,25 +2615,7 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(_song_display__WEBPACK_IMPORTED_MODULE_0__["default"])); // const mapStateToProps = (state, ownProps) => {
-//   const currentSongIdx = state.ui.musicPlayer.currentSongIndex;
-//   const currentSong = state.ui.musicPlayer.trackList[currentSongIdx];
-//   if (currentSong) {
-//     const currentSongAlbum = state.entities.albums[currentSong.albumId];
-//     const currentSongArtist = state.entities.artists[currentSong.artistId];
-//     return ({
-//       currentSong,
-//       currentSongAlbum,
-//       currentSongArtistName: currentSongArtist.name
-//     });
-//   } else {
-//     return ({
-//       currentSong: undefined,
-//       currentSongAlbum: undefined,
-//       currentSongArtistName: undefined
-//     });
-//   }
-// };
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(_song_display__WEBPACK_IMPORTED_MODULE_0__["default"]));
 
 /***/ }),
 
@@ -3206,6 +3186,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PlaylistShow).call(this, props));
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.getSongQueue = _this.getSongQueue.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handlePlay = _this.handlePlay.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -3223,6 +3204,13 @@ function (_React$Component) {
 
       this.props.deletePlaylist(playlist.id);
       this.props.history.push("/collection/playlists/");
+    }
+  }, {
+    key: "handlePlay",
+    value: function handlePlay() {
+      var playlistSongs = this.props.playlistSongs;
+      this.props.updateQueue(playlistSongs);
+      this.props.setCurrentSong(playlistSongs[0]);
     }
   }, {
     key: "getSongQueue",
@@ -3366,6 +3354,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     updateQueue: function updateQueue(queue) {
       return dispatch(Object(_actions_music_player_actions__WEBPACK_IMPORTED_MODULE_6__["updateQueue"])(queue));
+    },
+    setCurrentSong: function setCurrentSong(song, idx) {
+      return dispatch(Object(_actions_music_player_actions__WEBPACK_IMPORTED_MODULE_6__["setCurrentSong"])(song, idx));
     }
   };
 };
@@ -4293,28 +4284,27 @@ function (_React$Component) {
       }
 
       var songInfoText;
+      var songClass = "song-other-info";
 
       if (songAlbums.length === 0) {
         songInfoText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "song-artists-links"
-        }, " ", songArtists, " ");
+        }, songArtists);
       } else if (songArtists.length === 0) {
         songInfoText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "song-artists-links"
-        }, " ", songAlbums, " ");
+        }, songAlbums);
       } else {
-        songInfoText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, songArtists, "\u2022", songAlbums);
+        songInfoText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: songClass
+        }, songArtists, "\u2022", songAlbums);
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-item-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "song-title"
-      }, song.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "song-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "song-other-info"
-      }, songInfoText)));
+      }, song.title), songInfoText);
     }
   }]);
 
@@ -4507,7 +4497,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchSearchedSongs: function fetchSearchedSongs(searchString) {
       return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSearchedSongs"])(searchString));
     },
-    // fetchSearchedSongs: (searchString) => dispatch(fetchSearchedSongs(searchString)).then(res => console.log("api response", res)),
     updateQueue: function updateQueue(queue) {
       return dispatch(Object(_actions_music_player_actions__WEBPACK_IMPORTED_MODULE_3__["updateQueue"])(queue));
     }
@@ -5293,10 +5282,12 @@ function musicPlayerReducer() {
 
     case _actions_music_player_actions__WEBPACK_IMPORTED_MODULE_1__["UPDATE_QUEUE"]:
       var newSongQueue = action.songs;
-      newState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      newState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, {
         currentSong: newSongQueue[0],
         isPlaying: true,
-        songQueue: newSongQueue
+        songQueue: newSongQueue,
+        currentSongIdx: 0,
+        loop: false
       });
       return newState;
 

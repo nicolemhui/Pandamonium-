@@ -16,7 +16,6 @@ const mapDispatchToProps = dispatch => {
   return ({
     fetchAlbums: () => dispatch(fetchAlbums()),
     fetchSearchedAlbums: (searchString) => dispatch(fetchSearchedAlbums(searchString)),
-    // fetchSearchedAlbums: (searchString) => dispatch(fetchSearchedAlbums(searchString)).then(res => console.log("api response", res)),
   });
   
   

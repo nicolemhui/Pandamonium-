@@ -7,6 +7,7 @@ class PlaylistShow extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
     this.getSongQueue = this.getSongQueue.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
   }
   
   componentDidMount() {
@@ -16,12 +17,17 @@ class PlaylistShow extends React.Component {
 
   handleDelete() {
     const playlist = this.props.playlist;
-
     // this.props.deletePlaylist(playlist.id);
       // .then(() => this.props.history.push(`/collection/playlists/`))
 
     this.props.deletePlaylist(playlist.id);
     this.props.history.push(`/collection/playlists/`);
+  }
+
+  handlePlay() {
+    let { playlistSongs } = this.props; 
+    this.props.updateQueue(playlistSongs);
+    this.props.setCurrentSong(playlistSongs[0]);
   }
 
   getSongQueue(songId) {
@@ -97,12 +103,9 @@ class PlaylistShow extends React.Component {
         <div className="playlist-content-container">
           <div className="playlist-info">
             <div className="playlist-cover"><img src={photoUrl} className="cover-photo"></img></div>
-            {/* <div className="playlist-cover"><img src={playlist.photo_url} className="cover-photo"></img></div> */}
-    
             <div className="playlist-info-text">
               <h3>{playlist.name}</h3>
             </div>
-
             {buttons}
           </div>
           <br/>

@@ -26,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
   deletePlaylist: (id) => dispatch(deletePlaylist(id)),
   deletePlaylistSong: (playlistId, songId) => dispatch(deletePlaylistSong(playlistId, songId)),
   updateQueue: (queue) => dispatch(updateQueue(queue)),
+  setCurrentSong: (song, idx) => dispatch(setCurrentSong(song, idx)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistShow);
