@@ -22,10 +22,7 @@ class AlbumIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props.searchString != newProps.searchString) {
-      // this.setState({ searchString: newProps.searchString });
-      // console.log("search string: ", this.props.searchString);
       this.props.fetchSearchedAlbums(newProps.searchString)
-        // .then( (res) => console.log("new response receive props", res) );
     }
   }
 

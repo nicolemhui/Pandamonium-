@@ -25,3 +25,10 @@ json.artistSongs do
     end 
   end 
 end
+
+json.artistAlbums ({})
+json.artistAlbums do 
+  @album.artist_albums.each do |artist_album|
+    json.partial! 'api/artist_albums/artist_album', artist_album: artist_album
+  end 
+end

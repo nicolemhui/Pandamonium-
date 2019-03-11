@@ -16,7 +16,7 @@ class AlbumShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({ albumArtists: [newProps.albumArtists] });
+    this.setState({ albumArtists: newProps.albumArtists });
   }
 
   componentDidMount() {
@@ -44,18 +44,22 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    let { album, albumSongs, albumArtists } = this.props;
-    
+    let { album, albumSongs, artists } = this.props;
+    let { albumArtists } = this.state;
+
     if (!album || !albumArtists || !albumSongs) return null;
 
-    albumArtists = albumArtists.map(artist => {
-      return (
-        <Link to={`/artists/${artist.id}`} 
-          key={artist.id * Math.random()}
-          className="artist-link">{artist.name}</Link>
+    if ((albumArtists.length !== 0) && (albumArtists[0] !== undefined)) {
+      albumArtists = albumArtists.map(artist => {
+        return (
+          <Link to={`/artists/${artist.id}`} 
+            key={artist.id * Math.random()}
+            className="artist-link">{artist.name}
+          </Link>
         );
       });
-      
+    }
+
     albumSongs = albumSongs.map(song => {
       return (
         <SongIndexItemContainer

@@ -28,5 +28,5 @@
 
 
 node_modules/
-bundle.js
-bundle.js.map
+/app/assets/bundle.js
+/app/assets/bundle.js.map

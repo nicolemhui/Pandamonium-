@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -68,7 +69,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'shoulda-matchers'
   gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
