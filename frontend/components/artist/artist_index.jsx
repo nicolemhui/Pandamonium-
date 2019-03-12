@@ -22,7 +22,7 @@ class ArtistIndex extends React.Component {
       this.props.fetchSearchedArtists(searchString);
     } else {
       this.props.fetchArtists()
-        .then(() => window.setTimeout(() => this.setState({ loading: false }), 700));
+        .then(this.timer = () => setTimeout(() => this.setState({ loading: false }), 700));
     }
   }
 
@@ -31,6 +31,10 @@ class ArtistIndex extends React.Component {
       this.setState({ loading: false });
       this.props.fetchSearchedArtists(newProps.searchString);
     }
+  }
+
+  componentWillUnmount() {
+    if (this.timer) clearTimeout(this.timer);
   }
 
   render() {

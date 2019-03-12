@@ -23,7 +23,7 @@ class SongIndex extends React.Component {
       this.props.fetchSearchedSongs(searchString);
     } else {
       this.props.fetchSongs()
-        .then(() => window.setTimeout(() => this.setState({ loading: false }), 700));
+        .then(this.timer = () => setTimeout(() => this.setState({ loading: false }), 700));
     }
   }
 
@@ -32,6 +32,10 @@ class SongIndex extends React.Component {
       this.setState({ loading: false });
       this.props.fetchSearchedSongs(newProps.searchString);
     }
+  }
+
+  componentWillUnmount() {
+    if (this.timer) clearTimeout(this.timer);
   }
 
   handlePlay() {

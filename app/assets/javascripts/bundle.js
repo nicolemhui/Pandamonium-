@@ -859,8 +859,8 @@ function (_React$Component) {
         });
         this.props.fetchSearchedAlbums(searchString);
       } else {
-        this.props.fetchAlbums().then(function () {
-          return window.setTimeout(function () {
+        this.props.fetchAlbums().then(this.timer = function () {
+          return setTimeout(function () {
             return _this2.setState({
               loading: false
             });
@@ -877,6 +877,11 @@ function (_React$Component) {
         });
         this.props.fetchSearchedAlbums(newProps.searchString);
       }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.timer) clearTimeout(this.timer);
     }
   }, {
     key: "render",
@@ -1312,8 +1317,8 @@ function (_React$Component) {
         });
         this.props.fetchSearchedArtists(searchString);
       } else {
-        this.props.fetchArtists().then(function () {
-          return window.setTimeout(function () {
+        this.props.fetchArtists().then(this.timer = function () {
+          return setTimeout(function () {
             return _this2.setState({
               loading: false
             });
@@ -1330,6 +1335,11 @@ function (_React$Component) {
         });
         this.props.fetchSearchedArtists(newProps.searchString);
       }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.timer) clearTimeout(this.timer);
     }
   }, {
     key: "render",
@@ -2603,7 +2613,7 @@ function (_React$Component) {
           currentSong = _this$props.currentSong,
           albums = _this$props.albums,
           artists = _this$props.artists,
-          albumArtists = _this$props.albumArtists;
+          artist = _this$props.artist;
       var songArtists;
 
       if (this.props.location.pathname == "/search") {
@@ -2612,16 +2622,14 @@ function (_React$Component) {
           className: "player-song-artists",
           key: currentSong.artistId
         }, currentSong.artistName);
-      } else if (artists) {
-        songArtists = artists.map(function (artist) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-            to: "/artists/".concat(artist.id),
-            className: "player-song-artists",
-            key: artist.id
-          }, artist.name);
-        });
+      } else if (artist) {
+        songArtists = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/artists/".concat(artist.id),
+          className: "player-song-artists",
+          key: artist.id
+        }, artist.name);
       } else {
-        songArtists = albumArtists.map(function (artist) {
+        songArtists = artists.map(function (artist) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
             to: "/artists/".concat(artist.id),
             className: "player-song-artists",
@@ -3070,8 +3078,8 @@ function (_React$Component) {
         });
         this.props.fetchSearchedPlaylists(searchString);
       } else {
-        this.props.fetchPlaylists().then(function () {
-          return window.setTimeout(function () {
+        this.props.fetchPlaylists().then(this.timer = function () {
+          return setTimeout(function () {
             return _this2.setState({
               loading: false
             });
@@ -3088,6 +3096,11 @@ function (_React$Component) {
         });
         this.props.fetchSearchedPlaylists(newProps.searchString);
       }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.timer) clearTimeout(this.timer);
     }
   }, {
     key: "render",
@@ -3735,11 +3748,11 @@ function (_React$Component) {
         queryString: e.target.value,
         loading: true
       });
-      window.setTimeout(function () {
+      setTimeout(function () {
         return _this2.setState({
           loading: false
         });
-      }, 900);
+      }, 1000);
     }
   }, {
     key: "render",
@@ -4606,8 +4619,8 @@ function (_React$Component) {
         });
         this.props.fetchSearchedSongs(searchString);
       } else {
-        this.props.fetchSongs().then(function () {
-          return window.setTimeout(function () {
+        this.props.fetchSongs().then(this.timer = function () {
+          return setTimeout(function () {
             return _this2.setState({
               loading: false
             });
@@ -4624,6 +4637,11 @@ function (_React$Component) {
         });
         this.props.fetchSearchedSongs(newProps.searchString);
       }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.timer) clearTimeout(this.timer);
     }
   }, {
     key: "handlePlay",

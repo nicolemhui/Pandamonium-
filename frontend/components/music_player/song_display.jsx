@@ -7,7 +7,7 @@ class SongDisplay extends React.Component {
   }
   
   render () {
-    let { currentSong, albums, artists, albumArtists } = this.props;    
+    let { currentSong, albums, artists, artist } = this.props;    
     let songArtists;
     
     if (this.props.location.pathname == "/search") {
@@ -16,7 +16,13 @@ class SongDisplay extends React.Component {
         key={currentSong.artistId}>
         {currentSong.artistName}
       </Link>
-    } else if (artists) {
+    } else if (artist) {
+      songArtists = <Link to={`/artists/${artist.id}`}
+        className="player-song-artists"
+        key={artist.id}>
+        {artist.name}
+      </Link>
+    } else {
       songArtists = artists.map(artist => {
         return (
           <Link to={`/artists/${artist.id}`}
@@ -26,17 +32,7 @@ class SongDisplay extends React.Component {
           </Link>
         )
       });
-    } else {
-      songArtists = albumArtists.map(artist => {
-        return (
-          <Link to={`/artists/${artist.id}`}
-            className="player-song-artists"
-            key={artist.id}>
-            {artist.name}
-          </Link>
-        )
-      });
-    }
+    } 
 
     let album = albums[0];
     let albumPhoto;

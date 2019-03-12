@@ -25,7 +25,7 @@ class Search extends React.Component {
 
   handleChange(e) {
     this.setState({ queryString: e.target.value, loading: true });
-    window.setTimeout(() => this.setState({ loading: false }), 900);
+    setTimeout(() => this.setState({ loading: false }), 1000);
   }
 
   render() {
