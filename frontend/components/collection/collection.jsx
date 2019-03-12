@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import CollectionLinks from '../header_links/collection_links';
 import AlbumIndexContainer from '../album/album_index_container';
@@ -18,6 +18,7 @@ class Collection extends React.Component {
             <ProtectedRoute path="/collection/albums" component={AlbumIndexContainer}/>
             <ProtectedRoute path="/collection/artists" component={ArtistIndexContainer}/>
             <ProtectedRoute path="/collection/songs" component={SongIndexContainer}/>
+            <Redirect to="/collection/albums"/>
           </Switch>
         </div>
       </div>

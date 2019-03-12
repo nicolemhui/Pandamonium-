@@ -18,10 +18,10 @@ class CollectionLinks extends React.Component {
       <nav className="nav-links">
         <div className="nav-links-container">
           <div className="nav-bar-links">
-            <NavLink to="/collection/playlists" className="nav-links-link">Playlists<span></span></NavLink>
-            <NavLink to="/collection/songs" className="nav-links-link">Songs<span></span></NavLink>
-            <NavLink to="/collection/albums" className="nav-links-link">Albums<span></span></NavLink>
-            <NavLink to="/collection/artists" className="nav-links-link">Artists<span></span></NavLink>
+            <NavLink to="/collection/playlists" className="nav-links-link" activeClassName="active-nav-link">Playlists</NavLink>
+            <NavLink to="/collection/songs" className="nav-links-link" activeClassName="active-nav-link">Songs</NavLink>
+            <NavLink to="/collection/albums" className="nav-links-link" activeClassName="active-nav-link">Albums</NavLink>
+            <NavLink to="/collection/artists" className="nav-links-link" activeClassName="active-nav-link">Artists</NavLink>
           </div>
 
           <div className="nav-link-button"> 

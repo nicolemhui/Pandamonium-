@@ -1,6 +1,6 @@
 import React from 'react';
 import BrowseLinks from '../header_links/browse_links';
-import { Switch } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import AlbumIndexContainer from '../album/album_index_container';
 import ArtistIndexContainer from '../artist/artist_index_container';
@@ -18,6 +18,7 @@ class Browse extends React.Component {
             <ProtectedRoute path="/browse/artists" component={ArtistIndexContainer} />
             <ProtectedRoute path="/browse/songs" component={SongIndexContainer} />
             <ProtectedRoute path="/browse/playlists" component={PlaylistIndexContainer} />
+            <Redirect to="/browse/albums" />
           </Switch>
         </div>
       </div>

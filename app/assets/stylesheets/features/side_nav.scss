@@ -44,8 +44,24 @@ a {
   display: block;
   color: #b3b3b3;
 
+  ul {
+    padding-left: 0px;
+  }
+
   li {
     margin-bottom: 20px;
+    padding-left: 25px;
+  }
+}
+.active-sidenav-link {
+  border-left: 5px solid #1DB954;
+
+  i {
+    color: #fff;
+  }
+
+  span {
+    color: #fff;
   }
 }
 
@@ -55,6 +71,10 @@ a {
 
   li {
     list-style: none;
+  }
+
+  i {
+    padding-left: 10px;
   }
 
   .links-detail {

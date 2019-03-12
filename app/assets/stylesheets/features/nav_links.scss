@@ -35,25 +35,15 @@
   line-height: 16px;
 }
 
+.active-nav-link {
+  color: #fff;
+  padding-bottom: 6px;
+  padding-left: 2px;
+  border-bottom: 3px solid #1DB954;
+}
+
 .nav-links-link:hover {
   color: #fff;
   transition: 0.3s;
 }
-
-.nav-links-link:active {
-  color: #fff;
-  transition: 0.3s;
-  padding-bottom: 4px;
-
-  span {
-    background-color: green;
-    height: 2px;
-    width: 10px;
-    margin: 0 auto;
-  }
-}
-
-
-
-
 

@@ -30,7 +30,7 @@ class SideNav extends React.Component {
           <ul>
             <li>
               <div className="sidenav-links">
-                <NavLink to="/search" className="links-detail">
+                <NavLink activeClassName="active-sidenav-link" to="/search" className="links-detail">
                   <i className="fas fa-search"></i>
                   <span className="sidenav-links-description">Search</span>
                 </NavLink>
@@ -38,7 +38,7 @@ class SideNav extends React.Component {
             </li>
             <li>
               <div className="sidenav-links">
-                <NavLink to="/browse/playlists" className="links-detail">
+                <NavLink activeClassName="active-sidenav-link" to="/browse" className="links-detail">
                   <i className="fas fa-home"></i>
                   <span className="sidenav-links-description">Home</span>
                 </NavLink>
@@ -46,7 +46,7 @@ class SideNav extends React.Component {
             </li>
             <li>
               <div className="sidenav-links">
-                <NavLink to="/collection/playlists" className="links-detail">
+                <NavLink activeClassName="active-sidenav-link" to="/collection" className="links-detail">
                   <i className="fas fa-book-open"></i>
                   <span className="sidenav-links-description">Your Library</span>
                 </NavLink>
