@@ -11,7 +11,7 @@ class SearchResults extends React.Component {
     super(props);
 
     this.state = {
-      searchString: props.searchString
+      searchString: props.searchString,
     };
   }
 
@@ -28,11 +28,16 @@ class SearchResults extends React.Component {
     let searchedArtists = <ArtistIndexContainer searchString={searchString} />;
     let searchedAlbums = <AlbumIndexContainer searchString={searchString} />;
     let searchedSongs = <SongIndexContainer searchString={searchString} />;
-    
 
     let noResults;
     if ((Object.entries(playlists).length === 0) && (Object.entries(albums).length === 0) 
       && (Object.entries(artists).length === 0) && (Object.entries(songs).length === 0)){
+
+      const list = document.getElementsByClassName("search-category");
+      for (let i = 0; i < list.length; i++) {
+        list[i].innerHTML = "";   
+      }
+
       noResults = <div className="no-search-content">
         <h1>Nothing to see...</h1>
       </div>
@@ -57,7 +62,6 @@ class SearchResults extends React.Component {
   }
 }
 
-
 const mapStateToProps = (state) => ({
   songs: state.entities.songs,
   albums: state.entities.albums,
@@ -66,5 +70,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default withRouter(connect(mapStateToProps, null)(SearchResults));
-
-// export default SearchResults;

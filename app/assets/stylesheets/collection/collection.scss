@@ -2,18 +2,16 @@ body {
   margin: 0;
 }
 
-.collection-main {
+#collection-main {
   background-image: linear-gradient(#234666, black);
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-bottom: 150px;
-  // height: 100vh;
 }
 
 .collection-container {
   margin: 0px 0px 0px 250px;
 }
-
 
 .create-playlist-btn {
   color: white;
