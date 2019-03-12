@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { closeModal } from '../../actions/modal_actions';
 
 class PlaylistIndexItem extends React.Component {
   constructor(props) {
@@ -16,16 +15,6 @@ class PlaylistIndexItem extends React.Component {
 
   render() {
     const playlist = this.props.playlist;
-
-    // let linkAction;
-    // if ( this.state.ui.modal.modalType === "add_song_to_playlist" ) {
-    //   linkAction = <Link to={`playlists/${playlist.id}`} className="playlist-name" onClick={this.handleClick}>
-    //     {playlist.name}
-    //   </Link>
-    // } else {
-    //   link = 
-    // }
-    
     const click = this.props.modalType === "add_song_to_playlist"
       ? this.handleClick
       : ()=>{};
@@ -47,8 +36,6 @@ class PlaylistIndexItem extends React.Component {
           </div>
           <h1 className="album-title">
             {playlist.name}
-            {/* <h3 className="playlist-name">{playlist.name}</h3> */}
-            {/* <Link to={`/playlists/${playlist.id}`} className="playlist-name">{playlist.name}</Link> */}
           </h1>
         </Link>
       </li>

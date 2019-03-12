@@ -1,4 +1,3 @@
-// //NEW EDIT  -- TEST THIS ONE !
 import React from 'react';
 import SongDetailViewContainer from './song_detail_view_container';
 

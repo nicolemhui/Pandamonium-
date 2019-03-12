@@ -60,11 +60,7 @@ class SongDetailView extends React.Component {
     return (
       <div className="song-item-info">
         <h3 className="song-title">{song.title}</h3>
-        {/* <div className="song-info"> */}
-          {/* <div className="song-other-info"> */}
-            {songInfoText}
-          {/* </div> */}
-        {/* </div> */}
+        {songInfoText}
       </div>
     );
   }

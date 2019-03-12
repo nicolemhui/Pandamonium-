@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -30,10 +29,8 @@ class SessionForm extends React.Component {
   handleDemoClick(e) {
     e.preventDefault();
     const user = { username: "demouser", password: "password", email: "demo@user.com" };
-    this.props.demo(user)
+    this.props.demo(user);
   }
-
-  //.then(() => this.props.history.push('/'));
 
   renderErrors() {
     return (

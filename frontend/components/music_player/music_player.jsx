@@ -11,7 +11,6 @@ class MusicPlayer extends React.Component {
     };
 
     this.audio = document.getElementById('audio');
-
     this.togglePlay = this.togglePlay.bind(this);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
@@ -47,7 +46,6 @@ class MusicPlayer extends React.Component {
     }
 
     this.props.updateQueue(songQueue);
-  
     return songQueue;
   }
 
@@ -60,8 +58,6 @@ class MusicPlayer extends React.Component {
   }
 
   onProgressSliderChange() {
-    // console.log(this);
-
     return event => {
 
       const newProgress =
@@ -109,7 +105,6 @@ class MusicPlayer extends React.Component {
                 <i className="fas fa-infinity" onClick={this.repeat}></i>
               </div>
             </div>
-
 
             <div>
               <audio id="audio" src={currentSong.audioUrl} autoPlay></audio>

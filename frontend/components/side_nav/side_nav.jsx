@@ -53,20 +53,11 @@ class SideNav extends React.Component {
               </div>
             </li>
           </ul>
-          {/* <ul className="recently-played">
-            <h5>Recently Played</h5>
-              <li>Playlist 1</li>
-              <li>Playlist 2</li>
-              <li>Playlist 3</li>
-          </ul> */}
         </div>
-        
-        {/* <div className="sidenav-bottom"> */}
 
-          <div className="nav-greeting-logout">
-            {this.props.currentUser ? userGreeting() : ""}
-          </div>
-        {/* </div> */}
+        <div className="nav-greeting-logout">
+          {this.props.currentUser ? userGreeting() : ""}
+        </div>
       </aside>
     )
   }
