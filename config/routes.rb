@@ -3,10 +3,35 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
-    resources :songs, only: [:index, :show]
-    resources :artists, only: [:index, :show] 
-    resources :albums, only: [:index, :show] 
-    resources :playlists, only: [:create, :index, :show, :destroy]
+
+    resources :albums, only: [:index, :show] do
+      collection do
+        get :saved_albums
+      end
+      # member do
+      #   post :save
+      #   delete :unsave
+      # end
+    end
+    
+    resources :songs, only: [:index, :show] do 
+      collection do
+        get :saved_songs
+      end
+    end 
+    
+    resources :artists, only: [:index, :show] do 
+      collection do
+        get :saved_artists
+      end
+    end 
+
+    resources :playlists, only: [:create, :index, :show, :destroy] do 
+      collection do
+        get :saved_playlists
+      end
+    end 
+    
   end
   
   get 'api/albums/search/:search_string', to: 'api/albums#search'

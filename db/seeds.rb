@@ -14,29 +14,25 @@ Playlist.destroy_all
 PlaylistSong.destroy_all
 ArtistAlbum.destroy_all
 ArtistSong.destroy_all
+Save.destroy_all
 
 #Users
-demoUser = User.create(username: "Demo User", email: "demo@user.com", password: "password")
+demo = User.create(username: "Demo User", email: "demo@user.com", password: "password")
 nikki = User.create(username: "Nikki", email: "nikki@email.com", password: "password")
-djMango = User.create(username: "DJ Mango", email: "nikki@email.com", password: "password")
-
+djmango = User.create(username: "DJ Mango", email: "mango@email.com", password: "password")
 
 #Daft Punk 
 daft_punk = Artist.create(name: "Daft Punk")
-# daft_punk = Artist.create(name: "Daft Punk", bio: "Even as they evolved from French house pioneers in the '90s to dance tastemakers in the 2000s to mainstream heroes in the 2010s, 
-#   Daft Punk remained one of dance music's most influential and iconic acts. The combined talents of Guy-Manuel de Homem-Christo and Thomas Bangalter, the Parisian duo quickly won 
-#   acclaim for their unique blend of first-wave acid house and techno with pop, indie rock, and hip-hop. One of the pair's first projects together was Darling, an instrumental indie 
-#   cover band; their current recording name derives from a review in U.K. music weekly Melody Maker of a compilation tape Darling were featured on, released by Krautrock revivalists 
-#   Stereolab (their lo-fi D.I.Y. cover of a Beach Boys song was derided as "daft punk"). Subsequently ditching the almost inevitable creative cul-de-sac of rock for the more appealing 
-#   rush of the dancefloor, the pair released their debut single, "The New Wave," in 1993 on the celebrated Soma label. Instantly hailed by the dance music press as the work of a new 
-#   breed of house innovators, the single was followed by "Da Funk," the band's first true hit (the record sold 30,000 copies worldwide and saw thorough rinsings by everyone from Kris 
-#   Needs to the Chemical Brothers).")
 dp_artist_photo = File.open("app/assets/images/daft_punk_artist.jpg")
 daft_punk.photo.attach(io: dp_artist_photo, filename: 'daft_punk_artist.jpg')
+
+demo.saved_artists << daft_punk
 
 dp_discovery = Album.create(title: "Discovery", year: 2001)
 dp_discovery_photo = File.open("app/assets/images/daft_punk_discovery.png")
 dp_discovery.cover_photo.attach(io: dp_discovery_photo, filename: 'dp_discovery.png')
+
+demo.saved_albums << dp_discovery
 
 dp_aerodynamic = Song.create(title: "Aerodynamic", album_id: dp_discovery.id)
 dp_aerodynamic_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Daft+Punk+-+Aerodynamic.mp3")
@@ -46,6 +42,8 @@ dp_digital_love = Song.create(title: "Digital Love", album_id: dp_discovery.id)
 dp_digital_love_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Daft+Punk+-+Digital+Love.mp3")
 dp_digital_love.audio.attach(io: dp_digital_love_audio, filename: 'dp_digital_love.jpg')
 
+demo.saved_songs << dp_digital_love
+
 dp_harder_better_faster_stronger = Song.create(title: "Harder Better Faster Stronger", album_id: dp_discovery.id)
 dp_harder_better_faster_stronger_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Daft+Punk+-+Harder%2C+Better%2C+Faster%2C+Stronger.mp3")
 dp_harder_better_faster_stronger.audio.attach(io: dp_harder_better_faster_stronger_audio, filename: 'dp_harder_better_faster_stronger.jpg')
@@ -53,6 +51,8 @@ dp_harder_better_faster_stronger.audio.attach(io: dp_harder_better_faster_strong
 dp_one_more_time = Song.create(title: "One More Time", album_id: dp_discovery.id)
 dp_one_more_time_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Daft+Punk+-+One+more+time.mp3")
 dp_one_more_time.audio.attach(io: dp_one_more_time_audio, filename: 'dp_one_more_time.mp3')
+
+demo.saved_songs << dp_one_more_time
 
 dp_voyager = Song.create(title: "Voyager", album_id: dp_discovery.id)
 dp_voyager_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Daft+Punk+-+Voyager.mp3")
@@ -67,11 +67,12 @@ dp_song_5 = ArtistSong.create(artist_id: daft_punk.id, song_id: dp_voyager.id, o
 
 dp_album_1 = ArtistAlbum.create(artist_id: daft_punk.id, album_id: dp_discovery.id)
 
-
 #Bruno Mars
 bruno_mars = Artist.create(name: "Bruno Mars")
 bm_artist_photo = File.open("app/assets/images/bruno_mars_artist.png")
 bruno_mars.photo.attach(io: bm_artist_photo, filename: 'bruno_mars_artist.png')
+
+demo.saved_artists << bruno_mars
 
 #Doo Wops & Hooligans
 bm_doo_wops_hooligans = Album.create(title: "Doo-Wops & Hooligans", year: 2010)
@@ -85,6 +86,8 @@ bm_grenade.audio.attach(io: bm_grenade_audio, filename: 'bm_grenade.mp3')
 bm_just_the_way_you_are = Song.create(title: "Just The Way You Are", album_id: bm_doo_wops_hooligans.id)
 bm_just_the_way_you_are_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars+%2C+Doo-Wops+%26+Hooligans+-+Just+The+Way+You+Are.mp3")
 bm_just_the_way_you_are.audio.attach(io: bm_just_the_way_you_are_audio, filename: 'bm_just_the_way_you_are.mp3')
+
+demo.saved_songs << bm_just_the_way_you_are
 
 bm_lazy_song = Song.create(title: "The Lazy Song", album_id: bm_doo_wops_hooligans.id)
 bm_lazy_song_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars+%2C+Doo-Wops+%26+Hooligans+-+The+Lazy+Song.mp3")
@@ -102,6 +105,8 @@ bm_24k_magic.cover_photo.attach(io: bm_24k_magic_photo, filename: 'bm_24k_magic.
 bm_finesse = Song.create(title: "Finesse", album_id: bm_24k_magic.id)
 bm_finesse_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars%2C+24K+Magic+-+Finesse.mp3")
 bm_finesse.audio.attach(io: bm_finesse_audio, filename: 'bm_finesse.mp3')
+
+demo.saved_songs << bm_finesse
 
 bm_thats_what_i_like = Song.create(title: "That's What I Like", album_id: bm_24k_magic.id)
 bm_thats_what_i_like_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Bruno+Mars%2C+24K+Magic+-+That's+What+I+Like.mp3")
@@ -144,6 +149,8 @@ lp_what_ive_done = Song.create(title: "What I've Done", album_id: lp_minutes_to_
 lp_what_ive_done_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+06+What+I've+Done.mp3")
 lp_what_ive_done.audio.attach(io: lp_what_ive_done_audio, filename: 'lp_what_ive_done.mp3')
 
+demo.saved_songs << lp_what_ive_done
+
 lp_hands_held_high = Song.create(title: "Hands Held High", album_id: lp_minutes_to_midnight.id)
 lp_hands_held_high_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+07+Hands+Held+High.mp3")
 lp_hands_held_high.audio.attach(io: lp_hands_held_high_audio, filename: 'lp_hands_held_high.mp3')
@@ -155,6 +162,8 @@ lp_in_pieces.audio.attach(io: lp_in_pieces_audio, filename: 'lp_in_pieces.mp3')
 lp_in_the_end = Song.create(title: "In The End", album_id: lp_hybrid_theory.id)
 lp_in_the_end_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Linkin+Park+-+08+In+The+End.mp3")
 lp_in_the_end.audio.attach(io: lp_in_the_end_audio, filename: 'lp_in_the_end.mp3')
+
+demo.saved_songs << lp_in_the_end
 
 #lp songs & albums 
 lp_song_1 = ArtistSong.create(artist_id: linkin_park.id, song_id: lp_leave_out_all_the_rest.id, ord: 1)
@@ -177,6 +186,8 @@ pr_worlds = Album.create(title: "Worlds", year: 2014)
 pr_worlds_photo = File.open("app/assets/images/porter_robinson_worlds.png")
 pr_worlds.cover_photo.attach(io: pr_worlds_photo, filename: 'pr_worlds.png')
 
+demo.saved_albums << pr_worlds
+
 pr_shelter_album = Album.create(title: "Shelter", year: 2016)
 pr_shelter_album_photo = File.open("app/assets/images/shelter.png")
 pr_shelter_album.cover_photo.attach(io: pr_shelter_album_photo, filename: 'pr_shelter_album.png')
@@ -197,6 +208,8 @@ pr_lionhearted = Song.create(title: "Lionhearted", album_id: pr_worlds.id)
 pr_lionhearted_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson%2C+Worlds+-+09+Lionhearted+(feat.+Urban+Cone).mp3")
 pr_lionhearted.audio.attach(io: pr_lionhearted_audio, filename: 'pr_lionhearted.mp3')
 
+demo.saved_songs << pr_lionhearted
+
 pr_sea_of_voices = Song.create(title: "Sea of Voices", album_id: pr_worlds.id)
 pr_sea_of_voices_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson%2C+Worlds+-+10+Sea+of+Voices.mp3")
 pr_sea_of_voices.audio.attach(io: pr_sea_of_voices_audio, filename: 'pr_sea_of_voices.mp3')
@@ -208,6 +221,8 @@ pr_goodbye_to_a_world.audio.attach(io: pr_goodbye_to_a_world_audio, filename: 'p
 pr_shelter = Song.create(title: "Shelter", album_id: pr_shelter_album.id)
 pr_shelter_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Porter+Robinson+-+Shelter.mp3")
 pr_shelter.audio.attach(io: pr_shelter_audio, filename: 'pr_shelter_audio.mp3')
+
+demo.saved_songs << pr_shelter
 
 #pr songs & albums 
 pr_song_1 = ArtistSong.create(artist_id: porter_robinson.id, song_id: pr_divinity.id, ord: 1)
@@ -227,9 +242,13 @@ tycho = Artist.create(name: "Tycho")
 tycho_artist_photo = File.open("app/assets/images/tycho_artist.jpg")
 tycho.photo.attach(io: tycho_artist_photo, filename: 'tycho_artist.jpg')
 
+demo.saved_artists << tycho
+
 tycho_dive = Album.create(title: "Dive", year: 2011)
 tycho_dive_photo = File.open("app/assets/images/tycho_dive.png")
 tycho_dive.cover_photo.attach(io: tycho_dive_photo, filename: 'tycho_dive.png')
+
+demo.saved_albums << tycho_dive
 
 ty_a_walk = Song.create(title: "A Walk", album_id: tycho_dive.id)
 ty_a_walk_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Tycho+-+01+A+Walk.mp3")
@@ -266,9 +285,13 @@ odesza = Artist.create(name: "Odesza")
 odesza_artist_photo = File.open("app/assets/images/odesza_artist.jpg")
 odesza.photo.attach(io: odesza_artist_photo, filename: 'odesza_artist.jpg')
 
+demo.saved_artists << odesza
+
 od_in_return = Album.create(title: "In Return", year: 2014)
 od_in_return_photo = File.open("app/assets/images/odesza_in_return.png")
 od_in_return.cover_photo.attach(io: od_in_return_photo, filename: 'odesza_in_return.png')
+
+demo.saved_albums << od_in_return
 
 od_say_my_name = Song.create(title: "Say My Name", album_id: od_in_return.id)
 od_say_my_name_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Odesza+-+02+Say+My+Name+(feat.+Zyra).mp3")
@@ -290,6 +313,8 @@ od_sun_models = Song.create(title: "Sun Models", album_id: od_in_return.id)
 od_sun_models_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Odesza+-+12+Sun+Models+(feat.+Madelyn+Grant).mp3")
 od_sun_models.audio.attach(io: od_sun_models_audio, filename: 'od_sun_models.mp3')
 
+demo.saved_songs << od_sun_models
+
 od_light = Song.create(title: "Light", album_id: od_in_return.id)
 od_light_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Odesza+-+14+Light+(feat.+Little+Dragon).mp3")
 od_light.audio.attach(io: od_light_audio, filename: 'od_light.mp3')
@@ -297,6 +322,8 @@ od_light.audio.attach(io: od_light_audio, filename: 'od_light.mp3')
 od_line_of_sight = Song.create(title: "Line of Sight", album_id: od_in_return.id)
 od_line_of_sight_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Odesza+-+Line+Of+Sight+(feat.+WYNNE+%26+Mansionair).mp3")
 od_line_of_sight.audio.attach(io: od_line_of_sight_audio, filename: 'od_line_of_sight.mp3')
+
+demo.saved_songs << od_line_of_sight
 
 #odesza songs & albums 
 odesza_song_1 = ArtistSong.create(artist_id: odesza.id, song_id: od_say_my_name.id, ord: 1)
@@ -331,6 +358,8 @@ or_secrets = Song.create(title: "Secrets", album_id: or_waking_up.id)
 or_secrets_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+03+Secrets.mp3")
 or_secrets.audio.attach(io: or_secrets_audio, filename: 'or_secrets.mp3')
 
+demo.saved_songs << or_secrets
+
 or_everybody_loves_me = Song.create(title: "Everybody Loves Me", album_id: or_waking_up.id)
 or_everybody_loves_me_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/One+Republic+-+04+Everybody+Loves+Me.mp3")
 or_everybody_loves_me.audio.attach(io: or_everybody_loves_me_audio, filename: 'or_everybody_loves_me.mp3')
@@ -359,6 +388,8 @@ madeon = Artist.create(name: "Madeon")
 madeon_artist_photo = File.open("app/assets/images/madeon_artist.png")
 madeon.photo.attach(io: madeon_artist_photo, filename: 'madeon_artist.png')
 
+demo.saved_artists << madeon
+
 madeon_adventure = Album.create(title: "Adventure", year: 2015)
 madeon_adventure_photo = File.open("app/assets/images/madeon_album.png")
 madeon_adventure.cover_photo.attach(io: madeon_adventure_photo, filename: 'madeon_adventure.png')
@@ -370,6 +401,8 @@ madeon_youre_on.audio.attach(io: madeon_youre_on_audio, filename: 'madeon_youre_
 madeon_pay_no_mind = Song.create(title: "Pay No Mind", album_id: madeon_adventure.id)
 madeon_pay_no_mind_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Madeon+-+05+Pay+No+Mind+(feat.+Passion+Pit).mp3")
 madeon_pay_no_mind.audio.attach(io: madeon_pay_no_mind_audio, filename: 'madeon_pay_no_mind.mp3')
+
+demo.saved_songs << madeon_pay_no_mind
 
 madeon_beings = Song.create(title: "Beings", album_id: madeon_adventure.id)
 madeon_beings_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Madeon+-+06+Beings.mp3")
@@ -402,6 +435,8 @@ maroon_5_songs_about_jane = Album.create(title: "Songs About Jane", year: 2009)
 maroon_5_songs_about_jane_photo = File.open("app/assets/images/maroon_5_songs_about_jane.png")
 maroon_5_songs_about_jane.cover_photo.attach(io: maroon_5_songs_about_jane_photo, filename: 'maroon_5_songs_about_jane.png')
 
+demo.saved_albums << maroon_5_songs_about_jane
+
 maroon_5_harder_to_breathe = Song.create(title: "Harder to Breathe", album_id: maroon_5_songs_about_jane.id)
 maroon_5_harder_to_breathe_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+01+Harder+To+Breathe.m4a")
 maroon_5_harder_to_breathe.audio.attach(io: maroon_5_harder_to_breathe_audio, filename: 'maroon_5_harder_to_breathe.mp3')
@@ -422,6 +457,8 @@ maroon_5_sunday_mornings = Song.create(title: "Sunday Mornings", album_id: maroo
 maroon_5_sunday_mornings_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+08+Sunday+Mornings.m4a")
 maroon_5_sunday_mornings.audio.attach(io: maroon_5_sunday_mornings_audio, filename: 'maroon_5_sunday_mornings.mp3')
 
+demo.saved_songs << maroon_5_sunday_mornings
+
 maroon_5_secret = Song.create(title: "Secret", album_id: maroon_5_songs_about_jane.id)
 maroon_5_secret_audio = EzDownload.open("https://s3-us-west-1.amazonaws.com/pandamonium-resources/Maroon+5+-+09+Secret.m4a")
 maroon_5_secret.audio.attach(io: maroon_5_secret_audio, filename: 'maroon_5_secret.mp3')
@@ -438,27 +475,31 @@ maroon_5_album_1 = ArtistAlbum.create(artist_id: maroon_5.id, album_id: maroon_5
 
 
 #Playlists 
-playlist1 = Playlist.create(name: "Chill Vibes", creator_id: demoUser.id, public: true)
+playlist1 = Playlist.create(name: "Chill Vibes", creator_id: demo.id, public: true)
 playlist1.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist2 = Playlist.create(name: "Workout", creator_id: demoUser.id, public: true)
+playlist2 = Playlist.create(name: "Workout", creator_id: nikki.id, public: true)
 playlist2.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist3 = Playlist.create(name: "Study", creator_id: demoUser.id, public: true)
+playlist3 = Playlist.create(name: "Study", creator_id: demo.id, public: true)
 playlist3.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist4 = Playlist.create(name: "Jammin ~", creator_id: demoUser.id, public: true)
+playlist4 = Playlist.create(name: "Jammin ~", creator_id: nikki.id, public: true)
 playlist4.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist5 = Playlist.create(name: "Rainy days", creator_id: demoUser.id, public: true)
+playlist5 = Playlist.create(name: "Rainy days", creator_id: demo.id, public: true)
 playlist5.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
-playlist6 = Playlist.create(name: "Happy days", creator_id: nikki.id, public: true)
+playlist6 = Playlist.create(name: "Happy days", creator_id: demo.id, public: true)
 playlist6.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
 playlist7 = Playlist.create(name: "Carefree weeeeee", creator_id: nikki.id, public: true)
 playlist7.photo.attach(io: File.open("app/assets/images/gradient.jpg"), filename: 'playlist_photo.jpg')
 
+demo.saved_playlists << playlist1
+demo.saved_playlists << playlist2
+demo.saved_playlists << playlist6
+demo.saved_playlists << playlist7
 
 #PlaylistSongs 
 playlist1_song_1 = PlaylistSong.create(playlist_id: playlist1.id, song_id: od_say_my_name.id)
