@@ -20,6 +20,9 @@ class ArtistIndex extends React.Component {
     if (this.props.searchString != undefined) {
       this.setState({ loading: false });
       this.props.fetchSearchedArtists(searchString);
+    } else if (this.props.location.pathname == "/collection/artists") {
+      this.props.fetchSavedArtists()
+        .then(this.timer = () => setTimeout(() => this.setState({ loading: false }), 700));
     } else {
       this.props.fetchArtists()
         .then(this.timer = () => setTimeout(() => this.setState({ loading: false }), 700));

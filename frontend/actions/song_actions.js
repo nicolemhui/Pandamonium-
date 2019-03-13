@@ -32,3 +32,9 @@ export const fetchSearchedSongs = (searchString) => dispatch => (
   SongApiUtil.fetchSearchedSongs(searchString)
     .then(payload => dispatch(receiveSearchedSongs(payload)))
 );
+
+export const fetchSavedSongs = () => dispatch => (
+  SongApiUtil.fetchSavedSongs()
+    .then(payload => dispatch(receiveAllSongs(payload)))
+);
+

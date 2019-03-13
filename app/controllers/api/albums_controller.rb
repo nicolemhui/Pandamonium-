@@ -11,6 +11,11 @@ class Api::AlbumsController < ApplicationController
     render 'api/albums/index'
   end 
 
+  def saved_albums
+    @albums = current_user.saved_albums
+    render 'api/albums/index'
+  end
+
   def search 
     search_string = params[:search_string]
     

@@ -33,3 +33,10 @@ export const fetchSearchedPlaylists = (searchString) => (
     url: `api/playlists/search/${searchString}`,
   })
 );
+
+export const fetchSavedPlaylists = () => (
+  $.ajax({
+    url: 'api/playlists/saved_playlists',
+    method: 'GET'
+  })
+);

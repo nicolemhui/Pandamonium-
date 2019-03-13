@@ -1,6 +1,6 @@
 import AlbumIndex from './album_index';
 import { connect } from 'react-redux';
-import { fetchAlbums, fetchSearchedAlbums } from '../../actions/album_actions';
+import { fetchAlbums, fetchSearchedAlbums, fetchSavedAlbums } from '../../actions/album_actions';
 
 const mapStateToProps = (state) => {
   const albums = state.entities.albums;
@@ -15,6 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return ({
     fetchAlbums: () => dispatch(fetchAlbums()),
+    fetchSavedAlbums: () => dispatch(fetchSavedAlbums()),
     fetchSearchedAlbums: (searchString) => dispatch(fetchSearchedAlbums(searchString)),
   });
   

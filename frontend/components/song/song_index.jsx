@@ -21,6 +21,9 @@ class SongIndex extends React.Component {
     if (this.props.searchString != undefined) {
       this.setState({ loading: false });
       this.props.fetchSearchedSongs(searchString);
+    } else if (this.props.location.pathname == "/collection/songs") {
+      this.props.fetchSavedSongs()
+        .then(this.timer = () => setTimeout(() => this.setState({ loading: false }), 700));
     } else {
       this.props.fetchSongs()
         .then(this.timer = () => setTimeout(() => this.setState({ loading: false }), 700));

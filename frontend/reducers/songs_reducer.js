@@ -14,6 +14,7 @@ const songsReducer = (state = {}, action) => {
         return action.payload.songs;
       }
     case RECEIVE_ALL_SONGS:
+      return action.payload.songs;
     case RECEIVE_PLAYLIST:
     case RECEIVE_ALBUM:
     case RECEIVE_ARTIST:

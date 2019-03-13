@@ -16,7 +16,8 @@ const playlistsReducer = (state = {}, action) => {
       return action.payload.playlists;
     }
     case RECEIVE_ALL_PLAYLISTS:
-      return merge({}, state, action.payload.playlists);
+      // return merge({}, state, action.payload.playlists);
+      return action.payload.playlists;
     case RECEIVE_PLAYLIST:
       return merge({}, state, action.payload.playlist);
     case REMOVE_PLAYLIST:

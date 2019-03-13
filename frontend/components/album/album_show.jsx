@@ -82,6 +82,7 @@ class AlbumShow extends React.Component {
               <h3>{album.title}</h3>
 
               <h5>{albumArtists}</h5>
+              <h5>{album.year}</h5>
             </div>
             <button
               className="delete-playlist-btn"

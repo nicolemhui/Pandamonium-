@@ -32,3 +32,8 @@ export const fetchSearchedAlbums = (searchString) => dispatch => (
   AlbumApiUtil.fetchSearchedAlbums(searchString)
     .then(payload => dispatch(receiveSearchedAlbums(payload)))
 );
+
+export const fetchSavedAlbums = () => dispatch => (
+  AlbumApiUtil.fetchSavedAlbums()
+    .then(payload => dispatch(receiveAllAlbums(payload)))
+);

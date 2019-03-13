@@ -11,11 +11,10 @@ class Api::SongsController < ApplicationController
     render 'api/songs/index'
   end 
 
-  # def search 
-  #   search_string = params[:search_string]
-  #   @songs = Song.where('lower(title) LIKE ? OR lower(title) LIKE ?', "%#{search_string.downcase}%", "#{search_string.downcase}%")
-  #   render 'api/songs/index'
-  # end 
+  def saved_songs
+    @songs = current_user.saved_songs
+    render 'api/songs/index'
+  end
 
   def search 
     search_string = params[:search_string]
@@ -31,9 +30,6 @@ class Api::SongsController < ApplicationController
     @new_results = [];
     results.each do |result|
       song = Song.find_by("title" => result["title"])
-      # puts "album", album.inspect
-      # puts album.cover_photo.attached?  
-      # puts "cover photo", album.cover_photo.service_url
       @new_results << result.merge!({"audio" => song.audio.service_url}) if song.audio.attached?
       @new_results << result.merge!({"cover_photo" => song.photo.service_url}) if song.photo.attached?
 
@@ -45,7 +41,6 @@ class Api::SongsController < ApplicationController
       end 
     end 
 
-    # p "new results", @new_results
     render 'api/songs/search'
   end 
 end

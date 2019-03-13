@@ -50,3 +50,7 @@ export const fetchSearchedPlaylists = (searchString) => dispatch => (
     .then(payload => dispatch(receiveSearchedPlaylists(payload)))
 );
 
+export const fetchSavedPlaylists = () => dispatch => (
+  PlaylistApiUtil.fetchSavedPlaylists()
+    .then(payload => dispatch(receiveAllPlaylists(payload)))
+);

@@ -18,3 +18,10 @@ export const fetchSearchedArtists = (searchString) => (
     url: `api/artists/search/${searchString}`
   })
 );
+
+export const fetchSavedArtists = () => (
+  $.ajax({
+    url: 'api/artists/saved_artists',
+    method: 'GET'
+  })
+);

@@ -6,6 +6,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist.creator_id = current_user.id
 
     if @playlist.save 
+      current_user.saved_playlists << @playlist
       render 'api/playlists/show'
     else 
       render json: @playlist.errors.full_messages, status: 401
@@ -14,7 +15,6 @@ class Api::PlaylistsController < ApplicationController
 
   def index
     @playlists = Playlist.all 
-    # @playlists = current_user.playlists
     render 'api/playlists/index'
   end 
   
@@ -33,6 +33,11 @@ class Api::PlaylistsController < ApplicationController
     end 
   end 
   
+  def saved_playlists
+    @playlists = current_user.saved_playlists
+    render 'api/playlists/index'
+  end
+
   def search 
     search_string = params[:search_string]
     @playlists = Playlist.where('lower(name) LIKE ?', "%#{search_string.downcase}%")

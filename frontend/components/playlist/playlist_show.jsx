@@ -66,6 +66,7 @@ class PlaylistShow extends React.Component {
     }
     
     let buttons;
+    debugger;
     
     if (this.props.userId === playlist.creator_id) {
       buttons = 
@@ -79,6 +80,16 @@ class PlaylistShow extends React.Component {
               className="delete-playlist-btn"
               onClick={this.handleDelete}>
               DELETE
+          </button>
+        </div>
+    } else if (this.props.playlistSongs.length === 0) {
+
+      buttons =
+        <div className="playlist-btns">
+          <button
+            className="delete-playlist-btn"
+            onClick={this.handleDelete}>
+            DELETE
           </button>
         </div>
     } else {

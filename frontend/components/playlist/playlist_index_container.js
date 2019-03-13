@@ -1,6 +1,6 @@
 import PlaylistIndex from './playlist_index';
 import { connect } from 'react-redux';
-import { fetchPlaylists, fetchSearchedPlaylists } from '../../actions/playlist_actions';
+import { fetchPlaylists, fetchSearchedPlaylists, fetchSavedPlaylists } from '../../actions/playlist_actions';
 
 const mapStateToProps = (state) => {
   const playlists = state.entities.playlists;
@@ -16,6 +16,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   fetchPlaylists: () => dispatch(fetchPlaylists()),
   fetchSearchedPlaylists: (searchString) => dispatch(fetchSearchedPlaylists(searchString)),
+  fetchSavedPlaylists: () => dispatch(fetchSavedPlaylists()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistIndex);
